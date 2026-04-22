@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Executive Conditioning System™ · Day 04 · The Performance Gap</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Jost:wght@300;400;500;600&family=Martian+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --paper:        #F0EBE1;
+    --paper-deep:   #E8E1D5;
+    --ink:          #1A1510;
+    --ink-mid:      #4A3F35;
+    --ink-light:    #8A7D72;
+    --accent:       #A87840;
+    --accent-light: #C4975A;
+    --accent-muted: rgba(168, 120, 64, 0.12);
+    --dark:         #2E2820;
+    --rule:         rgba(168, 120, 64, 0.25);
+    --write-line:   rgba(26, 21, 16, 0.15);
+  }
+
+  *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    font-size: 11pt;
+  }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Lora', Georgia, serif;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* ─────────────────────────────────────────────
+     MASTHEAD
+  ───────────────────────────────────────────── */
+
+  .masthead {
+    background: var(--dark);
+    border-bottom: 1px solid rgba(168, 120, 64, 0.3);
+    padding: 16px 64px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .masthead-left {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 400;
+    color: var(--ink-light);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .masthead-left .highlight {
+    color: var(--accent-light);
+  }
+
+  .masthead-right {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 400;
+    color: var(--ink-light);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* ─────────────────────────────────────────────
+     DAY HEADER
+  ───────────────────────────────────────────── */
+
+  .day-header {
+    padding: 48px 64px 40px;
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 0 32px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .day-number-col {
+    display: flex;
+    align-items: flex-start;
+    padding-top: 4px;
+  }
+
+  .day-number-large {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 88pt;
+    font-weight: 400;
+    color: var(--accent);
+    opacity: 0.65;
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+
+  .day-meta-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .phase-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 400;
+    color: var(--accent);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  .day-title {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 20pt;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.25;
+    margin-bottom: 12px;
+  }
+
+  .day-premise {
+    font-family: 'Jost', sans-serif;
+    font-size: 10pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.65;
+    max-width: 520px;
+  }
+
+  /* ─────────────────────────────────────────────
+     CONTENT AREA
+  ───────────────────────────────────────────── */
+
+  .content-area {
+    padding: 0 64px;
+  }
+
+  /* ─────────────────────────────────────────────
+     SECTION LABEL
+  ───────────────────────────────────────────── */
+
+  .section-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 400;
+    color: var(--accent);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 10px;
+    margin-top: 48px;
+    margin-bottom: 0;
+  }
+
+  /* ─────────────────────────────────────────────
+     EMAIL BLOCK
+  ───────────────────────────────────────────── */
+
+  .email-block {
+    border: 1px solid var(--rule);
+    border-top: none;
+    margin-top: 0;
+  }
+
+  .email-topbar {
+    background: var(--dark);
+    padding: 10px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .email-topbar-left {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 400;
+    color: var(--ink-light);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .email-topbar-right {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 400;
+    color: var(--ink-light);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .email-body {
+    background: var(--paper);
+    padding: 36px 40px 40px;
+  }
+
+  .email-body p {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 11pt;
+    font-weight: 400;
+    color: var(--ink);
+    line-height: 1.75;
+    margin-bottom: 18px;
+  }
+
+  .email-body p:last-child {
+    margin-bottom: 0;
+  }
+
+  .email-body em {
+    font-style: italic;
+  }
+
+  /* ─────────────────────────────────────────────
+     SCIENCE BOX
+  ───────────────────────────────────────────── */
+
+  .science-box {
+    background: var(--accent-muted);
+    border-left: 3px solid var(--accent);
+    padding: 24px 28px;
+    margin-top: 32px;
+  }
+
+  .science-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 500;
+    color: var(--accent);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .science-box p {
+    font-family: 'Jost', sans-serif;
+    font-size: 10pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.65;
+    margin-bottom: 12px;
+  }
+
+  .science-box p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* ─────────────────────────────────────────────
+     CALLOUT
+  ───────────────────────────────────────────── */
+
+  .callout {
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    padding: 28px 0;
+    margin-top: 40px;
+    text-align: center;
+  }
+
+  .callout p {
+    font-family: 'Lora', Georgia, serif;
+    font-style: italic;
+    font-size: 14pt;
+    color: var(--ink-mid);
+    line-height: 1.55;
+    max-width: 440px;
+    margin: 0 auto;
+  }
+
+  /* ─────────────────────────────────────────────
+     WORKBOOK BLOCK
+  ───────────────────────────────────────────── */
+
+  .workbook-block {
+    background: var(--paper-deep);
+    border-left: 3px solid var(--accent);
+    padding: 28px 32px;
+    margin-top: 32px;
+  }
+
+  .workbook-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 500;
+    color: var(--accent);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  .workbook-title {
+    font-family: 'Jost', sans-serif;
+    font-size: 13pt;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 8px;
+    line-height: 1.3;
+  }
+
+  .workbook-time {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 400;
+    color: var(--ink-light);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .workbook-instruction {
+    font-family: 'Jost', sans-serif;
+    font-size: 9.5pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.65;
+    margin-bottom: 20px;
+  }
+
+  .workbook-question {
+    font-family: 'Jost', sans-serif;
+    font-size: 10pt;
+    font-weight: 500;
+    color: var(--ink);
+    line-height: 1.55;
+    margin-bottom: 6px;
+    margin-top: 14px;
+  }
+
+  .workbook-sub {
+    font-family: 'Jost', sans-serif;
+    font-size: 9pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.55;
+    margin-bottom: 8px;
+  }
+
+  .write-lines {
+    margin-top: 6px;
+    margin-bottom: 10px;
+  }
+
+  .write-line {
+    height: 9mm;
+    border-bottom: 1px solid var(--write-line);
+  }
+
+  .stage-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 24px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .stage-field {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .stage-field-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 400;
+    color: var(--ink-light);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+
+  .stage-field .write-line {
+    margin-bottom: 0;
+  }
+
+  .stage-section {
+    margin-top: 22px;
+    padding-top: 18px;
+    border-top: 1px solid var(--rule);
+  }
+
+  .stage-section:first-of-type {
+    border-top: none;
+    padding-top: 0;
+    margin-top: 16px;
+  }
+
+  .stage-title {
+    font-family: 'Jost', sans-serif;
+    font-size: 10pt;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 10px;
+  }
+
+  .workbook-divider {
+    height: 1px;
+    background: var(--rule);
+    margin: 24px 0;
+  }
+
+  /* ─────────────────────────────────────────────
+     DRILL BOX
+  ───────────────────────────────────────────── */
+
+  .drill-box {
+    background: var(--paper);
+    border-left: 3px solid var(--ink-mid);
+    padding: 24px 28px;
+    margin-top: 32px;
+  }
+
+  .drill-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 400;
+    color: var(--ink-light);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .drill-box p {
+    font-family: 'Jost', sans-serif;
+    font-size: 10pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.65;
+    margin-bottom: 10px;
+  }
+
+  .drill-box p:last-child {
+    margin-bottom: 0;
+  }
+
+  .drill-box strong {
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .drill-fields {
+    margin-top: 14px;
+    margin-bottom: 14px;
+  }
+
+  .drill-field-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 400;
+    color: var(--ink-light);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+    margin-top: 12px;
+  }
+
+  .drill-fallback {
+    margin-top: 18px;
+    padding-top: 16px;
+    border-top: 1px solid var(--rule);
+  }
+
+  .drill-fallback-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 400;
+    color: var(--ink-light);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  /* ─────────────────────────────────────────────
+     DAY FOOTER
+  ───────────────────────────────────────────── */
+
+  .day-footer {
+    border-top: 1px solid var(--rule);
+    margin-top: 48px;
+    padding: 24px 64px 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .footer-left {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 400;
+    color: var(--ink-light);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    line-height: 1.8;
+  }
+
+  .footer-right {
+    text-align: right;
+  }
+
+  .footer-tomorrow-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 500;
+    color: var(--accent);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+
+  .footer-tomorrow-title {
+    font-family: 'Jost', sans-serif;
+    font-size: 9pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+  }
+
+  /* ─────────────────────────────────────────────
+     PRINT STYLESHEET
+  ───────────────────────────────────────────── */
+
+  @media print {
+    body {
+      background: white;
+      color: #1A1510;
+    }
+
+    .masthead,
+    .email-topbar {
+      background: white !important;
+      color: #1A1510 !important;
+      border-bottom: 1px solid #CCCCCC !important;
+    }
+
+    .masthead-left,
+    .masthead-left .highlight,
+    .masthead-right,
+    .email-topbar-left,
+    .email-topbar-right {
+      color: #1A1510 !important;
+    }
+
+    .science-box,
+    .workbook-block {
+      background: #F5F5F5 !important;
+      page-break-inside: avoid;
+    }
+
+    .drill-box {
+      page-break-inside: avoid;
+    }
+
+    .day-footer {
+      page-break-inside: avoid;
+    }
+
+    .email-block {
+      border-color: #CCCCCC !important;
+    }
+
+    .email-body {
+      background: white !important;
+    }
+
+    .write-line {
+      border-bottom-color: #BBBBBB !important;
+    }
+
+    .workbook-divider {
+      background: #CCCCCC !important;
+    }
+  }
+</style>
+</head>
+<body>
+
+  <!-- ─────────────────────────────────────────────
+       MASTHEAD
+  ───────────────────────────────────────────── -->
+  <header class="masthead">
+    <div class="masthead-left">
+      Executive Conditioning System™ · <span class="highlight">Sales Conditioning</span> · An Aivorya Program
+    </div>
+    <div class="masthead-right">
+      Phase 1 · Day 04
+    </div>
+  </header>
+
+  <!-- ─────────────────────────────────────────────
+       DAY HEADER
+  ───────────────────────────────────────────── -->
+  <div class="day-header">
+    <div class="day-number-col">
+      <span class="day-number-large">04</span>
+    </div>
+    <div class="day-meta-col">
+      <div class="phase-label">Phase 1 — Diagnosis</div>
+      <h1 class="day-title">The Performance Gap</h1>
+      <p class="day-premise">Not emotional — clinical. The gap between where you are and where you need to be is not a motivation problem. It is a targeting problem.</p>
+    </div>
+  </div>
+
+  <!-- ─────────────────────────────────────────────
+       CONTENT AREA
+  ───────────────────────────────────────────── -->
+  <div class="content-area">
+
+    <!-- Morning Conditioning -->
+    <div class="section-label">Morning Conditioning</div>
+
+    <div class="email-block">
+      <div class="email-topbar">
+        <span class="email-topbar-left">From: Executive Conditioning System™ · Day 04 of 30</span>
+        <span class="email-topbar-right">Read · Then Work</span>
+      </div>
+      <div class="email-body">
+        <p>You have spent three days watching your patterns. Today the register changes.</p>
+
+        <p>Days 01 through 03 were psychological work — identifying triggers, naming the identity beliefs underneath them, watching how the automatic response fires before judgment can catch it. That work is not finished. But today you leave it aside and look at something else: the numbers.</p>
+
+        <p>Not roughly. Precisely.</p>
+
+        <p>Most salespeople have a general sense of how they are performing. They know whether the last quarter was strong or weak. They know which deals are live and which are cold. What most do not know — with any precision — is <em>where in the process</em> their performance drops. At which stage conversion falls. At which stage their behavior changes in a way that costs them deals they should win.</p>
+
+        <p>This is not a question of effort. It is a question of targeting.</p>
+
+        <p>Anders Ericsson spent thirty years studying expert performance across chess, music, surgery, and sport. His consistent finding was this: the gap between a professional and an expert is not hours of practice. It is specificity of practice. The professional rehearses. The expert identifies the exact point where their performance falls short of required and trains that point directly, repeatedly, until it moves.</p>
+
+        <p>Roger Bannister is remembered for the four-minute mile. What is less documented is how he trained. He did not simply increase his training volume. He built a measurement system — specific weekly targets, precise tracking of each performance component, a clear picture at each stage of the gap between current and required. <em>The measurement was part of the training protocol.</em> It was not a separate activity.</p>
+
+        <p>This is what you are building today.</p>
+
+        <p>The Gap Analysis you complete in the workbook is not a reflection exercise. It is the targeting document for the next eighteen days of this program. Phase 3 — which runs from Day 13 through Day 22 — applies deliberate conditioning pressure at the exact failure points you identify today. Without this document, that conditioning is unfocused. With it, every drill has a precise address.</p>
+
+        <p>Some participants will have exact CRM data to draw from. Others will be estimating. Both are valid starting points. An honest estimate built from pattern recognition is more useful than no data — and more accurate than the vague sense of underperformance most salespeople carry without examining it. If your numbers are estimates, label them as such and continue. The point is precision in your thinking, not precision in your records.</p>
+
+        <p>One note before you begin: some salespeople avoid looking at their numbers closely because the numbers are honest in a way that self-narrative is not. If you notice resistance to this exercise, record it. The resistance is data too.</p>
+      </div>
+    </div>
+
+    <!-- Science Box -->
+    <div class="science-box">
+      <div class="science-label">The Science</div>
+      <p>Ericsson's research identified what separates professional performance from expert performance. It is not talent, and it is not experience accumulation. Twenty years of sales calls, without structured analysis of where performance fails, produces approximately one year of learning repeated twenty times.</p>
+      <p>The mechanism that produces durable improvement is specific: identify the component where current performance falls short of required, train that component in isolation at the edge of current ability, get feedback, adjust, repeat. Broad practice — working on everything equally — produces broad performance. Targeted practice at a specific failure point moves that point.</p>
+      <p>A second mechanism is relevant here. Performance psychology research on attentional focus shows that outcome-focused attention before high-pressure performance activates the stress response and degrades execution — the prefrontal cortex, which manages judgment and language, loses capacity as arousal rises. Process-focused attention — what am I doing specifically right now — keeps the nervous system regulated and performance consistent. The Gap Analysis accomplishes both: it identifies where to target practice, and it shifts your daily focus from outcome (hitting the number) to process (improving conversion at the proposal stage). That shift has direct effects on how you enter a call, independent of its analytical value.</p>
+    </div>
+
+
+    <!-- Callout -->
+    <div class="callout">
+      <p>A vague sense of underperformance is not trainable. A specific conversion drop at the proposal stage is.</p>
+    </div>
+
+    <!-- Workbook -->
+    <div class="section-label">Workbook — Day 04</div>
+
+    <!-- Exercise 1 -->
+    <div class="workbook-block">
+      <div class="workbook-label">Exercise 1 · The Gap Analysis Framework</div>
+      <div class="workbook-title">Stage-by-Stage Conversion Map</div>
+      <div class="workbook-time">Allow 5–7 minutes</div>
+      <p class="workbook-instruction">Map your performance across four stages. For each stage, record your current conversion rate — the percentage of conversations that move to the next stage — and the rate you need to reach your target. Use CRM data if you have it. If you are estimating, estimate from what you know and mark it as an estimate. Do not skip this exercise because your numbers are not exact.</p>
+
+      <div class="stage-section">
+        <div class="stage-title">Stage 1 — Discovery → Proposal</div>
+        <p class="workbook-sub">What percentage of discovery conversations result in a proposal being sent?</p>
+        <div class="stage-grid">
+          <div class="stage-field">
+            <div class="stage-field-label">Current rate</div>
+            <div class="write-line"></div>
+          </div>
+          <div class="stage-field">
+            <div class="stage-field-label">Target rate</div>
+            <div class="write-line"></div>
+          </div>
+        </div>
+        <div class="workbook-question">What happens at this stage when it goes wrong?</div>
+        <div class="write-lines">
+          <div class="write-line"></div>
+          <div class="write-line"></div>
+        </div>
+      </div>
+
+      <div class="stage-section">
+        <div class="stage-title">Stage 2 — Proposal → Objection Handling</div>
+        <p class="workbook-sub">What percentage of proposals lead to active objection or negotiation?</p>
+        <div class="stage-grid">
+          <div class="stage-field">
+            <div class="stage-field-label">Current rate</div>
+            <div class="write-line"></div>
+          </div>
+          <div class="stage-field">
+            <div class="stage-field-label">Target rate</div>
+            <div class="write-line"></div>
+          </div>
+        </div>
+        <div class="workbook-question">What changes in your approach after a proposal goes out and you wait?</div>
+        <div class="write-lines">
+          <div class="write-line"></div>
+          <div class="write-line"></div>
+        </div>
+      </div>
+
+      <div class="stage-section">
+        <div class="stage-title">Stage 3 — Objection Handling → Close</div>
+        <p class="workbook-sub">What percentage of objection conversations result in a close or a clear next step?</p>
+        <div class="stage-grid">
+          <div class="stage-field">
+            <div class="stage-field-label">Current rate</div>
+            <div class="write-line"></div>
+          </div>
+          <div class="stage-field">
+            <div class="stage-field-label">Target rate</div>
+            <div class="write-line"></div>
+          </div>
+        </div>
+        <div class="workbook-question">Where does your composure shift during this stage?</div>
+        <div class="write-lines">
+          <div class="write-line"></div>
+          <div class="write-line"></div>
+        </div>
+      </div>
+
+      <div class="stage-section">
+        <div class="stage-title">Overall Close Rate</div>
+        <p class="workbook-sub">Deals closed as a percentage of qualified opportunities entered.</p>
+        <div class="stage-grid">
+          <div class="stage-field">
+            <div class="stage-field-label">Current rate</div>
+            <div class="write-line"></div>
+          </div>
+          <div class="stage-field">
+            <div class="stage-field-label">Target rate</div>
+            <div class="write-line"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Exercise 2 -->
+    <div class="workbook-block">
+      <div class="workbook-label">Exercise 2 · Locating the Primary Gap</div>
+      <div class="workbook-title">Name the Stage. Name the Behavior.</div>
+      <div class="workbook-time">Allow 3–5 minutes</div>
+      <p class="workbook-instruction">Look at what you recorded in Exercise 1. Identify the stage with the largest gap between current and target conversion.</p>
+
+      <div class="workbook-question">Which stage shows the largest gap?</div>
+      <div class="write-lines">
+        <div class="write-line"></div>
+      </div>
+
+      <div class="workbook-question">What is the specific behavior at that stage — not the outcome, your behavior — that accounts for the gap?</div>
+      <div class="write-lines">
+        <div class="write-line"></div>
+        <div class="write-line"></div>
+      </div>
+
+      <p class="workbook-instruction" style="margin-top: 16px; margin-bottom: 8px;">This is your primary conditioning target. It will be referenced again at Day 13, Day 22, and Day 25. Write it clearly below.</p>
+
+      <div class="workbook-question">Primary conditioning target:</div>
+      <div class="write-lines">
+        <div class="write-line"></div>
+        <div class="write-line"></div>
+      </div>
+    </div>
+
+    <!-- Exercise 3 -->
+    <div class="workbook-block">
+      <div class="workbook-label">Exercise 3 · The Behavior Behind the Number</div>
+      <div class="workbook-title">Three Deals. One Pattern.</div>
+      <div class="workbook-time">Allow 5–7 minutes</div>
+      <p class="workbook-instruction">Take the stage you identified in Exercise 2. Think of the last three deals that stalled or were lost at that stage. For each one: set aside what the buyer did. What was your specific behavior that preceded the stall or loss?</p>
+
+      <div class="workbook-question">Deal 1</div>
+      <div class="write-lines">
+        <div class="write-line"></div>
+        <div class="write-line"></div>
+      </div>
+
+      <div class="workbook-question">Deal 2</div>
+      <div class="write-lines">
+        <div class="write-line"></div>
+        <div class="write-line"></div>
+      </div>
+
+      <div class="workbook-question">Deal 3</div>
+      <div class="write-lines">
+        <div class="write-line"></div>
+        <div class="write-line"></div>
+      </div>
+
+      <div class="workbook-divider"></div>
+
+      <div class="workbook-question">Is there a pattern across all three?</div>
+      <div class="write-lines">
+        <div class="write-line"></div>
+        <div class="write-line"></div>
+      </div>
+    </div>
+
+    <!-- Drill -->
+    <div class="section-label">Today's Practice Drill</div>
+
+    <div class="drill-box">
+      <div class="drill-label">Stage-by-Stage Audit · Day 04</div>
+      <p><strong>Before your next call:</strong> identify which stage that call is at. Write the stage, your current conversion rate at that stage, and the one specific behavior you are watching in yourself during this call.</p>
+
+      <div class="drill-fields">
+        <div class="drill-field-label">Stage this call is at</div>
+        <div class="write-line"></div>
+        <div class="drill-field-label">Current conversion at this stage</div>
+        <div class="write-line"></div>
+        <div class="drill-field-label">Behavior I am tracking today</div>
+        <div class="write-line"></div>
+      </div>
+
+      <p><strong>After the call:</strong> record whether the behavior appeared, what you did, and what the result was.</p>
+
+      <div class="write-lines" style="margin-top: 10px;">
+        <div class="write-line"></div>
+        <div class="write-line"></div>
+        <div class="write-line"></div>
+      </div>
+
+      <div class="drill-fallback">
+        <div class="drill-fallback-label">No-call fallback</div>
+        <p>If you have no call scheduled today, reconstruct a deal from the past 30 days that stalled or was lost. Work through the same four stages. At which stage did the deal break? What was your behavior at that stage? What would you do differently with what you now know from Days 01–04?</p>
+        <div class="write-lines" style="margin-top: 10px;">
+          <div class="write-line"></div>
+          <div class="write-line"></div>
+          <div class="write-line"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- End of Day Reflection -->
+    <div class="section-label">End of Day — Day 04</div>
+
+    <div class="workbook-block">
+      <div class="workbook-label">End of Day Reflection</div>
+      <div class="workbook-title">Three Questions</div>
+      <div class="workbook-time">Allow 5 minutes</div>
+
+      <div class="workbook-question">Which stage in your Gap Analysis showed the largest gap between where you are and where you need to be?</div>
+      <div class="write-lines">
+        <div class="write-line"></div>
+        <div class="write-line"></div>
+      </div>
+
+      <div class="workbook-question">What did you notice about your own resistance — or absence of it — when looking at the numbers today?</div>
+      <div class="write-lines">
+        <div class="write-line"></div>
+        <div class="write-line"></div>
+      </div>
+
+      <div class="workbook-question">What are you taking into Day 05?</div>
+      <div class="write-lines">
+        <div class="write-line"></div>
+        <div class="write-line"></div>
+      </div>
+    </div>
+
+  </div>
+  <!-- end content-area -->
+
+  <!-- ─────────────────────────────────────────────
+       DAY FOOTER
+  ───────────────────────────────────────────── -->
+  <footer class="day-footer">
+    <div class="footer-left">
+      Executive Conditioning System™ · Sales Conditioning<br>
+      © 2026 Aivorya AS · Licensed for personal use only · Not for redistribution · Day 04 of 30
+    </div>
+    <div class="footer-right">
+      <div class="footer-tomorrow-label">Tomorrow</div>
+      <div class="footer-tomorrow-title">Day 05 — The Commitment Declaration</div>
+    </div>
+  </footer>
+
+</body>
+</html>

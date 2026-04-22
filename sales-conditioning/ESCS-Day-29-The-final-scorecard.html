@@ -1,0 +1,1139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Executive Conditioning System™ · Day 29 · The Final Scorecard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Jost:wght@300;400;500;600&family=Martian+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper:        #F0EBE1;
+    --paper-deep:   #E8E1D5;
+    --ink:          #1A1510;
+    --ink-mid:      #4A3F35;
+    --ink-light:    #8A7D72;
+    --accent:       #A87840;
+    --accent-light: #C4975A;
+    --accent-muted: rgba(168, 120, 64, 0.12);
+    --dark:         #2E2820;
+    --rule:         rgba(168, 120, 64, 0.25);
+    --write-line:   rgba(26, 21, 16, 0.15);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Jost', sans-serif;
+    line-height: 1.7;
+  }
+
+  /* ─── PHASE COVER ─────────────────────────────────────────────── */
+  .phase-cover {
+    background: var(--dark);
+    padding: 72px 64px 64px;
+    position: relative;
+    overflow: hidden;
+    border-top: 3px solid var(--accent);
+    page-break-after: always;
+  }
+
+  .phase-cover-ghost {
+    position: absolute;
+    top: -40px;
+    right: -20px;
+    font-family: 'Lora', serif;
+    font-size: 380px;
+    font-weight: 600;
+    color: #ffffff;
+    opacity: 0.03;
+    line-height: 1;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  .phase-cover-eyebrow {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 300;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent-light);
+    margin-bottom: 48px;
+  }
+
+  .phase-cover-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 7.5pt;
+    font-weight: 400;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 16px;
+  }
+
+  .phase-cover-title {
+    font-family: 'Lora', serif;
+    font-size: 42pt;
+    font-weight: 600;
+    color: #F0EBE1;
+    line-height: 1.1;
+    margin-bottom: 28px;
+    letter-spacing: -0.01em;
+  }
+
+  .phase-cover-subtitle {
+    font-family: 'Jost', sans-serif;
+    font-size: 11pt;
+    font-weight: 300;
+    color: rgba(240, 235, 225, 0.7);
+    line-height: 1.75;
+    max-width: 580px;
+    margin-bottom: 64px;
+  }
+
+  .phase-cover-meta {
+    display: flex;
+    gap: 32px;
+    border-top: 1px solid rgba(168, 120, 64, 0.3);
+    padding-top: 20px;
+  }
+
+  .phase-cover-meta-item {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 300;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(240, 235, 225, 0.4);
+  }
+
+  .phase-cover-meta-item span {
+    color: rgba(240, 235, 225, 0.65);
+  }
+
+  /* ─── MASTHEAD ────────────────────────────────────────────────── */
+  .masthead {
+    background: var(--dark);
+    padding: 14px 64px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(168, 120, 64, 0.3);
+  }
+
+  .masthead-left {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 300;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(240, 235, 225, 0.45);
+  }
+
+  .masthead-left .accent {
+    color: var(--accent-light);
+  }
+
+  .masthead-right {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 400;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  /* ─── DAY HEADER ──────────────────────────────────────────────── */
+  .day-header {
+    padding: 48px 64px 40px;
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 0;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .day-number-col {
+    display: flex;
+    align-items: flex-start;
+    padding-top: 8px;
+  }
+
+  .day-number {
+    font-family: 'Lora', serif;
+    font-size: 88pt;
+    font-weight: 400;
+    color: var(--accent);
+    opacity: 0.65;
+    line-height: 0.85;
+    letter-spacing: -0.03em;
+  }
+
+  .day-meta-col {
+    padding-left: 8px;
+  }
+
+  .day-phase-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 10px;
+  }
+
+  .day-title {
+    font-family: 'Lora', serif;
+    font-size: 20pt;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.2;
+    margin-bottom: 14px;
+    letter-spacing: -0.01em;
+  }
+
+  .day-premise {
+    font-family: 'Jost', sans-serif;
+    font-size: 10pt;
+    font-weight: 300;
+    color: var(--ink-mid);
+    line-height: 1.65;
+    max-width: 520px;
+  }
+
+  /* ─── CONTENT AREA ────────────────────────────────────────────── */
+  .content-area {
+    padding: 0 64px;
+  }
+
+  /* ─── SECTION LABEL ───────────────────────────────────────────── */
+  .section-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 10px;
+    margin-top: 48px;
+    margin-bottom: 32px;
+  }
+
+  /* ─── EMAIL BLOCK ─────────────────────────────────────────────── */
+  .email-block {
+    margin-bottom: 40px;
+  }
+
+  .email-topbar {
+    background: var(--dark);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .email-topbar-left {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 300;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(240, 235, 225, 0.5);
+  }
+
+  .email-topbar-right {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 300;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent-light);
+  }
+
+  .email-body {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-top: none;
+    padding: 36px 40px;
+  }
+
+  .email-body p {
+    font-family: 'Lora', serif;
+    font-size: 11pt;
+    line-height: 1.75;
+    color: var(--ink);
+    margin-bottom: 18px;
+  }
+
+  .email-body p:last-child {
+    margin-bottom: 0;
+  }
+
+  .email-body em {
+    font-style: italic;
+    color: var(--ink);
+  }
+
+  /* ─── SCIENCE BOX ─────────────────────────────────────────────── */
+  .science-box {
+    background: var(--accent-muted);
+    border-left: 3px solid var(--accent);
+    padding: 24px 28px;
+    margin-bottom: 40px;
+  }
+
+  .science-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 12px;
+  }
+
+  .science-box p {
+    font-family: 'Jost', sans-serif;
+    font-size: 10pt;
+    font-weight: 300;
+    color: var(--ink-mid);
+    line-height: 1.7;
+    margin-bottom: 10px;
+  }
+
+  .science-box p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* ─── CALLOUT ─────────────────────────────────────────────────── */
+  .callout {
+    text-align: center;
+    padding: 28px 0;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 40px;
+  }
+
+  .callout p {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 14pt;
+    color: var(--ink-mid);
+    line-height: 1.6;
+    max-width: 440px;
+    margin: 0 auto;
+  }
+
+  /* ─── WORKBOOK BLOCK ──────────────────────────────────────────── */
+  .workbook-block {
+    background: var(--paper-deep);
+    border-left: 3px solid var(--accent);
+    padding: 28px 32px;
+    margin-bottom: 28px;
+    page-break-inside: avoid;
+  }
+
+  .workbook-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 8px;
+  }
+
+  .workbook-title {
+    font-family: 'Jost', sans-serif;
+    font-size: 13pt;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 10px;
+    line-height: 1.3;
+  }
+
+  .workbook-timing {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 300;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+    margin-bottom: 16px;
+  }
+
+  .workbook-instruction {
+    font-family: 'Jost', sans-serif;
+    font-size: 9.5pt;
+    font-weight: 300;
+    color: var(--ink-mid);
+    line-height: 1.65;
+    margin-bottom: 20px;
+  }
+
+  .workbook-question {
+    font-family: 'Jost', sans-serif;
+    font-size: 10pt;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 6px;
+    margin-top: 16px;
+  }
+
+  .workbook-sub {
+    font-family: 'Jost', sans-serif;
+    font-size: 9.5pt;
+    font-weight: 300;
+    color: var(--ink-mid);
+    line-height: 1.6;
+    margin-bottom: 10px;
+  }
+
+  .write-line {
+    border: none;
+    border-bottom: 1px solid var(--write-line);
+    height: 9mm;
+    display: block;
+    width: 100%;
+    margin-bottom: 0;
+  }
+
+  .write-line + .write-line {
+    margin-top: 0;
+  }
+
+  /* ─── SCORECARD TABLE ─────────────────────────────────────────── */
+  .scorecard-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    margin-bottom: 24px;
+    font-family: 'Jost', sans-serif;
+  }
+
+  .scorecard-table thead tr {
+    border-bottom: 1px solid var(--accent);
+  }
+
+  .scorecard-table th {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    padding: 8px 10px;
+    text-align: left;
+    vertical-align: bottom;
+  }
+
+  .scorecard-table th.score-col {
+    text-align: center;
+    width: 62px;
+  }
+
+  .scorecard-table td {
+    font-size: 9pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+    padding: 10px 10px;
+    vertical-align: top;
+    border-bottom: 1px solid var(--write-line);
+    line-height: 1.5;
+  }
+
+  .scorecard-table td.dim-name {
+    font-weight: 500;
+    color: var(--ink);
+    font-size: 9.5pt;
+    width: 220px;
+  }
+
+  .scorecard-table td.dim-desc {
+    font-weight: 300;
+    font-size: 8.5pt;
+    color: var(--ink-light);
+    display: block;
+    margin-top: 2px;
+  }
+
+  .scorecard-table td.score-cell {
+    text-align: center;
+    width: 62px;
+  }
+
+  .score-box {
+    border: 1px solid var(--rule);
+    width: 36px;
+    height: 26px;
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .evidence-cell {
+    font-size: 8.5pt;
+    color: var(--ink-light);
+  }
+
+  .evidence-line {
+    border-bottom: 1px solid var(--write-line);
+    height: 8mm;
+    display: block;
+    width: 100%;
+    margin-bottom: 2px;
+  }
+
+  .delta-row td {
+    background: var(--accent-muted);
+    font-weight: 600;
+    color: var(--ink);
+    border-bottom: 2px solid var(--accent);
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+
+  /* ─── ATTRIBUTION FORMAT ──────────────────────────────────────── */
+  .attribution-entry {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-left: 3px solid var(--ink-light);
+    padding: 18px 20px;
+    margin-bottom: 16px;
+  }
+
+  .attribution-num {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 10px;
+  }
+
+  .attribution-line-label {
+    font-family: 'Jost', sans-serif;
+    font-size: 8.5pt;
+    font-weight: 500;
+    color: var(--ink-mid);
+    margin-bottom: 4px;
+    margin-top: 10px;
+  }
+
+  /* ─── DRILL BOX ───────────────────────────────────────────────── */
+  .drill-box {
+    background: var(--paper);
+    border-left: 3px solid var(--ink-mid);
+    padding: 24px 28px;
+    margin-bottom: 40px;
+    page-break-inside: avoid;
+  }
+
+  .drill-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+    margin-bottom: 12px;
+  }
+
+  .drill-box p {
+    font-family: 'Jost', sans-serif;
+    font-size: 10pt;
+    font-weight: 300;
+    color: var(--ink-mid);
+    line-height: 1.7;
+    margin-bottom: 10px;
+  }
+
+  .drill-box p:last-child {
+    margin-bottom: 0;
+  }
+
+  .drill-box strong {
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  /* ─── END OF DAY ──────────────────────────────────────────────── */
+  .eod-block {
+    background: var(--paper-deep);
+    border-left: 3px solid var(--accent);
+    padding: 28px 32px;
+    margin-bottom: 0;
+    page-break-inside: avoid;
+  }
+
+  .eod-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 20px;
+  }
+
+  .eod-question {
+    font-family: 'Jost', sans-serif;
+    font-size: 10pt;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 8px;
+    margin-top: 20px;
+    line-height: 1.55;
+  }
+
+  .eod-question:first-of-type {
+    margin-top: 0;
+  }
+
+  .closing-note {
+    font-family: 'Jost', sans-serif;
+    font-size: 9.5pt;
+    font-weight: 300;
+    color: var(--ink-mid);
+    line-height: 1.65;
+    margin-top: 24px;
+    padding-top: 20px;
+    border-top: 1px solid var(--rule);
+  }
+
+  /* ─── FOOTER ──────────────────────────────────────────────────── */
+  .day-footer {
+    padding: 20px 64px 40px;
+    border-top: 1px solid var(--rule);
+    margin-top: 48px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    page-break-inside: avoid;
+  }
+
+  .footer-left {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 300;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+    line-height: 2;
+  }
+
+  .footer-right {
+    text-align: right;
+  }
+
+  .footer-tomorrow-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 6px;
+  }
+
+  .footer-tomorrow-title {
+    font-family: 'Jost', sans-serif;
+    font-size: 9pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.4;
+  }
+
+  /* ─── INLINE NUMBERS ──────────────────────────────────────────── */
+  .inline-numbers {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 12px;
+    margin: 16px 0 20px;
+  }
+
+  .number-field {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    padding: 12px 14px;
+  }
+
+  .number-field-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+    margin-bottom: 8px;
+  }
+
+  .number-field-line {
+    border-bottom: 1px solid var(--write-line);
+    height: 22px;
+    display: block;
+  }
+
+  /* ─── PRINT STYLES ────────────────────────────────────────────── */
+  @media print {
+    .phase-cover {
+      background: white !important;
+      border-top: 3px solid var(--accent);
+      border-bottom: 2px solid var(--accent);
+    }
+
+    .phase-cover-ghost { display: none; }
+    .phase-cover-eyebrow,
+    .phase-cover-label,
+    .phase-cover-meta-item { color: var(--ink-light) !important; }
+    .phase-cover-title { color: var(--ink) !important; }
+    .phase-cover-subtitle { color: var(--ink-mid) !important; }
+    .phase-cover-meta-item span { color: var(--ink-mid) !important; }
+
+    .masthead { background: white !important; border-bottom: 1px solid var(--rule); }
+    .masthead-left { color: var(--ink-light) !important; }
+    .masthead-left .accent { color: var(--accent) !important; }
+    .masthead-right { color: var(--ink) !important; }
+
+    .email-topbar { background: white !important; border-bottom: 1px solid #CCCCCC; }
+    .email-topbar-left,
+    .email-topbar-right { color: var(--ink-light) !important; }
+
+    .email-body { border-color: #CCCCCC !important; }
+    .science-box { background: #F5F5F5 !important; }
+    .workbook-block { background: #F5F5F5 !important; page-break-inside: avoid; }
+    .drill-box { background: white !important; page-break-inside: avoid; }
+    .eod-block { background: #F5F5F5 !important; page-break-inside: avoid; }
+    .attribution-entry { background: #F5F5F5 !important; }
+    .number-field { background: #F5F5F5 !important; }
+
+    .write-line { border-bottom-color: #BBBBBB !important; }
+    .evidence-line { border-bottom-color: #BBBBBB !important; }
+    .number-field-line { border-bottom-color: #BBBBBB !important; }
+    .score-box { border-color: #BBBBBB !important; }
+
+    .day-footer { page-break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- PHASE 5 COVER                                                   -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<div class="phase-cover">
+  <div class="phase-cover-ghost">5</div>
+
+  <div class="phase-cover-eyebrow">Executive Conditioning System™ · Sales Conditioning</div>
+
+  <div class="phase-cover-label">Phase 5 — Days 29–30</div>
+
+  <div class="phase-cover-title">Ownership</div>
+
+  <div class="phase-cover-subtitle">
+    The program ends. The conditioning does not. Phase 5 closes the measurement arc that began on Day 01 — with a complete behavioral evidence review, a full scorecard comparison across three data points, and the attribution exercise that converts documented improvement into durable self-efficacy. The tools are installed. The conditioning has been tested in live deals under real pressure. What comes next is not reflection. It is the specific work of claiming what the evidence shows.
+  </div>
+
+  <div class="phase-cover-meta">
+    <div class="phase-cover-meta-item">Program<br><span>Executive Sales Conditioning</span></div>
+    <div class="phase-cover-meta-item">Phase<br><span>5 of 5</span></div>
+    <div class="phase-cover-meta-item">Duration<br><span>Days 29–30</span></div>
+    <div class="phase-cover-meta-item">Series<br><span>An Aivorya Program</span></div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- MASTHEAD                                                         -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<div class="masthead">
+  <div class="masthead-left">
+    Executive Conditioning System™ · <span class="accent">Sales Conditioning</span> · An Aivorya Program
+  </div>
+  <div class="masthead-right">Phase 5 · Day 29</div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- DAY HEADER                                                       -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<div class="day-header">
+  <div class="day-number-col">
+    <div class="day-number">29</div>
+  </div>
+  <div class="day-meta-col">
+    <div class="day-phase-label">Phase 5 — Ownership</div>
+    <div class="day-title">The Final Scorecard</div>
+    <div class="day-premise">A complete, formal performance assessment across all eight dimensions of the program. Not a self-assessment of feelings — a behavioral evidence review. What specific things do you now do that you did not do on Day 01?</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- CONTENT AREA                                                     -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<div class="content-area">
+
+  <!-- Morning Conditioning -->
+  <div class="section-label">Morning Conditioning</div>
+
+  <div class="email-block">
+    <div class="email-topbar">
+      <div class="email-topbar-left">From: Executive Conditioning System™ · Day 29 of 30</div>
+      <div class="email-topbar-right">Read · Then Work</div>
+    </div>
+    <div class="email-body">
+      <p>There is a specific reason why two salespeople can go through identical training, produce similar results during the program, and diverge significantly six months later. One attributes what changed to the program — or to a good patch of deals, or to a manager who gave them space, or to timing. The other attributes it to specific behaviors they changed deliberately. The first person has had a good experience. The second has built self-efficacy.</p>
+
+      <p>Albert Bandura's research on self-efficacy identified four sources from which people develop belief in their own capability. The most durable of these is mastery experience: a specific instance of successful performance that the person attributes to their own deliberate action. The attribution is not incidental to the mechanism. <em>It is the mechanism.</em> A successful call attributed to a good day produces nothing that compounds. The same call attributed to a specific behavior the participant changed on purpose produces a measurable and durable shift in how they assess their own capability the next time a similar situation arises.</p>
+
+      <p>Today's work is attribution training. Not reflection on how far you have come. Not a summary of the program. The specific behavior that produced the specific outcome — named, documented, owned.</p>
+
+      <p>You have four measurement points in this program: Day 01, Day 12, Day 22, and today. That trajectory is more informative than a before/after. It shows you where the conditioning accelerated, where it plateaued, and where Phase 4 integration produced what Phase 3 rehearsal had begun but not completed. Read the shape of that trajectory as data — not as a grade.</p>
+
+      <p>The scorecard is the primary exercise. The close rate delta review follows. The attribution exercise closes the day by building the five connections that Day 30 needs to produce a declaration that is evidence-based rather than aspirational.</p>
+
+      <p>One instruction before you start: bring your Day 12 workbook and your Day 28 evidence inventory. The participant who arrives at this scorecard with those documents has everything they need. The one who does not will have to reconstruct from memory — which is possible, but less precise.</p>
+    </div>
+  </div>
+
+  <!-- Science Box -->
+  <div class="science-box">
+    <div class="science-label">The Science</div>
+    <p>Julian Rotter's locus of control research (1954, developed across subsequent decades) demonstrated that individuals who attribute outcomes to their own behavior — internal locus of control — perform more consistently under evaluative pressure than those who attribute outcomes to external factors: luck, market conditions, the quality of the lead. The performance gap is not explained by skill level. It is explained by attribution pattern.</p>
+    <p>Bandura's self-efficacy research extends this: when a mastery experience is attributed to a specific behavior the person changed deliberately, it produces a durable increase in the person's belief in their own capability in similar future situations. When the same experience is attributed to luck, the favorable outcome registers but the capability belief does not update. The close rate delta review today is not a numbers exercise. The attribution is the exercise. What specific behavioral change drove the difference in that outcome? That question, answered specifically and repeatedly, is what builds an internal attribution pattern. That pattern is what compounds over the next twelve months.</p>
+  </div>
+
+  <!-- Callout -->
+  <div class="callout">
+    <p>Improvement attributed to luck produces relief. Improvement attributed to specific behavior produces capability.</p>
+  </div>
+
+  <!-- Workbook -->
+  <div class="section-label">Workbook — Day 29</div>
+
+  <!-- Exercise 1: Final Scorecard -->
+  <div class="workbook-block">
+    <div class="workbook-label">Exercise 1 · The Final Scorecard</div>
+    <div class="workbook-title">Three-Point Assessment — All Eight Dimensions</div>
+    <div class="workbook-timing">Approximately 15–20 minutes</div>
+    <div class="workbook-instruction">
+      Retrieve your Day 12 workbook. If you have your Day 22 scorecard, bring that too. Complete the table below with three scores for each dimension: your reconstructed Day 01 score, your Day 12 score, and your score today.<br><br>
+      The Day 29 score requires behavioral evidence. Do not score from impression. Score from what you can point to. Scoring guide: 1–3 underdeveloped / 4–6 functional / 7–8 consistent / 9–10 automatic under pressure.
+    </div>
+
+    <table class="scorecard-table">
+      <thead>
+        <tr>
+          <th style="width:200px;">Dimension</th>
+          <th class="score-col">Day 01</th>
+          <th class="score-col">Day 12</th>
+          <th class="score-col">Day 29</th>
+          <th class="score-col" style="width:50px;">Delta</th>
+          <th>Behavioral Evidence — Day 29 Score</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="dim-name">
+            1. Regulation
+            <span class="dim-desc">Staying composed when pressure rises</span>
+          </td>
+          <td class="score-cell"><div class="score-box"></div></td>
+          <td class="score-cell"><div class="score-box"></div></td>
+          <td class="score-cell"><div class="score-box"></div></td>
+          <td class="score-cell"><div class="score-box"></div></td>
+          <td class="evidence-cell">
+            <span class="evidence-line"></span>
+            <span class="evidence-line"></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="dim-name">
+            2. Curiosity
+            <span class="dim-desc">Responding to objections with questions, not defence</span>
+          </td>
+          <td class="score-cell"><div class="score-box"></div></td>
+          <td class="score-cell"><div class="score-box"></div></td>
+          <td class="score-cell"><div class="score-box"></div></td>
+          <td class="score-cell"><div class="score-box"></div></td>
+          <td class="evidence-cell">
+            <span class="evidence-line"></span>
+            <span class="evidence-line"></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="dim-name">
+            3. Structure
+            <span class="dim-desc">Maintaining conversation framework under pressure</span>
+          </td>
+          <td class="score-cell"><div class="score-box"></div></td>
+          <td class="score-cell"><div class="score-box"></div></td>
+          <td class="score-cell"><div class="score-box"></div></td>
+          <td class="score-cell"><div class="score-box"></div></td>
+          <td class="evidence-cell">
+            <span class="evidence-line"></span>
+            <span class="evidence-line"></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="dim-name">
+            4. Silence Tolerance
+            <span class="dim-desc">Holding space after questions and proposals</span>
+          </td>
+          <td class="score-cell"><div class="score-box"></div></td>
+          <td class="score-cell"><div class="score-box"></div></td>
+          <td class="score-cell"><div class="score-box"></div></td>
+          <td class="score-cell"><div class="score-box"></div></td>
+          <td class="evidence-cell">
+            <span class="evidence-line"></span>
+            <span class="evidence-line"></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="dim-name">
+            5. Non-Attachment
+            <span class="dim-desc">Wanting the deal without needing it</span>
+          </td>
+          <td class="score-cell"><div class="score-box"></div></td>
+          <td class="score-cell"><div class="score-box"></div></td>
+          <td class="score-cell"><div class="score-box"></div></td>
+          <td class="score-cell"><div class="score-box"></div></td>
+          <td class="evidence-cell">
+            <span class="evidence-line"></span>
+            <span class="evidence-line"></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="dim-name">
+            6. Certainty Language
+            <span class="dim-desc">Reducing buyer uncertainty precisely</span>
+          </td>
+          <td class="score-cell"><div class="score-box"></div></td>
+          <td class="score-cell"><div class="score-box"></div></td>
+          <td class="score-cell"><div class="score-box"></div></td>
+          <td class="score-cell"><div class="score-box"></div></td>
+          <td class="evidence-cell">
+            <span class="evidence-line"></span>
+            <span class="evidence-line"></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="dim-name">
+            7. Authority Posture
+            <span class="dim-desc">Physical and vocal presence on calls</span>
+          </td>
+          <td class="score-cell"><div class="score-box"></div></td>
+          <td class="score-cell"><div class="score-box"></div></td>
+          <td class="score-cell"><div class="score-box"></div></td>
+          <td class="score-cell"><div class="score-box"></div></td>
+          <td class="evidence-cell">
+            <span class="evidence-line"></span>
+            <span class="evidence-line"></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="dim-name">
+            8. Recovery Speed
+            <span class="dim-desc">Time to reset after a loss or difficult moment</span>
+          </td>
+          <td class="score-cell"><div class="score-box"></div></td>
+          <td class="score-cell"><div class="score-box"></div></td>
+          <td class="score-cell"><div class="score-box"></div></td>
+          <td class="score-cell"><div class="score-box"></div></td>
+          <td class="evidence-cell">
+            <span class="evidence-line"></span>
+            <span class="evidence-line"></span>
+          </td>
+        </tr>
+        <tr class="delta-row">
+          <td class="dim-name" colspan="2" style="font-family:'Martian Mono',monospace;font-size:6.5pt;letter-spacing:0.15em;text-transform:uppercase;">Total Score</td>
+          <td class="score-cell"><div class="score-box" style="border-color:var(--accent);"></div></td>
+          <td class="score-cell"><div class="score-box" style="border-color:var(--accent);"></div></td>
+          <td class="score-cell"><div class="score-box" style="border-color:var(--accent);"></div></td>
+          <td colspan="2" style="font-family:'Jost',sans-serif;font-size:8.5pt;font-weight:300;color:var(--ink-mid);">Total delta, Day 01 → Day 29: ______</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="workbook-question">Trajectory note — one sentence</div>
+    <div class="workbook-sub">Where did the conditioning move fastest? Where did Phase 4 add what Phase 3 had not yet completed?</div>
+    <span class="write-line"></span>
+    <span class="write-line"></span>
+  </div>
+
+  <!-- Exercise 2: Close Rate Delta -->
+  <div class="workbook-block">
+    <div class="workbook-label">Exercise 2 · Close Rate Delta Review</div>
+    <div class="workbook-title">The Numbers and Their Attribution</div>
+    <div class="workbook-timing">Approximately 10 minutes</div>
+    <div class="workbook-instruction">
+      Pull your deal outcomes for the 30-day period of this program. Compare them to the comparable period immediately before Day 01. Use exact data if available. Use honest estimates if not — an honest estimate is more useful than no data.
+    </div>
+
+    <div class="inline-numbers">
+      <div class="number-field">
+        <div class="number-field-label">Close rate — before program</div>
+        <span class="number-field-line"></span>
+      </div>
+      <div class="number-field">
+        <div class="number-field-label">Close rate — during program</div>
+        <span class="number-field-line"></span>
+      </div>
+      <div class="number-field">
+        <div class="number-field-label">Delta</div>
+        <span class="number-field-line"></span>
+      </div>
+    </div>
+
+    <div class="workbook-question">For each deal that went differently than your historical pattern — what specific behavior did you apply that produced a different result?</div>
+    <div class="workbook-sub">Do not write "I was more confident." Write the behavior. What did you say, ask, hold, or not do that produced a different outcome?</div>
+
+    <div class="workbook-question" style="margin-top:14px;">Instance 1</div>
+    <span class="write-line"></span>
+    <span class="write-line"></span>
+
+    <div class="workbook-question">Instance 2</div>
+    <span class="write-line"></span>
+    <span class="write-line"></span>
+  </div>
+
+  <!-- Exercise 3: Attribution Inventory -->
+  <div class="workbook-block">
+    <div class="workbook-label">Exercise 3 · The Attribution Inventory</div>
+    <div class="workbook-title">Five Connections — Behavior to Outcome</div>
+    <div class="workbook-timing">Approximately 10–12 minutes</div>
+    <div class="workbook-instruction">
+      Select the five dimensions where your scorecard shows the most significant movement from Day 01 to Day 29. For each one: name the specific behavior that moved the dimension, and name one specific conversation where that behavior produced a different outcome than you would have produced on Day 01.<br><br>
+      This is the attribution inventory that Day 30 builds from. Vague entries here produce a vague declaration tomorrow. Specific entries produce one that holds.
+    </div>
+
+    <div class="attribution-entry">
+      <div class="attribution-num">Connection 01</div>
+      <div class="attribution-line-label">The [dimension] score moved from ___ to ___. In this conversation:</div>
+      <span class="write-line"></span>
+      <div class="attribution-line-label">I did this specifically:</div>
+      <span class="write-line"></span>
+      <div class="attribution-line-label">The result was:</div>
+      <span class="write-line"></span>
+      <div class="attribution-line-label">Before this program, I would have:</div>
+      <span class="write-line"></span>
+    </div>
+
+    <div class="attribution-entry">
+      <div class="attribution-num">Connection 02</div>
+      <div class="attribution-line-label">The [dimension] score moved from ___ to ___. In this conversation:</div>
+      <span class="write-line"></span>
+      <div class="attribution-line-label">I did this specifically:</div>
+      <span class="write-line"></span>
+      <div class="attribution-line-label">The result was:</div>
+      <span class="write-line"></span>
+      <div class="attribution-line-label">Before this program, I would have:</div>
+      <span class="write-line"></span>
+    </div>
+
+    <div class="attribution-entry">
+      <div class="attribution-num">Connection 03</div>
+      <div class="attribution-line-label">The [dimension] score moved from ___ to ___. In this conversation:</div>
+      <span class="write-line"></span>
+      <div class="attribution-line-label">I did this specifically:</div>
+      <span class="write-line"></span>
+      <div class="attribution-line-label">The result was:</div>
+      <span class="write-line"></span>
+      <div class="attribution-line-label">Before this program, I would have:</div>
+      <span class="write-line"></span>
+    </div>
+
+    <div class="attribution-entry">
+      <div class="attribution-num">Connection 04</div>
+      <div class="attribution-line-label">The [dimension] score moved from ___ to ___. In this conversation:</div>
+      <span class="write-line"></span>
+      <div class="attribution-line-label">I did this specifically:</div>
+      <span class="write-line"></span>
+      <div class="attribution-line-label">The result was:</div>
+      <span class="write-line"></span>
+      <div class="attribution-line-label">Before this program, I would have:</div>
+      <span class="write-line"></span>
+    </div>
+
+    <div class="attribution-entry">
+      <div class="attribution-num">Connection 05</div>
+      <div class="attribution-line-label">The [dimension] score moved from ___ to ___. In this conversation:</div>
+      <span class="write-line"></span>
+      <div class="attribution-line-label">I did this specifically:</div>
+      <span class="write-line"></span>
+      <div class="attribution-line-label">The result was:</div>
+      <span class="write-line"></span>
+      <div class="attribution-line-label">Before this program, I would have:</div>
+      <span class="write-line"></span>
+    </div>
+  </div>
+
+  <!-- Exercise 4: Trajectory Note -->
+  <div class="workbook-block">
+    <div class="workbook-label">Exercise 4 · The Trajectory Note</div>
+    <div class="workbook-title">The Shape of the Change</div>
+    <div class="workbook-timing">Approximately 5 minutes</div>
+    <div class="workbook-instruction">
+      You now have four measurement points: Day 01, Day 12, Day 22, and Day 29. Write four to six sentences on the shape of your trajectory across those points. Where did the conditioning move fastest? Where did Phase 4 integration produce what Phase 3 rehearsal had not yet completed? Where did you plateau and then break through — or plateau and not break through?<br><br>
+      This is not a summary of the program. It is a description of how this specific program worked for this specific person. That distinction is what makes it useful.
+    </div>
+    <span class="write-line"></span>
+    <span class="write-line"></span>
+    <span class="write-line"></span>
+    <span class="write-line"></span>
+    <span class="write-line"></span>
+  </div>
+
+  <!-- Drill -->
+  <div class="section-label">Today's Practice Drill</div>
+
+  <div class="drill-box">
+    <div class="drill-label">Post-Call Attribution — Every Call Today</div>
+    <p>After every call today, before closing your notes: <strong>name one behavior you applied from the program and one outcome it produced.</strong> One sentence each.</p>
+    <p>You are building the attribution reflex — the habit of connecting what you did to what happened. That reflex, practiced consistently after this program ends, is what prevents regression. It takes thirty seconds. It compounds over twelve months.</p>
+  </div>
+
+  <!-- End of Day -->
+  <div class="section-label">End of Day — Day 29</div>
+
+  <div class="eod-block">
+    <div class="eod-label">End of Day · Day 29 of 30</div>
+
+    <div class="eod-question">What is the single most significant behavioral change documented in your scorecard today — and name the specific conversation from the attribution inventory where it produced its clearest result.</div>
+    <span class="write-line"></span>
+    <span class="write-line"></span>
+
+    <div class="eod-question">Where in the close rate delta review do you see the clearest connection between a behavioral change and a deal outcome — and what does that tell you about where your capability moved most concretely?</div>
+    <span class="write-line"></span>
+    <span class="write-line"></span>
+
+    <div class="eod-question">One behavior from the attribution inventory today that you are taking into tomorrow's Identity Declaration — stated specifically, not generally.</div>
+    <span class="write-line"></span>
+    <span class="write-line"></span>
+
+    <div class="closing-note">
+      The attribution inventory from today is the raw material for tomorrow. Day 30 builds the Identity Declaration from what you documented here. Arrive with specific entries.
+    </div>
+  </div>
+
+</div><!-- /content-area -->
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- FOOTER                                                           -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<div class="day-footer">
+  <div class="footer-left">
+    Executive Conditioning System™ · Sales Conditioning<br>
+    © 2026 Aivorya AS · Licensed for personal use only · Not for redistribution · Day 29 of 30
+  </div>
+  <div class="footer-right">
+    <div class="footer-tomorrow-label">Tomorrow</div>
+    <div class="footer-tomorrow-title">Day 30 — Claiming the New Identity</div>
+  </div>
+</div>
+
+</body>
+</html>

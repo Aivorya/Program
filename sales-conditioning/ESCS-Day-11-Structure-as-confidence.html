@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Executive Conditioning System™ · Day 11 · Structure as Confidence</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Jost:wght@300;400;500;600&family=Martian+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --paper:        #F0EBE1;
+    --paper-deep:   #E8E1D5;
+    --ink:          #1A1510;
+    --ink-mid:      #4A3F35;
+    --ink-light:    #8A7D72;
+    --accent:       #A87840;
+    --accent-light: #C4975A;
+    --accent-muted: rgba(168, 120, 64, 0.12);
+    --dark:         #2E2820;
+    --rule:         rgba(168, 120, 64, 0.25);
+    --write-line:   rgba(26, 21, 16, 0.15);
+  }
+
+  *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    background-color: var(--paper);
+    color: var(--ink);
+    font-family: 'Jost', sans-serif;
+    font-size: 10pt;
+    line-height: 1.7;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* ─── MASTHEAD ─── */
+  .masthead {
+    background: var(--dark);
+    border-bottom: 1px solid rgba(168, 120, 64, 0.3);
+    padding: 14px 64px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .masthead-left {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 300;
+    color: var(--ink-light);
+    letter-spacing: 0.08em;
+  }
+
+  .masthead-left .highlight {
+    color: var(--accent-light);
+  }
+
+  .masthead-right {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 300;
+    color: var(--ink-light);
+    letter-spacing: 0.08em;
+  }
+
+  /* ─── DAY HEADER ─── */
+  .day-header {
+    padding: 48px 64px 40px;
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 0 24px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .day-number-col {
+    display: flex;
+    align-items: flex-start;
+    padding-top: 4px;
+  }
+
+  .day-number {
+    font-family: 'Lora', serif;
+    font-size: 88pt;
+    font-weight: 400;
+    color: var(--accent);
+    opacity: 0.65;
+    line-height: 0.85;
+    letter-spacing: -0.02em;
+  }
+
+  .day-meta-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .phase-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 400;
+    color: var(--accent);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+
+  .day-title {
+    font-family: 'Lora', serif;
+    font-size: 20pt;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.2;
+  }
+
+  .day-premise {
+    font-family: 'Jost', sans-serif;
+    font-size: 10pt;
+    font-weight: 300;
+    color: var(--ink-mid);
+    line-height: 1.65;
+    max-width: 560px;
+  }
+
+  /* ─── CONTENT AREA ─── */
+  .content-area {
+    padding: 0 64px;
+  }
+
+  /* ─── SECTION LABEL ─── */
+  .section-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 400;
+    color: var(--accent);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 10px;
+    margin-top: 48px;
+    margin-bottom: 0;
+  }
+
+  /* ─── EMAIL BLOCK ─── */
+  .email-block {
+    border: 1px solid var(--rule);
+    border-top: none;
+  }
+
+  .email-topbar {
+    background: var(--dark);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .email-topbar-left,
+  .email-topbar-right {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 300;
+    color: var(--ink-light);
+    letter-spacing: 0.08em;
+  }
+
+  .email-body {
+    background: var(--paper);
+    padding: 36px 40px 40px;
+  }
+
+  .email-body p {
+    font-family: 'Lora', serif;
+    font-size: 11pt;
+    font-weight: 400;
+    color: var(--ink);
+    line-height: 1.75;
+    margin-bottom: 18px;
+  }
+
+  .email-body p:last-child {
+    margin-bottom: 0;
+  }
+
+  .email-body em {
+    font-style: italic;
+    color: var(--ink);
+  }
+
+  /* ─── SCIENCE BOX ─── */
+  .science-box {
+    background: var(--accent-muted);
+    border-left: 3px solid var(--accent);
+    padding: 24px 28px;
+    margin-top: 36px;
+  }
+
+  .science-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 500;
+    color: var(--accent);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .science-box p {
+    font-family: 'Jost', sans-serif;
+    font-size: 10pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.65;
+    margin-bottom: 10px;
+  }
+
+  .science-box p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* ─── CALLOUT ─── */
+  .callout {
+    text-align: center;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    padding: 28px 0;
+    margin-top: 36px;
+  }
+
+  .callout p {
+    font-family: 'Lora', serif;
+    font-size: 14pt;
+    font-style: italic;
+    color: var(--ink-mid);
+    line-height: 1.55;
+    max-width: 440px;
+    margin: 0 auto;
+  }
+
+  /* ─── WORKBOOK BLOCK ─── */
+  .workbook-block {
+    background: var(--paper-deep);
+    border-left: 3px solid var(--accent);
+    padding: 28px 32px;
+    margin-top: 36px;
+    page-break-inside: avoid;
+  }
+
+  .workbook-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 500;
+    color: var(--accent);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .workbook-title {
+    font-family: 'Jost', sans-serif;
+    font-size: 13pt;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 10px;
+    line-height: 1.3;
+  }
+
+  .workbook-instruction {
+    font-family: 'Jost', sans-serif;
+    font-size: 9.5pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.65;
+    margin-bottom: 20px;
+  }
+
+  .workbook-time {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 300;
+    color: var(--ink-light);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  .workbook-question {
+    font-family: 'Jost', sans-serif;
+    font-size: 10pt;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 4px;
+    margin-top: 18px;
+    line-height: 1.4;
+  }
+
+  .workbook-sub {
+    font-family: 'Jost', sans-serif;
+    font-size: 9pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+    margin-bottom: 6px;
+    line-height: 1.6;
+  }
+
+  .write-line {
+    border: none;
+    border-bottom: 1px solid var(--write-line);
+    height: 9mm;
+    width: 100%;
+    display: block;
+    margin-bottom: 2px;
+  }
+
+  .write-area {
+    margin-top: 6px;
+    margin-bottom: 4px;
+  }
+
+  .phase-row {
+    margin-top: 22px;
+    padding-top: 18px;
+    border-top: 1px solid var(--rule);
+  }
+
+  .phase-row:first-of-type {
+    margin-top: 10px;
+    padding-top: 0;
+    border-top: none;
+  }
+
+  .phase-name {
+    font-family: 'Martian Mono', monospace;
+    font-size: 7pt;
+    font-weight: 500;
+    color: var(--accent);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+
+  .phase-desc {
+    font-family: 'Jost', sans-serif;
+    font-size: 9pt;
+    font-weight: 300;
+    color: var(--ink-mid);
+    line-height: 1.6;
+    margin-bottom: 8px;
+  }
+
+  .objective-label {
+    font-family: 'Jost', sans-serif;
+    font-size: 9.5pt;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+
+  .transition-block {
+    margin-top: 22px;
+    padding-top: 18px;
+    border-top: 1px solid var(--rule);
+  }
+
+  .transition-block:first-of-type {
+    margin-top: 10px;
+    padding-top: 0;
+    border-top: none;
+  }
+
+  .transition-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 500;
+    color: var(--ink-mid);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .transition-phrase {
+    font-family: 'Lora', serif;
+    font-size: 10.5pt;
+    font-style: italic;
+    color: var(--ink);
+    line-height: 1.6;
+    margin-bottom: 10px;
+    padding: 10px 16px;
+    border-left: 2px solid var(--accent);
+    background: rgba(168, 120, 64, 0.06);
+  }
+
+  .transition-note {
+    font-family: 'Jost', sans-serif;
+    font-size: 9pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.65;
+    margin-bottom: 8px;
+  }
+
+  .your-version-label {
+    font-family: 'Jost', sans-serif;
+    font-size: 9.5pt;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 4px;
+    margin-top: 10px;
+  }
+
+  .workbook-note {
+    font-family: 'Jost', sans-serif;
+    font-size: 9pt;
+    font-weight: 400;
+    font-style: italic;
+    color: var(--ink-mid);
+    line-height: 1.65;
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 1px solid var(--rule);
+  }
+
+  .audit-question {
+    font-family: 'Jost', sans-serif;
+    font-size: 9.5pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.65;
+    margin-top: 10px;
+    margin-bottom: 6px;
+  }
+
+  /* ─── EOD BLOCK ─── */
+  .eod-block {
+    background: var(--paper-deep);
+    border-left: 3px solid var(--accent);
+    padding: 28px 32px;
+    margin-top: 36px;
+    page-break-inside: avoid;
+  }
+
+  .eod-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 500;
+    color: var(--accent);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+
+  .eod-q {
+    font-family: 'Jost', sans-serif;
+    font-size: 10pt;
+    font-weight: 500;
+    color: var(--ink);
+    margin-top: 20px;
+    margin-bottom: 6px;
+    line-height: 1.4;
+  }
+
+  .eod-q:first-of-type {
+    margin-top: 0;
+  }
+
+  .eod-number {
+    font-family: 'Martian Mono', monospace;
+    font-size: 7pt;
+    font-weight: 400;
+    color: var(--accent);
+    margin-right: 6px;
+  }
+
+  /* ─── DRILL BOX ─── */
+  .drill-box {
+    background: var(--paper);
+    border-left: 3px solid var(--ink-mid);
+    padding: 24px 28px;
+    margin-top: 36px;
+    page-break-inside: avoid;
+  }
+
+  .drill-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 400;
+    color: var(--ink-light);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .drill-body {
+    font-family: 'Jost', sans-serif;
+    font-size: 10pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.65;
+    margin-bottom: 10px;
+  }
+
+  .drill-body:last-child {
+    margin-bottom: 0;
+  }
+
+  .drill-body strong {
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  /* ─── FOOTER ─── */
+  .day-footer {
+    margin-top: 48px;
+    padding: 20px 64px 48px;
+    border-top: 1px solid var(--rule);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 40px;
+    page-break-inside: avoid;
+  }
+
+  .footer-left {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 300;
+    color: var(--ink-light);
+    letter-spacing: 0.06em;
+    line-height: 1.8;
+  }
+
+  .footer-right {
+    text-align: right;
+  }
+
+  .footer-tomorrow-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 500;
+    color: var(--accent);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+
+  .footer-tomorrow-title {
+    font-family: 'Jost', sans-serif;
+    font-size: 9pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.5;
+  }
+
+  /* ─── PRINT STYLES ─── */
+  @media print {
+    body {
+      background: white;
+      color: var(--ink);
+    }
+
+    .masthead {
+      background: white !important;
+      border-bottom: 1px solid #CCCCCC;
+    }
+
+    .masthead-left,
+    .masthead-left .highlight,
+    .masthead-right {
+      color: var(--ink) !important;
+    }
+
+    .email-topbar {
+      background: white !important;
+      border-bottom: 1px solid #CCCCCC;
+    }
+
+    .email-topbar-left,
+    .email-topbar-right {
+      color: var(--ink) !important;
+    }
+
+    .email-body {
+      border: 1px solid #CCCCCC;
+      border-top: none;
+    }
+
+    .science-box {
+      background: #F5F5F5 !important;
+    }
+
+    .workbook-block {
+      background: #F5F5F5 !important;
+    }
+
+    .eod-block {
+      background: #F5F5F5 !important;
+    }
+
+    .write-line {
+      border-bottom: 1px solid #BBBBBB;
+    }
+
+    .workbook-block,
+    .drill-box,
+    .science-box,
+    .eod-block {
+      page-break-inside: avoid;
+    }
+
+    .day-footer {
+      page-break-inside: avoid;
+    }
+  }
+</style>
+</head>
+<body>
+
+  <!-- ─── MASTHEAD ─── -->
+  <div class="masthead">
+    <div class="masthead-left">
+      Executive Conditioning System™ · <span class="highlight">Sales Conditioning</span> · An Aivorya Program
+    </div>
+    <div class="masthead-right">Phase 2 · Day 11</div>
+  </div>
+
+  <!-- ─── DAY HEADER ─── -->
+  <div class="day-header">
+    <div class="day-number-col">
+      <div class="day-number">11</div>
+    </div>
+    <div class="day-meta-col">
+      <div class="phase-label">Phase 2 — Foundation</div>
+      <div class="day-title">Structure as Confidence</div>
+      <div class="day-premise">Confidence in a sales conversation does not come from personality. It comes from knowing exactly what phase you are in, what you are trying to learn, and what comes next. Structure is the foundation of composure.</div>
+    </div>
+  </div>
+
+  <!-- ─── CONTENT AREA ─── -->
+  <div class="content-area">
+
+    <!-- SECTION: Morning Conditioning -->
+    <div class="section-label">Morning Conditioning</div>
+
+    <div class="email-block">
+      <div class="email-topbar">
+        <div class="email-topbar-left">From: Executive Conditioning System™ · Day 11 of 30</div>
+        <div class="email-topbar-right">Read · Then Work</div>
+      </div>
+      <div class="email-body">
+        <p>A surgeon who has internalized the sequence of a procedure does not think about what comes next. Their working memory is entirely available for what is happening right now — the tissue in front of them, the complication developing in this patient, this minute. The sequence runs automatically in the background.</p>
+
+        <p>A surgeon who is simultaneously managing the sequence and the procedure is cognitively compromised. Not visibly. Not dramatically. Just operating with reduced capacity at precisely the moment full capacity is required.</p>
+
+        <p>Sales conversations work the same way.</p>
+
+        <p>When you do not have a deeply internalized conversation structure, your working memory is divided across tasks that should not be competing: navigating what phase you are in, formulating the next question, listening to what is being said, managing your own regulatory state, and tracking the buyer's uncertainty signals. None of these tasks gets full resource. The one that suffers most, reliably, is listening — because listening has no output, no visible product, no urgency. It gets rationed first.</p>
+
+        <p>This is not a discipline problem. It is a cognitive load problem.</p>
+
+        <p>Cognitive load theory — developed by John Sweller in 1988 and extended extensively in performance psychology — describes working memory as a finite resource. When that resource is split across multiple concurrent demands, performance on each one degrades. The solution is not to try harder across all of them. It is to remove the tasks that can be automated from the cognitive equation entirely.</p>
+
+        <p>Internalized structure does this. A conversation framework that has been practiced to automaticity removes navigation from working memory. The sequence runs. You stop tracking it. Your full attention goes to the conversation itself — to the exact quality of the buyer's answer, to the hesitation behind the confident statement, to the thing they are circling without saying directly.</p>
+
+        <p>That is not a natural gift. It is the result of having internalized a structure so thoroughly that running it costs nothing.</p>
+
+        <p>Today you design that structure. Phase 3 internalizes it under pressure. By week four, the framework runs automatically — not because you are ignoring it, but because you have practiced it past the point where it requires attention. That is when the conversation becomes fully available to you.</p>
+      </div>
+    </div>
+
+    <!-- SCIENCE BOX -->
+    <div class="science-box">
+      <div class="science-label">The Science</div>
+      <p>Sweller's cognitive load research established that working memory — the cognitive system responsible for active processing — operates with a hard capacity limit. When multiple tasks compete for this capacity simultaneously, each task receives reduced resource and performance on each degrades.</p>
+      <p>Performance psychology research across surgery, aviation, and elite sport consistently shows that expert practitioners handle this by training structural elements to automaticity. The structure becomes procedural memory — running without conscious supervision, freeing working memory for the unpredictable, variable elements that require full attention.</p>
+      <p>In sales, the structural elements are the phases of the conversation and the transitions between them. These are entirely trainable to automaticity. When they are, working memory is available for listening, curiosity, and regulation. When they are not, those capacities compete with navigation — and navigation, being concrete and procedural, tends to win.</p>
+    </div>
+
+    <!-- CALLOUT -->
+    <div class="callout">
+      <p><em>You cannot listen fully and navigate simultaneously. Structure frees the capacity that listening requires.</em></p>
+    </div>
+
+    <!-- SECTION: Workbook -->
+    <div class="section-label">Workbook — Day 11</div>
+
+    <!-- EXERCISE 1: Conversation Blueprint -->
+    <div class="workbook-block">
+      <div class="workbook-label">Exercise 1 · The Conversation Blueprint</div>
+      <div class="workbook-title">Design Your Personal Call Framework</div>
+      <span class="workbook-time">Approximate time: 12–15 minutes</span>
+      <div class="workbook-instruction">You are not completing a template. You are building a personal framework that reflects how you actually sell. The constraint is strict: each phase has one objective. One. When that objective is met, the phase is complete and you transition. Seven phases. Write the one objective you are trying to accomplish in each. Use the definitions below as the brief, not the answer.</div>
+
+      <!-- Phase: Open -->
+      <div class="phase-row" style="margin-top: 10px; padding-top: 0; border-top: none;">
+        <div class="phase-name">Open</div>
+        <div class="phase-desc">The buyer knows what this conversation is for, you know how much time you have, and you are both present to the same thing.</div>
+        <div class="objective-label">One objective:</div>
+        <div class="write-area">
+          <div class="write-line"></div>
+        </div>
+      </div>
+
+      <!-- Phase: Diagnose -->
+      <div class="phase-row">
+        <div class="phase-name">Diagnose</div>
+        <div class="phase-desc">Understand the specific situation — what is happening, what has been tried, what is driving this conversation happening now.</div>
+        <div class="objective-label">One objective:</div>
+        <div class="write-area">
+          <div class="write-line"></div>
+        </div>
+      </div>
+
+      <!-- Phase: Explore Impact -->
+      <div class="phase-row">
+        <div class="phase-name">Explore Impact</div>
+        <div class="phase-desc">Surface what the current situation is costing — in time, money, risk, or internal friction. The cost needs to become concrete, not remain abstract.</div>
+        <div class="objective-label">One objective:</div>
+        <div class="write-area">
+          <div class="write-line"></div>
+        </div>
+      </div>
+
+      <!-- Phase: Confirm Understanding -->
+      <div class="phase-row">
+        <div class="phase-name">Confirm Understanding</div>
+        <div class="phase-desc">Before proposing anything, demonstrate that you heard accurately. Not a summary for your benefit — a signal to the buyer that what they described was received.</div>
+        <div class="objective-label">One objective:</div>
+        <div class="write-area">
+          <div class="write-line"></div>
+        </div>
+      </div>
+
+      <!-- Phase: Propose -->
+      <div class="phase-row">
+        <div class="phase-name">Propose</div>
+        <div class="phase-desc">Present a specific response to a specific situation. Not a product presentation. A direct answer to what was diagnosed.</div>
+        <div class="objective-label">One objective:</div>
+        <div class="write-area">
+          <div class="write-line"></div>
+        </div>
+      </div>
+
+      <!-- Phase: Address Resistance -->
+      <div class="phase-row">
+        <div class="phase-name">Address Resistance</div>
+        <div class="phase-desc">Apply the curiosity frame and uncertainty diagnosis from Days 08 and 10. Surface the specific uncertainty present. Do not defend the proposal.</div>
+        <div class="objective-label">One objective:</div>
+        <div class="write-area">
+          <div class="write-line"></div>
+        </div>
+      </div>
+
+      <!-- Phase: Define Next Steps -->
+      <div class="phase-row">
+        <div class="phase-name">Define Next Steps</div>
+        <div class="phase-desc">Close the conversation with a concrete, time-bound, agreed action. Both parties commit to something specific before the call ends.</div>
+        <div class="objective-label">One objective:</div>
+        <div class="write-area">
+          <div class="write-line"></div>
+        </div>
+      </div>
+
+      <div class="workbook-note">Review what you wrote. If any phase has more than one objective stated or implied, cut until only one remains. A phase with two objectives does not have a completion signal — you will not know when to move.</div>
+    </div>
+
+    <!-- EXERCISE 2: Phase Transition Drill -->
+    <div class="workbook-block">
+      <div class="workbook-label">Exercise 2 · Phase Transition Drill</div>
+      <div class="workbook-title">Practice the Highest-Cost Handoffs</div>
+      <span class="workbook-time">Approximate time: 5–7 minutes</span>
+      <div class="workbook-instruction">The transition from one phase to the next is the highest cognitive-cost moment in the conversation. It requires simultaneous management of what just completed and what is beginning — while maintaining composure, demonstrating listening, and not rushing. Most salespeople rush transitions. Some lose control of them entirely. A practiced transition phrase removes the cognitive cost. It signals movement, demonstrates that the previous phase was completed, and establishes the frame for what follows. Read each phrase aloud. Twice. Then write your version — same function, your language.</div>
+
+      <!-- Transition 1 -->
+      <div class="transition-block" style="margin-top: 10px; padding-top: 0; border-top: none;">
+        <div class="transition-label">Diagnose → Confirm Understanding</div>
+        <div class="transition-phrase">"Before I share anything, I want to make sure I've understood what you've described correctly."</div>
+        <div class="transition-note">This phrase does three things: it signals a transition, it demonstrates that listening occurred, and it slows the conversation at the exact moment most salespeople accelerate toward the proposal. The buyer hears that they are about to be reflected back before anything is sold to them.</div>
+        <div class="your-version-label">Your version:</div>
+        <div class="write-area">
+          <div class="write-line"></div>
+          <div class="write-line"></div>
+        </div>
+      </div>
+
+      <!-- Transition 2 -->
+      <div class="transition-block">
+        <div class="transition-label">Open → Diagnose</div>
+        <div class="transition-phrase">"I've got [X minutes] — the most useful thing I can do with that time is understand your situation before I say anything about ours. Is it alright if I start there?"</div>
+        <div class="transition-note">This phrase reorients the conversation from a product presentation to a diagnostic conversation — with the buyer's permission. It establishes curiosity as the mode before a word of diagnosis has been spoken.</div>
+        <div class="your-version-label">Your version:</div>
+        <div class="write-area">
+          <div class="write-line"></div>
+          <div class="write-line"></div>
+        </div>
+      </div>
+
+      <!-- Transition 3 -->
+      <div class="transition-block">
+        <div class="transition-label">Propose → Address Resistance</div>
+        <div class="transition-phrase">"What I've described is based on what you told me — what's your reaction to that so far?"</div>
+        <div class="transition-note">This phrase opens the resistance phase without defensiveness. It attributes the proposal to the diagnosis, not to the salesperson's agenda. It invites the buyer's reaction rather than waiting for it.</div>
+        <div class="your-version-label">Your version:</div>
+        <div class="write-area">
+          <div class="write-line"></div>
+          <div class="write-line"></div>
+        </div>
+      </div>
+
+      <div class="workbook-note">Read your three versions aloud. They should sound like you. If they sound like the standard phrase with words changed, rewrite them.</div>
+    </div>
+
+    <!-- EXERCISE 3: Single-Objective Audit -->
+    <div class="workbook-block">
+      <div class="workbook-label">Exercise 3 · Single-Objective Audit</div>
+      <div class="workbook-title">Test the Completion Signal in Each Phase</div>
+      <span class="workbook-time">Approximate time: 3–5 minutes</span>
+      <div class="workbook-instruction">Look at the objectives you wrote in Exercise 1. For each phase, answer this: if you achieved only this objective and nothing else, would the phase be complete? If no — the objective is not single enough. Rewrite it. Mark any phase where your answer was no and revise the objective until the completion signal is clear.</div>
+
+      <div class="audit-question">Which phases needed revision?</div>
+      <div class="write-area">
+        <div class="write-line"></div>
+        <div class="write-line"></div>
+      </div>
+
+      <div class="audit-question">What was the problem with the original objective — too broad, two objectives implied, or no clear completion signal?</div>
+      <div class="write-area">
+        <div class="write-line"></div>
+        <div class="write-line"></div>
+      </div>
+    </div>
+
+    <!-- SECTION: Today's Practice Drill -->
+    <div class="section-label">Today's Practice Drill</div>
+
+    <div class="drill-box">
+      <div class="drill-label">Day 11 Drill · Blueprint Reconnaissance</div>
+      <p class="drill-body"><strong>Before your next call:</strong> Run your blueprint. Identify which phase you expect the conversation to open in — and which transition is most likely to be tested. Name the transition phrase you will use. Say it aloud once.</p>
+      <p class="drill-body"><strong>During the call:</strong> Notice when you are navigating and when you are listening. They will not both be fully present at the same time. That is the data.</p>
+      <p class="drill-body"><strong>After the call:</strong> Record which phase had the least clear completion signal — the moment where you were unsure whether to move or stay. That is the phase to refine.</p>
+      <p class="drill-body">This is reconnaissance. You are mapping where the cognitive cost is highest in your specific conversations, with your specific buyers. The blueprint you built today is version one. It gets refined through use.</p>
+    </div>
+
+    <!-- SECTION: End of Day -->
+    <div class="section-label">End of Day — Day 11</div>
+
+    <div class="eod-block">
+      <div class="eod-label">End of Day · Day 11 of 30</div>
+
+      <div class="eod-q"><span class="eod-number">01</span>Which phase of the Conversation Blueprint are you currently weakest in? Describe specifically what your working memory is doing at that moment — what are you tracking that is competing with listening?</div>
+      <div class="write-area">
+        <div class="write-line"></div>
+        <div class="write-line"></div>
+      </div>
+
+      <div class="eod-q"><span class="eod-number">02</span>What do you currently do at the transition from Diagnose to Confirm Understanding? Describe what you actually say or do — not what you intend to.</div>
+      <div class="write-area">
+        <div class="write-line"></div>
+        <div class="write-line"></div>
+      </div>
+
+      <div class="eod-q"><span class="eod-number">03</span>One specific thing you are taking into your next call from today.</div>
+      <div class="write-area">
+        <div class="write-line"></div>
+        <div class="write-line"></div>
+      </div>
+    </div>
+
+  </div><!-- end content-area -->
+
+  <!-- ─── FOOTER ─── -->
+  <div class="day-footer">
+    <div class="footer-left">
+      Executive Conditioning System™ · Sales Conditioning<br>
+      © 2026 Aivorya AS · Licensed for personal use only · Not for redistribution · Day 11 of 30
+    </div>
+    <div class="footer-right">
+      <div class="footer-tomorrow-label">Tomorrow</div>
+      <div class="footer-tomorrow-title">Day 12 — Foundation Integration</div>
+    </div>
+  </div>
+
+</body>
+</html>

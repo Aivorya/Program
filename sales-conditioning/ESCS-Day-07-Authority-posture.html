@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Executive Conditioning System™ · Day 07 · The Authority Posture</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Jost:wght@300;400;500;600&family=Martian+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --paper:        #F0EBE1;
+    --paper-deep:   #E8E1D5;
+    --ink:          #1A1510;
+    --ink-mid:      #4A3F35;
+    --ink-light:    #8A7D72;
+    --accent:       #A87840;
+    --accent-light: #C4975A;
+    --accent-muted: rgba(168, 120, 64, 0.12);
+    --dark:         #2E2820;
+    --rule:         rgba(168, 120, 64, 0.25);
+    --write-line:   rgba(26, 21, 16, 0.15);
+  }
+
+  *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Lora', serif;
+    line-height: 1.7;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* ── MASTHEAD ── */
+  .masthead {
+    background: var(--dark);
+    border-bottom: 1px solid rgba(168, 120, 64, 0.3);
+    padding: 14px 64px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .masthead-left {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 300;
+    color: var(--ink-light);
+    letter-spacing: 0.05em;
+  }
+
+  .masthead-left .highlight {
+    color: var(--accent-light);
+  }
+
+  .masthead-right {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 400;
+    color: var(--ink-light);
+    letter-spacing: 0.05em;
+  }
+
+  /* ── DAY HEADER ── */
+  .day-header {
+    padding: 48px 64px 40px;
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 0 32px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .day-number-col {
+    display: flex;
+    align-items: flex-start;
+    padding-top: 4px;
+  }
+
+  .day-number {
+    font-family: 'Lora', serif;
+    font-size: 88pt;
+    font-weight: 400;
+    color: var(--accent);
+    opacity: 0.65;
+    line-height: 1;
+    letter-spacing: -0.03em;
+  }
+
+  .day-meta-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .phase-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 400;
+    color: var(--accent);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+
+  .day-title {
+    font-family: 'Lora', serif;
+    font-size: 20pt;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.2;
+  }
+
+  .day-premise {
+    font-family: 'Jost', sans-serif;
+    font-size: 10pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.65;
+    max-width: 520px;
+  }
+
+  /* ── CONTENT AREA ── */
+  .content-area {
+    padding: 0 64px;
+  }
+
+  /* ── SECTION LABEL ── */
+  .section-label {
+    margin-top: 48px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--rule);
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 400;
+    color: var(--accent);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+
+  /* ── EMAIL BLOCK ── */
+  .email-block {
+    margin-top: 28px;
+  }
+
+  .email-topbar {
+    background: var(--dark);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .email-topbar-left,
+  .email-topbar-right {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 300;
+    color: var(--ink-light);
+    letter-spacing: 0.05em;
+  }
+
+  .email-body {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-top: none;
+    padding: 36px 40px 40px;
+  }
+
+  .email-body p {
+    font-family: 'Lora', serif;
+    font-size: 11pt;
+    font-weight: 400;
+    color: var(--ink);
+    line-height: 1.75;
+    margin-bottom: 18px;
+  }
+
+  .email-body p:last-child {
+    margin-bottom: 0;
+  }
+
+  .email-body em {
+    font-style: italic;
+  }
+
+  /* ── SCIENCE BOX ── */
+  .science-box {
+    margin-top: 36px;
+    background: var(--accent-muted);
+    border-left: 3px solid var(--accent);
+    padding: 24px 28px;
+  }
+
+  .science-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 500;
+    color: var(--accent);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .science-box p {
+    font-family: 'Jost', sans-serif;
+    font-size: 10pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.65;
+    margin-bottom: 10px;
+  }
+
+  .science-box p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* ── CALLOUT ── */
+  .callout {
+    margin: 36px auto;
+    max-width: 440px;
+    text-align: center;
+    padding: 24px 0;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .callout p {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 14pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.5;
+  }
+
+  /* ── WORKBOOK BLOCK ── */
+  .workbook-block {
+    margin-top: 36px;
+    background: var(--paper-deep);
+    border-left: 3px solid var(--accent);
+    padding: 28px 32px;
+  }
+
+  .workbook-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 500;
+    color: var(--accent);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  .workbook-title {
+    font-family: 'Jost', sans-serif;
+    font-size: 13pt;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 8px;
+    line-height: 1.3;
+  }
+
+  .workbook-instruction {
+    font-family: 'Jost', sans-serif;
+    font-size: 9.5pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.65;
+    margin-bottom: 20px;
+    font-style: italic;
+  }
+
+  .workbook-question {
+    font-family: 'Jost', sans-serif;
+    font-size: 10pt;
+    font-weight: 500;
+    color: var(--ink);
+    line-height: 1.55;
+    margin-bottom: 8px;
+    margin-top: 14px;
+  }
+
+  .workbook-question:first-of-type {
+    margin-top: 0;
+  }
+
+  .write-line {
+    display: block;
+    height: 9mm;
+    border-bottom: 1px solid var(--write-line);
+    margin-bottom: 2px;
+  }
+
+  .workbook-block p {
+    font-family: 'Jost', sans-serif;
+    font-size: 10pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.65;
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+
+  .workbook-block strong {
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .checklist-item {
+    font-family: 'Jost', sans-serif;
+    font-size: 10pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.55;
+    margin-bottom: 6px;
+    padding-left: 16px;
+    position: relative;
+  }
+
+  .checklist-item::before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: 300;
+  }
+
+  .voice-component {
+    margin-top: 18px;
+    padding-top: 14px;
+    border-top: 1px solid var(--rule);
+  }
+
+  .voice-component:first-of-type {
+    border-top: none;
+    padding-top: 0;
+    margin-top: 14px;
+  }
+
+  .component-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 500;
+    color: var(--accent);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .ritual-component {
+    margin-top: 18px;
+    padding: 16px 20px;
+    background: rgba(255,255,255,0.35);
+    border-left: 2px solid var(--rule);
+  }
+
+  .ritual-component-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 500;
+    color: var(--accent);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  /* ── DRILL BOX ── */
+  .drill-box {
+    margin-top: 36px;
+    background: var(--paper);
+    border-left: 3px solid var(--ink-mid);
+    padding: 24px 28px;
+    border: 1px solid var(--rule);
+    border-left: 3px solid var(--ink-mid);
+  }
+
+  .drill-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 400;
+    color: var(--ink-light);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .drill-box p {
+    font-family: 'Jost', sans-serif;
+    font-size: 10pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.65;
+    margin-bottom: 10px;
+  }
+
+  .drill-box p:last-child {
+    margin-bottom: 0;
+  }
+
+  .drill-box strong {
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .drill-checkbox {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin-bottom: 8px;
+  }
+
+  .drill-checkbox-marker {
+    font-family: 'Martian Mono', monospace;
+    font-size: 8pt;
+    color: var(--accent);
+    flex-shrink: 0;
+  }
+
+  .drill-checkbox p {
+    margin-bottom: 0;
+  }
+
+  /* ── DAY FOOTER ── */
+  .day-footer {
+    margin-top: 48px;
+    padding: 20px 64px 40px;
+    border-top: 1px solid var(--rule);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 40px;
+    page-break-inside: avoid;
+  }
+
+  .footer-left {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 300;
+    color: var(--ink-light);
+    line-height: 1.8;
+  }
+
+  .footer-right {
+    text-align: right;
+  }
+
+  .footer-tomorrow-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 500;
+    color: var(--accent);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+
+  .footer-tomorrow-title {
+    font-family: 'Jost', sans-serif;
+    font-size: 9pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+  }
+
+  /* ── PRINT STYLES ── */
+  @media print {
+    body {
+      background: white;
+      color: var(--ink);
+    }
+
+    .masthead {
+      background: white !important;
+      border-bottom: 1px solid #CCCCCC;
+    }
+
+    .masthead-left,
+    .masthead-right {
+      color: var(--ink) !important;
+    }
+
+    .masthead-left .highlight {
+      color: var(--accent) !important;
+    }
+
+    .email-topbar {
+      background: white !important;
+      border-bottom: 1px solid #CCCCCC;
+    }
+
+    .email-topbar-left,
+    .email-topbar-right {
+      color: var(--ink) !important;
+    }
+
+    .email-body {
+      border: 1px solid #CCCCCC;
+      border-top: none;
+    }
+
+    .science-box {
+      background: #F5F5F5 !important;
+    }
+
+    .workbook-block {
+      background: #F5F5F5 !important;
+      page-break-inside: avoid;
+    }
+
+    .drill-box {
+      page-break-inside: avoid;
+      background: white !important;
+    }
+
+    .science-box {
+      page-break-inside: avoid;
+    }
+
+    .write-line {
+      border-bottom-color: #BBBBBB;
+    }
+
+    .day-footer {
+      page-break-inside: avoid;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- ── MASTHEAD ── -->
+<header class="masthead">
+  <div class="masthead-left">
+    Executive Conditioning System™ · <span class="highlight">Sales Conditioning</span> · An Aivorya Program
+  </div>
+  <div class="masthead-right">Phase 2 · Day 07</div>
+</header>
+
+<!-- ── DAY HEADER ── -->
+<div class="day-header">
+  <div class="day-number-col">
+    <span class="day-number">07</span>
+  </div>
+  <div class="day-meta-col">
+    <div class="phase-label">Phase 2 — Foundation</div>
+    <div class="day-title">The Authority Posture</div>
+    <div class="day-premise">Posture and voice are not style choices. They are physiological signals that change both your internal state and how the person across from you reads the conversation.</div>
+  </div>
+</div>
+
+<!-- ── CONTENT AREA ── -->
+<div class="content-area">
+
+  <!-- Morning Conditioning -->
+  <div class="section-label">Morning Conditioning</div>
+
+  <div class="email-block">
+    <div class="email-topbar">
+      <span class="email-topbar-left">From: Executive Conditioning System™ · Day 07 of 30</span>
+      <span class="email-topbar-right">Read · Then Work</span>
+    </div>
+    <div class="email-body">
+      <p>The relationship between body and mind runs in both directions.</p>
+
+      <p>You already know that mental state affects posture — anxiety produces collapse, urgency produces tension, confidence produces openness. What receives less attention is the reverse: that deliberate posture change produces measurable changes in internal state, and that the buyer reads your physical signals before they process a word you say.</p>
+
+      <p>This is not a style point. It is how the nervous system operates.</p>
+
+      <p>Upright, open posture signals safety to your own nervous system, which keeps your prefrontal cortex online — the part responsible for language, listening, and non-reactive decision-making. Collapsed or contracted posture signals threat, which begins routing cognitive resources away from exactly the systems you need in a sales conversation. The buyer's nervous system is running the same assessment on you. Before any evaluation of your proposition begins, their threat-detection system has already read your physical state and made a preliminary judgment about whether this conversation is safe to engage with.</p>
+
+      <p>A regulated physical presence creates the conditions for social engagement. An unregulated one — tense, collapsed, or <em>performing</em> composure — creates low-level friction before the conversation has started.</p>
+
+      <p>In 2010, Amy Cuddy and colleagues published research on expansive posture and performance in evaluative situations. The finding that attracted the most attention — hormonal change — has not replicated cleanly in subsequent studies. What has replicated: participants who adopted open, expansive posture before high-pressure evaluative tasks reported higher confidence and performed better on those tasks than those who did not. The subjective confidence effect is real. The specific hormonal mechanism remains debated. The practical application stands regardless of the mechanism.</p>
+
+      <p>The participant who stands on calls, holds open posture, and speaks at a deliberate pace is not <em>performing</em> confidence. They are creating the physiological conditions for it. That distinction matters because performance collapses under pressure. Physiology is more durable.</p>
+
+      <p>The same mechanism operates in your voice before a word of content is evaluated.</p>
+
+      <p>Speech rate, pause length, and vocal tone are processed as authority signals before the content of what you say is evaluated. A slower speech rate with deliberate pauses signals control. A faster rate with filled pauses — "um," "uh," "does that make sense?" — signals anxiety and approval-seeking. Listeners do not consciously analyze this. The assessment happens automatically, and shapes how everything that follows is received.</p>
+
+      <p>Three components operate here. <em>Rate:</em> under pressure, most people speak faster than their baseline. Record a call segment and listen for where your rate increases — it clusters around price, timeline, and direct questions. <em>Pause:</em> the deliberate pause after a question or proposal signals that you are not anxious about the response. Filling it signals the opposite, and the buyer reads it accurately. <em>Approval language:</em> "Does that make sense?" "If that's okay." "Just quickly." These are not neutral phrases. Each one signals that you need the conversation to go well. Identify the specific phrases you use. They cluster around the same moments your trigger catalogue named in Phase 1.</p>
+    </div>
+  </div>
+
+  <!-- Science Box -->
+  <div class="science-box">
+    <div class="science-label">The Science — Embodied Cognition</div>
+    <p>The field of embodied cognition documents that the body and mind are not a one-way system. Mental states produce physical responses — this is well established. What is less intuitive is that physical states produce mental responses with equal reliability.</p>
+    <p>In studies on embodied cognition, participants assigned to physically enact emotional states — expansive versus contracted posture, upright versus slumped position — showed measurable differences in cognitive performance, risk tolerance, and self-reported confidence on subsequent tasks. The body does not simply express the mind. It participates in generating it.</p>
+    <p>The practical implication: deliberately changing your physical state before a call is not cosmetic preparation. It is a physiological intervention that changes the state you bring into the conversation. The nervous system does not distinguish between genuine and rehearsed — it responds to the physical signal it receives.</p>
+  </div>
+
+  <!-- Callout -->
+  <div class="callout">
+    <p>The buyer's nervous system reads your physical state before their conscious mind evaluates your proposition.</p>
+  </div>
+
+  <!-- Workbook -->
+  <div class="section-label">Workbook — Day 07</div>
+
+  <!-- Exercise 1 -->
+  <div class="workbook-block">
+    <div class="workbook-label">Exercise 1 · Posture Audit</div>
+    <div class="workbook-title">Your Current Default Position</div>
+    <div class="workbook-instruction">5 minutes — Identify your current default physical state on calls and establish the specific adjustments you are making today.</div>
+
+    <p>Sit now in the position you typically hold during a sales call. Do not correct it first — observe it.</p>
+
+    <div class="checklist-item">Spine: upright / slightly rounded / fully rounded</div>
+    <div class="checklist-item">Shoulders: back and down / raised / forward</div>
+    <div class="checklist-item">Chest: open / partially closed / collapsed</div>
+    <div class="checklist-item">Chin: level / dropped / lifted</div>
+    <div class="checklist-item">Feet: both on floor / crossed / elevated</div>
+
+    <div class="workbook-question">Note what you found:</div>
+    <span class="write-line"></span>
+    <span class="write-line"></span>
+
+    <p style="margin-top: 18px;"><strong>The adjusted position:</strong> Stand for calls if possible. If not, sit with both feet flat, spine upright, open chest, shoulders back and down — not tense, not rigid. Chin level. This is your working posture for calls, not a performance of it.</p>
+
+    <div class="workbook-question">Write the three most significant adjustments you are making from your current default:</div>
+    <span class="write-line"></span>
+    <span class="write-line"></span>
+    <span class="write-line"></span>
+  </div>
+
+  <!-- Exercise 2 -->
+  <div class="workbook-block">
+    <div class="workbook-label">Exercise 2 · Voice Audit</div>
+    <div class="workbook-title">Locating the Approval Patterns</div>
+    <div class="workbook-instruction">7 minutes — Identify the specific patterns in your speech that signal anxiety or approval-seeking. You cannot change what you have not named.</div>
+
+    <p>Pull up a recording of a recent call — or make a short practice recording now. Two minutes is enough. Listen specifically for the three components.</p>
+
+    <div class="voice-component">
+      <div class="component-label">Rate</div>
+      <p>Does your speech rate increase when price, timeline, or a direct question arrives? Note when it happens.</p>
+      <span class="write-line"></span>
+    </div>
+
+    <div class="voice-component">
+      <div class="component-label">Filled Pauses</div>
+      <p>How often do you use "um," "uh," or trailing phrases? Note the approximate frequency and which moments trigger them.</p>
+      <span class="write-line"></span>
+    </div>
+
+    <div class="voice-component">
+      <div class="component-label">Approval Language</div>
+      <p>Write the specific phrases you use. Not categories — the actual words.</p>
+      <span class="write-line"></span>
+      <span class="write-line"></span>
+    </div>
+
+    <p style="margin-top: 16px;">These are what you are training against today. Not "speak more confidently." These phrases, in these moments.</p>
+  </div>
+
+  <!-- Exercise 3 -->
+  <div class="workbook-block">
+    <div class="workbook-label">Exercise 3 · Silence Tolerance Drill</div>
+    <div class="workbook-title">Five Seconds, Timed</div>
+    <div class="workbook-instruction">10 minutes — Calibrate five seconds of silence so it is available in a live call when you need it. The discomfort you feel here is the same discomfort that fills silences in real conversations.</div>
+
+    <p><strong>Solo practice — do this now.</strong></p>
+
+    <p>Set a timer or use a clock. Ask the following question out loud to an empty room:</p>
+
+    <p style="font-style: italic; padding: 12px 16px; border-left: 2px solid var(--rule); color: var(--ink-mid);">"What's the main thing you'd want to be different about how this is working now?"</p>
+
+    <p>After you ask it — stop. Time five seconds. Do not speak. Hold it.</p>
+
+    <p>Repeat with:</p>
+
+    <p style="font-style: italic; padding: 12px 16px; border-left: 2px solid var(--rule); color: var(--ink-mid);">"What would need to be true for this to be worth prioritising right now?"</p>
+
+    <p>Five seconds. Timed. Hold it.</p>
+
+    <div class="workbook-question">Note what happens in your body during the five seconds:</div>
+    <span class="write-line"></span>
+    <span class="write-line"></span>
+
+    <p>That physical response is what you are training to tolerate. The drill is not about silence as a tactic. It is about extending your threshold for discomfort so that you do not break it automatically when it costs you.</p>
+
+    <p><strong>On calls today:</strong> Ask a question, then hold five seconds before speaking again. Not "as long as feels right." Five seconds. If the buyer has not responded within five seconds, you may prompt — once, briefly. Track how many times you deploy it and whether you held the full count.</p>
+
+    <div class="workbook-question">Record what you notice after using it in a live call:</div>
+    <span class="write-line"></span>
+  </div>
+
+  <!-- Exercise 4 -->
+  <div class="workbook-block">
+    <div class="workbook-label">Exercise 4 · Pre-Call Ritual Update</div>
+    <div class="workbook-title">Complete the Protocol</div>
+    <div class="workbook-instruction">5 minutes — The ritual from Day 06 had a placeholder for the posture component. Fill it in precisely now. Write the complete three-component protocol in full.</div>
+
+    <div class="ritual-component">
+      <div class="ritual-component-label">Component 1 — Breath (from Day 06)</div>
+      <span class="write-line"></span>
+      <span class="write-line"></span>
+    </div>
+
+    <div class="ritual-component">
+      <div class="ritual-component-label">Component 2 — Posture</div>
+      <span class="write-line"></span>
+      <span class="write-line"></span>
+    </div>
+
+    <div class="ritual-component">
+      <div class="ritual-component-label">Component 3 — Intention (from Day 06)</div>
+      <span class="write-line"></span>
+      <span class="write-line"></span>
+    </div>
+
+    <p style="margin-top: 16px;">This replaces the Day 06 version. This is the protocol that runs from today.</p>
+  </div>
+
+  <!-- Drill -->
+  <div class="section-label">Today's Practice Drill</div>
+
+  <div class="drill-box">
+    <div class="drill-label">Drill · Day 07 — The Physical Standard</div>
+    <p><em>Reconnaissance, not reflection.</em></p>
+    <p><strong>On every call today: stand, or hold the adjusted posture. Before you speak, your position is set.</strong></p>
+    <p>At the end of each call, record three data points:</p>
+
+    <div class="drill-checkbox">
+      <span class="drill-checkbox-marker">01</span>
+      <p>Did you maintain posture through the difficult moments of the call? Y / N</p>
+    </div>
+    <div class="drill-checkbox">
+      <span class="drill-checkbox-marker">02</span>
+      <p>Did you hold at least one five-second silence? Y / N</p>
+    </div>
+    <div class="drill-checkbox">
+      <span class="drill-checkbox-marker">03</span>
+      <p>Did you catch yourself using an approval phrase? If yes — which one?</p>
+    </div>
+
+    <span class="write-line" style="margin-top: 10px;"></span>
+
+    <p style="margin-top: 14px;">This data goes into your log. You are not grading yourself. You are building a picture of your baseline so you know what to train.</p>
+  </div>
+
+  <!-- End of Day -->
+  <div class="section-label">End of Day — Day 07</div>
+
+  <div class="workbook-block">
+    <div class="workbook-label">End of Day Reflection</div>
+    <div class="workbook-title">Three Questions</div>
+
+    <div class="workbook-question">Which approval-seeking pattern showed up most often today — and at what point in the conversation did it fire?</div>
+    <span class="write-line"></span>
+    <span class="write-line"></span>
+
+    <div class="workbook-question">What was harder — the five seconds of silence itself, or the moment before you asked the question?</div>
+    <span class="write-line"></span>
+    <span class="write-line"></span>
+
+    <div class="workbook-question">One thing you are taking into tomorrow:</div>
+    <span class="write-line"></span>
+    <span class="write-line"></span>
+  </div>
+
+</div>
+<!-- end content-area -->
+
+<!-- ── DAY FOOTER ── -->
+<footer class="day-footer">
+  <div class="footer-left">
+    Executive Conditioning System™ · Sales Conditioning<br>
+    © 2026 Aivorya AS · Licensed for personal use only · Not for redistribution · Day 07 of 30
+  </div>
+  <div class="footer-right">
+    <div class="footer-tomorrow-label">Tomorrow</div>
+    <div class="footer-tomorrow-title">Day 08 — Curiosity as Default</div>
+  </div>
+</footer>
+
+</body>
+</html>

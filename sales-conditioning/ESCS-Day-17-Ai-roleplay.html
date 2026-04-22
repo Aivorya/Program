@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Executive Conditioning System™ · Day 17 · AI Roleplay — Resistant Buyer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Jost:wght@300;400;500;600&family=Martian+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper:        #F0EBE1;
+    --paper-deep:   #E8E1D5;
+    --ink:          #1A1510;
+    --ink-mid:      #4A3F35;
+    --ink-light:    #8A7D72;
+    --accent:       #A87840;
+    --accent-light: #C4975A;
+    --accent-muted: rgba(168, 120, 64, 0.12);
+    --dark:         #2E2820;
+    --rule:         rgba(168, 120, 64, 0.25);
+    --write-line:   rgba(26, 21, 16, 0.15);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Jost', sans-serif;
+    font-size: 10pt;
+    line-height: 1.7;
+  }
+
+  /* ── MASTHEAD ── */
+  .masthead {
+    background: var(--dark);
+    border-bottom: 1px solid rgba(168, 120, 64, 0.3);
+    padding: 14px 64px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .masthead-left {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 300;
+    color: var(--ink-light);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .masthead-left span {
+    color: var(--accent-light);
+  }
+  .masthead-right {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 300;
+    color: var(--ink-light);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* ── DAY HEADER ── */
+  .day-header {
+    padding: 48px 64px 40px;
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 0 24px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .day-number-col {
+    display: flex;
+    align-items: flex-start;
+    padding-top: 4px;
+  }
+  .day-number {
+    font-family: 'Lora', serif;
+    font-size: 88pt;
+    font-weight: 400;
+    color: var(--accent);
+    opacity: 0.65;
+    line-height: 0.85;
+    letter-spacing: -0.02em;
+  }
+  .day-meta-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
+  }
+  .phase-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 400;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+  }
+  .day-title {
+    font-family: 'Lora', serif;
+    font-size: 20pt;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.2;
+  }
+  .day-premise {
+    font-family: 'Jost', sans-serif;
+    font-size: 10pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.65;
+    max-width: 520px;
+    margin-top: 4px;
+  }
+
+  /* ── CONTENT AREA ── */
+  .content-area {
+    padding: 0 64px;
+  }
+
+  /* ── SECTION LABEL ── */
+  .section-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 400;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 8px;
+    margin-top: 48px;
+    margin-bottom: 0;
+  }
+
+  /* ── EMAIL BLOCK ── */
+  .email-block {
+    border: 1px solid var(--rule);
+    border-top: none;
+    margin-top: 0;
+  }
+  .email-topbar {
+    background: var(--dark);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .email-topbar-left {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 300;
+    color: var(--ink-light);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .email-topbar-right {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 300;
+    color: var(--ink-light);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .email-body {
+    padding: 36px 40px 32px;
+    background: var(--paper);
+  }
+  .email-body p {
+    font-family: 'Lora', serif;
+    font-size: 11pt;
+    font-weight: 400;
+    color: var(--ink);
+    line-height: 1.75;
+    margin-bottom: 18px;
+  }
+  .email-body p:last-child { margin-bottom: 0; }
+  .email-body em { font-style: italic; }
+
+  /* ── SCIENCE BOX ── */
+  .science-box {
+    background: var(--accent-muted);
+    border-left: 3px solid var(--accent);
+    padding: 22px 24px 20px;
+    margin-top: 32px;
+  }
+  .science-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 500;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin-bottom: 10px;
+  }
+  .science-box p {
+    font-family: 'Jost', sans-serif;
+    font-size: 10pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.65;
+    margin-bottom: 10px;
+  }
+  .science-box p:last-child { margin-bottom: 0; }
+
+  /* ── CALLOUT ── */
+  .callout {
+    text-align: center;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    padding: 28px 0;
+    margin: 36px auto;
+    max-width: 440px;
+  }
+  .callout p {
+    font-family: 'Lora', serif;
+    font-size: 14pt;
+    font-weight: 400;
+    font-style: italic;
+    color: var(--ink-mid);
+    line-height: 1.6;
+  }
+
+  /* ── WORKBOOK BLOCK ── */
+  .workbook-block {
+    background: var(--paper-deep);
+    border-left: 3px solid var(--accent);
+    padding: 24px 28px 22px;
+    margin-top: 32px;
+    page-break-inside: avoid;
+  }
+  .workbook-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 500;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin-bottom: 6px;
+  }
+  .workbook-title {
+    font-family: 'Jost', sans-serif;
+    font-size: 13pt;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 8px;
+    line-height: 1.3;
+  }
+  .workbook-instruction {
+    font-family: 'Jost', sans-serif;
+    font-size: 9.5pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.65;
+    margin-bottom: 18px;
+  }
+  .workbook-question {
+    font-family: 'Jost', sans-serif;
+    font-size: 10pt;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 4px;
+    margin-top: 14px;
+  }
+  .workbook-question:first-of-type { margin-top: 0; }
+  .write-lines {
+    margin-top: 4px;
+    margin-bottom: 2px;
+  }
+  .write-line {
+    height: 9mm;
+    border-bottom: 1px solid var(--write-line);
+    margin-bottom: 0;
+  }
+
+  /* AI Prompt block */
+  .prompt-block {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    padding: 20px 22px;
+    margin: 18px 0;
+    font-family: 'Lora', serif;
+    font-size: 10pt;
+    font-style: italic;
+    color: var(--ink-mid);
+    line-height: 1.75;
+  }
+
+  /* Debrief section */
+  .debrief-section {
+    margin-top: 22px;
+    padding-top: 18px;
+    border-top: 1px solid var(--rule);
+  }
+  .debrief-round-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 500;
+    color: var(--ink-light);
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    margin-bottom: 14px;
+  }
+
+  /* Score row */
+  .score-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 6px;
+    margin-top: 10px;
+  }
+  .score-label {
+    font-family: 'Jost', sans-serif;
+    font-size: 10pt;
+    font-weight: 500;
+    color: var(--ink);
+    flex: 1;
+  }
+  .score-box {
+    width: 44px;
+    height: 28px;
+    border: 1px solid var(--rule);
+    background: var(--paper);
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Martian Mono', monospace;
+    font-size: 8pt;
+    color: var(--ink-light);
+  }
+
+  /* ── DRILL BOX ── */
+  .drill-box {
+    background: var(--paper);
+    border-left: 3px solid var(--ink-mid);
+    padding: 22px 24px 20px;
+    margin-top: 32px;
+    page-break-inside: avoid;
+  }
+  .drill-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 400;
+    color: var(--ink-light);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin-bottom: 10px;
+  }
+  .drill-box p {
+    font-family: 'Jost', sans-serif;
+    font-size: 10pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.65;
+    margin-bottom: 8px;
+  }
+  .drill-box p:last-child { margin-bottom: 0; }
+  .drill-box strong {
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  /* ── DAY FOOTER ── */
+  .day-footer {
+    border-top: 1px solid var(--rule);
+    padding: 20px 64px 32px;
+    margin-top: 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    page-break-inside: avoid;
+  }
+  .footer-left {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 300;
+    color: var(--ink-light);
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    line-height: 1.8;
+  }
+  .footer-right {
+    text-align: right;
+  }
+  .footer-tomorrow-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 400;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: 4px;
+  }
+  .footer-tomorrow-title {
+    font-family: 'Jost', sans-serif;
+    font-size: 9pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+  }
+
+  /* ── PRINT STYLES ── */
+  @media print {
+    body { background: white; color: var(--ink); }
+    .masthead { background: white; border-bottom: 1px solid #CCCCCC; }
+    .masthead-left, .masthead-right { color: #888; }
+    .masthead-left span { color: var(--accent); }
+    .email-topbar { background: white; border-bottom: 1px solid #CCCCCC; }
+    .email-topbar-left, .email-topbar-right { color: #888; }
+    .email-body { border: 1px solid #CCCCCC; border-top: none; }
+    .science-box { background: #F5F5F5; }
+    .workbook-block { background: #F5F5F5; page-break-inside: avoid; }
+    .drill-box { background: white; page-break-inside: avoid; }
+    .write-line { border-bottom: 1px solid #BBBBBB; }
+    .day-footer { page-break-inside: avoid; }
+    .prompt-block { border: 1px solid #CCCCCC; background: #F9F9F9; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ── MASTHEAD ── -->
+<div class="masthead">
+  <div class="masthead-left">Executive Conditioning System™ · <span>Sales Conditioning</span> · An Aivorya Program</div>
+  <div class="masthead-right">Phase 3 · Day 17</div>
+</div>
+
+<!-- ── DAY HEADER ── -->
+<div class="day-header">
+  <div class="day-number-col">
+    <div class="day-number">17</div>
+  </div>
+  <div class="day-meta-col">
+    <div class="phase-label">Phase 3 — Conditioning</div>
+    <div class="day-title">AI Roleplay — Resistant Buyer</div>
+    <div class="day-premise">Simulation is not performance. But simulation with a structured debrief is the closest available approximation to deliberate practice under pressure. Today you run the first structured AI roleplay session — not to win the simulation, but to observe yourself operating under conditions that approximate real pressure.</div>
+  </div>
+</div>
+
+<!-- ── CONTENT AREA ── -->
+<div class="content-area">
+
+  <!-- Morning Conditioning -->
+  <div class="section-label">Morning Conditioning</div>
+  <div class="email-block">
+    <div class="email-topbar">
+      <div class="email-topbar-left">From: Executive Conditioning System™ · Day 17 of 30</div>
+      <div class="email-topbar-right">Read · Then Work</div>
+    </div>
+    <div class="email-body">
+      <p>The roleplay is not the work.</p>
+      <p>Most people will run the simulation and feel like they have done something. They will feel the pressure of a resistant buyer, recover from a price challenge, navigate a stall. They will close the window, note it went reasonably well or badly, and move on.</p>
+      <p>That is repetition. It is not deliberate practice, and it will not produce different results next week.</p>
+      <p>The debrief is where the skill is built. Not during the simulation — after it. Ericsson's thirty years of research across music, surgery, chess, and sport reached the same conclusion each time: structured reflection immediately after performance is what converts repetition into development. Without it, you entrench whatever pattern you ran — including the bad ones. <em>The simulation without the debrief is just a faster way to rehearse your existing habits.</em></p>
+      <p>Today has three rounds. Each round is ten minutes. After each round, you stop. You write the four debrief questions. You do not skip this step. You do not abbreviate it. The debrief takes three to five minutes. That is where the work is.</p>
+      <p>The buyer you are about to simulate will respond differently depending on how you operate. When you are genuinely curious — asking because you want to know, not because you know you are supposed to — the buyer opens. When you become defensive or start managing toward a decision, the buyer escalates resistance. This is not a quirk of the simulation. It is the simulation telling you something true. Pay attention to when the buyer shifts. That shift is data.</p>
+      <p>Three rounds. Three debriefs. Then a cross-round comparison. Then four dimensions from the Foundation Scorecard. Total: approximately 45 minutes.</p>
+      <p>Do not run round two until you have written the round one debrief. Do not run round three until you have written the round two debrief. The sequencing is not optional.</p>
+    </div>
+  </div>
+
+  <!-- Science Box -->
+  <div class="science-box">
+    <div class="science-label">The Science</div>
+    <p>Simulation fidelity and transfer is a measurable relationship. Research from surgical training, aviation, and military contexts is consistent: the closer a simulation matches the conditions of real performance — including the emotional activation — the higher the transfer to live performance. A resistant buyer who escalates pressure when met with defensive answers is a higher-fidelity simulation than a cooperative buyer who makes the conversation easy. The discomfort of the simulation is not a side effect. It is the mechanism.</p>
+    <p>The debrief works because post-performance reflection, when structured and immediate, produces more accurate self-assessment than unstructured review. Asking "what triggered you at the specific moment when the buyer raised price?" produces a usable answer. Asking "how did it go?" does not. The specificity of the question determines the specificity of the answer — and the specificity of the answer determines whether the next round is different.</p>
+    <p>One more thing the simulation tests: whether the conversation structure from Day 11 has been sufficiently internalised. If it has, working memory is available for regulation, curiosity, and uncertainty diagnosis. If it has not, you will feel the cognitive cost — managing structure while simultaneously managing the conversation. The debrief question on structure is not rhetorical. It surfaces exactly this.</p>
+  </div>
+
+  <!-- Callout -->
+  <div class="callout">
+    <p>The simulation is the stimulus. The debrief is the learning. One without the other is not deliberate practice — it is repetition with extra steps.</p>
+  </div>
+
+  <!-- Workbook Section Label -->
+  <div class="section-label">Workbook — Day 17</div>
+
+  <!-- Exercise 1: The AI Prompt -->
+  <div class="workbook-block">
+    <div class="workbook-label">Exercise 1 · The AI Prompt</div>
+    <div class="workbook-title">Deploy Before Round 1</div>
+    <div class="workbook-instruction">Copy the prompt below and paste it directly into ChatGPT or Claude. Do not modify it. The prompt is calibrated to produce a buyer who responds to your inputs — not a scripted scenario. The buyer's behaviour will change depending on how you operate. Approximately 2 minutes setup.</div>
+
+    <div class="prompt-block">
+      "You are playing the role of a B2B buyer named Alex. You are a Head of Operations at a mid-sized company. You have agreed to this call but are skeptical — you are currently using a competitor solution you are reasonably satisfied with. You are price-sensitive and will raise cost as an objection. You are not hostile, but you are direct and not easily impressed. When the salesperson answers your concerns with genuine curiosity and specific questions, you become slightly more open. When they become defensive or try to push you toward a decision, you become more resistant. Respond naturally to what they say. Do not follow a script. Begin the call by saying: 'I'll be honest — we're pretty happy with what we have. I'm not sure this call is going to change that, but I said I'd give you fifteen minutes. What have you got?'"
+    </div>
+
+    <div class="workbook-instruction" style="margin-bottom:0; margin-top: 6px;">If AI roleplay is not available: brief a colleague on the buyer profile above and run the session live. Alternatively, narrate both sides aloud into a recording device — play both roles with full commitment. The debrief protocol is identical regardless of format.</div>
+  </div>
+
+  <!-- Exercise 2: Round Debrief Protocol -->
+  <div class="workbook-block">
+    <div class="workbook-label">Exercise 2 · Round Debrief Protocol</div>
+    <div class="workbook-title">Four Questions — After Every Round</div>
+    <div class="workbook-instruction">Run this immediately after Round 1. Then again after Round 2. Then again after Round 3. Same questions each time. The repetition is deliberate — you are tracking whether your answers change. Do not begin the next round until you have completed this debrief. 3–5 minutes per debrief.</div>
+
+    <!-- Round 1 -->
+    <div class="debrief-section">
+      <div class="debrief-round-label">Round 1 Debrief</div>
+
+      <div class="workbook-question">Q1 — What was the specific moment in this round that triggered a defensive or reactive response in you? Name the moment — not the general feeling.</div>
+      <div class="write-lines">
+        <div class="write-line"></div>
+        <div class="write-line"></div>
+      </div>
+
+      <div class="workbook-question">Q2 — When were you genuinely curious — asking because you wanted to know — versus performing curiosity as a technique? Name the specific exchange.</div>
+      <div class="write-lines">
+        <div class="write-line"></div>
+        <div class="write-line"></div>
+      </div>
+
+      <div class="workbook-question">Q3 — Which phase of the conversation structure did you lose or rush? What were you managing at that moment that competed with structure?</div>
+      <div class="write-lines">
+        <div class="write-line"></div>
+        <div class="write-line"></div>
+      </div>
+
+      <div class="workbook-question">Q4 — In the next round, at the moment you identified in Q1 — what specifically will you do differently?</div>
+      <div class="write-lines">
+        <div class="write-line"></div>
+        <div class="write-line"></div>
+      </div>
+    </div>
+
+    <!-- Round 2 -->
+    <div class="debrief-section">
+      <div class="debrief-round-label">Round 2 Debrief</div>
+
+      <div class="workbook-question">Q1 — What was the specific moment in this round that triggered a defensive or reactive response in you? Name the moment — not the general feeling.</div>
+      <div class="write-lines">
+        <div class="write-line"></div>
+        <div class="write-line"></div>
+      </div>
+
+      <div class="workbook-question">Q2 — When were you genuinely curious — asking because you wanted to know — versus performing curiosity as a technique? Name the specific exchange.</div>
+      <div class="write-lines">
+        <div class="write-line"></div>
+        <div class="write-line"></div>
+      </div>
+
+      <div class="workbook-question">Q3 — Which phase of the conversation structure did you lose or rush? What were you managing at that moment that competed with structure?</div>
+      <div class="write-lines">
+        <div class="write-line"></div>
+        <div class="write-line"></div>
+      </div>
+
+      <div class="workbook-question">Q4 — In the next round, at the moment you identified in Q1 — what specifically will you do differently?</div>
+      <div class="write-lines">
+        <div class="write-line"></div>
+        <div class="write-line"></div>
+      </div>
+    </div>
+
+    <!-- Round 3 -->
+    <div class="debrief-section">
+      <div class="debrief-round-label">Round 3 Debrief</div>
+
+      <div class="workbook-question">Q1 — What was the specific moment in this round that triggered a defensive or reactive response in you? Name the moment — not the general feeling.</div>
+      <div class="write-lines">
+        <div class="write-line"></div>
+        <div class="write-line"></div>
+      </div>
+
+      <div class="workbook-question">Q2 — When were you genuinely curious — asking because you wanted to know — versus performing curiosity as a technique? Name the specific exchange.</div>
+      <div class="write-lines">
+        <div class="write-line"></div>
+        <div class="write-line"></div>
+      </div>
+
+      <div class="workbook-question">Q3 — Which phase of the conversation structure did you lose or rush? What were you managing at that moment that competed with structure?</div>
+      <div class="write-lines">
+        <div class="write-line"></div>
+        <div class="write-line"></div>
+      </div>
+
+      <div class="workbook-question">Q4 — In the next round, at the moment you identified in Q1 — what specifically will you do differently?</div>
+      <div class="write-lines">
+        <div class="write-line"></div>
+        <div class="write-line"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Exercise 3: Cross-Round Comparison -->
+  <div class="workbook-block">
+    <div class="workbook-label">Exercise 3 · Cross-Round Comparison</div>
+    <div class="workbook-title">After All Three Rounds and Debriefs</div>
+    <div class="workbook-instruction">Complete this only after all three rounds and all three debriefs are written. Approximately 5 minutes.</div>
+
+    <div class="workbook-question">Did the pattern you identified in Round 1 change across the three rounds? If not — what is holding it in place?</div>
+    <div class="write-lines">
+      <div class="write-line"></div>
+      <div class="write-line"></div>
+      <div class="write-line"></div>
+    </div>
+
+    <div class="workbook-question">What did you observe about the buyer's responses when you were genuinely curious versus when you were defensive? Be specific about the moments.</div>
+    <div class="write-lines">
+      <div class="write-line"></div>
+      <div class="write-line"></div>
+      <div class="write-line"></div>
+    </div>
+
+  </div>
+
+  <!-- Exercise 4: Scorecard Check -->
+  <div class="workbook-block">
+    <div class="workbook-label">Exercise 4 · Scorecard Check</div>
+    <div class="workbook-title">Four Dimensions — Cross-Round Average</div>
+    <div class="workbook-instruction">Rate yourself 1–10 on the four dimensions most directly tested today. Use your cross-round average — not your best round or your worst. Then write one line on what it looked like when each held or failed. Approximately 5 minutes.</div>
+
+    <!-- Regulation -->
+    <div class="workbook-question" style="margin-top: 18px;">Regulation — staying composed when the buyer escalated pressure</div>
+    <div class="score-row">
+      <div class="score-label">Score (1–10)</div>
+      <div class="score-box">___</div>
+    </div>
+    <div class="workbook-question" style="font-weight:400; font-size: 9.5pt; color: var(--ink-mid); margin-top: 6px;">What it looked like when it held:</div>
+    <div class="write-lines">
+      <div class="write-line"></div>
+      <div class="write-line"></div>
+    </div>
+
+    <!-- Curiosity -->
+    <div class="workbook-question" style="margin-top: 18px;">Curiosity — genuine questions versus performance of curiosity</div>
+    <div class="score-row">
+      <div class="score-label">Score (1–10)</div>
+      <div class="score-box">___</div>
+    </div>
+    <div class="workbook-question" style="font-weight:400; font-size: 9.5pt; color: var(--ink-mid); margin-top: 6px;">Where it was real:</div>
+    <div class="write-lines">
+      <div class="write-line"></div>
+      <div class="write-line"></div>
+    </div>
+
+    <!-- Structure -->
+    <div class="workbook-question" style="margin-top: 18px;">Structure — maintaining conversation framework under pressure</div>
+    <div class="score-row">
+      <div class="score-label">Score (1–10)</div>
+      <div class="score-box">___</div>
+    </div>
+    <div class="workbook-question" style="font-weight:400; font-size: 9.5pt; color: var(--ink-mid); margin-top: 6px;">What you lost or rushed:</div>
+    <div class="write-lines">
+      <div class="write-line"></div>
+      <div class="write-line"></div>
+    </div>
+
+    <!-- Recovery Speed -->
+    <div class="workbook-question" style="margin-top: 18px;">Recovery speed — time to reset after a defensive or reactive moment</div>
+    <div class="score-row">
+      <div class="score-label">Score (1–10)</div>
+      <div class="score-box">___</div>
+    </div>
+    <div class="workbook-question" style="font-weight:400; font-size: 9.5pt; color: var(--ink-mid); margin-top: 6px;">What the reset looked like:</div>
+    <div class="write-lines">
+      <div class="write-line"></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+
+  <!-- End of Day Reflection -->
+  <div class="section-label">End of Day — Day 17</div>
+  <div class="workbook-block">
+    <div class="workbook-label">End of Day Reflection</div>
+    <div class="workbook-title">Three Questions</div>
+    <div class="workbook-instruction">Write what actually happened. Two minutes maximum per question.</div>
+
+    <div class="workbook-question">What did the buyer's behaviour tell you about your state in this session — specifically, the moments when resistance escalated?</div>
+    <div class="write-lines">
+      <div class="write-line"></div>
+      <div class="write-line"></div>
+    </div>
+
+    <div class="workbook-question">What is the gap between how you performed in simulation today and how you perform in a live call with equivalent stakes?</div>
+    <div class="write-lines">
+      <div class="write-line"></div>
+      <div class="write-line"></div>
+    </div>
+
+    <div class="workbook-question">One thing you are taking into tomorrow.</div>
+    <div class="write-lines">
+      <div class="write-line"></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+
+  <!-- Drill -->
+  <div class="section-label">Today's Practice Drill</div>
+  <div class="drill-box">
+    <div class="drill-label">Day 17 Drill · AI Roleplay Session</div>
+    <p><strong>Today's drill is the session itself.</strong></p>
+    <p>Three rounds. Maximum ten minutes each. Debrief after every round before starting the next.</p>
+    <p>If you abbreviate the debrief to save time, you have inverted the value of the session. The simulation is the lower-value activity. The debrief is where the work is.</p>
+    <p>Total time: approximately 45 minutes.</p>
+    <p>Cannot complete the full session today: run one round only and complete the Round 1 debrief. One round with a written debrief is categorically more valuable than three rounds without one. Complete rounds two and three tomorrow before Day 18.</p>
+  </div>
+
+</div><!-- /content-area -->
+
+<!-- ── DAY FOOTER ── -->
+<div class="day-footer">
+  <div class="footer-left">
+    Executive Conditioning System™ · Sales Conditioning<br>
+    © 2026 Aivorya AS · Licensed for personal use only · Not for redistribution · Day 17 of 30
+  </div>
+  <div class="footer-right">
+    <div class="footer-tomorrow-label">Tomorrow</div>
+    <div class="footer-tomorrow-title">Closing Without Pressure</div>
+  </div>
+</div>
+
+</body>
+</html>

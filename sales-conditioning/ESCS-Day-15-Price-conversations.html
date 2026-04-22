@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Executive Conditioning System™ · Day 15 · Price Conversations</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Jost:wght@300;400;500;600&family=Martian+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper:        #F0EBE1;
+    --paper-deep:   #E8E1D5;
+    --ink:          #1A1510;
+    --ink-mid:      #4A3F35;
+    --ink-light:    #8A7D72;
+    --accent:       #A87840;
+    --accent-light: #C4975A;
+    --accent-muted: rgba(168, 120, 64, 0.12);
+    --dark:         #2E2820;
+    --rule:         rgba(168, 120, 64, 0.25);
+    --write-line:   rgba(26, 21, 16, 0.15);
+  }
+
+  *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Jost', sans-serif;
+    line-height: 1.7;
+  }
+
+  /* ─── MASTHEAD ─── */
+  .masthead {
+    background: var(--dark);
+    border-bottom: 1px solid rgba(168, 120, 64, 0.3);
+    padding: 14px 64px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .masthead-left {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 300;
+    color: var(--ink-light);
+    letter-spacing: 0.05em;
+  }
+
+  .masthead-left span {
+    color: var(--accent-light);
+  }
+
+  .masthead-right {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 300;
+    color: var(--ink-light);
+    letter-spacing: 0.05em;
+  }
+
+  /* ─── DAY HEADER ─── */
+  .day-header {
+    padding: 48px 64px 40px;
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 0 32px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .day-number-col {
+    display: flex;
+    align-items: flex-start;
+    padding-top: 4px;
+  }
+
+  .day-number {
+    font-family: 'Lora', serif;
+    font-size: 88pt;
+    font-weight: 400;
+    color: var(--accent);
+    opacity: 0.65;
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+
+  .day-meta {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .day-phase-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 400;
+    color: var(--accent);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+
+  .day-title {
+    font-family: 'Lora', serif;
+    font-size: 20pt;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.2;
+  }
+
+  .day-premise {
+    font-family: 'Jost', sans-serif;
+    font-size: 10pt;
+    font-weight: 300;
+    color: var(--ink-mid);
+    line-height: 1.65;
+    max-width: 580px;
+  }
+
+  /* ─── CONTENT AREA ─── */
+  .content {
+    padding: 0 64px;
+  }
+
+  /* ─── SECTION LABEL ─── */
+  .section-label {
+    margin-top: 48px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--rule);
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--accent);
+  }
+
+  /* ─── EMAIL BLOCK ─── */
+  .email-block {
+    border: 1px solid var(--rule);
+    border-top: none;
+    margin-top: 0;
+  }
+
+  .email-topbar {
+    background: var(--dark);
+    padding: 10px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .email-topbar-left {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 300;
+    color: var(--ink-light);
+    letter-spacing: 0.04em;
+  }
+
+  .email-topbar-right {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 300;
+    color: var(--ink-light);
+    letter-spacing: 0.04em;
+  }
+
+  .email-body {
+    background: var(--paper);
+    padding: 40px 48px;
+  }
+
+  .email-body p {
+    font-family: 'Lora', serif;
+    font-size: 11pt;
+    font-weight: 400;
+    color: var(--ink);
+    line-height: 1.75;
+    margin-bottom: 18px;
+  }
+
+  .email-body p:last-child {
+    margin-bottom: 0;
+  }
+
+  .email-body em {
+    font-style: italic;
+  }
+
+  /* ─── SCIENCE BOX ─── */
+  .science-box {
+    background: var(--accent-muted);
+    border-left: 3px solid var(--accent);
+    padding: 24px 28px;
+    margin-top: 32px;
+  }
+
+  .science-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--accent);
+    margin-bottom: 12px;
+  }
+
+  .science-box p {
+    font-family: 'Jost', sans-serif;
+    font-size: 10pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.7;
+    margin-bottom: 12px;
+  }
+
+  .science-box p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* ─── CALLOUT ─── */
+  .callout {
+    text-align: center;
+    padding: 28px 0;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    margin-top: 40px;
+  }
+
+  .callout p {
+    font-family: 'Lora', serif;
+    font-size: 14pt;
+    font-style: italic;
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.6;
+    max-width: 440px;
+    margin: 0 auto;
+  }
+
+  /* ─── WORKBOOK BLOCK ─── */
+  .workbook-block {
+    background: var(--paper-deep);
+    border-left: 3px solid var(--accent);
+    padding: 28px 32px;
+    margin-top: 32px;
+  }
+
+  .workbook-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--accent);
+    margin-bottom: 10px;
+  }
+
+  .workbook-title {
+    font-family: 'Jost', sans-serif;
+    font-size: 13pt;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 8px;
+  }
+
+  .workbook-time {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 300;
+    color: var(--ink-light);
+    letter-spacing: 0.1em;
+    margin-bottom: 14px;
+  }
+
+  .workbook-instruction {
+    font-family: 'Jost', sans-serif;
+    font-size: 9.5pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.65;
+    margin-bottom: 20px;
+  }
+
+  .workbook-question {
+    font-family: 'Jost', sans-serif;
+    font-size: 10pt;
+    font-weight: 500;
+    color: var(--ink);
+    line-height: 1.6;
+    margin-bottom: 8px;
+    margin-top: 16px;
+  }
+
+  .workbook-question:first-of-type {
+    margin-top: 0;
+  }
+
+  .write-line {
+    border: none;
+    border-bottom: 1px solid var(--write-line);
+    height: 9mm;
+    display: block;
+    width: 100%;
+    margin-bottom: 2px;
+  }
+
+  .hedging-list {
+    list-style: none;
+    padding: 0;
+    margin: 14px 0 18px 0;
+  }
+
+  .hedging-list li {
+    font-family: 'Jost', sans-serif;
+    font-size: 10pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.65;
+    padding: 6px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .hedging-list li:last-child {
+    border-bottom: none;
+  }
+
+  .hedging-list li em {
+    font-style: italic;
+    color: var(--ink);
+  }
+
+  .step-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--accent);
+    margin-top: 20px;
+    margin-bottom: 4px;
+    display: block;
+  }
+
+  /* ─── DRILL BOX ─── */
+  .drill-box {
+    background: var(--paper);
+    border-left: 3px solid var(--ink-mid);
+    padding: 24px 28px;
+    margin-top: 32px;
+  }
+
+  .drill-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--ink-light);
+    margin-bottom: 12px;
+  }
+
+  .drill-box p {
+    font-family: 'Jost', sans-serif;
+    font-size: 10pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.7;
+    margin-bottom: 10px;
+  }
+
+  .drill-box p:last-child {
+    margin-bottom: 0;
+  }
+
+  .drill-box strong {
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  /* ─── END OF DAY ─── */
+  .end-of-day {
+    background: var(--paper-deep);
+    border-left: 3px solid var(--accent);
+    padding: 28px 32px;
+    margin-top: 32px;
+  }
+
+  .eod-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--accent);
+    margin-bottom: 16px;
+  }
+
+  .eod-question {
+    font-family: 'Jost', sans-serif;
+    font-size: 10pt;
+    font-weight: 500;
+    color: var(--ink);
+    line-height: 1.6;
+    margin-bottom: 8px;
+    margin-top: 20px;
+  }
+
+  .eod-question:first-of-type {
+    margin-top: 0;
+  }
+
+  /* ─── FOOTER ─── */
+  .day-footer {
+    margin-top: 48px;
+    padding: 20px 64px 48px;
+    border-top: 1px solid var(--rule);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 40px;
+    align-items: start;
+  }
+
+  .footer-left {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 300;
+    color: var(--ink-light);
+    line-height: 1.8;
+    letter-spacing: 0.04em;
+  }
+
+  .footer-right {
+    text-align: right;
+  }
+
+  .footer-tomorrow-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--accent);
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .footer-tomorrow-title {
+    font-family: 'Jost', sans-serif;
+    font-size: 9pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+  }
+
+  /* ─── PRINT STYLES ─── */
+  @media print {
+    body {
+      background: white;
+      color: var(--ink);
+    }
+
+    .masthead,
+    .email-topbar {
+      background: white !important;
+      color: var(--ink) !important;
+    }
+
+    .masthead-left,
+    .masthead-right,
+    .masthead-left span,
+    .email-topbar-left,
+    .email-topbar-right {
+      color: var(--ink) !important;
+    }
+
+    .masthead {
+      border-bottom: 1px solid #CCCCCC;
+    }
+
+    .science-box {
+      background: #F5F5F5 !important;
+    }
+
+    .workbook-block,
+    .end-of-day {
+      background: #F5F5F5 !important;
+    }
+
+    .email-body {
+      border: 1px solid #CCCCCC;
+    }
+
+    .write-line {
+      border-bottom: 1px solid #BBBBBB !important;
+    }
+
+    .workbook-block,
+    .drill-box,
+    .science-box,
+    .end-of-day {
+      page-break-inside: avoid;
+    }
+
+    .day-footer {
+      page-break-inside: avoid;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- ─── MASTHEAD ─── -->
+<div class="masthead">
+  <div class="masthead-left">
+    Executive Conditioning System™ · <span>Sales Conditioning</span> · An Aivorya Program
+  </div>
+  <div class="masthead-right">
+    Phase 3 · Day 15
+  </div>
+</div>
+
+<!-- ─── DAY HEADER ─── -->
+<div class="day-header">
+  <div class="day-number-col">
+    <div class="day-number">15</div>
+  </div>
+  <div class="day-meta">
+    <div class="day-phase-label">Phase 3 — Conditioning</div>
+    <div class="day-title">Price Conversations</div>
+    <p class="day-premise">Price resistance is not primarily a negotiation problem. It is a physiological one. The state the salesperson arrives in when they give the number determines more of what follows than the number itself does.</p>
+  </div>
+</div>
+
+<!-- ─── CONTENT ─── -->
+<div class="content">
+
+  <!-- Morning Conditioning -->
+  <div class="section-label">Morning Conditioning</div>
+
+  <div class="email-block">
+    <div class="email-topbar">
+      <div class="email-topbar-left">From: Executive Conditioning System™ · Day 15 of 30</div>
+      <div class="email-topbar-right">Read · Then Work</div>
+    </div>
+    <div class="email-body">
+      <p>The price conversation is not where deals are won or lost on the merit of the number. It is where the salesperson's belief about that number becomes visible.</p>
+
+      <p>Before the figure leaves your mouth, the buyer is already reading your state. Accelerated speech. A slight drop in inflection on the number itself. The half-second pause before you say it — not confidence, the other kind. These are not technique failures. They are the output of a belief running underneath the conversation: that the number might not hold.</p>
+
+      <p>The most common form of that belief is that the solution is not worth what it costs.</p>
+
+      <p>If that belief is present, the price conversation is over before it starts. Not because the buyer has decided no — they have not yet. Because the seller has.</p>
+
+      <p>This is the Day 03 downward arrow in live operation. The core belief you identified — about worth, about performance ceiling, about whether you are the kind of salesperson who can justify a premium — surfaces most reliably at one moment: the instant after the number is given and before the buyer speaks. That silence is where the belief lives. And what you do in that silence is what the buyer reads.</p>
+
+      <p>The untrained response is to fill it. <em>"I know that might seem like a lot."</em> <em>"It's really an investment when you think about it."</em> <em>"We might have some flexibility there."</em> Each of these signals the same thing: the seller does not fully believe the number is justified, and they are managing the buyer's anticipated resistance in advance.</p>
+
+      <p>The buyer has not objected. You have pre-emptively conceded.</p>
+
+      <p>What you are training today is the capacity to give a number and stay in it — without defensive additions, without apologetic framing, without filling silence that has not yet asked to be filled. The discomfort of that five-second pause after the number is not a problem to solve. It is the drill.</p>
+
+      <p>When price resistance comes, the number is almost never what it is actually about.</p>
+
+      <p>Price objections carry three layers, like every other objection. The surface layer is the number. Underneath it is usually one of two things: the buyer does not yet see the full cost of their current situation, or they are not yet confident the solution will work for them. Most salespeople address the surface layer and defend the number. That is the wrong conversation.</p>
+
+      <p>The cost of the problem was established in discovery. The figure they gave you, the consequence they described — it is already in the room. It does not need to be invented. It needs to be reactivated.</p>
+
+      <p>One question does it: <em>"You mentioned earlier that this was costing you approximately X per quarter. Is the concern the investment — or confidence that this actually solves the problem?"</em></p>
+
+      <p>That question moves the conversation from price negotiation to uncertainty diagnosis. It also tells you immediately which conversation you are in. Address the concern they name. Not both. The one they identified.</p>
+    </div>
+  </div>
+
+  <!-- Science Box -->
+  <div class="science-box">
+    <div class="science-label">The Science</div>
+    <p>The brain does not evaluate price in absolute terms. It evaluates price relative to whatever reference point is active at the moment the number is given.</p>
+    <p>Tversky and Kahneman established this in their anchoring research in 1974: the first number in a sequence becomes the reference point against which subsequent numbers are judged, regardless of whether that number is directly relevant. In a sales conversation, if the only active reference point when the price is stated is the price itself, the buyer has nothing to compare it against except a general sense of "large" or "small." The number floats without context.</p>
+    <p>If the active reference point is the cost of the problem — the quarterly loss, the inefficiency they named, the risk they described in discovery — the price is evaluated against that figure instead. A number that looks large against nothing often looks proportionate against the cost of the problem it resolves. The value re-anchoring sequence does not create a new frame. It activates the one already established in the conversation.</p>
+    <p>Loss aversion compounds this. Kahneman and Tversky's Prospect Theory (1979) established that people weigh potential losses approximately twice as heavily as equivalent gains. At the price moment, the buyer is calculating two risks simultaneously: the risk of the investment failing, and the risk of the problem continuing. The re-anchoring sequence makes both visible. When both are present, the buyer has a complete calculation. Without it, they are making a partial one.</p>
+  </div>
+
+  <!-- Callout -->
+  <div class="callout">
+    <p>The price conversation exposes what the salesperson believes about the number before the buyer has said a word.</p>
+  </div>
+
+  <!-- Workbook -->
+  <div class="section-label">Workbook — Day 15</div>
+
+  <!-- Exercise 1 -->
+  <div class="workbook-block">
+    <div class="workbook-label">Exercise 1 · The Hedging Audit</div>
+    <div class="workbook-title">Identify Your Price-Moment Patterns</div>
+    <div class="workbook-time">Approx. 5 minutes</div>
+    <div class="workbook-instruction">These are the language patterns that cluster most densely around the price moment. Each one signals, before the buyer has said anything, that the seller does not fully believe the number is justified. Go through the list. Mark the ones you use.</div>
+
+    <ul class="hedging-list">
+      <li><em>"It's an investment."</em> — Apologetic framing. Signals the seller expects resistance before the buyer has expressed any.</li>
+      <li><em>"I know it might seem like a lot."</em> — Concession before objection. The buyer had not yet said it was a lot.</li>
+      <li><em>"We can probably work something out."</em> — Premature negotiation. Opens the number before the buyer has responded to it.</li>
+      <li><em>"The price is X, but..."</em> — The "but" undermines the number before the sentence is finished.</li>
+      <li><em>"Does that work for you?"</em> immediately after stating the price — Opens negotiation before the buyer has had space to respond.</li>
+      <li><em>"Just to be transparent..."</em> before the number — Signals the seller is bracing for a reaction.</li>
+      <li>Downward inflection on the number itself — the voice drops as if apologising for the figure.</li>
+    </ul>
+
+    <div class="workbook-question">Add your own. Pull from your Day 07 voice audit. Write the specific phrases you use at the price moment.</div>
+    <span class="write-line"></span>
+    <span class="write-line"></span>
+    <span class="write-line"></span>
+
+    <div class="workbook-question">Now write one sentence that states your price cleanly — your actual number, no additions. That is the version you use.</div>
+    <span class="write-line"></span>
+  </div>
+
+  <!-- Exercise 2 -->
+  <div class="workbook-block">
+    <div class="workbook-label">Exercise 2 · The Price Anchoring Drill</div>
+    <div class="workbook-title">State the Number. Hold the Silence.</div>
+    <div class="workbook-time">Approx. 7 minutes</div>
+    <div class="workbook-instruction">This drill is not about feeling comfortable with the number. The discomfort is the training.<br><br>Set up: state your price out loud, alone, as if delivering it to a buyer. Use your actual number. Then stop. Hold five seconds of silence. Do not add qualifications. Do not explain the price. Do not soften what you just said.<br><br>Repeat ten times. What you are conditioning is the impulse to fill silence after a large number — specifically, the ability to tolerate that silence without acting on the impulse. By the fourth or fifth repetition the urge to add something diminishes. That is the drill working.</div>
+
+    <div class="workbook-question">If the silence consistently produces a strong urge to qualify — note exactly what the urge sounds like. Write the phrase that wants to come out.</div>
+    <span class="write-line"></span>
+    <span class="write-line"></span>
+
+    <div class="workbook-question">That urge is the Day 03 belief in operation. Where does it sit — throat, chest, stomach? Write what you notice physically when the silence arrives.</div>
+    <span class="write-line"></span>
+    <span class="write-line"></span>
+  </div>
+
+  <!-- Exercise 3 -->
+  <div class="workbook-block">
+    <div class="workbook-label">Exercise 3 · The Value Re-anchoring Sequence</div>
+    <div class="workbook-title">Map the Two Conversations Before They Arrive</div>
+    <div class="workbook-time">Approx. 7 minutes</div>
+    <div class="workbook-instruction">Write out the following sequence using your actual numbers and your buyer's actual problem. You are not writing scripts. You are mapping the two conversations so that when price resistance arrives, you know which one you are in before you respond.</div>
+
+    <span class="step-label">Step 1 — Return to the cost of the problem</span>
+    <div class="workbook-question">Write the exact figure or consequence the buyer gave you in discovery. "You mentioned that this was costing approximately..."</div>
+    <span class="write-line"></span>
+    <span class="write-line"></span>
+
+    <span class="step-label">Step 2 — Name the two frames</span>
+    <div class="workbook-question">Write out how you would deliver this question in your own voice: "Is the concern the investment itself — or confidence that this actually solves the problem?" Do not copy the template. Write it as you would say it.</div>
+    <span class="write-line"></span>
+    <span class="write-line"></span>
+
+    <span class="step-label">Step 3 — Address the concern they name</span>
+    <div class="workbook-question">If they say: the investment is the concern —</div>
+    <span class="write-line"></span>
+    <span class="write-line"></span>
+
+    <div class="workbook-question">If they say: confidence in the outcome is the concern —</div>
+    <span class="write-line"></span>
+    <span class="write-line"></span>
+  </div>
+
+  <!-- Exercise 4 -->
+  <div class="workbook-block">
+    <div class="workbook-label">Exercise 4 · The Identity Check</div>
+    <div class="workbook-title">One Question. Answer It Honestly.</div>
+    <div class="workbook-time">Approx. 5 minutes</div>
+    <div class="workbook-instruction">Not whether the buyer will think the solution is worth the price. Whether you do.</div>
+
+    <div class="workbook-question">If the answer is yes — write what that belief is grounded in. Specific outcomes. Documented results. Named evidence. Vague confidence does not count here.</div>
+    <span class="write-line"></span>
+    <span class="write-line"></span>
+    <span class="write-line"></span>
+
+    <div class="workbook-question">If the answer is anything other than a clean yes — write what is underneath that. The belief does not need to be corrected today. It needs to be named. The buyer reads what you believe about the number before you have finished saying it.</div>
+    <span class="write-line"></span>
+    <span class="write-line"></span>
+    <span class="write-line"></span>
+  </div>
+
+  <!-- Daily Drill -->
+  <div class="section-label">Today's Practice Drill</div>
+
+  <div class="drill-box">
+    <div class="drill-label">Daily Drill · Day 15 · Before Your Next Price Conversation</div>
+    <p>Run five cycles of cyclic sighing from Day 09. Two sharp inhales through the nose, one long slow exhale through the mouth. Full exhale before the next cycle. This takes under 90 seconds.</p>
+    <p><strong>Then state your price out loud once, alone, before the call. Five seconds of silence after. No additions. Go into the call.</strong></p>
+    <p>After the call: note whether the price moment produced the impulse to hedge. Write what you did. Write what the buyer's response was.</p>
+    <span class="write-line"></span>
+    <span class="write-line"></span>
+    <p>No price conversation today: run the Price Anchoring Drill from Exercise 2 a second time — ten repetitions, five seconds of silence after each. Then write what the urge to hedge sounds like after ten repetitions compared to after one. The change in that urge is the data.</p>
+    <span class="write-line"></span>
+    <span class="write-line"></span>
+  </div>
+
+  <!-- End of Day -->
+  <div class="section-label">End of Day — Day 15</div>
+
+  <div class="end-of-day">
+    <div class="eod-label">End of Day Reflection</div>
+
+    <div class="eod-question">Where in the price conversation did your regulation hold today?</div>
+    <span class="write-line"></span>
+    <span class="write-line"></span>
+
+    <div class="eod-question">Where did it not — and what specifically happened in that moment?</div>
+    <span class="write-line"></span>
+    <span class="write-line"></span>
+
+    <div class="eod-question">One thing you are taking into Day 16.</div>
+    <span class="write-line"></span>
+    <span class="write-line"></span>
+  </div>
+
+</div><!-- /content -->
+
+<!-- ─── FOOTER ─── -->
+<div class="day-footer">
+  <div class="footer-left">
+    Executive Conditioning System™ · Sales Conditioning<br>
+    © 2026 Aivorya AS · Licensed for personal use only · Not for redistribution · Day 15 of 30
+  </div>
+  <div class="footer-right">
+    <span class="footer-tomorrow-label">Tomorrow</span>
+    <span class="footer-tomorrow-title">Day 16 · The Stall Conversation</span>
+  </div>
+</div>
+
+</body>
+</html>

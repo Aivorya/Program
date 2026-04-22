@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Executive Conditioning System™ · Sales Conditioning · Day 09</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Jost:wght@300;400;500;600&family=Martian+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --paper:        #F0EBE1;
+    --paper-deep:   #E8E1D5;
+    --ink:          #1A1510;
+    --ink-mid:      #4A3F35;
+    --ink-light:    #8A7D72;
+    --accent:       #A87840;
+    --accent-light: #C4975A;
+    --accent-muted: rgba(168, 120, 64, 0.12);
+    --dark:         #2E2820;
+    --rule:         rgba(168, 120, 64, 0.25);
+    --write-line:   rgba(26, 21, 16, 0.15);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Lora', serif;
+    font-size: 11pt;
+    line-height: 1.7;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* ── MASTHEAD ── */
+  .masthead {
+    background: var(--dark);
+    border-bottom: 1px solid rgba(168, 120, 64, 0.3);
+    padding: 14px 64px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .masthead-left {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 300;
+    color: var(--ink-light);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .masthead-left span {
+    color: var(--accent-light);
+  }
+  .masthead-right {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 300;
+    color: var(--ink-light);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* ── DAY HEADER ── */
+  .day-header {
+    padding: 48px 64px 40px;
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 0 32px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .day-number-col {
+    display: flex;
+    align-items: flex-start;
+    padding-top: 6px;
+  }
+  .day-number-large {
+    font-family: 'Lora', serif;
+    font-size: 88pt;
+    font-weight: 400;
+    color: var(--accent);
+    opacity: 0.65;
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+  .day-meta-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+  }
+  .day-phase-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 400;
+    color: var(--accent);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+  .day-title {
+    font-family: 'Lora', serif;
+    font-size: 20pt;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.2;
+  }
+  .day-premise {
+    font-family: 'Jost', sans-serif;
+    font-size: 10pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.65;
+    max-width: 520px;
+  }
+
+  /* ── CONTENT AREA ── */
+  .content-area {
+    padding: 0 64px;
+  }
+
+  /* ── SECTION LABEL ── */
+  .section-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 400;
+    color: var(--accent);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 10px;
+    margin-top: 48px;
+    margin-bottom: 0;
+  }
+
+  /* ── EMAIL BLOCK ── */
+  .email-block {
+    margin-top: 24px;
+  }
+  .email-topbar {
+    background: var(--dark);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .email-topbar-left {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 300;
+    color: var(--ink-light);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .email-topbar-right {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 300;
+    color: var(--ink-light);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .email-body {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-top: none;
+    padding: 36px 40px 32px;
+  }
+  .email-body p {
+    font-family: 'Lora', serif;
+    font-size: 11pt;
+    line-height: 1.75;
+    color: var(--ink);
+    margin-bottom: 18px;
+  }
+  .email-body p:last-child { margin-bottom: 0; }
+  .email-body em { font-style: italic; }
+
+  /* ── SCIENCE BOX ── */
+  .science-box {
+    background: var(--accent-muted);
+    border-left: 3px solid var(--accent);
+    padding: 24px 28px;
+    margin-top: 32px;
+  }
+  .science-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 500;
+    color: var(--accent);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .science-box p {
+    font-family: 'Jost', sans-serif;
+    font-size: 10pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.65;
+    margin-bottom: 12px;
+  }
+  .science-box p:last-child { margin-bottom: 0; }
+
+  /* ── CALLOUT ── */
+  .callout {
+    text-align: center;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    padding: 28px 40px;
+    margin-top: 36px;
+  }
+  .callout p {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 14pt;
+    color: var(--ink-mid);
+    line-height: 1.6;
+    max-width: 440px;
+    margin: 0 auto;
+  }
+
+  /* ── WORKBOOK BLOCK ── */
+  .workbook-block {
+    background: var(--paper-deep);
+    border-left: 3px solid var(--accent);
+    padding: 28px 32px;
+    margin-top: 32px;
+  }
+  .workbook-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 500;
+    color: var(--accent);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .workbook-title {
+    font-family: 'Jost', sans-serif;
+    font-size: 13pt;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 8px;
+    line-height: 1.3;
+  }
+  .workbook-instruction {
+    font-family: 'Jost', sans-serif;
+    font-size: 9.5pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.65;
+    margin-bottom: 20px;
+  }
+  .workbook-question {
+    font-family: 'Jost', sans-serif;
+    font-size: 10pt;
+    font-weight: 500;
+    color: var(--ink);
+    line-height: 1.55;
+    margin-bottom: 8px;
+    margin-top: 16px;
+  }
+  .workbook-question:first-of-type { margin-top: 0; }
+
+  .write-lines { margin-top: 6px; margin-bottom: 4px; }
+  .write-line {
+    border-bottom: 1px solid var(--write-line);
+    height: 9mm;
+    display: block;
+  }
+  .write-line + .write-line { margin-top: 0; }
+
+  .workbook-body {
+    font-family: 'Jost', sans-serif;
+    font-size: 10pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.65;
+    margin-bottom: 10px;
+    margin-top: 6px;
+  }
+
+  /* ── DRILL BOX ── */
+  .drill-box {
+    background: var(--paper);
+    border-left: 3px solid var(--ink-mid);
+    padding: 24px 28px;
+    margin-top: 32px;
+  }
+  .drill-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 400;
+    color: var(--ink-light);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .drill-box p {
+    font-family: 'Jost', sans-serif;
+    font-size: 10pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.65;
+    margin-bottom: 10px;
+  }
+  .drill-box p:last-child { margin-bottom: 0; }
+  .drill-box strong {
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  /* ── FOOTER ── */
+  .day-footer {
+    margin-top: 48px;
+    padding: 20px 64px 40px;
+    border-top: 1px solid var(--rule);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    page-break-inside: avoid;
+  }
+  .footer-left {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 300;
+    color: var(--ink-light);
+    letter-spacing: 0.06em;
+    line-height: 1.8;
+    text-transform: uppercase;
+  }
+  .footer-right {
+    text-align: right;
+  }
+  .footer-tomorrow-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 500;
+    color: var(--accent);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .footer-tomorrow-title {
+    font-family: 'Jost', sans-serif;
+    font-size: 9pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+  }
+
+  /* ── PROTOCOL SUMMARY BOX ── */
+  .protocol-summary {
+    background: var(--paper-deep);
+    border-left: 3px solid var(--accent);
+    border-top: 1px solid var(--rule);
+    padding: 28px 32px;
+    margin-top: 32px;
+  }
+  .protocol-summary .workbook-label { margin-bottom: 10px; }
+  .protocol-step {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    margin-bottom: 14px;
+  }
+  .protocol-step:last-child { margin-bottom: 0; }
+  .protocol-step-num {
+    font-family: 'Martian Mono', monospace;
+    font-size: 7pt;
+    font-weight: 500;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+    min-width: 24px;
+    padding-top: 2px;
+  }
+  .protocol-step-content {
+    font-family: 'Jost', sans-serif;
+    font-size: 10pt;
+    color: var(--ink);
+    line-height: 1.55;
+  }
+  .protocol-step-content span {
+    display: block;
+    font-size: 9pt;
+    color: var(--ink-mid);
+    margin-top: 2px;
+  }
+
+  /* ── PRINT STYLES ── */
+  @media print {
+    body { background: white; color: var(--ink); }
+
+    .masthead,
+    .email-topbar {
+      background: white !important;
+      border-bottom: 1px solid #CCCCCC !important;
+    }
+    .masthead-left,
+    .masthead-left span,
+    .masthead-right,
+    .email-topbar-left,
+    .email-topbar-right {
+      color: var(--ink) !important;
+    }
+
+    .email-body {
+      border: 1px solid #CCCCCC !important;
+    }
+
+    .science-box,
+    .workbook-block,
+    .protocol-summary {
+      background: #F5F5F5 !important;
+      page-break-inside: avoid;
+    }
+
+    .drill-box { page-break-inside: avoid; }
+    .day-footer { page-break-inside: avoid; }
+
+    .write-line {
+      border-bottom: 1px solid #BBBBBB !important;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════
+     MASTHEAD
+══════════════════════════════════════ -->
+<header class="masthead">
+  <div class="masthead-left">
+    Executive Conditioning System™ · <span>Sales Conditioning</span> · An Aivorya Program
+  </div>
+  <div class="masthead-right">Phase 2 · Day 09</div>
+</header>
+
+<!-- ══════════════════════════════════════
+     DAY HEADER
+══════════════════════════════════════ -->
+<div class="day-header">
+  <div class="day-number-col">
+    <span class="day-number-large">09</span>
+  </div>
+  <div class="day-meta-col">
+    <div class="day-phase-label">Phase 2 — Foundation</div>
+    <div class="day-title">The Pre-Call Mind</div>
+    <div class="day-premise">What you have decided before you dial determines what you are able to hear once the conversation starts. Most salespeople do not regulate their state before a call. They regulate their script.</div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     CONTENT AREA
+══════════════════════════════════════ -->
+<div class="content-area">
+
+  <!-- SECTION: Morning Conditioning -->
+  <div class="section-label">Morning Conditioning</div>
+
+  <div class="email-block">
+    <div class="email-topbar">
+      <span class="email-topbar-left">From: Executive Conditioning System™ · Day 09 of 30</span>
+      <span class="email-topbar-right">Read · Then Work</span>
+    </div>
+    <div class="email-body">
+      <p>Before you dial, something has already happened.</p>
+      <p>You have formed a picture of how this conversation is going to go. It may feel like experience — a realistic read based on what you know about the account, the industry, or how the last three calls landed. It is not. It is a prediction. And a prediction is a closed interpretive frame.</p>
+      <p>A closed frame does not prevent you from hearing the buyer. It filters what you hear through what you have already decided. Questions that do not fit the prediction get processed differently. Silence gets interpreted through it. Hesitation confirms it. The conversation you thought you were entering turns out to be the conversation you brought.</p>
+      <p>This is not a character flaw. It is an automatic cognitive process — the brain conserving resources by pattern-matching new situations to previous ones. The problem is that pattern-matching runs faster than listening. By the time you ask the first question, the prediction is already doing the work.</p>
+      <p><em>The pre-call protocol you complete today has one purpose: interrupt that process before it runs.</em></p>
+    </div>
+  </div>
+
+  <!-- SCIENCE BOX -->
+  <div class="science-box">
+    <div class="science-label">The Science</div>
+    <p>In 2023, researchers at Stanford University ran a randomised controlled trial with 108 participants over 28 days, comparing three breathing techniques against mindfulness meditation. Primary outcomes were mood improvement and reduction in physiological arousal. Cyclic sighing won — two sharp inhales through the nose, one long slow exhale through the mouth. It outperformed box breathing, diaphragmatic breathing, and mindfulness meditation on both measures.</p>
+    <p>The mechanism is the extended exhale. Exhaling slowly activates the parasympathetic nervous system through the vagus nerve, reducing heart rate, lowering blood pressure, and measurably decreasing cortisol. The effect begins within two cycles.</p>
+    <p>What the study does not describe — but what performance psychology research makes clear — is that physiological arousal and cognitive interpretation are not separate systems. A nervous system running at elevated arousal interprets ambiguous stimuli as threatening. Silence on a call reads as rejection. Hesitation reads as objection. A nervous system running at baseline interprets the same stimuli as information.</p>
+    <p>The breath protocol does not just calm you down. It resets the cognitive frame from which you enter the conversation. That is a different mechanism, and a more useful one. Five cycles. Under 90 seconds. Run them before you dial — not after you feel activated. Before.</p>
+  </div>
+
+  <!-- CALLOUT -->
+  <div class="callout">
+    <p>A salesperson who needs the call to go well has handed the buyer control of their nervous system before the conversation has started.</p>
+  </div>
+
+  <!-- SECTION: Workbook -->
+  <div class="section-label">Workbook — Day 09</div>
+
+  <!-- Exercise 1 -->
+  <div class="workbook-block">
+    <div class="workbook-label">Exercise 1 · The Pre-Call Prediction Audit</div>
+    <div class="workbook-title">What Are You Carrying In?</div>
+    <div class="workbook-instruction">5 minutes. Do this before your next call today, or write it now for the next call on your calendar. Answer each question as it actually is — not the professional version.</div>
+
+    <div class="workbook-question">1. What expectation am I carrying into this conversation?</div>
+    <p class="workbook-body">Write what you actually think is going to happen — not what you hope.</p>
+    <div class="write-lines">
+      <span class="write-line"></span>
+      <span class="write-line"></span>
+    </div>
+
+    <div class="workbook-question">2. Where did that expectation come from — this buyer, or something else?</div>
+    <p class="workbook-body">Name it. Previous call with this person. A similar account that went badly. The last three rejections. This week's numbers. Something your manager said. Name the actual source.</p>
+    <div class="write-lines">
+      <span class="write-line"></span>
+      <span class="write-line"></span>
+    </div>
+
+    <div class="workbook-question">3. What do I need this call to produce — and is that need affecting my state right now?</div>
+    <p class="workbook-body">Not what you want. What you need. There is a difference, and you know it.</p>
+    <div class="write-lines">
+      <span class="write-line"></span>
+      <span class="write-line"></span>
+    </div>
+  </div>
+
+  <!-- Exercise 2 -->
+  <div class="workbook-block">
+    <div class="workbook-label">Exercise 2 · Wanting Versus Needing</div>
+    <div class="workbook-title">The Release Practice</div>
+    <div class="workbook-instruction">5 minutes. Read the section below, then complete the two prompts.</div>
+
+    <p class="workbook-body">A salesperson who wants the deal to close brings full capability to the conversation. A salesperson who needs the deal to close has already handed the buyer partial control of their nervous system — and the buyer will detect it. Not as a conscious thought. As a low-level reading of your regulatory state, before a word of content is spoken.</p>
+    <p class="workbook-body">Need produces approval-seeking orientation. Approval-seeking orientation activates the stress response under evaluative pressure. Elevated stress response degrades listening, curiosity, and composure. The buyer experiences a conversation partner who is subtly focused on their own outcome rather than on the buyer's situation. This is not a motivation problem. It is a physiological one.</p>
+
+    <div class="workbook-question">Before your next call: name what you need the call to produce.</div>
+    <div class="write-lines">
+      <span class="write-line"></span>
+    </div>
+
+    <p class="workbook-body" style="margin-top:14px;">Set it aside for the duration of the call. Not because outcomes do not matter — because a salesperson focused on the quality of the conversation produces better outcomes than one focused on the outcome itself.</p>
+    <p class="workbook-body">The distinction you are training: wanting the deal to close is useful motivation. Needing it to close — when the result feels necessary for your self-assessment, your standing, your security — transfers the locus of control to the buyer before you have asked a single question.</p>
+
+    <div class="workbook-question">Where does that need come from today? Write one sentence.</div>
+    <div class="write-lines">
+      <span class="write-line"></span>
+    </div>
+  </div>
+
+  <!-- Exercise 3 -->
+  <div class="workbook-block">
+    <div class="workbook-label">Exercise 3 · Cyclic Sighing as Reset</div>
+    <div class="workbook-title">The Interpretive Reset</div>
+    <div class="workbook-instruction">90 seconds. Run this immediately after the audit and release above — before your next call.</div>
+
+    <p class="workbook-body"><strong>Five cycles. Each cycle:</strong></p>
+    <p class="workbook-body">Two sharp inhales through the nose — the second one shorter and sharper than the first.<br>One long, slow exhale through the mouth — until the lungs are fully empty.</p>
+    <p class="workbook-body">Do not rush the exhale. That is where the physiological effect lives.</p>
+    <p class="workbook-body">After five cycles: sit with the result for 15 seconds. Notice the difference in how the upcoming call registers — not what you think about it, what it feels like to think about it.</p>
+    <p class="workbook-body">This is not relaxation preparation. It is resetting the interpretive frame from which you will enter the conversation.</p>
+  </div>
+
+  <!-- Exercise 4 — Complete Protocol -->
+  <div class="workbook-block">
+    <div class="workbook-label">Exercise 4 · The Complete Pre-Call Protocol</div>
+    <div class="workbook-title">Write It Out in Full</div>
+    <div class="workbook-instruction">10 minutes. Write each component as a specific instruction to yourself — not a general description. This is the protocol you run before every call from here forward.</div>
+
+    <div class="workbook-question">Step 1 — The Three-Question Audit (60 seconds)</div>
+    <p class="workbook-body">Write the three questions in your own words, as you will ask them to yourself:</p>
+    <div class="write-lines">
+      <span class="write-line"></span>
+    </div>
+    <div class="write-lines">
+      <span class="write-line"></span>
+    </div>
+    <div class="write-lines">
+      <span class="write-line"></span>
+    </div>
+
+    <div class="workbook-question">Step 2 — The Release (15 seconds)</div>
+    <p class="workbook-body">Name the need. Set it aside. Write your version of this instruction in one sentence:</p>
+    <div class="write-lines">
+      <span class="write-line"></span>
+    </div>
+
+    <div class="workbook-question">Step 3 — Cyclic Sighing Reset (90 seconds)</div>
+    <p class="workbook-body">Write the sequence as you will run it:</p>
+    <div class="write-lines">
+      <span class="write-line"></span>
+    </div>
+
+    <div class="workbook-question">Step 4 — Posture Set (15 seconds)</div>
+    <p class="workbook-body">Write the specific physical cue that works for you:</p>
+    <div class="write-lines">
+      <span class="write-line"></span>
+    </div>
+
+    <div class="workbook-question">Step 5 — One Behavioral Intention (15 seconds)</div>
+    <p class="workbook-body">Not what you want the call to produce. What you are going to do in the conversation. One specific behavior:</p>
+    <div class="write-lines">
+      <span class="write-line"></span>
+    </div>
+  </div>
+
+  <!-- Protocol Summary -->
+  <div class="protocol-summary">
+    <div class="workbook-label">Pre-Call Protocol · Summary</div>
+    <div class="workbook-title" style="margin-bottom:20px; font-family:'Jost',sans-serif; font-size:13pt; font-weight:600; color:var(--ink);">Under Four Minutes. Every Call.</div>
+    <div class="protocol-step">
+      <div class="protocol-step-num">01</div>
+      <div class="protocol-step-content">Three-Question Audit<span>What am I carrying in? Where did it come from? What do I need?</span></div>
+    </div>
+    <div class="protocol-step">
+      <div class="protocol-step-num">02</div>
+      <div class="protocol-step-content">The Release<span>Name the need. Set it aside for the call.</span></div>
+    </div>
+    <div class="protocol-step">
+      <div class="protocol-step-num">03</div>
+      <div class="protocol-step-content">Cyclic Sighing Reset — Five Cycles<span>Two sharp inhales. One long exhale. 90 seconds.</span></div>
+    </div>
+    <div class="protocol-step">
+      <div class="protocol-step-num">04</div>
+      <div class="protocol-step-content">Posture Set<span>Feet flat. Weight forward. Shoulders dropped.</span></div>
+    </div>
+    <div class="protocol-step">
+      <div class="protocol-step-num">05</div>
+      <div class="protocol-step-content">One Behavioral Intention<span>What you are going to do in this conversation.</span></div>
+    </div>
+  </div>
+
+  <!-- SECTION: Today's Practice Drill -->
+  <div class="section-label">Today's Practice Drill</div>
+
+  <div class="drill-box">
+    <div class="drill-label">Drill · Day 09 — First Live Run</div>
+    <p><strong>Your next call. Run the full protocol before you dial.</strong></p>
+    <p>All five steps. In sequence. Do not abbreviate it today — you are training the sequence, not the shortcut.</p>
+    <p>After the call, note one thing you heard in the conversation that you might have missed if you had dialed without running the protocol.</p>
+    <div class="write-lines" style="margin-top:10px;">
+      <span class="write-line"></span>
+    </div>
+  </div>
+
+  <!-- SECTION: End of Day -->
+  <div class="section-label">End of Day — Day 09</div>
+
+  <div class="workbook-block">
+    <div class="workbook-label">End of Day Reflection</div>
+
+    <div class="workbook-question">What expectation did you identify in today's audit — and what was its actual source?</div>
+    <div class="write-lines">
+      <span class="write-line"></span>
+      <span class="write-line"></span>
+    </div>
+
+    <div class="workbook-question">Which specific moment in your pipeline conversations — not which deal — is most affected by needing rather than wanting? Name the moment, not the account.</div>
+    <div class="write-lines">
+      <span class="write-line"></span>
+      <span class="write-line"></span>
+    </div>
+
+    <div class="workbook-question">One thing you are taking into Day 10:</div>
+    <div class="write-lines">
+      <span class="write-line"></span>
+      <span class="write-line"></span>
+    </div>
+  </div>
+
+</div><!-- /content-area -->
+
+<!-- ══════════════════════════════════════
+     DAY FOOTER
+══════════════════════════════════════ -->
+<footer class="day-footer">
+  <div class="footer-left">
+    Executive Conditioning System™ · Sales Conditioning<br>
+    © 2026 Aivorya AS · Licensed for personal use only · Not for redistribution · Day 09 of 30
+  </div>
+  <div class="footer-right">
+    <div class="footer-tomorrow-label">Tomorrow</div>
+    <div class="footer-tomorrow-title">The Uncertainty Reduction Frame</div>
+  </div>
+</footer>
+
+</body>
+</html>

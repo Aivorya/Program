@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Executive Conditioning System™ · Day 14 · Objection Anatomy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Jost:wght@300;400;500;600&family=Martian+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --paper:        #F0EBE1;
+    --paper-deep:   #E8E1D5;
+    --ink:          #1A1510;
+    --ink-mid:      #4A3F35;
+    --ink-light:    #8A7D72;
+    --accent:       #A87840;
+    --accent-light: #C4975A;
+    --accent-muted: rgba(168, 120, 64, 0.12);
+    --dark:         #2E2820;
+    --rule:         rgba(168, 120, 64, 0.25);
+    --write-line:   rgba(26, 21, 16, 0.15);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Lora', Georgia, serif;
+    font-size: 11pt;
+    line-height: 1.7;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* ── MASTHEAD ── */
+  .masthead {
+    background: var(--dark);
+    border-bottom: 1px solid rgba(168, 120, 64, 0.3);
+    padding: 14px 64px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .masthead-left {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 300;
+    color: var(--ink-light);
+    letter-spacing: 0.08em;
+    line-height: 1.5;
+  }
+  .masthead-left .highlight {
+    color: var(--accent-light);
+  }
+  .masthead-right {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 400;
+    color: var(--ink-light);
+    letter-spacing: 0.1em;
+  }
+
+  /* ── DAY HEADER ── */
+  .day-header {
+    padding: 48px 64px 40px;
+    border-bottom: 1px solid var(--rule);
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 0 32px;
+    align-items: start;
+  }
+  .day-number {
+    font-family: 'Lora', serif;
+    font-size: 88pt;
+    font-weight: 400;
+    color: var(--accent);
+    opacity: 0.65;
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+  .day-meta {
+    padding-top: 8px;
+  }
+  .day-phase-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 400;
+    color: var(--accent);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    display: block;
+  }
+  .day-title {
+    font-family: 'Lora', serif;
+    font-size: 20pt;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.25;
+    margin-bottom: 12px;
+  }
+  .day-premise {
+    font-family: 'Jost', sans-serif;
+    font-size: 10pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.65;
+  }
+
+  /* ── CONTENT AREA ── */
+  .content-area {
+    padding: 0 64px;
+  }
+
+  /* ── SECTION LABEL ── */
+  .section-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 400;
+    color: var(--accent);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 10px;
+    margin-top: 48px;
+    margin-bottom: 0;
+  }
+
+  /* ── EMAIL BLOCK ── */
+  .email-block {
+    margin-top: 0;
+    border: 1px solid var(--rule);
+    border-top: none;
+  }
+  .email-topbar {
+    background: var(--dark);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .email-topbar-left,
+  .email-topbar-right {
+    font-family: 'Martian Mono', monospace;
+    font-size: 5.5pt;
+    font-weight: 300;
+    color: var(--ink-light);
+    letter-spacing: 0.1em;
+  }
+  .email-body {
+    background: var(--paper);
+    padding: 36px 40px 40px;
+  }
+  .email-body p {
+    font-family: 'Lora', serif;
+    font-size: 11pt;
+    line-height: 1.75;
+    color: var(--ink);
+    margin-bottom: 18px;
+  }
+  .email-body p:last-child {
+    margin-bottom: 0;
+  }
+  .email-body em {
+    font-style: italic;
+  }
+
+  /* ── SCIENCE BOX ── */
+  .science-box {
+    background: var(--accent-muted);
+    border-left: 3px solid var(--accent);
+    padding: 24px 28px;
+    margin-top: 36px;
+  }
+  .science-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 500;
+    color: var(--accent);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    display: block;
+  }
+  .science-box p {
+    font-family: 'Jost', sans-serif;
+    font-size: 10pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.65;
+    margin-bottom: 12px;
+  }
+  .science-box p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* ── CALLOUT ── */
+  .callout {
+    text-align: center;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    padding: 28px 20px;
+    margin-top: 40px;
+  }
+  .callout p {
+    font-family: 'Lora', serif;
+    font-size: 14pt;
+    font-style: italic;
+    color: var(--ink-mid);
+    line-height: 1.55;
+    max-width: 440px;
+    margin: 0 auto;
+  }
+
+  /* ── WORKBOOK BLOCK ── */
+  .workbook-block {
+    background: var(--paper-deep);
+    border-left: 3px solid var(--accent);
+    padding: 28px 32px;
+    margin-top: 36px;
+  }
+  .workbook-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 500;
+    color: var(--accent);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    display: block;
+  }
+  .workbook-title {
+    font-family: 'Jost', sans-serif;
+    font-size: 13pt;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 10px;
+    line-height: 1.3;
+  }
+  .workbook-time {
+    font-family: 'Martian Mono', monospace;
+    font-size: 5.5pt;
+    color: var(--ink-light);
+    letter-spacing: 0.12em;
+    margin-bottom: 16px;
+    display: block;
+  }
+  .workbook-instruction {
+    font-family: 'Jost', sans-serif;
+    font-size: 9.5pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.65;
+    margin-bottom: 20px;
+  }
+  .workbook-question {
+    font-family: 'Jost', sans-serif;
+    font-size: 10pt;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 6px;
+    margin-top: 14px;
+    line-height: 1.5;
+  }
+  .write-line {
+    border-bottom: 1px solid var(--write-line);
+    height: 9mm;
+    display: block;
+    margin-bottom: 2px;
+  }
+  .write-lines-group {
+    margin-bottom: 10px;
+  }
+
+  /* ── WORKED EXAMPLE ── */
+  .worked-example {
+    background: rgba(168, 120, 64, 0.06);
+    border-left: 2px solid rgba(168, 120, 64, 0.35);
+    padding: 16px 20px;
+    margin: 20px 0;
+  }
+  .worked-example-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 5.5pt;
+    color: var(--accent);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    display: block;
+  }
+  .worked-example-row {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: 4px 16px;
+    margin-bottom: 8px;
+    align-items: baseline;
+  }
+  .worked-example-row:last-child {
+    margin-bottom: 0;
+  }
+  .we-key {
+    font-family: 'Martian Mono', monospace;
+    font-size: 5.5pt;
+    color: var(--ink-light);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding-top: 2px;
+  }
+  .we-value {
+    font-family: 'Jost', sans-serif;
+    font-size: 9.5pt;
+    color: var(--ink-mid);
+    line-height: 1.55;
+  }
+  .we-value em {
+    font-style: italic;
+    color: var(--ink);
+  }
+
+  /* ── OBJECTION ROWS FOR PARTICIPANT ── */
+  .objection-input-block {
+    margin-top: 20px;
+  }
+  .objection-row {
+    border-bottom: 1px solid var(--rule);
+    padding: 16px 0 12px;
+  }
+  .objection-row:last-child {
+    border-bottom: none;
+  }
+  .objection-number {
+    font-family: 'Martian Mono', monospace;
+    font-size: 5.5pt;
+    color: var(--accent);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    display: block;
+  }
+  .objection-field {
+    margin-bottom: 6px;
+  }
+  .objection-field-label {
+    font-family: 'Jost', sans-serif;
+    font-size: 8.5pt;
+    color: var(--ink-light);
+    font-weight: 400;
+    margin-bottom: 2px;
+  }
+
+  /* ── DRILL BOX ── */
+  .drill-box {
+    background: var(--paper);
+    border-left: 3px solid var(--ink-mid);
+    padding: 24px 28px;
+    margin-top: 36px;
+  }
+  .drill-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 400;
+    color: var(--ink-light);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    display: block;
+  }
+  .drill-box p {
+    font-family: 'Jost', sans-serif;
+    font-size: 10pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.65;
+    margin-bottom: 10px;
+  }
+  .drill-box p:last-child {
+    margin-bottom: 0;
+  }
+  .drill-box strong {
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  /* ── END OF DAY ── */
+  .eod-block {
+    background: var(--paper-deep);
+    border-left: 3px solid var(--accent);
+    padding: 28px 32px;
+    margin-top: 36px;
+  }
+
+  /* ── FOOTER ── */
+  .day-footer {
+    margin-top: 48px;
+    padding: 20px 64px 40px;
+    border-top: 1px solid var(--rule);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  .footer-left {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 300;
+    color: var(--ink-light);
+    line-height: 1.8;
+    letter-spacing: 0.06em;
+  }
+  .footer-right {
+    text-align: right;
+  }
+  .footer-tomorrow-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 500;
+    color: var(--accent);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 4px;
+  }
+  .footer-tomorrow-title {
+    font-family: 'Jost', sans-serif;
+    font-size: 9pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+  }
+
+  /* ── PRINT STYLESHEET ── */
+  @media print {
+    body { background: white; color: var(--ink); }
+    .masthead,
+    .email-topbar { background: white !important; }
+    .masthead-left,
+    .masthead-right,
+    .email-topbar-left,
+    .email-topbar-right { color: #555 !important; }
+    .science-box,
+    .workbook-block,
+    .eod-block { background: #F5F5F5 !important; }
+    .drill-box { background: white !important; }
+    .write-line { border-bottom-color: #BBBBBB !important; }
+    .email-block { border-color: #CCCCCC !important; }
+    .workbook-block,
+    .drill-box,
+    .science-box,
+    .eod-block,
+    .day-footer { page-break-inside: avoid; }
+    .worked-example { page-break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ── MASTHEAD ── -->
+<header class="masthead">
+  <div class="masthead-left">
+    Executive Conditioning System™ · <span class="highlight">Sales Conditioning</span> · An Aivorya Program
+  </div>
+  <div class="masthead-right">Phase 3 · Day 14</div>
+</header>
+
+<!-- ── DAY HEADER ── -->
+<div class="day-header">
+  <div class="day-number">14</div>
+  <div class="day-meta">
+    <span class="day-phase-label">Phase 3 — Conditioning</span>
+    <div class="day-title">Objection Anatomy</div>
+    <div class="day-premise">Objections are not random. Each one has a structure — a surface statement, an underlying concern, and an unspoken question. Responding to the surface is almost always wrong. Today you learn to read the structure before you respond to any part of it.</div>
+  </div>
+</div>
+
+<!-- ── CONTENT AREA ── -->
+<div class="content-area">
+
+  <!-- SECTION: Morning Conditioning -->
+  <div class="section-label">Morning Conditioning</div>
+
+  <div class="email-block">
+    <div class="email-topbar">
+      <span class="email-topbar-left">From: Executive Conditioning System™ · Day 14 of 30</span>
+      <span class="email-topbar-right">Read · Then Work</span>
+    </div>
+    <div class="email-body">
+      <p>Every objection has three layers. Almost every response addresses one.</p>
+
+      <p>The surface statement is what the buyer says. <em>"It's too expensive." "We're already using something for that." "We need to think about it."</em> These are presenting symptoms — the words available to a buyer who hasn't fully articulated, and sometimes hasn't fully identified, what's actually in the way.</p>
+
+      <p>Underneath the surface statement is the underlying concern. This is what the buyer means. The concern behind "it's too expensive" is rarely the number. It's that the investment doesn't feel proportionate to the confidence in the outcome. The concern behind "we're already using something" is often switching cost, disruption, or a genuine question about whether the difference in performance justifies the pain of changing.</p>
+
+      <p>Beneath the underlying concern is the unspoken question — what the buyer needs answered before they can move. Not what they're worried about. What they need to know. <em>"Will this actually produce results that justify this cost?" "Is the pain of changing worth the potential gain?" "What do I need to feel certain enough to make this call?"</em></p>
+
+      <p>Most salespeople address the surface statement. Some address the underlying concern. Almost none surface the unspoken question — which is the only layer where the conversation can actually close.</p>
+
+      <p>Clinical medicine has a foundational operating principle: diagnosis before prescription. A presenting symptom is not a diagnosis. A doctor who prescribes based on the presenting complaint without establishing the underlying cause is practicing dangerously. The structural parallel to sales is exact. The stated objection is not the underlying concern. A salesperson who responds to the surface statement without diagnosing what's beneath it is making the same structural error — less dangerously, but at equal cost to the outcome.</p>
+
+      <p>The discipline this installs is one rule: before responding to any objection, ask one question. Not to buy time. Not to appear thorough. To diagnose. The answer tells you which layer of the objection is actually present and which uncertainty is driving it. Without the answer, your response is aimed at a target you haven't yet identified.</p>
+
+      <p><em>"Help me understand what's driving that concern."</em></p>
+
+      <p>That question, asked calmly and without defensive loading, will tell you more about the real state of the deal than the objection that preceded it. It signals that you are not threatened by resistance. It signals that you treat their concern as information. Those two signals change the register of the conversation before you've said another word.</p>
+
+      <p>The participant who treats this as a discipline — not a technique, a discipline — applies it every time, including when pressure makes them want to respond immediately. Techniques get abandoned under pressure. Disciplines don't. The difference is in the internal commitment, not the external behaviour.</p>
+    </div>
+  </div>
+
+  <!-- SCIENCE BOX -->
+  <div class="science-box">
+    <span class="science-label">The Science</span>
+    <p>The ABC model from cognitive behavioural therapy, developed by Aaron Beck, maps the sequence between an activating event and an emotional response. A is the activating event. B is the automatic interpretation the person makes about it. C is the consequence — the emotional response and the behaviour it produces.</p>
+    <p>Most objection handling training addresses C. It teaches a better response to "it's too expensive." The problem is B — the automatic interpretation the salesperson makes the moment the objection lands. A salesperson who interprets "it's too expensive" as rejection generates a defensive response regardless of the script they have prepared. The threat response fires. Prefrontal cortex engagement drops. The prepared response comes out clipped or over-explained.</p>
+    <p>A salesperson who interprets the same words as incomplete information — a signal that value hasn't yet been established, or that a specific uncertainty is present — stays regulated. The diagnostic question is available. The script is not needed because the real concern can be addressed directly. The objection is identical. The interpretation is the variable.</p>
+    <p>This is what James Gross's emotion regulation research makes clear: reappraisal works at the source, before the full emotional response generates. Suppression — delivering a scripted response while internally threatened — elevates physiological arousal and signals stress to the buyer's nervous system. Reappraisal — reading the objection as data rather than attack — keeps the salesperson regulated and the conversation productive. The Explore Before Respond rule is the behavioural application of this. One question before any response is how you buy the half-second needed for reappraisal to work.</p>
+  </div>
+
+  <!-- CALLOUT -->
+  <div class="callout">
+    <p>The stated objection is not the underlying concern. Respond to what you have diagnosed, not to what you first heard.</p>
+  </div>
+
+  <!-- SECTION: Workbook -->
+  <div class="section-label">Workbook — Day 14</div>
+
+  <!-- Exercise 1 -->
+  <div class="workbook-block">
+    <span class="workbook-label">Exercise 1 · Objection Dissection</span>
+    <div class="workbook-title">Three Layers. Four Columns. Ten Objections.</div>
+    <span class="workbook-time">Approximately 15 minutes</span>
+    <div class="workbook-instruction">
+      This exercise extends the work you started on Day 08. The three-layer structure is the same — surface statement, underlying concern, response — but today adds the diagnostic layer: the unspoken question. This is what the buyer needs answered before they can move, and it's the layer that determines whether your response actually addresses anything real.
+      <br><br>
+      Four worked examples follow. Use the precision of these as the standard for your own ten objections below. The surface statement and underlying concern are orientation. The unspoken question is the exercise. Do not move to the next objection until you've written it. If it's coming easily, you haven't gone deep enough.
+    </div>
+
+    <!-- Worked Example 1 -->
+    <div class="worked-example">
+      <span class="worked-example-label">Worked Example 1</span>
+      <div class="worked-example-row">
+        <span class="we-key">Surface Statement</span>
+        <span class="we-value">"We're already using something for that."</span>
+      </div>
+      <div class="worked-example-row">
+        <span class="we-key">Underlying Concern</span>
+        <span class="we-value">Switching cost, disruption, or genuine satisfaction with the current solution.</span>
+      </div>
+      <div class="worked-example-row">
+        <span class="we-key">Unspoken Question</span>
+        <span class="we-value"><em>Is the pain of changing worth the potential gain?</em></span>
+      </div>
+      <div class="worked-example-row">
+        <span class="we-key">Uncertainty Type</span>
+        <span class="we-value">Implementation (what does the transition actually look like?) or Outcome (is the improvement real enough to justify it?).</span>
+      </div>
+    </div>
+
+    <!-- Worked Example 2 -->
+    <div class="worked-example">
+      <span class="worked-example-label">Worked Example 2</span>
+      <div class="worked-example-row">
+        <span class="we-key">Surface Statement</span>
+        <span class="we-value">"It's too expensive."</span>
+      </div>
+      <div class="worked-example-row">
+        <span class="we-key">Underlying Concern</span>
+        <span class="we-value">The investment doesn't feel proportionate to confidence in the outcome. Budget may be genuinely constrained, or the number may be real but the value case isn't yet solid.</span>
+      </div>
+      <div class="worked-example-row">
+        <span class="we-key">Unspoken Question</span>
+        <span class="we-value"><em>Will this actually produce results that justify this cost?</em></span>
+      </div>
+      <div class="worked-example-row">
+        <span class="we-key">Uncertainty Type</span>
+        <span class="we-value">Outcome (will it work?) or Social (what happens internally if I spend this and it doesn't deliver?).</span>
+      </div>
+    </div>
+
+    <!-- Worked Example 3 -->
+    <div class="worked-example">
+      <span class="worked-example-label">Worked Example 3</span>
+      <div class="worked-example-row">
+        <span class="we-key">Surface Statement</span>
+        <span class="we-value">"We need to think about it."</span>
+      </div>
+      <div class="worked-example-row">
+        <span class="we-key">Underlying Concern</span>
+        <span class="we-value">Something is unresolved — fit, timing, internal sign-off required, or discomfort making the call without more certainty.</span>
+      </div>
+      <div class="worked-example-row">
+        <span class="we-key">Unspoken Question</span>
+        <span class="we-value"><em>What do I need to feel certain enough to move?</em></span>
+      </div>
+      <div class="worked-example-row">
+        <span class="we-key">Uncertainty Type</span>
+        <span class="we-value">Social, primarily. There is usually a specific internal conversation the buyer needs to have, or a specific fear they haven't yet named.</span>
+      </div>
+    </div>
+
+    <!-- Worked Example 4 -->
+    <div class="worked-example">
+      <span class="worked-example-label">Worked Example 4</span>
+      <div class="worked-example-row">
+        <span class="we-key">Surface Statement</span>
+        <span class="we-value">"Can you send me some information?"</span>
+      </div>
+      <div class="worked-example-row">
+        <span class="we-key">Underlying Concern</span>
+        <span class="we-value">Not ready to engage further, or needs specific material to justify an internal conversation, or is disengaging politely.</span>
+      </div>
+      <div class="worked-example-row">
+        <span class="we-key">Unspoken Question</span>
+        <span class="we-value"><em>Can I get what I need without committing to another conversation?</em></span>
+      </div>
+      <div class="worked-example-row">
+        <span class="we-key">Uncertainty Type</span>
+        <span class="we-value">Social (needs internal justification cover) or disengagement. These require different responses. The Explore Before Respond question surfaces which one is present.</span>
+      </div>
+    </div>
+
+    <div class="workbook-instruction" style="margin-top: 24px; margin-bottom: 8px;">
+      Now complete the same structure for your ten most common objections. Write what you actually hear — not textbook versions. The unspoken question column should take longer than the others. If it doesn't, go deeper.
+    </div>
+
+    <!-- 10 Objection Input Rows -->
+    <div class="objection-input-block">
+
+      <!-- Objection 1 -->
+      <div class="objection-row">
+        <span class="objection-number">Objection 01</span>
+        <div class="objection-field">
+          <div class="objection-field-label">Surface statement</div>
+          <span class="write-line"></span>
+        </div>
+        <div class="objection-field">
+          <div class="objection-field-label">Underlying concern</div>
+          <span class="write-line"></span>
+          <span class="write-line"></span>
+        </div>
+        <div class="objection-field">
+          <div class="objection-field-label">Unspoken question</div>
+          <span class="write-line"></span>
+          <span class="write-line"></span>
+        </div>
+        <div class="objection-field">
+          <div class="objection-field-label">Uncertainty type</div>
+          <span class="write-line"></span>
+        </div>
+      </div>
+
+      <!-- Objection 2 -->
+      <div class="objection-row">
+        <span class="objection-number">Objection 02</span>
+        <div class="objection-field">
+          <div class="objection-field-label">Surface statement</div>
+          <span class="write-line"></span>
+        </div>
+        <div class="objection-field">
+          <div class="objection-field-label">Underlying concern</div>
+          <span class="write-line"></span>
+          <span class="write-line"></span>
+        </div>
+        <div class="objection-field">
+          <div class="objection-field-label">Unspoken question</div>
+          <span class="write-line"></span>
+          <span class="write-line"></span>
+        </div>
+        <div class="objection-field">
+          <div class="objection-field-label">Uncertainty type</div>
+          <span class="write-line"></span>
+        </div>
+      </div>
+
+      <!-- Objection 3 -->
+      <div class="objection-row">
+        <span class="objection-number">Objection 03</span>
+        <div class="objection-field">
+          <div class="objection-field-label">Surface statement</div>
+          <span class="write-line"></span>
+        </div>
+        <div class="objection-field">
+          <div class="objection-field-label">Underlying concern</div>
+          <span class="write-line"></span>
+          <span class="write-line"></span>
+        </div>
+        <div class="objection-field">
+          <div class="objection-field-label">Unspoken question</div>
+          <span class="write-line"></span>
+          <span class="write-line"></span>
+        </div>
+        <div class="objection-field">
+          <div class="objection-field-label">Uncertainty type</div>
+          <span class="write-line"></span>
+        </div>
+      </div>
+
+      <!-- Objection 4 -->
+      <div class="objection-row">
+        <span class="objection-number">Objection 04</span>
+        <div class="objection-field">
+          <div class="objection-field-label">Surface statement</div>
+          <span class="write-line"></span>
+        </div>
+        <div class="objection-field">
+          <div class="objection-field-label">Underlying concern</div>
+          <span class="write-line"></span>
+          <span class="write-line"></span>
+        </div>
+        <div class="objection-field">
+          <div class="objection-field-label">Unspoken question</div>
+          <span class="write-line"></span>
+          <span class="write-line"></span>
+        </div>
+        <div class="objection-field">
+          <div class="objection-field-label">Uncertainty type</div>
+          <span class="write-line"></span>
+        </div>
+      </div>
+
+      <!-- Objection 5 -->
+      <div class="objection-row">
+        <span class="objection-number">Objection 05</span>
+        <div class="objection-field">
+          <div class="objection-field-label">Surface statement</div>
+          <span class="write-line"></span>
+        </div>
+        <div class="objection-field">
+          <div class="objection-field-label">Underlying concern</div>
+          <span class="write-line"></span>
+          <span class="write-line"></span>
+        </div>
+        <div class="objection-field">
+          <div class="objection-field-label">Unspoken question</div>
+          <span class="write-line"></span>
+          <span class="write-line"></span>
+        </div>
+        <div class="objection-field">
+          <div class="objection-field-label">Uncertainty type</div>
+          <span class="write-line"></span>
+        </div>
+      </div>
+
+      <!-- Objection 6 -->
+      <div class="objection-row">
+        <span class="objection-number">Objection 06</span>
+        <div class="objection-field">
+          <div class="objection-field-label">Surface statement</div>
+          <span class="write-line"></span>
+        </div>
+        <div class="objection-field">
+          <div class="objection-field-label">Underlying concern</div>
+          <span class="write-line"></span>
+          <span class="write-line"></span>
+        </div>
+        <div class="objection-field">
+          <div class="objection-field-label">Unspoken question</div>
+          <span class="write-line"></span>
+          <span class="write-line"></span>
+        </div>
+        <div class="objection-field">
+          <div class="objection-field-label">Uncertainty type</div>
+          <span class="write-line"></span>
+        </div>
+      </div>
+
+      <!-- Objection 7 -->
+      <div class="objection-row">
+        <span class="objection-number">Objection 07</span>
+        <div class="objection-field">
+          <div class="objection-field-label">Surface statement</div>
+          <span class="write-line"></span>
+        </div>
+        <div class="objection-field">
+          <div class="objection-field-label">Underlying concern</div>
+          <span class="write-line"></span>
+          <span class="write-line"></span>
+        </div>
+        <div class="objection-field">
+          <div class="objection-field-label">Unspoken question</div>
+          <span class="write-line"></span>
+          <span class="write-line"></span>
+        </div>
+        <div class="objection-field">
+          <div class="objection-field-label">Uncertainty type</div>
+          <span class="write-line"></span>
+        </div>
+      </div>
+
+      <!-- Objection 8 -->
+      <div class="objection-row">
+        <span class="objection-number">Objection 08</span>
+        <div class="objection-field">
+          <div class="objection-field-label">Surface statement</div>
+          <span class="write-line"></span>
+        </div>
+        <div class="objection-field">
+          <div class="objection-field-label">Underlying concern</div>
+          <span class="write-line"></span>
+          <span class="write-line"></span>
+        </div>
+        <div class="objection-field">
+          <div class="objection-field-label">Unspoken question</div>
+          <span class="write-line"></span>
+          <span class="write-line"></span>
+        </div>
+        <div class="objection-field">
+          <div class="objection-field-label">Uncertainty type</div>
+          <span class="write-line"></span>
+        </div>
+      </div>
+
+      <!-- Objection 9 -->
+      <div class="objection-row">
+        <span class="objection-number">Objection 09</span>
+        <div class="objection-field">
+          <div class="objection-field-label">Surface statement</div>
+          <span class="write-line"></span>
+        </div>
+        <div class="objection-field">
+          <div class="objection-field-label">Underlying concern</div>
+          <span class="write-line"></span>
+          <span class="write-line"></span>
+        </div>
+        <div class="objection-field">
+          <div class="objection-field-label">Unspoken question</div>
+          <span class="write-line"></span>
+          <span class="write-line"></span>
+        </div>
+        <div class="objection-field">
+          <div class="objection-field-label">Uncertainty type</div>
+          <span class="write-line"></span>
+        </div>
+      </div>
+
+      <!-- Objection 10 -->
+      <div class="objection-row">
+        <span class="objection-number">Objection 10</span>
+        <div class="objection-field">
+          <div class="objection-field-label">Surface statement</div>
+          <span class="write-line"></span>
+        </div>
+        <div class="objection-field">
+          <div class="objection-field-label">Underlying concern</div>
+          <span class="write-line"></span>
+          <span class="write-line"></span>
+        </div>
+        <div class="objection-field">
+          <div class="objection-field-label">Unspoken question</div>
+          <span class="write-line"></span>
+          <span class="write-line"></span>
+        </div>
+        <div class="objection-field">
+          <div class="objection-field-label">Uncertainty type</div>
+          <span class="write-line"></span>
+        </div>
+      </div>
+
+    </div><!-- end objection-input-block -->
+  </div><!-- end workbook-block -->
+
+  <!-- Exercise 2 -->
+  <div class="workbook-block">
+    <span class="workbook-label">Exercise 2 · Explore Before Respond</span>
+    <div class="workbook-title">One Question. Written in Advance. Used on the Next Call.</div>
+    <span class="workbook-time">Approximately 5 minutes</span>
+    <div class="workbook-instruction">
+      Write the one objection you are most likely to face on your next call. Dissect it using the three-layer structure. Name the uncertainty type. Then write three versions of the Explore Before Respond question — variations you would actually say, in your register, without sounding like you're running a technique.
+      <br><br>
+      The base version: <em>"Help me understand what's driving that concern."</em>
+      <br><br>
+      Variations to consider: <em>"What specifically makes you say that?" · "What would it look like if that concern was resolved?" · "What's the part of this that feels most uncertain right now?"</em>
+      <br><br>
+      Write the version you will use. Commit to it before the call.
+    </div>
+
+    <div class="workbook-question">The objection most likely to appear on your next call</div>
+    <div class="write-lines-group">
+      <span class="write-line"></span>
+    </div>
+
+    <div class="workbook-question">Surface statement / Underlying concern / Unspoken question / Uncertainty type</div>
+    <div class="write-lines-group">
+      <span class="write-line"></span>
+      <span class="write-line"></span>
+      <span class="write-line"></span>
+      <span class="write-line"></span>
+    </div>
+
+    <div class="workbook-question">Three versions of the Explore Before Respond question — in your words</div>
+    <div class="write-lines-group">
+      <span class="write-line"></span>
+      <span class="write-line"></span>
+      <span class="write-line"></span>
+    </div>
+
+    <div class="workbook-question">The version you will use</div>
+    <div class="write-lines-group">
+      <span class="write-line"></span>
+    </div>
+
+    <div class="workbook-question" style="margin-top: 20px;">After the call — was the pre-call diagnosis accurate?</div>
+    <div class="write-lines-group">
+      <span class="write-line"></span>
+      <span class="write-line"></span>
+    </div>
+
+    <div class="workbook-question">What did the question actually surface?</div>
+    <div class="write-lines-group">
+      <span class="write-line"></span>
+      <span class="write-line"></span>
+    </div>
+  </div>
+
+  <!-- SECTION: Today's Practice Drill -->
+  <div class="section-label">Today's Practice Drill</div>
+
+  <div class="drill-box">
+    <span class="drill-label">Drill · Day 14 · Objection Diagnosis</span>
+    <p>Before your next call: identify the one objection most likely to appear. Run the three-layer dissection. Write the Explore Before Respond question you will use.</p>
+    <p><strong>During the call: when the objection lands, ask the question before you say anything else.</strong> Not a reframe. Not a response. One question.</p>
+    <p>After the call: record whether the pre-call diagnosis was correct. Record what the question surfaced. Two sentences.</p>
+    <p>This is reconnaissance, not technique. The data collected in the post-call debrief is what makes the Objection Dissection exercise more precise every time you use it.</p>
+    <p>Pre-call preparation: 90 seconds. Post-call debrief: 3 minutes.</p>
+    <p>No live call today: take the objection you dissected in Exercise 2. Write what you predict the buyer would say if you asked the Explore Before Respond question — and what that prediction tells you about how you currently read that objection.</p>
+  </div>
+
+  <!-- END OF DAY -->
+  <div class="section-label">End of Day — Day 14</div>
+
+  <div class="eod-block">
+    <span class="workbook-label">End of Day Reflection</span>
+    <div class="workbook-instruction">Three questions. Two lines each.</div>
+
+    <div class="workbook-question">1. Which objection in your Objection Dissection had the most distance between the surface statement and the unspoken question?</div>
+    <div class="write-lines-group">
+      <span class="write-line"></span>
+      <span class="write-line"></span>
+    </div>
+
+    <div class="workbook-question">2. Where have you been responding to the surface statement when you should have been asking?</div>
+    <div class="write-lines-group">
+      <span class="write-line"></span>
+      <span class="write-line"></span>
+    </div>
+
+    <div class="workbook-question">3. The Explore Before Respond rule — write the exact moment in a call when you are most tempted to respond before asking. That is the moment you are training against.</div>
+    <div class="write-lines-group">
+      <span class="write-line"></span>
+      <span class="write-line"></span>
+    </div>
+  </div>
+
+</div><!-- end content-area -->
+
+<!-- ── FOOTER ── -->
+<footer class="day-footer">
+  <div class="footer-left">
+    Executive Conditioning System™ · Sales Conditioning<br>
+    © 2026 Aivorya AS · Licensed for personal use only · Not for redistribution · Day 14 of 30
+  </div>
+  <div class="footer-right">
+    <span class="footer-tomorrow-label">Tomorrow</span>
+    <span class="footer-tomorrow-title">Day 15 — Price Conversations</span>
+  </div>
+</footer>
+
+</body>
+</html>

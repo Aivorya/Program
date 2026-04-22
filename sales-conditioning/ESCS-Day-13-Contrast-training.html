@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Executive Conditioning System™ — Day 13</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Jost:wght@300;400;500;600&family=Martian+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper:        #F0EBE1;
+    --paper-deep:   #E8E1D5;
+    --ink:          #1A1510;
+    --ink-mid:      #4A3F35;
+    --ink-light:    #8A7D72;
+    --accent:       #A87840;
+    --accent-light: #C4975A;
+    --accent-muted: rgba(168, 120, 64, 0.12);
+    --dark:         #2E2820;
+    --rule:         rgba(168, 120, 64, 0.25);
+    --write-line:   rgba(26, 21, 16, 0.15);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Lora', serif;
+    line-height: 1.7;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* ─── PHASE COVER ─── */
+  .phase-cover {
+    background: var(--dark);
+    padding: 72px 64px 64px;
+    position: relative;
+    overflow: hidden;
+    border-top: 3px solid var(--accent);
+  }
+
+  .phase-cover__ghost {
+    position: absolute;
+    top: -40px;
+    right: -20px;
+    font-family: 'Lora', serif;
+    font-size: 420px;
+    font-weight: 600;
+    color: #ffffff;
+    opacity: 0.03;
+    line-height: 1;
+    user-select: none;
+    pointer-events: none;
+  }
+
+  .phase-cover__eyebrow {
+    font-family: 'Martian Mono', monospace;
+    font-size: 7pt;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent-light);
+    margin-bottom: 40px;
+  }
+
+  .phase-cover__label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 8pt;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 16px;
+  }
+
+  .phase-cover__title {
+    font-family: 'Lora', serif;
+    font-size: 52pt;
+    font-weight: 600;
+    color: var(--paper);
+    line-height: 1.05;
+    margin-bottom: 28px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .phase-cover__subtitle {
+    font-family: 'Jost', sans-serif;
+    font-size: 11pt;
+    font-weight: 300;
+    color: var(--ink-light);
+    line-height: 1.75;
+    max-width: 560px;
+    margin-bottom: 64px;
+  }
+
+  .phase-cover__meta {
+    border-top: 1px solid rgba(168, 120, 64, 0.3);
+    padding-top: 20px;
+    display: flex;
+    gap: 40px;
+    align-items: center;
+  }
+
+  .phase-cover__meta-item {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 300;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+  }
+
+  .phase-cover__meta-item span {
+    display: block;
+    font-size: 5.5pt;
+    color: rgba(138, 125, 114, 0.6);
+    margin-bottom: 3px;
+    letter-spacing: 0.1em;
+  }
+
+  /* ─── MASTHEAD ─── */
+  .masthead {
+    background: var(--dark);
+    border-bottom: 1px solid rgba(168, 120, 64, 0.3);
+    padding: 14px 64px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .masthead__left {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 300;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+  }
+
+  .masthead__left .highlight {
+    color: var(--accent-light);
+  }
+
+  .masthead__right {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  /* ─── DAY HEADER ─── */
+  .day-header {
+    padding: 48px 64px 40px;
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 0;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .day-header__number {
+    font-family: 'Lora', serif;
+    font-size: 88pt;
+    font-weight: 600;
+    color: var(--accent);
+    opacity: 0.65;
+    line-height: 0.9;
+    padding-top: 8px;
+  }
+
+  .day-header__right {
+    padding-left: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .day-header__phase-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 10px;
+  }
+
+  .day-header__title {
+    font-family: 'Lora', serif;
+    font-size: 20pt;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.2;
+    margin-bottom: 12px;
+  }
+
+  .day-header__premise {
+    font-family: 'Jost', sans-serif;
+    font-size: 10pt;
+    font-weight: 300;
+    color: var(--ink-mid);
+    line-height: 1.65;
+    max-width: 520px;
+  }
+
+  /* ─── CONTENT AREA ─── */
+  .content-area {
+    padding: 0 64px;
+  }
+
+  /* ─── SECTION LABEL ─── */
+  .section-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 10px;
+    margin-top: 48px;
+    margin-bottom: 0;
+  }
+
+  /* ─── EMAIL BLOCK ─── */
+  .email-block {
+    border: 1px solid var(--rule);
+    border-top: none;
+  }
+
+  .email-topbar {
+    background: var(--dark);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .email-topbar__from {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 300;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent-light);
+  }
+
+  .email-topbar__action {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 300;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+  }
+
+  .email-body {
+    background: var(--paper);
+    padding: 32px 36px 36px;
+  }
+
+  .email-body p {
+    font-family: 'Lora', serif;
+    font-size: 11pt;
+    font-weight: 400;
+    line-height: 1.75;
+    color: var(--ink);
+    margin-bottom: 18px;
+  }
+
+  .email-body p:last-child {
+    margin-bottom: 0;
+  }
+
+  .email-body em {
+    font-style: italic;
+  }
+
+  /* ─── SCIENCE BOX ─── */
+  .science-box {
+    background: var(--accent-muted);
+    border-left: 3px solid var(--accent);
+    padding: 24px 28px;
+    margin-top: 32px;
+  }
+
+  .science-box__label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 12px;
+  }
+
+  .science-box p {
+    font-family: 'Jost', sans-serif;
+    font-size: 10pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.7;
+    margin-bottom: 10px;
+  }
+
+  .science-box p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* ─── CALLOUT ─── */
+  .callout {
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    padding: 28px 0;
+    margin-top: 40px;
+    text-align: center;
+  }
+
+  .callout p {
+    font-family: 'Lora', serif;
+    font-size: 14pt;
+    font-style: italic;
+    color: var(--ink-mid);
+    line-height: 1.6;
+    max-width: 440px;
+    margin: 0 auto;
+  }
+
+  /* ─── WORKBOOK BLOCK ─── */
+  .workbook-block {
+    background: var(--paper-deep);
+    border-left: 3px solid var(--accent);
+    padding: 28px 32px;
+    margin-top: 32px;
+  }
+
+  .workbook-block__label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 10px;
+  }
+
+  .workbook-block__title {
+    font-family: 'Jost', sans-serif;
+    font-size: 13pt;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 12px;
+    line-height: 1.3;
+  }
+
+  .workbook-block__instruction {
+    font-family: 'Jost', sans-serif;
+    font-size: 9.5pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.65;
+    margin-bottom: 20px;
+  }
+
+  .workbook-block__instruction strong {
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .workbook-question {
+    font-family: 'Jost', sans-serif;
+    font-size: 10pt;
+    font-weight: 500;
+    color: var(--ink);
+    line-height: 1.5;
+    margin-bottom: 6px;
+    margin-top: 16px;
+  }
+
+  .workbook-question:first-of-type {
+    margin-top: 0;
+  }
+
+  .write-lines {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-bottom: 4px;
+  }
+
+  .write-line {
+    height: 9mm;
+    border-bottom: 1px solid var(--write-line);
+  }
+
+  /* ─── DRILL BOX ─── */
+  .drill-box {
+    background: var(--paper);
+    border-left: 3px solid var(--ink-mid);
+    padding: 24px 28px;
+    margin-top: 32px;
+  }
+
+  .drill-box__label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+    margin-bottom: 12px;
+  }
+
+  .drill-box p {
+    font-family: 'Jost', sans-serif;
+    font-size: 10pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.7;
+    margin-bottom: 10px;
+  }
+
+  .drill-box p:last-child {
+    margin-bottom: 0;
+  }
+
+  .drill-box strong {
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  /* ─── DAY FOOTER ─── */
+  .day-footer {
+    border-top: 1px solid var(--rule);
+    margin-top: 48px;
+    padding: 24px 64px 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    page-break-inside: avoid;
+  }
+
+  .day-footer__left {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 300;
+    letter-spacing: 0.1em;
+    color: var(--ink-light);
+    line-height: 1.8;
+    text-transform: uppercase;
+  }
+
+  .day-footer__right {
+    text-align: right;
+  }
+
+  .day-footer__tomorrow-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 4px;
+  }
+
+  .day-footer__tomorrow-title {
+    font-family: 'Jost', sans-serif;
+    font-size: 9pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+  }
+
+  /* ─── PRINT ─── */
+  @media print {
+    .phase-cover {
+      background: white !important;
+      border-bottom: 2px solid var(--accent);
+      color: var(--ink) !important;
+    }
+    .phase-cover__ghost { display: none !important; }
+    .phase-cover__eyebrow,
+    .phase-cover__label { color: var(--accent) !important; }
+    .phase-cover__title { color: var(--ink) !important; }
+    .phase-cover__subtitle { color: var(--ink-mid) !important; }
+    .phase-cover__meta { border-top-color: var(--rule) !important; }
+    .phase-cover__meta-item { color: var(--ink-mid) !important; }
+    .phase-cover__meta-item span { color: var(--ink-light) !important; }
+
+    .masthead {
+      background: white !important;
+      color: var(--ink) !important;
+    }
+    .masthead__left,
+    .masthead__left .highlight,
+    .masthead__right { color: var(--ink) !important; }
+
+    .email-topbar {
+      background: white !important;
+      border-bottom: 1px solid #CCCCCC;
+    }
+    .email-topbar__from,
+    .email-topbar__action { color: var(--ink-mid) !important; }
+
+    .email-body {
+      border: 1px solid #CCCCCC !important;
+      border-top: none !important;
+    }
+
+    .email-body p,
+    .science-box p,
+    .workbook-block__instruction,
+    .workbook-question,
+    .drill-box p { color: var(--ink) !important; }
+
+    .science-box,
+    .workbook-block {
+      background: #F5F5F5 !important;
+      page-break-inside: avoid;
+    }
+
+    .drill-box { page-break-inside: avoid; }
+
+    .write-line { border-bottom-color: #BBBBBB !important; }
+
+    .day-footer { page-break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- PHASE COVER -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="phase-cover">
+  <div class="phase-cover__ghost">3</div>
+
+  <div class="phase-cover__eyebrow">Executive Conditioning System™ · Sales Conditioning</div>
+
+  <div class="phase-cover__label">Phase 3 — Days 13–22</div>
+
+  <div class="phase-cover__title">Conditioning</div>
+
+  <div class="phase-cover__subtitle">
+    Knowing how to regulate and actually regulating under deliberate pressure are not the same skill. Phase 2 installed the tools. Phase 3 tests whether they hold. Over the next ten days, contrast training, objection rehearsal, and structured AI roleplay apply pressure at the edges of your current tolerance — until regulation stops being a decision and becomes a default.
+  </div>
+
+  <div class="phase-cover__meta">
+    <div class="phase-cover__meta-item">
+      <span>Program</span>
+      Executive Sales Conditioning
+    </div>
+    <div class="phase-cover__meta-item">
+      <span>Phase</span>
+      3 of 5
+    </div>
+    <div class="phase-cover__meta-item">
+      <span>Duration</span>
+      Days 13–22
+    </div>
+    <div class="phase-cover__meta-item">
+      <span>Series</span>
+      An Aivorya Program
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- MASTHEAD -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="masthead">
+  <div class="masthead__left">
+    Executive Conditioning System™ · <span class="highlight">Sales Conditioning</span> · An Aivorya Program
+  </div>
+  <div class="masthead__right">Phase 3 · Day 13</div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- DAY HEADER -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="day-header">
+  <div class="day-header__number">13</div>
+  <div class="day-header__right">
+    <div class="day-header__phase-label">Phase 3 — Conditioning</div>
+    <div class="day-header__title">Contrast Training — Calibration</div>
+    <div class="day-header__premise">Before you can train regulation under pressure, you need to know what regulation actually feels like. Today you calibrate the difference between your regulated and unregulated state — deliberately, across the full emotional range of your domain.</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- CONTENT AREA -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="content-area">
+
+  <!-- Morning Conditioning -->
+  <div class="section-label">Morning Conditioning</div>
+
+  <div class="email-block">
+    <div class="email-topbar">
+      <div class="email-topbar__from">From: Executive Sales Conditioning · Day 13 of 30</div>
+      <div class="email-topbar__action">Read · Then Work</div>
+    </div>
+    <div class="email-body">
+      <p>Phase 3 is harder than Phase 2. That is not a warning. It is an explanation of the mechanism.</p>
+
+      <p>Anders Ericsson spent three decades studying expert performance — musicians, surgeons, chess players, athletes. The consistent finding was precise: <em>durable improvement comes from practice at the edge of current ability</em>, not from accumulating repetitions within the comfortable range. Deliberate practice is defined by working at the limit of what you can currently do, with specific targets and immediate feedback. Comfortable practice produces a narrower version of what you already are.</p>
+
+      <p>Phase 2 was methodical. One tool at a time, installed deliberately, tested at low pressure. Phase 3 applies pressure at the edges. The drills over the next ten days will feel less natural than Phase 2 work. Some will feel artificial. That gap between how the drill feels and how real performance feels is the gap you are closing. The drills that feel disconnected from your real deals in week three are what show up automatically in week five, when the stakes are real and there is no time to think.</p>
+
+      <p>That is the design. Proceed accordingly.</p>
+
+      <p>Today's work is contrast training.</p>
+
+      <p>There is a range of arousal within which your cognitive and physiological systems operate at full capacity. Below it — flat, disengaged, under-stimulated — performance degrades through disconnection. Above it — flooded, reactive, over-activated — performance degrades through automatic pattern execution. You stop thinking and start reacting.</p>
+
+      <p>That range is not fixed. It expands with deliberate practice at both edges.</p>
+
+      <p>Most salespeople train implicitly. Calls happen, some go well, some do not, experience accumulates. The result is a performance range calibrated to moderate conditions. When a conversation goes to either extreme — a fully cooperative buyer or a buyer who will not move — the automatic response fires before any deliberate choice is possible. A certain win produces complacency. A certain loss produces a defensive reaction. Both are regulation failures.</p>
+
+      <p>Contrast training addresses this directly. Today you run both extremes deliberately: a Guaranteed Yes and a Guaranteed No. The purpose of the Guaranteed Yes is not to practice winning. It is to anchor — physiologically, in your body — what your regulated state actually feels like during a sales conversation. The purpose of the Guaranteed No is not to practice recovering a lost deal. It is to practice staying in that same regulated state when the outcome is already determined as negative.</p>
+
+      <p><em>The regulation is the training. The outcome is irrelevant.</em></p>
+    </div>
+  </div>
+
+  <!-- Science Box -->
+  <div class="science-box">
+    <div class="science-box__label">The Science</div>
+    <p>Performance psychology describes a <em>window of tolerance</em> — the range of physiological arousal within which full cognitive and executive function remain available. Below that window, activation is insufficient for sharp performance. Above it, the prefrontal cortex — responsible for deliberate decision-making and regulation — is progressively overridden by threat-response circuitry.</p>
+    <p>The critical point: this window is trainable. Research on elite performers across sport, medicine, and high-stakes professional environments consistently shows that deliberate exposure to conditions at the outer edges of one's current tolerance expands the range. Ericsson's deliberate practice framework identifies edge-of-ability repetition as the specific condition required for durable structural improvement. Repetition within the comfortable zone reinforces existing patterns. Repetition at the edge changes the underlying capacity.</p>
+    <p>A salesperson who has never deliberately practiced a certain loss has a performance window that does not include it. When a real deal feels like a certain loss, they move outside their functional range — not because the deal is unsalvageable, but because their nervous system has no reference for staying regulated in that condition. Contrast training builds that reference, systematically.</p>
+  </div>
+
+  <!-- Callout after science box -->
+  <div class="callout">
+    <p>A salesperson who has never practiced a certain loss has a performance window that does not include it. Contrast training builds the range that real deals require.</p>
+  </div>
+
+  <!-- Workbook Section Label -->
+  <div class="section-label">Workbook — Day 13</div>
+
+  <!-- Exercise 1 -->
+  <div class="workbook-block">
+    <div class="workbook-block__label">Exercise 1 · Phase 3 Target Identification</div>
+    <div class="workbook-block__title">Name the Pattern Before the Drill</div>
+    <div class="workbook-block__instruction">
+      <strong>Time: 3 minutes.</strong> Before the drills, name the target. Go back to your Day 12 scorecard and look at your two lowest-rated dimensions. Write the one that is most likely to break under pressure — the pattern that appears when a conversation moves against you.
+    </div>
+
+    <div class="workbook-question">The scorecard dimension most likely to break under pressure:</div>
+    <div class="write-lines"><div class="write-line"></div><div class="write-line"></div></div>
+
+    <div class="workbook-question">In a conversation that is going badly, what does that pattern look like specifically — what do you do or say?</div>
+    <div class="write-lines"><div class="write-line"></div><div class="write-line"></div></div>
+
+    <div class="workbook-block__instruction" style="margin-bottom:0; margin-top: 16px;">
+      Hold that answer. You will check against it after the Guaranteed No drill.
+    </div>
+  </div>
+
+  <!-- Exercise 2 -->
+  <div class="workbook-block">
+    <div class="workbook-block__label">Exercise 2 · Guaranteed Yes Drill</div>
+    <div class="workbook-block__title">Anchor the Regulated State</div>
+    <div class="workbook-block__instruction">
+      <strong>Time: 15–20 minutes.</strong> Use one of three formats: AI roleplay (prompt a cooperative buyer who agrees readily, raises no hard objections, and moves toward close); a colleague briefed to be easy; or self-narration (run the conversation aloud as both participants). Five interactions minimum. Each does not need to be a complete call — five objection moments with a cooperative buyer is sufficient. Keep each to 3–4 minutes.<br><br>
+      <strong>The task:</strong> While running each conversation, attend to your internal state rather than the conversation outcome. The outcome is already decided. Your attention goes elsewhere: breath rate, postural ease, pace of speech, quality of focus. What does regulation feel like in your body when the conversation is going well?
+    </div>
+
+    <div class="workbook-question">How would you describe your internal state during the Guaranteed Yes? Be specific — breath, posture, pace, attention.</div>
+    <div class="write-lines"><div class="write-line"></div><div class="write-line"></div><div class="write-line"></div></div>
+
+    <div class="workbook-question">What is the clearest physical marker of your regulated state — the one thing you will use as a reference point before every call from here forward?</div>
+    <div class="write-lines"><div class="write-line"></div><div class="write-line"></div></div>
+
+    <div class="workbook-block__instruction" style="margin-bottom:0; margin-top: 16px;">
+      This is your anchor. The target state for every conversation — not just easy ones.
+    </div>
+  </div>
+
+  <!-- Exercise 3 -->
+  <div class="workbook-block">
+    <div class="workbook-block__label">Exercise 3 · Guaranteed No Drill</div>
+    <div class="workbook-block__title">Stay Regulated Through the Loss</div>
+    <div class="workbook-block__instruction">
+      <strong>Time: 15–20 minutes.</strong> Same format options as Exercise 2, but the buyer will not move. Price is wrong. Timing is wrong. They are committed to their current solution. This is not a recoverable situation. Do not attempt to recover it.<br><br>
+      <strong>The task:</strong> Bring the same breath, posture, and quality of attention to this conversation as you brought to the Guaranteed Yes. Not to win. To stay regulated. After each of the five interactions, run five cycles of cyclic sighing before the next — two sharp inhales through the nose, one long slow exhale through the mouth. This resets physiological arousal between repetitions.
+    </div>
+
+    <div class="workbook-question">What was different about your internal state in the Guaranteed No versus the Guaranteed Yes?</div>
+    <div class="write-lines"><div class="write-line"></div><div class="write-line"></div><div class="write-line"></div></div>
+
+    <div class="workbook-question">Go back to Exercise 1. Did the pattern you named appear? What specifically happened?</div>
+    <div class="write-lines"><div class="write-line"></div><div class="write-line"></div></div>
+
+    <div class="workbook-question">At what point in the Guaranteed No drill did regulation break most consistently — and what triggered it?</div>
+    <div class="write-lines"><div class="write-line"></div><div class="write-line"></div></div>
+  </div>
+
+  <!-- Exercise 4 -->
+  <div class="workbook-block">
+    <div class="workbook-block__label">Exercise 4 · Contrast Debrief</div>
+    <div class="workbook-block__title">What the Contrast Reveals</div>
+    <div class="workbook-block__instruction">
+      <strong>Time: 5 minutes.</strong>
+    </div>
+
+    <div class="workbook-question">The regulated state you identified in Exercise 2 — is it accessible when the outcome is negative? What would need to be true for it to be?</div>
+    <div class="write-lines"><div class="write-line"></div><div class="write-line"></div><div class="write-line"></div></div>
+
+    <div class="workbook-question">One specific thing you will watch for in your next live call, based on what appeared in the Guaranteed No drill.</div>
+    <div class="write-lines"><div class="write-line"></div><div class="write-line"></div></div>
+  </div>
+
+  <!-- Callout -->
+  <div class="callout">
+    <p>The regulation is the training. The outcome was never the point.</p>
+  </div>
+
+  <!-- End of Day -->
+  <div class="workbook-block">
+    <div class="workbook-block__label">End of Day — Day 13</div>
+    <div class="workbook-block__title">End of Day Reflection</div>
+    <div class="workbook-block__instruction">Three questions. Two write lines each.</div>
+
+    <div class="workbook-question">What did the contrast between the two drills reveal that a normal call would not have shown you?</div>
+    <div class="write-lines"><div class="write-line"></div><div class="write-line"></div></div>
+
+    <div class="workbook-question">Where in a live call are you most likely to move outside your regulated range — and at what point does it happen?</div>
+    <div class="write-lines"><div class="write-line"></div><div class="write-line"></div></div>
+
+    <div class="workbook-question">One thing you are taking into Day 14.</div>
+    <div class="write-lines"><div class="write-line"></div><div class="write-line"></div></div>
+  </div>
+
+  <!-- Drill Box -->
+  <div class="section-label">Today's Practice Drill</div>
+
+  <div class="drill-box">
+    <div class="drill-box__label">Drill · Contrast Pre-Call Reset</div>
+    <p>Before your next live call, run the Guaranteed Yes state recall: five seconds. Breath settled, posture set, the physical marker you identified in Exercise 2 deliberately placed.</p>
+    <p><strong>Do this before every call today.</strong> Not as a ritual. As a calibration. You are not trying to manufacture ease — you are referencing the state you know is available.</p>
+    <p>After the call, one note: which direction did your arousal move — and did it return to range before the call ended?</p>
+    <p>No live call today: run the Guaranteed Yes state recall before any high-stakes interaction — a manager conversation, a proposal review, any moment where outcome pressure is present. The calibration is the same. Note which direction arousal moved and whether it returned to range.</p>
+  </div>
+
+</div>
+<!-- end .content-area -->
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- DAY FOOTER -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="day-footer">
+  <div class="day-footer__left">
+    Executive Conditioning System™ · Sales Conditioning<br>
+    © 2026 Aivorya AS · Licensed for personal use only · Not for redistribution · Day 13 of 30
+  </div>
+  <div class="day-footer__right">
+    <div class="day-footer__tomorrow-label">Tomorrow</div>
+    <div class="day-footer__tomorrow-title">Objection Anatomy</div>
+  </div>
+</div>
+
+</body>
+</html>

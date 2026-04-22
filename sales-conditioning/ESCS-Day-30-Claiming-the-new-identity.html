@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Executive Conditioning System™ · Sales Conditioning · Day 30</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Jost:wght@300;400;500;600&family=Martian+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper:        #F0EBE1;
+    --paper-deep:   #E8E1D5;
+    --ink:          #1A1510;
+    --ink-mid:      #4A3F35;
+    --ink-light:    #8A7D72;
+    --accent:       #A87840;
+    --accent-light: #C4975A;
+    --accent-muted: rgba(168, 120, 64, 0.12);
+    --dark:         #2E2820;
+    --rule:         rgba(168, 120, 64, 0.25);
+    --write-line:   rgba(26, 21, 16, 0.15);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Jost', sans-serif;
+    font-size: 10pt;
+    line-height: 1.7;
+  }
+
+  /* ── MASTHEAD ── */
+  .masthead {
+    background: var(--dark);
+    border-bottom: 1px solid rgba(168, 120, 64, 0.3);
+    padding: 14px 64px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .masthead-left {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 300;
+    color: var(--ink-light);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .masthead-left span {
+    color: var(--accent-light);
+  }
+  .masthead-right {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 300;
+    color: var(--ink-light);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* ── DAY HEADER ── */
+  .day-header {
+    padding: 48px 64px 40px;
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 0 32px;
+    border-bottom: 1px solid var(--rule);
+    align-items: start;
+  }
+  .day-number {
+    font-family: 'Lora', serif;
+    font-size: 88pt;
+    font-weight: 400;
+    color: var(--accent);
+    opacity: 0.65;
+    line-height: 1;
+    margin-top: -8px;
+  }
+  .day-meta {
+    padding-top: 4px;
+  }
+  .day-phase-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 400;
+    color: var(--accent);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .day-title {
+    font-family: 'Lora', serif;
+    font-size: 20pt;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.25;
+    margin-bottom: 12px;
+  }
+  .day-premise {
+    font-family: 'Jost', sans-serif;
+    font-size: 10pt;
+    font-weight: 300;
+    color: var(--ink-mid);
+    line-height: 1.65;
+    max-width: 520px;
+  }
+
+  /* ── CONTENT AREA ── */
+  .content {
+    padding: 0 64px;
+  }
+
+  /* ── SECTION LABEL ── */
+  .section-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 400;
+    color: var(--accent);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 10px;
+    margin-top: 48px;
+    margin-bottom: 0;
+  }
+
+  /* ── EMAIL BLOCK ── */
+  .email-block {
+    margin-top: 24px;
+  }
+  .email-topbar {
+    background: var(--dark);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .email-topbar-left,
+  .email-topbar-right {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 300;
+    color: var(--ink-light);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .email-body {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-top: none;
+    padding: 32px 36px;
+  }
+  .email-body p {
+    font-family: 'Lora', serif;
+    font-size: 11pt;
+    font-weight: 400;
+    color: var(--ink);
+    line-height: 1.75;
+    margin-bottom: 18px;
+  }
+  .email-body p:last-child { margin-bottom: 0; }
+  .email-body em {
+    font-style: italic;
+  }
+
+  /* ── SCIENCE BOX ── */
+  .science-box {
+    background: var(--accent-muted);
+    border-left: 3px solid var(--accent);
+    padding: 24px 28px;
+    margin-top: 32px;
+  }
+  .science-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 500;
+    color: var(--accent);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .science-box p {
+    font-family: 'Jost', sans-serif;
+    font-size: 10pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.65;
+    margin-bottom: 12px;
+  }
+  .science-box p:last-child { margin-bottom: 0; }
+
+  /* ── CALLOUT ── */
+  .callout {
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    padding: 24px 0;
+    margin-top: 32px;
+    text-align: center;
+  }
+  .callout p {
+    font-family: 'Lora', serif;
+    font-size: 14pt;
+    font-style: italic;
+    color: var(--ink-mid);
+    line-height: 1.5;
+    max-width: 440px;
+    margin: 0 auto;
+  }
+
+  /* ── WORKBOOK BLOCK ── */
+  .workbook-block {
+    background: var(--paper-deep);
+    border-left: 3px solid var(--accent);
+    padding: 28px 32px;
+    margin-top: 32px;
+    page-break-inside: avoid;
+  }
+  .workbook-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 500;
+    color: var(--accent);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .workbook-title {
+    font-family: 'Jost', sans-serif;
+    font-size: 13pt;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 12px;
+    line-height: 1.3;
+  }
+  .workbook-instruction {
+    font-family: 'Jost', sans-serif;
+    font-size: 9.5pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.65;
+    margin-bottom: 20px;
+  }
+  .workbook-instruction p { margin-bottom: 10px; }
+  .workbook-instruction p:last-child { margin-bottom: 0; }
+  .workbook-question {
+    font-family: 'Jost', sans-serif;
+    font-size: 10pt;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 6px;
+    margin-top: 16px;
+    line-height: 1.5;
+  }
+  .workbook-question:first-of-type { margin-top: 0; }
+  .write-line {
+    border-bottom: 1px solid var(--write-line);
+    height: 9mm;
+    margin-bottom: 0;
+    display: block;
+  }
+  .write-lines-2 .write-line + .write-line { margin-top: 0; }
+  .write-lines-3 .write-line + .write-line { margin-top: 0; }
+  .spacer { height: 10px; }
+
+  /* Sub-section within workbook */
+  .workbook-sub {
+    margin-top: 24px;
+    padding-top: 20px;
+    border-top: 1px solid var(--rule);
+  }
+  .workbook-sub:first-child { border-top: none; padding-top: 0; margin-top: 0; }
+
+  /* Distinction example block */
+  .example-block {
+    background: rgba(168,120,64,0.06);
+    border-left: 2px solid var(--accent-light);
+    padding: 14px 18px;
+    margin: 14px 0;
+  }
+  .example-block p {
+    font-family: 'Jost', sans-serif;
+    font-size: 9.5pt;
+    color: var(--ink-mid);
+    line-height: 1.6;
+    margin-bottom: 6px;
+  }
+  .example-block p:last-child { margin-bottom: 0; }
+  .example-block em { font-style: italic; color: var(--ink); }
+
+  /* Sentence starter */
+  .sentence-starter {
+    font-family: 'Jost', sans-serif;
+    font-size: 9.5pt;
+    font-style: italic;
+    color: var(--ink-mid);
+    margin: 12px 0 4px;
+    line-height: 1.6;
+  }
+
+  /* Signature area */
+  .sig-area {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-top: 24px;
+  }
+  .sig-field-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    color: var(--ink-light);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+
+  /* Return protocol step */
+  .return-step {
+    margin-top: 16px;
+    padding-left: 20px;
+    border-left: 2px solid var(--accent-light);
+    padding-top: 4px;
+    padding-bottom: 4px;
+  }
+  .return-step-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    color: var(--accent);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .return-step p {
+    font-family: 'Jost', sans-serif;
+    font-size: 10pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.6;
+  }
+
+  /* Final note */
+  .final-note {
+    margin-top: 40px;
+    padding: 24px 0;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+  }
+  .final-note p {
+    font-family: 'Lora', serif;
+    font-size: 11pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.75;
+    font-style: italic;
+  }
+
+  /* ── FOOTER ── */
+  .day-footer {
+    margin-top: 48px;
+    border-top: 1px solid var(--rule);
+    padding: 20px 64px 48px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    page-break-inside: avoid;
+  }
+  .footer-left {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 300;
+    color: var(--ink-light);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    line-height: 1.8;
+  }
+  .footer-right {
+    text-align: right;
+  }
+  .footer-complete-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 500;
+    color: var(--accent);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .footer-complete-line {
+    font-family: 'Jost', sans-serif;
+    font-size: 9pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+    font-style: italic;
+  }
+
+  /* ── PRINT STYLES ── */
+  @media print {
+    body { background: white; }
+
+    .masthead {
+      background: white !important;
+      border-bottom: 1px solid #CCC;
+    }
+    .masthead-left,
+    .masthead-right { color: var(--ink) !important; }
+    .masthead-left span { color: var(--accent) !important; }
+
+    .email-topbar {
+      background: white !important;
+      border: 1px solid #CCC;
+      border-bottom: none;
+    }
+    .email-topbar-left,
+    .email-topbar-right { color: var(--ink) !important; }
+
+    .email-body { border-color: #CCC !important; }
+
+    .science-box { background: #F5F5F5 !important; }
+    .workbook-block { background: #F5F5F5 !important; }
+    .example-block { background: #EFEFEF !important; }
+
+    .write-line { border-bottom-color: #BBBBBB !important; }
+
+    .workbook-block,
+    .science-box,
+    .day-footer { page-break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════════════════
+     MASTHEAD
+══════════════════════════════════════════════════════════ -->
+<div class="masthead">
+  <div class="masthead-left">Executive Conditioning System™ · <span>Sales Conditioning</span> · An Aivorya Program</div>
+  <div class="masthead-right">Phase 5 · Day 30</div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════
+     DAY HEADER
+══════════════════════════════════════════════════════════ -->
+<div class="day-header">
+  <div class="day-number">30</div>
+  <div class="day-meta">
+    <div class="day-phase-label">Phase 5 — Ownership</div>
+    <div class="day-title">Claiming the New Identity</div>
+    <p class="day-premise">The program ends today. Not with a summary — with a claim. The Identity Declaration 2.0 is supported by thirty days of documented behavioral change. Today you write it, sign it, and design the maintenance structure that makes it last.</p>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════
+     CONTENT AREA
+══════════════════════════════════════════════════════════ -->
+<div class="content">
+
+  <!-- SECTION: Morning Conditioning -->
+  <div class="section-label">Morning Conditioning</div>
+
+  <div class="email-block">
+    <div class="email-topbar">
+      <span class="email-topbar-left">From: Executive Conditioning System™ · Day 30 of 30</span>
+      <span class="email-topbar-right">Read · Then Work</span>
+    </div>
+    <div class="email-body">
+      <p>On Day 01, the premise was this: you cannot change what operates below your notice. You spent five days making the invisible visible — naming the patterns, the triggers, the automatic responses that had been running below the surface of every sales conversation you'd had.</p>
+      <p>That was the diagnosis. What followed was the conditioning.</p>
+      <p>You now have thirty days of behavioral data. Not thirty days of intention — data. Conversations where you held silence instead of filling it. Objections you received with a question instead of a defence. Moments where the regulation ran before the reaction did. Moments where it didn't, and you tracked what happened.</p>
+      <p>Today you write the Declaration. Not <em>"I intend to be"</em> — <em>"I am."</em> The difference is not semantic. It is behavioral. The self-concept functions as a thermostat: it regulates behavior toward its stated position. When you write "I am the kind of salesperson who holds the number without qualification" and back it with a specific instance where you did exactly that, you are not writing aspiration. You are moving the thermostat setting. The self-concept now has a stated position. It will work to confirm it.</p>
+      <p>This is the mechanism. The Declaration is not ceremony. It is the final instrument in a conditioning protocol.</p>
+      <p>Retrieve the document you wrote on Day 05. Read it before you open the workbook.</p>
+    </div>
+  </div>
+
+  <!-- SCIENCE BOX -->
+  <div class="science-box">
+    <div class="science-label">The Science</div>
+    <p>Identity consolidation works through evidence accumulation. The self-concept — first described systematically by William James, extended by self-concept theory across the last century — does not shift through intention or affirmation. It shifts when behavioral evidence accumulates that contradicts the previous self-description, and that contradiction is formalized.</p>
+    <p>The signed declaration is a commitment device (documented in Dan Ariely's research on precommitment and self-binding). Once written and signed, the self-concept treats the stated position as a reference point it has to work to maintain. Reading the Declaration in three months — when regression arrives — is not motivational. It is mechanistic: the self-concept is shown its own stated position and resists contradicting it.</p>
+    <p>Marlatt and Gordon's relapse prevention research documents the decay pattern for conditioned behavior under sustained real-world pressure: new behavior holds under moderate pressure, slips under maximum pressure, and contracts toward the old baseline within 60 to 90 days without a maintenance structure. The maintenance protocol is not optional upkeep. It is the structure that makes the decay recoverable. Regression will occur. The protocol provides a practiced return that is faster than the decay. That is sufficient.</p>
+  </div>
+
+  <!-- SECTION: Workbook -->
+  <div class="section-label">Workbook — Day 30</div>
+
+  <!-- ── EXERCISE 1 ── -->
+  <div class="workbook-block">
+    <div class="workbook-label">Exercise 1 · Day 05 Commitment Declaration Review</div>
+    <div class="workbook-title">Closing the Arc</div>
+    <div class="workbook-instruction">
+      <p>Retrieve the Commitment Declaration you wrote on Day 05. Read it in full before answering here.</p>
+      <p>For each of the three when-then commitments: write the original commitment, whether it was kept — consistently, partially, or not consistently — and one specific conversation or moment that supports your answer. That moment is behavioral data. The unkept commitment names the dimension that needs the most attention in your maintenance protocol.</p>
+    </div>
+
+    <!-- Commitment 1 -->
+    <div class="workbook-sub">
+      <div class="workbook-question">Commitment 1 — Write the original when-then statement</div>
+      <span class="write-line"></span>
+      <span class="write-line"></span>
+      <div class="spacer"></div>
+      <div class="workbook-question">Was it kept: consistently / partially / not consistently</div>
+      <span class="write-line"></span>
+      <div class="spacer"></div>
+      <div class="workbook-question">One specific conversation or moment that supports your answer</div>
+      <span class="write-line"></span>
+      <span class="write-line"></span>
+    </div>
+
+    <!-- Commitment 2 -->
+    <div class="workbook-sub">
+      <div class="workbook-question">Commitment 2 — Write the original when-then statement</div>
+      <span class="write-line"></span>
+      <span class="write-line"></span>
+      <div class="spacer"></div>
+      <div class="workbook-question">Was it kept: consistently / partially / not consistently</div>
+      <span class="write-line"></span>
+      <div class="spacer"></div>
+      <div class="workbook-question">One specific conversation or moment that supports your answer</div>
+      <span class="write-line"></span>
+      <span class="write-line"></span>
+    </div>
+
+    <!-- Commitment 3 -->
+    <div class="workbook-sub">
+      <div class="workbook-question">Commitment 3 — Write the original when-then statement</div>
+      <span class="write-line"></span>
+      <span class="write-line"></span>
+      <div class="spacer"></div>
+      <div class="workbook-question">Was it kept: consistently / partially / not consistently</div>
+      <span class="write-line"></span>
+      <div class="spacer"></div>
+      <div class="workbook-question">One specific conversation or moment that supports your answer</div>
+      <span class="write-line"></span>
+      <span class="write-line"></span>
+    </div>
+  </div>
+
+  <!-- ── EXERCISE 2 ── -->
+  <div class="workbook-block">
+    <div class="workbook-label">Exercise 2 · Identity Declaration 2.0</div>
+    <div class="workbook-title">The Claim — Backed by Evidence</div>
+    <div class="workbook-instruction">
+      <p>This is the most formally structured exercise in the program.</p>
+      <p>Write five to eight claims. Each claim must follow this exact format, with no variation:</p>
+    </div>
+
+    <div class="example-block">
+      <p><em>"I am the kind of salesperson who [specific behavior] — evidenced by [specific instance from your Day 28 evidence inventory or Day 29 attribution inventory]."</em></p>
+    </div>
+
+    <div class="workbook-instruction" style="margin-top: 16px;">
+      <p>The instance must be specific: a conversation type, a moment, an outcome you can locate. A claim without a specific instance does not belong in the Declaration. Write a different claim you can support.</p>
+    </div>
+
+    <div class="example-block">
+      <p><strong>Day 03:</strong> <em>"I am the kind of salesperson who stays calm under pressure."</em></p>
+      <p style="margin-top: 8px;"><strong>Day 30:</strong> <em>"I am the kind of salesperson who holds silence after stating a price — evidenced by the conversation with [buyer type, approximate date] where I gave the number, held five seconds, and the buyer responded with a question rather than an objection."</em></p>
+    </div>
+
+    <div class="workbook-instruction" style="margin-top: 14px;">
+      <p>The general claim is aspiration. The specific claim with an instance is evidence. Write evidence.</p>
+    </div>
+
+    <!-- Claims 1–8 -->
+    <div class="workbook-sub">
+      <div class="workbook-question">Claim 1</div>
+      <span class="write-line"></span>
+      <span class="write-line"></span>
+      <span class="write-line"></span>
+    </div>
+    <div class="workbook-sub">
+      <div class="workbook-question">Claim 2</div>
+      <span class="write-line"></span>
+      <span class="write-line"></span>
+      <span class="write-line"></span>
+    </div>
+    <div class="workbook-sub">
+      <div class="workbook-question">Claim 3</div>
+      <span class="write-line"></span>
+      <span class="write-line"></span>
+      <span class="write-line"></span>
+    </div>
+    <div class="workbook-sub">
+      <div class="workbook-question">Claim 4</div>
+      <span class="write-line"></span>
+      <span class="write-line"></span>
+      <span class="write-line"></span>
+    </div>
+    <div class="workbook-sub">
+      <div class="workbook-question">Claim 5</div>
+      <span class="write-line"></span>
+      <span class="write-line"></span>
+      <span class="write-line"></span>
+    </div>
+    <div class="workbook-sub">
+      <div class="workbook-question">Claim 6 <span style="font-weight:300;color:var(--ink-light);font-size:9pt;">(optional)</span></div>
+      <span class="write-line"></span>
+      <span class="write-line"></span>
+      <span class="write-line"></span>
+    </div>
+    <div class="workbook-sub">
+      <div class="workbook-question">Claim 7 <span style="font-weight:300;color:var(--ink-light);font-size:9pt;">(optional)</span></div>
+      <span class="write-line"></span>
+      <span class="write-line"></span>
+      <span class="write-line"></span>
+    </div>
+    <div class="workbook-sub">
+      <div class="workbook-question">Claim 8 <span style="font-weight:300;color:var(--ink-light);font-size:9pt;">(optional)</span></div>
+      <span class="write-line"></span>
+      <span class="write-line"></span>
+      <span class="write-line"></span>
+    </div>
+
+    <!-- Signature -->
+    <div class="workbook-sub">
+      <div class="workbook-instruction">
+        <p>The signature is not ceremony. It is the commitment device. The Declaration is an external reference point — one the self-concept will work to confirm. Sign it.</p>
+      </div>
+      <div class="sig-area">
+        <div>
+          <div class="sig-field-label">Signature</div>
+          <span class="write-line"></span>
+        </div>
+        <div>
+          <div class="sig-field-label">Date</div>
+          <span class="write-line"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── EXERCISE 3 ── -->
+  <div class="workbook-block">
+    <div class="workbook-label">Exercise 3 · 90-Day Maintenance Protocol</div>
+    <div class="workbook-title">The Structure That Makes It Last</div>
+    <div class="workbook-instruction">
+      <p>Write each component in the first person. These are commitments you are making today — not templates you are filling in. The participant who writes a vague commitment here will not execute it in six weeks. Be specific.</p>
+    </div>
+
+    <!-- Daily -->
+    <div class="workbook-sub">
+      <div class="workbook-question">Daily — Pre-Call Ritual</div>
+      <div class="workbook-instruction" style="margin-bottom:8px;">
+        <p>Name the call type that triggers the full five-step pre-call protocol from Day 09, and when you will run it.</p>
+      </div>
+      <p class="sentence-starter">"I will run the full pre-call protocol before _________________ every _________________."</p>
+      <span class="write-line"></span>
+      <span class="write-line"></span>
+    </div>
+
+    <!-- Weekly -->
+    <div class="workbook-sub">
+      <div class="workbook-question">Weekly — Post-Call Debrief</div>
+      <div class="workbook-instruction" style="margin-bottom:8px;">
+        <p>Name the day, the call type, and the three questions from Day 23.</p>
+      </div>
+      <p class="sentence-starter">"Each _________________ I will debrief _________________ using the three questions from Day 23."</p>
+      <span class="write-line"></span>
+      <span class="write-line"></span>
+    </div>
+
+    <!-- Monthly -->
+    <div class="workbook-sub">
+      <div class="workbook-question">Monthly — Contrast Training</div>
+      <div class="workbook-instruction" style="margin-bottom:8px;">
+        <p>Name the specific anchor — first Monday, last Friday. Pick one and write it.</p>
+      </div>
+      <p class="sentence-starter">"On _________________ I will run one Guaranteed Yes and one Guaranteed No session."</p>
+      <span class="write-line"></span>
+      <span class="write-line"></span>
+    </div>
+
+    <!-- Quarterly -->
+    <div class="workbook-sub">
+      <div class="workbook-question">Quarterly — AI Roleplay</div>
+      <div class="workbook-instruction" style="margin-bottom:8px;">
+        <p>Name the quarter anchor: first week of Q2, first Monday of each quarter.</p>
+      </div>
+      <p class="sentence-starter">"At _________________ I will run one full AI roleplay session — resistant buyer or high-stakes close — with the three-round debrief from Day 21."</p>
+      <span class="write-line"></span>
+      <span class="write-line"></span>
+    </div>
+  </div>
+
+  <!-- ── EXERCISE 4 ── -->
+  <div class="workbook-block">
+    <div class="workbook-label">Exercise 4 · Return Protocol</div>
+    <div class="workbook-title">When Regression Appears</div>
+    <div class="workbook-instruction">
+      <p>Write this as an instruction to yourself under pressure. It will be read when regulation has slipped and the old patterns have returned. Write it clearly enough to follow in that condition.</p>
+    </div>
+
+    <div class="return-step">
+      <div class="return-step-label">Step 1</div>
+      <p>Immediately after the call where regulation failed, run the Day 19 3-Step Reset. Do not wait until the next day.</p>
+    </div>
+
+    <div class="return-step">
+      <div class="return-step-label">Step 2</div>
+      <p>Run the Day 26 Regression Mapping exercise. Identify the trigger, the specific pattern that returned, the cost to the conversation, and the reset time.</p>
+    </div>
+
+    <div class="return-step">
+      <div class="return-step-label">Step 3</div>
+      <p>Within 48 hours, schedule one Guaranteed No session. Not to punish — to re-establish the physiological baseline.</p>
+    </div>
+
+    <div class="workbook-sub" style="margin-top: 24px;">
+      <div class="workbook-question">Name the specific trigger most likely to produce regression for you — based on what Day 26 showed</div>
+      <span class="write-line"></span>
+      <span class="write-line"></span>
+    </div>
+  </div>
+
+  <!-- SECTION: End of Day -->
+  <div class="section-label">End of Day — Day 30</div>
+
+  <div class="workbook-block">
+    <div class="workbook-label">Reflection · Day 30</div>
+    <div class="workbook-title">Three Questions</div>
+
+    <div class="workbook-question">What is the single strongest piece of evidence in your Declaration?</div>
+    <span class="write-line"></span>
+    <span class="write-line"></span>
+
+    <div class="spacer"></div>
+
+    <div class="workbook-question">Which dimension of the scorecard showed the greatest movement over 30 days?</div>
+    <span class="write-line"></span>
+    <span class="write-line"></span>
+
+    <div class="spacer"></div>
+
+    <div class="workbook-question">Which component of the 90-day maintenance protocol are you most likely to skip — and what will you do when you notice yourself skipping it?</div>
+    <span class="write-line"></span>
+    <span class="write-line"></span>
+  </div>
+
+  <!-- FINAL NOTE -->
+  <div class="final-note">
+    <p>Day 01 opened with the observation that you cannot change what operates below your notice. The Declaration you just signed is evidence of what changed.</p>
+  </div>
+
+</div><!-- /content -->
+
+<!-- ══════════════════════════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════════════════════ -->
+<div class="day-footer">
+  <div class="footer-left">
+    Executive Conditioning System™ · Sales Conditioning<br>
+    © 2026 Aivorya AS · Licensed for personal use only · Not for redistribution · Day 30 of 30
+  </div>
+  <div class="footer-right">
+    <div class="footer-complete-label">Program Complete</div>
+    <div class="footer-complete-line">The pre-call ritual runs tomorrow.</div>
+  </div>
+</div>
+
+</body>
+</html>

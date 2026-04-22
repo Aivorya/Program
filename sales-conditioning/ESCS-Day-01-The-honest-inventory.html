@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Executive Conditioning System™ · Sales Conditioning · Day 01</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Jost:wght@300;400;500;600&family=Martian+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --paper:        #F0EBE1;
+    --paper-deep:   #E8E1D5;
+    --ink:          #1A1510;
+    --ink-mid:      #4A3F35;
+    --ink-light:    #8A7D72;
+    --accent:       #A87840;
+    --accent-light: #C4975A;
+    --accent-muted: rgba(168, 120, 64, 0.12);
+    --dark:         #2E2820;
+    --rule:         rgba(168, 120, 64, 0.25);
+    --write-line:   rgba(26, 21, 16, 0.15);
+  }
+
+  *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Jost', sans-serif;
+    line-height: 1.7;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* ─────────────────────────────────────────────
+     PHASE COVER
+  ───────────────────────────────────────────── */
+  .phase-cover {
+    background: var(--dark);
+    padding: 72px 64px 64px;
+    position: relative;
+    overflow: hidden;
+    border-top: 3px solid var(--accent);
+  }
+
+  .phase-cover__ghost {
+    position: absolute;
+    top: -20px;
+    right: 40px;
+    font-family: 'Lora', serif;
+    font-size: 320px;
+    font-weight: 600;
+    color: white;
+    opacity: 0.03;
+    line-height: 1;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  .phase-cover__eyebrow {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--accent-light);
+    margin-bottom: 32px;
+  }
+
+  .phase-cover__label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 8pt;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--accent);
+    margin-bottom: 16px;
+  }
+
+  .phase-cover__title {
+    font-family: 'Lora', serif;
+    font-size: 38pt;
+    font-weight: 600;
+    color: var(--paper);
+    line-height: 1.15;
+    margin-bottom: 24px;
+    max-width: 580px;
+  }
+
+  .phase-cover__subtitle {
+    font-family: 'Jost', sans-serif;
+    font-size: 11pt;
+    font-weight: 300;
+    color: rgba(240, 235, 225, 0.65);
+    line-height: 1.75;
+    max-width: 520px;
+    margin-bottom: 56px;
+  }
+
+  .phase-cover__meta {
+    border-top: 1px solid rgba(168, 120, 64, 0.3);
+    padding-top: 20px;
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+
+  .phase-cover__meta-item {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--ink-light);
+  }
+
+  .phase-cover__meta-item span {
+    display: block;
+    color: rgba(240, 235, 225, 0.45);
+    margin-bottom: 3px;
+  }
+
+  /* ─────────────────────────────────────────────
+     MASTHEAD
+  ───────────────────────────────────────────── */
+  .masthead {
+    background: var(--dark);
+    border-bottom: 1px solid rgba(168, 120, 64, 0.3);
+    padding: 14px 64px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .masthead__left {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--ink-light);
+  }
+
+  .masthead__left .highlight {
+    color: var(--accent-light);
+  }
+
+  .masthead__right {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--accent);
+  }
+
+  /* ─────────────────────────────────────────────
+     DAY HEADER
+  ───────────────────────────────────────────── */
+  .day-header {
+    padding: 48px 64px 40px;
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 0 32px;
+    border-bottom: 1px solid var(--rule);
+    align-items: start;
+  }
+
+  .day-header__number {
+    font-family: 'Lora', serif;
+    font-size: 88pt;
+    font-weight: 400;
+    color: var(--accent);
+    opacity: 0.65;
+    line-height: 0.9;
+    margin-top: 6px;
+  }
+
+  .day-header__phase-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--accent);
+    margin-bottom: 10px;
+  }
+
+  .day-header__title {
+    font-family: 'Lora', serif;
+    font-size: 20pt;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.25;
+    margin-bottom: 12px;
+  }
+
+  .day-header__premise {
+    font-family: 'Jost', sans-serif;
+    font-size: 10pt;
+    font-weight: 300;
+    color: var(--ink-mid);
+    line-height: 1.65;
+    max-width: 520px;
+  }
+
+  /* ─────────────────────────────────────────────
+     CONTENT AREA
+  ───────────────────────────────────────────── */
+  .content-area {
+    padding: 0 64px;
+  }
+
+  /* ─────────────────────────────────────────────
+     SECTION LABEL
+  ───────────────────────────────────────────── */
+  .section-label {
+    margin-top: 48px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--rule);
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--accent);
+  }
+
+  /* ─────────────────────────────────────────────
+     EMAIL BLOCK
+  ───────────────────────────────────────────── */
+  .email-block {
+    border: 1px solid var(--rule);
+    border-top: none;
+  }
+
+  .email-topbar {
+    background: var(--dark);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .email-topbar__from {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--ink-light);
+  }
+
+  .email-topbar__action {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: rgba(240, 235, 225, 0.35);
+  }
+
+  .email-body {
+    background: var(--paper);
+    padding: 36px 40px 40px;
+  }
+
+  .email-body p {
+    font-family: 'Lora', serif;
+    font-size: 11pt;
+    font-weight: 400;
+    color: var(--ink);
+    line-height: 1.75;
+    margin-bottom: 18px;
+  }
+
+  .email-body p:last-child {
+    margin-bottom: 0;
+  }
+
+  .email-body em {
+    font-style: italic;
+  }
+
+  /* ─────────────────────────────────────────────
+     SCIENCE BOX
+  ───────────────────────────────────────────── */
+  .science-box {
+    background: var(--accent-muted);
+    border-left: 3px solid var(--accent);
+    padding: 24px 28px;
+    margin-top: 24px;
+  }
+
+  .science-box__label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--accent);
+    margin-bottom: 12px;
+  }
+
+  .science-box p {
+    font-family: 'Jost', sans-serif;
+    font-size: 10pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.7;
+    margin-bottom: 10px;
+  }
+
+  .science-box p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* ─────────────────────────────────────────────
+     CALLOUT
+  ───────────────────────────────────────────── */
+  .callout {
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    padding: 28px 20px;
+    margin: 40px auto;
+    max-width: 440px;
+    text-align: center;
+  }
+
+  .callout p {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 14pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.6;
+  }
+
+  /* ─────────────────────────────────────────────
+     WORKBOOK BLOCK
+  ───────────────────────────────────────────── */
+  .workbook-block {
+    background: var(--paper-deep);
+    border-left: 3px solid var(--accent);
+    padding: 28px 32px;
+    margin-top: 24px;
+    page-break-inside: avoid;
+  }
+
+  .workbook-block__label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--accent);
+    margin-bottom: 8px;
+  }
+
+  .workbook-block__title {
+    font-family: 'Jost', sans-serif;
+    font-size: 13pt;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.3;
+    margin-bottom: 10px;
+  }
+
+  .workbook-block__instruction {
+    font-family: 'Jost', sans-serif;
+    font-size: 9.5pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.65;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .workbook-question {
+    margin-bottom: 18px;
+  }
+
+  .workbook-question p {
+    font-family: 'Jost', sans-serif;
+    font-size: 10pt;
+    font-weight: 500;
+    color: var(--ink);
+    line-height: 1.55;
+    margin-bottom: 8px;
+  }
+
+  .write-line {
+    border: none;
+    border-bottom: 1px solid var(--write-line);
+    height: 9mm;
+    display: block;
+    width: 100%;
+    margin-bottom: 2px;
+  }
+
+  .write-line + .write-line {
+    margin-top: 2px;
+  }
+
+  .workbook-group-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--accent);
+    margin-top: 28px;
+    margin-bottom: 16px;
+    padding-top: 16px;
+    border-top: 1px solid var(--rule);
+  }
+
+  /* ─────────────────────────────────────────────
+     AUDIT TABLE
+  ───────────────────────────────────────────── */
+  .audit-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 16px;
+    margin-bottom: 24px;
+  }
+
+  .audit-table thead tr {
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .audit-table th {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--ink-light);
+    padding: 6px 8px 8px;
+    text-align: left;
+  }
+
+  .audit-table th:last-child {
+    text-align: center;
+    width: 120px;
+  }
+
+  .audit-table tbody tr {
+    border-bottom: 1px solid var(--write-line);
+  }
+
+  .audit-table tbody tr:last-child {
+    border-bottom: none;
+  }
+
+  .audit-table td {
+    font-family: 'Jost', sans-serif;
+    font-size: 9.5pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+    padding: 10px 8px;
+    line-height: 1.5;
+    vertical-align: top;
+  }
+
+  .audit-table td:first-child {
+    padding-right: 24px;
+  }
+
+  .audit-table td:last-child {
+    text-align: center;
+    vertical-align: middle;
+  }
+
+  .audit-table .row-num {
+    font-family: 'Martian Mono', monospace;
+    font-size: 7pt;
+    color: var(--ink-light);
+    margin-right: 8px;
+  }
+
+  .rating-box {
+    display: inline-block;
+    width: 44px;
+    height: 26px;
+    border: 1px solid var(--rule);
+    background: var(--paper);
+  }
+
+  /* ─────────────────────────────────────────────
+     DRILL BOX
+  ───────────────────────────────────────────── */
+  .drill-box {
+    background: var(--paper);
+    border-left: 3px solid var(--ink-mid);
+    padding: 24px 28px;
+    margin-top: 24px;
+    page-break-inside: avoid;
+  }
+
+  .drill-box__label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--ink-light);
+    margin-bottom: 12px;
+  }
+
+  .drill-box p {
+    font-family: 'Jost', sans-serif;
+    font-size: 10pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.7;
+    margin-bottom: 10px;
+  }
+
+  .drill-box p:last-child {
+    margin-bottom: 0;
+  }
+
+  .drill-box strong {
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  /* ─────────────────────────────────────────────
+     DAY FOOTER
+  ───────────────────────────────────────────── */
+  .day-footer {
+    margin-top: 48px;
+    padding: 20px 64px 48px;
+    border-top: 1px solid var(--rule);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    page-break-inside: avoid;
+  }
+
+  .day-footer__left {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 300;
+    color: var(--ink-light);
+    line-height: 1.8;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+  }
+
+  .day-footer__right {
+    text-align: right;
+  }
+
+  .day-footer__tomorrow-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--accent);
+    margin-bottom: 4px;
+  }
+
+  .day-footer__tomorrow-title {
+    font-family: 'Jost', sans-serif;
+    font-size: 9pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+  }
+
+  /* ─────────────────────────────────────────────
+     PRINT STYLESHEET
+  ───────────────────────────────────────────── */
+  @media print {
+    .phase-cover {
+      background: white !important;
+      border-bottom: 2px solid var(--accent);
+    }
+
+    .phase-cover__ghost {
+      display: none;
+    }
+
+    .phase-cover__eyebrow,
+    .phase-cover__label {
+      color: var(--accent) !important;
+    }
+
+    .phase-cover__title {
+      color: var(--ink) !important;
+    }
+
+    .phase-cover__subtitle {
+      color: var(--ink-mid) !important;
+    }
+
+    .phase-cover__meta-item {
+      color: var(--ink-light) !important;
+    }
+
+    .phase-cover__meta-item span {
+      color: var(--ink-mid) !important;
+    }
+
+    .masthead {
+      background: white !important;
+    }
+
+    .masthead__left,
+    .masthead__left .highlight,
+    .masthead__right {
+      color: var(--ink) !important;
+    }
+
+    .email-topbar {
+      background: white !important;
+      border-bottom: 1px solid #CCCCCC;
+    }
+
+    .email-topbar__from,
+    .email-topbar__action {
+      color: var(--ink-mid) !important;
+    }
+
+    .email-body {
+      border: 1px solid #CCCCCC;
+    }
+
+    .science-box {
+      background: #F5F5F5 !important;
+      page-break-inside: avoid;
+    }
+
+    .workbook-block {
+      background: #F5F5F5 !important;
+      page-break-inside: avoid;
+    }
+
+    .drill-box {
+      page-break-inside: avoid;
+    }
+
+    .write-line {
+      border-bottom: 1px solid #BBBBBB;
+    }
+
+    .rating-box {
+      border: 1px solid #BBBBBB !important;
+    }
+
+    .day-footer {
+      page-break-inside: avoid;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- ─────────────────────────────────────────────
+     PHASE COVER — Phase 1
+───────────────────────────────────────────── -->
+<div class="phase-cover">
+  <div class="phase-cover__ghost">1</div>
+  <div class="phase-cover__eyebrow">Executive Conditioning System™ · Sales Conditioning</div>
+  <div class="phase-cover__label">Phase 1 — Days 01–05</div>
+  <h1 class="phase-cover__title">Diagnosis</h1>
+  <p class="phase-cover__subtitle">You cannot change what you cannot see. Phase 1 installs the observer — the ability to watch your own patterns without being pulled into them. Nothing is fixed here. Everything is named. The five days that follow are reconnaissance, not remediation.</p>
+  <div class="phase-cover__meta">
+    <div class="phase-cover__meta-item">
+      <span>Program</span>
+      Executive Sales Conditioning
+    </div>
+    <div class="phase-cover__meta-item">
+      <span>Phase</span>
+      1 of 5
+    </div>
+    <div class="phase-cover__meta-item">
+      <span>Duration</span>
+      5 Business Days
+    </div>
+    <div class="phase-cover__meta-item">
+      <span>Series</span>
+      An Aivorya Program
+    </div>
+  </div>
+</div>
+
+<!-- ─────────────────────────────────────────────
+     MASTHEAD
+───────────────────────────────────────────── -->
+<div class="masthead">
+  <div class="masthead__left">
+    Executive Conditioning System™ · <span class="highlight">Sales Conditioning</span> · An Aivorya Program
+  </div>
+  <div class="masthead__right">Phase 1 · Day 01</div>
+</div>
+
+<!-- ─────────────────────────────────────────────
+     DAY HEADER
+───────────────────────────────────────────── -->
+<div class="day-header">
+  <div class="day-header__number">01</div>
+  <div>
+    <div class="day-header__phase-label">Phase 1 — Diagnosis</div>
+    <h2 class="day-header__title">The Honest Inventory</h2>
+    <p class="day-header__premise">You cannot change what you cannot see. Before anything is trained, everything must be named.</p>
+  </div>
+</div>
+
+<!-- ─────────────────────────────────────────────
+     CONTENT AREA
+───────────────────────────────────────────── -->
+<div class="content-area">
+
+  <!-- SECTION LABEL: Morning Conditioning -->
+  <div class="section-label">Morning Conditioning</div>
+
+  <!-- EMAIL BLOCK -->
+  <div class="email-block">
+    <div class="email-topbar">
+      <div class="email-topbar__from">From: Executive Conditioning System™ · Day 01 of 30</div>
+      <div class="email-topbar__action">Read · Then Work</div>
+    </div>
+    <div class="email-body">
+      <p>Most salespeople know their numbers. They track pipeline, monitor close rates, review the month. What they do not track — and what determines all of those numbers — is what happens inside a conversation when pressure arrives.</p>
+
+      <p>Not the technique. The response.</p>
+
+      <p>When a buyer goes quiet after the price. When a competitor is named. When the call takes longer to get going than it should and something in the room shifts. In these moments, most salespeople stop performing and start reacting. The conversation continues. The words are professional. But the frame has changed — and the buyer feels it before they can name it.</p>
+
+      <p>This program starts here, not because it is an interesting place to start, but because nothing else works until this is visible. Identity shifts do not hold. Technique training does not hold. Objection responses do not hold. None of it holds when the pattern that fires under pressure runs deeper than the training.</p>
+
+      <p>Day 1 is not an introduction. It is the first data collection session.</p>
+
+      <p>You are going to look at three moments in the last ninety days where pressure arrived — a stalled deal, a price challenge, a call made directly after losing something — and you are going to write what you actually did. Not the professional version. Not what you would do differently now. What happened.</p>
+
+      <p>This is uncomfortable to do with precision. That discomfort is the point. The degree to which it is uncomfortable is proportional to how clearly you are seeing it.</p>
+    </div>
+  </div>
+
+  <!-- SCIENCE BOX -->
+  <div class="science-box">
+    <div class="science-box__label">The Science</div>
+    <p>Metacognition — the capacity to observe your own mental processes in real time — is consistently associated with better performance under pressure across competitive domains: surgical decision-making, military performance, competitive sport, and sales. The mechanism is specific.</p>
+    <p>Under perceived threat, the brain routes processing through the amygdala faster than the prefrontal cortex can intercept it. The result is a rapid behavioural response that feels like a decision but is pattern replay. The person is not choosing to over-explain or concede early. The pattern fires before the choice is available.</p>
+    <p>Training metacognitive awareness does not slow the threat response. It creates a second track that can observe the response as it fires — which is the precondition for interrupting it. You cannot redirect something you have not yet noticed. Day 1 begins installing that second track. The Self-Witness Journal is not reflection for its own sake. It is the first session of pattern observation under controlled conditions — low stakes, high honesty.</p>
+  </div>
+
+  <!-- CALLOUT -->
+  <div class="callout">
+    <p>Most salespeople have an accurate picture of their skills and a distorted picture of how those skills hold up under pressure. The distance between those two pictures is where this program works.</p>
+  </div>
+
+  <!-- SECTION LABEL: Workbook -->
+  <div class="section-label">Workbook — Day 01</div>
+
+  <!-- WORKBOOK BLOCK: Exercise 1 -->
+  <div class="workbook-block">
+    <div class="workbook-block__label">Exercise 1 · Self-Witness Journal</div>
+    <div class="workbook-block__title">Three High-Pressure Moments — What Actually Happened</div>
+    <div class="workbook-block__instruction">Write without editing. Do not describe what you should have done. Do not describe your intention. Write what actually happened — specifically, in that moment. Give each moment 5–7 minutes. Do not move to the next one until the current one is finished.</div>
+
+    <!-- Moment 1 -->
+    <div class="workbook-group-label">Moment 1 — A deal that stalled or was lost in the last 90 days</div>
+
+    <div class="workbook-question">
+      <p>What was the point in the conversation where something shifted?</p>
+      <span class="write-line"></span>
+      <span class="write-line"></span>
+    </div>
+
+    <div class="workbook-question">
+      <p>What did you do in response? Name the specific behaviour — not the intention behind it.</p>
+      <span class="write-line"></span>
+      <span class="write-line"></span>
+    </div>
+
+    <div class="workbook-question">
+      <p>What was happening in your body at that moment?</p>
+      <span class="write-line"></span>
+    </div>
+
+    <div class="workbook-question">
+      <p>What story did you construct to explain what happened — and whose fault did it land on?</p>
+      <span class="write-line"></span>
+      <span class="write-line"></span>
+    </div>
+
+    <!-- Moment 2 -->
+    <div class="workbook-group-label">Moment 2 — A conversation where price or budget came up and you felt it</div>
+
+    <div class="workbook-question">
+      <p>What changed in your delivery when the number was questioned?</p>
+      <span class="write-line"></span>
+      <span class="write-line"></span>
+    </div>
+
+    <div class="workbook-question">
+      <p>Did you concede, justify, or hold? If you justified, how long did you keep going?</p>
+      <span class="write-line"></span>
+      <span class="write-line"></span>
+    </div>
+
+    <div class="workbook-question">
+      <p>What were you trying to avoid?</p>
+      <span class="write-line"></span>
+      <span class="write-line"></span>
+    </div>
+
+    <!-- Moment 3 -->
+    <div class="workbook-group-label">Moment 3 — A call made directly after a difficult conversation or a lost deal</div>
+
+    <div class="workbook-question">
+      <p>Were you carrying anything from the previous conversation into this one? What did that look like in practice?</p>
+      <span class="write-line"></span>
+      <span class="write-line"></span>
+    </div>
+
+    <div class="workbook-question">
+      <p>Did the next buyer experience a different version of you than they deserved to?</p>
+      <span class="write-line"></span>
+      <span class="write-line"></span>
+    </div>
+
+  </div>
+
+  <!-- WORKBOOK BLOCK: Exercise 2 -->
+  <div class="workbook-block">
+    <div class="workbook-block__label">Exercise 2 · Top 1% Audit</div>
+    <div class="workbook-block__title">The Gap Map — 10 Behaviors, Rated Honestly</div>
+    <div class="workbook-block__instruction">Rate yourself 1–10 on each behavior. 1 is rarely or never. 10 is consistently, even under pressure. Do not average upward. This is your gap map. You will return to it at Day 12, Day 22, and Day 30. Allow 10 minutes. If you are not uncomfortable with at least three of your scores, you are rounding up. Use your last five calls as the reference point, not your best day.</div>
+
+    <table class="audit-table">
+      <thead>
+        <tr>
+          <th>Behaviour</th>
+          <th>Rating (1–10)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="row-num">01</span>Stays regulated when the buyer pushes back on price</td>
+          <td><div class="rating-box"></div></td>
+        </tr>
+        <tr>
+          <td><span class="row-num">02</span>Asks follow-up questions rather than defending when challenged</td>
+          <td><div class="rating-box"></div></td>
+        </tr>
+        <tr>
+          <td><span class="row-num">03</span>Tolerates silence after giving a price or a proposal</td>
+          <td><div class="rating-box"></div></td>
+        </tr>
+        <tr>
+          <td><span class="row-num">04</span>Moves into the next conversation without carrying the previous one</td>
+          <td><div class="rating-box"></div></td>
+        </tr>
+        <tr>
+          <td><span class="row-num">05</span>Does not change tone or pace when a deal looks uncertain</td>
+          <td><div class="rating-box"></div></td>
+        </tr>
+        <tr>
+          <td><span class="row-num">06</span>Asks directly about budget, timeline, and decision process in the first call</td>
+          <td><div class="rating-box"></div></td>
+        </tr>
+        <tr>
+          <td><span class="row-num">07</span>Handles an objection with curiosity rather than a prepared response</td>
+          <td><div class="rating-box"></div></td>
+        </tr>
+        <tr>
+          <td><span class="row-num">08</span>Maintains physical authority on video — posture, stillness, eye contact</td>
+          <td><div class="rating-box"></div></td>
+        </tr>
+        <tr>
+          <td><span class="row-num">09</span>Does not over-explain when the buyer is already decided</td>
+          <td><div class="rating-box"></div></td>
+        </tr>
+        <tr>
+          <td><span class="row-num">10</span>Debriefs every significant call — win or loss — within 24 hours</td>
+          <td><div class="rating-box"></div></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="workbook-group-label">After Scoring — Your Three Lowest</div>
+
+    <div class="workbook-question">
+      <p>Lowest score — behavior number: _______ &nbsp;&nbsp; What does this cost you in a conversation?</p>
+      <span class="write-line"></span>
+      <span class="write-line"></span>
+    </div>
+
+    <div class="workbook-question">
+      <p>Second lowest — behavior number: _______ &nbsp;&nbsp; What does this cost you?</p>
+      <span class="write-line"></span>
+      <span class="write-line"></span>
+    </div>
+
+    <div class="workbook-question">
+      <p>Third lowest — behavior number: _______ &nbsp;&nbsp; What does this cost you?</p>
+      <span class="write-line"></span>
+      <span class="write-line"></span>
+    </div>
+
+  </div>
+
+  <!-- SECTION LABEL: Today's Practice Drill -->
+  <div class="section-label">Today's Practice Drill</div>
+
+  <!-- DRILL BOX -->
+  <div class="drill-box">
+    <div class="drill-box__label">Drill · Day 01 — Pattern Reconnaissance</div>
+    <p>Before your next sales call today, take 90 seconds before dialling.</p>
+    <p><strong>Write down: What pattern am I most likely to run if this call gets uncomfortable?</strong></p>
+    <p>One sentence. Name it specifically. Not "I might get nervous." Name the behaviour: over-explaining, early concession, speeding up, going quiet, pushing to close before the buyer is ready.</p>
+    <p>If you have no live call today, run this against a recorded call from the past week. The pattern is visible there too.</p>
+    <p>After the call, take 3 minutes and write three things: Did it fire. What triggered it. What you did.</p>
+    <p>This is not journaling. It is reconnaissance. The data you collect today is what the next 29 days work from. Two of these behaviors will become your primary conditioning targets. Today's scores determine which ones.</p>
+  </div>
+
+  <!-- SECTION LABEL: End of Day -->
+  <div class="section-label">End of Day — Day 01</div>
+
+  <!-- WORKBOOK BLOCK: End of Day Reflection -->
+  <div class="workbook-block">
+    <div class="workbook-block__label">Reflection · End of Day 01</div>
+    <div class="workbook-block__title">What the Day Produced</div>
+    <div class="workbook-block__instruction">Answer these after your last call or at the end of your working day. Three minutes. Write what actually happened.</div>
+
+    <div class="workbook-question">
+      <p>Did the pattern you named before your call actually fire?</p>
+      <span class="write-line"></span>
+      <span class="write-line"></span>
+    </div>
+
+    <div class="workbook-question">
+      <p>What triggered it?</p>
+      <span class="write-line"></span>
+      <span class="write-line"></span>
+    </div>
+
+    <div class="workbook-question">
+      <p>One thing you are taking into Day 02:</p>
+      <span class="write-line"></span>
+      <span class="write-line"></span>
+    </div>
+
+  </div>
+
+</div><!-- /content-area -->
+
+<!-- ─────────────────────────────────────────────
+     DAY FOOTER
+───────────────────────────────────────────── -->
+<div class="day-footer">
+  <div class="day-footer__left">
+    Executive Conditioning System™ · Sales Conditioning<br>
+    © 2026 Aivorya AS · Licensed for personal use only · Not for redistribution · Day 01 of 30
+  </div>
+  <div class="day-footer__right">
+    <div class="day-footer__tomorrow-label">Tomorrow</div>
+    <div class="day-footer__tomorrow-title">The Trigger Catalogue</div>
+  </div>
+</div>
+
+</body>
+</html>

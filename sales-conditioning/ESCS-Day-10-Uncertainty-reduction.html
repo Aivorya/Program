@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Executive Conditioning System™ · Sales Conditioning · Day 10</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Jost:wght@300;400;500;600&family=Martian+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --paper:        #F0EBE1;
+    --paper-deep:   #E8E1D5;
+    --ink:          #1A1510;
+    --ink-mid:      #4A3F35;
+    --ink-light:    #8A7D72;
+    --accent:       #A87840;
+    --accent-light: #C4975A;
+    --accent-muted: rgba(168, 120, 64, 0.12);
+    --dark:         #2E2820;
+    --rule:         rgba(168, 120, 64, 0.25);
+    --write-line:   rgba(26, 21, 16, 0.15);
+  }
+
+  *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Lora', serif;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ─── MASTHEAD ─── */
+  .masthead {
+    background: var(--dark);
+    border-bottom: 1px solid rgba(168, 120, 64, 0.3);
+    padding: 14px 64px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .masthead-left {
+    font-family: 'Martian Mono', monospace;
+    font-size: 7px;
+    font-weight: 400;
+    color: var(--ink-light);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .masthead-left .highlight {
+    color: var(--accent-light);
+  }
+
+  .masthead-right {
+    font-family: 'Martian Mono', monospace;
+    font-size: 7px;
+    font-weight: 400;
+    color: var(--ink-light);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  /* ─── DAY HEADER ─── */
+  .day-header {
+    padding: 48px 64px 40px;
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 0 32px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .day-number-col {
+    display: flex;
+    align-items: flex-start;
+    padding-top: 4px;
+  }
+
+  .day-number {
+    font-family: 'Lora', serif;
+    font-size: 88px;
+    font-weight: 400;
+    color: var(--accent);
+    opacity: 0.65;
+    line-height: 1;
+    letter-spacing: -2px;
+  }
+
+  .day-meta {
+    padding-top: 8px;
+  }
+
+  .phase-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 7px;
+    font-weight: 400;
+    color: var(--accent);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  .day-title {
+    font-family: 'Lora', serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.3;
+    margin-bottom: 10px;
+  }
+
+  .day-premise {
+    font-family: 'Jost', sans-serif;
+    font-size: 10px;
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.65;
+  }
+
+  /* ─── CONTENT AREA ─── */
+  .content-area {
+    padding: 0 64px;
+  }
+
+  /* ─── SECTION LABEL ─── */
+  .section-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5px;
+    font-weight: 400;
+    color: var(--accent);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 10px;
+    margin-top: 48px;
+    margin-bottom: 0;
+  }
+
+  /* ─── EMAIL BLOCK ─── */
+  .email-block {
+    border: 1px solid var(--rule);
+    border-top: none;
+  }
+
+  .email-topbar {
+    background: var(--dark);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .email-topbar-left {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5px;
+    font-weight: 300;
+    color: var(--ink-light);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .email-topbar-right {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5px;
+    font-weight: 300;
+    color: var(--ink-light);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .email-body {
+    background: var(--paper);
+    padding: 36px 40px 40px;
+  }
+
+  .email-body p {
+    font-family: 'Lora', serif;
+    font-size: 11px;
+    font-weight: 400;
+    color: var(--ink);
+    line-height: 1.75;
+    margin-bottom: 18px;
+  }
+
+  .email-body p:last-child {
+    margin-bottom: 0;
+  }
+
+  .email-body em {
+    font-style: italic;
+  }
+
+  .email-body strong {
+    font-weight: 600;
+  }
+
+  /* ─── SCIENCE BOX ─── */
+  .science-box {
+    background: var(--accent-muted);
+    border-left: 3px solid var(--accent);
+    padding: 24px 28px;
+    margin-top: 32px;
+  }
+
+  .science-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5px;
+    font-weight: 500;
+    color: var(--accent);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .science-box p {
+    font-family: 'Jost', sans-serif;
+    font-size: 10px;
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.65;
+    margin-bottom: 10px;
+  }
+
+  .science-box p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* ─── CALLOUT ─── */
+  .callout {
+    text-align: center;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    padding: 28px 0;
+    margin-top: 32px;
+    max-width: 440px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .callout p {
+    font-family: 'Lora', serif;
+    font-size: 14px;
+    font-weight: 400;
+    font-style: italic;
+    color: var(--ink-mid);
+    line-height: 1.6;
+  }
+
+  /* ─── WORKBOOK BLOCK ─── */
+  .workbook-block {
+    background: var(--paper-deep);
+    border-left: 3px solid var(--accent);
+    padding: 28px 32px;
+    margin-top: 32px;
+    page-break-inside: avoid;
+  }
+
+  .workbook-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5px;
+    font-weight: 500;
+    color: var(--accent);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  .workbook-title {
+    font-family: 'Jost', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.3;
+    margin-bottom: 10px;
+  }
+
+  .workbook-instruction {
+    font-family: 'Jost', sans-serif;
+    font-size: 9.5px;
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.65;
+    margin-bottom: 18px;
+  }
+
+  .workbook-question {
+    font-family: 'Jost', sans-serif;
+    font-size: 10px;
+    font-weight: 500;
+    color: var(--ink);
+    line-height: 1.6;
+    margin-bottom: 6px;
+    margin-top: 14px;
+  }
+
+  .write-line {
+    border: none;
+    border-bottom: 1px solid var(--write-line);
+    height: 9mm;
+    display: block;
+    width: 100%;
+    margin-bottom: 2px;
+  }
+
+  .write-lines-group {
+    margin-bottom: 12px;
+  }
+
+  /* uncertainty type headers inside workbook */
+  .uncertainty-type {
+    font-family: 'Jost', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-top: 20px;
+    margin-bottom: 6px;
+  }
+
+  .language-example {
+    font-family: 'Lora', serif;
+    font-size: 10px;
+    font-style: italic;
+    color: var(--ink-mid);
+    line-height: 1.65;
+    border-left: 2px solid var(--rule);
+    padding-left: 14px;
+    margin-bottom: 8px;
+  }
+
+  .language-structure {
+    font-family: 'Jost', sans-serif;
+    font-size: 9.5px;
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.65;
+    margin-bottom: 6px;
+  }
+
+  /* ─── DRILL BOX ─── */
+  .drill-box {
+    background: var(--paper);
+    border-left: 3px solid var(--ink-mid);
+    padding: 24px 28px;
+    margin-top: 32px;
+    page-break-inside: avoid;
+  }
+
+  .drill-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5px;
+    font-weight: 400;
+    color: var(--ink-light);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .drill-box p {
+    font-family: 'Jost', sans-serif;
+    font-size: 10px;
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.65;
+    margin-bottom: 10px;
+  }
+
+  .drill-box p:last-child {
+    margin-bottom: 0;
+  }
+
+  .drill-box strong {
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  /* ─── END OF DAY ─── */
+  .end-of-day {
+    background: var(--paper-deep);
+    border-left: 3px solid var(--accent);
+    padding: 28px 32px;
+    margin-top: 32px;
+    page-break-inside: avoid;
+  }
+
+  /* ─── DAY FOOTER ─── */
+  .day-footer {
+    margin-top: 48px;
+    border-top: 1px solid var(--rule);
+    padding: 20px 64px 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 32px;
+    page-break-inside: avoid;
+  }
+
+  .footer-left {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6px;
+    font-weight: 300;
+    color: var(--ink-light);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    line-height: 1.8;
+  }
+
+  .footer-right {
+    text-align: right;
+  }
+
+  .footer-tomorrow-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6px;
+    font-weight: 500;
+    color: var(--accent);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+
+  .footer-tomorrow-title {
+    font-family: 'Jost', sans-serif;
+    font-size: 9px;
+    font-weight: 400;
+    color: var(--ink-mid);
+  }
+
+  /* ─── PRINT STYLESHEET ─── */
+  @media print {
+    body {
+      background: white;
+      color: var(--ink);
+    }
+
+    .masthead {
+      background: white !important;
+      border-bottom: 1px solid #CCCCCC;
+    }
+
+    .masthead-left,
+    .masthead-right,
+    .masthead-left .highlight {
+      color: var(--ink) !important;
+    }
+
+    .email-topbar {
+      background: white !important;
+      border-bottom: 1px solid #CCCCCC;
+    }
+
+    .email-topbar-left,
+    .email-topbar-right {
+      color: var(--ink) !important;
+    }
+
+    .email-body {
+      border: 1px solid #CCCCCC;
+      border-top: none;
+    }
+
+    .science-box {
+      background: #F5F5F5 !important;
+    }
+
+    .workbook-block {
+      background: #F5F5F5 !important;
+    }
+
+    .end-of-day {
+      background: #F5F5F5 !important;
+    }
+
+    .write-line {
+      border-bottom: 1px solid #BBBBBB;
+    }
+
+    .workbook-block,
+    .drill-box,
+    .science-box,
+    .end-of-day {
+      page-break-inside: avoid;
+    }
+
+    .day-footer {
+      page-break-inside: avoid;
+    }
+  }
+</style>
+</head>
+<body>
+
+  <!-- ─── MASTHEAD ─── -->
+  <div class="masthead">
+    <div class="masthead-left">
+      Executive Conditioning System™ · <span class="highlight">Sales Conditioning</span> · An Aivorya Program
+    </div>
+    <div class="masthead-right">Phase 2 · Day 10</div>
+  </div>
+
+  <!-- ─── DAY HEADER ─── -->
+  <div class="day-header">
+    <div class="day-number-col">
+      <div class="day-number">10</div>
+    </div>
+    <div class="day-meta">
+      <div class="phase-label">Phase 2 — Foundation</div>
+      <div class="day-title">The Uncertainty Reduction Frame</div>
+      <div class="day-premise">The biggest obstacle in most sales conversations is not price, competition, or timing. It is the buyer's fear that this will not work for them. Everything else is a symptom of that.</div>
+    </div>
+  </div>
+
+  <!-- ─── CONTENT AREA ─── -->
+  <div class="content-area">
+
+    <!-- MORNING CONDITIONING -->
+    <div class="section-label">Morning Conditioning</div>
+
+    <div class="email-block">
+      <div class="email-topbar">
+        <div class="email-topbar-left">From: Executive Conditioning System™ · Day 10 of 30</div>
+        <div class="email-topbar-right">Read · Then Work</div>
+      </div>
+      <div class="email-body">
+        <p>Kahneman and Tversky published Prospect Theory in 1979. It has been replicated hundreds of times across cultures, professions, and decision contexts. The finding: the pain of a potential loss is approximately twice as motivationally powerful as the pleasure of an equivalent gain.</p>
+
+        <p>In a buying decision, that ratio means this. The fear of making the wrong call — wasting budget, failing to deliver, being seen to have misjudged it — is more motivationally powerful than the appeal of the solution working. Not slightly more powerful. Twice as powerful.</p>
+
+        <p>This is what most sales conversations are built to ignore.</p>
+
+        <p>The standard sales conversation is built around the case for the solution: the value proposition, the ROI calculation, the reference customers, the features that address the stated need. The case is necessary. It is not sufficient. A buyer who has unresolved uncertainty about whether this will go wrong will not buy, regardless of how strong the case is. The fear of being wrong outweighs the appeal of being right.</p>
+
+        <p>The pre-call protocol from Day 09 matters here. A seller who arrives regulated and genuinely curious creates the space in which a buyer will name their real concern. A seller who arrives activated — outcome-focused, slightly urgent, subtly approval-seeking — raises the buyer's threat response before the conversation has started. In that state, the real concern stays unexpressed, and the buyer presents a surface objection they are comfortable voicing. That is the conversation that goes nowhere.</p>
+
+        <p>There are three types of uncertainty that stall a buying decision.</p>
+
+        <p><strong>Outcome uncertainty.</strong> The buyer is not confident this will produce the result they need. They may say: <em>"We've tried something similar before and it didn't deliver."</em> What they mean: <em>I don't believe this will work.</em> The objection is about the past. The uncertainty is about the future.</p>
+
+        <p><strong>Implementation uncertainty.</strong> The buyer can see the value in principle but is not confident it will function in their specific environment, with their specific constraints. They may say: <em>"I'm not sure how this would actually work with our current setup."</em> What they mean: <em>The abstract case is fine. I don't believe the practical execution will land.</em> This requires the seller to understand the buyer's environment precisely enough to diagnose the gap — not to reassure, but to test.</p>
+
+        <p><strong>Social uncertainty.</strong> The buyer is not confident they can defend this decision internally if it goes wrong. Or they are not confident they have the authority to make it and be seen as having made the right call. They may say: <em>"I need to run this past the team."</em> What they mean is rarely about the team. It is about internal risk. <em>If this fails, what happens to me?</em> Social uncertainty is the least named and the most powerful. A deal stalling on it does not move on product information or competitive comparisons. It moves only when the seller addresses the specific internal risk the buyer is carrying.</p>
+
+        <p>Buyers rarely announce which type of uncertainty they have. They present the symptom. The job is to diagnose the type — and address that type specifically.</p>
+
+        <p>Vague reassurance does not reduce uncertainty. It increases it. A buyer who hears <em>"don't worry, this will work for you"</em> processes two things: the seller did not understand what I said, and the seller is choosing to move past it. Neither interpretation builds trust. The real concern stays unaddressed. The deal stalls.</p>
+
+        <p>Precision is what builds trust. Naming the concern accurately — more accurately than the buyer named it — signals to the buyer that this is a person worth thinking with. That is what creates the opening to address it.</p>
+      </div>
+    </div>
+
+    <!-- SCIENCE BOX -->
+    <div class="science-box">
+      <div class="science-label">The Science</div>
+      <p>Kahneman and Tversky's Prospect Theory (1979) is one of the most replicated findings in behavioral economics. The core result: losses are weighted approximately twice as heavily as equivalent gains in human decision-making. This holds across populations, cultures, and decision types.</p>
+      <p>The practical implication for a sales conversation: adding more reasons to buy is working on the gain side of the equation. Addressing the buyer's fear of a wrong decision — the loss side — is working on the side with twice the motivational weight.</p>
+      <p>A seller who builds an increasingly strong case while the buyer has unresolved uncertainty is adding to a number that matters less. The seller who identifies and addresses the specific uncertainty is working on the number that drives the decision. This is not a closing technique. It is the primary lever of the buying decision.</p>
+    </div>
+
+    <!-- CALLOUT -->
+    <div class="callout">
+      <p>The seller who addresses the fear of being wrong is working on the side of the equation that drives the decision.</p>
+    </div>
+
+    <!-- WORKBOOK -->
+    <div class="section-label">Workbook — Day 10</div>
+
+    <!-- Exercise 1 -->
+    <div class="workbook-block">
+      <div class="workbook-label">Exercise 1 · Uncertainty Audit</div>
+      <div class="workbook-title">Diagnosing What Is Actually Stalling</div>
+      <div class="workbook-instruction">List every active deal currently in your pipeline — at minimum, three. For each one, write the specific objection or hesitation the buyer has expressed. Then identify which uncertainty type it most likely represents.<br><br>The default diagnosis is outcome uncertainty. Resist it. Implementation and social uncertainty are more common in B2B decisions than they appear, and they are almost always misdiagnosed as outcome uncertainty by sellers who address the surface presentation. For each deal, work through the three questions below.</div>
+
+      <div class="workbook-question">Deal 1 — What exactly did the buyer say?</div>
+      <div class="write-lines-group">
+        <div class="write-line"></div>
+        <div class="write-line"></div>
+      </div>
+
+      <div class="workbook-question">Which uncertainty type does that most likely represent — outcome, implementation, or social?</div>
+      <div class="write-lines-group">
+        <div class="write-line"></div>
+      </div>
+
+      <div class="workbook-question">What is the one question you would ask in your next conversation to test whether that diagnosis is correct?</div>
+      <div class="write-lines-group">
+        <div class="write-line"></div>
+        <div class="write-line"></div>
+      </div>
+
+      <div class="workbook-question">Deal 2 — What exactly did the buyer say?</div>
+      <div class="write-lines-group">
+        <div class="write-line"></div>
+        <div class="write-line"></div>
+      </div>
+
+      <div class="workbook-question">Which uncertainty type does that most likely represent?</div>
+      <div class="write-lines-group">
+        <div class="write-line"></div>
+      </div>
+
+      <div class="workbook-question">What is the one question you would ask to test your diagnosis?</div>
+      <div class="write-lines-group">
+        <div class="write-line"></div>
+        <div class="write-line"></div>
+      </div>
+
+      <div class="workbook-question">Deal 3 — What exactly did the buyer say?</div>
+      <div class="write-lines-group">
+        <div class="write-line"></div>
+        <div class="write-line"></div>
+      </div>
+
+      <div class="workbook-question">Which uncertainty type does that most likely represent?</div>
+      <div class="write-lines-group">
+        <div class="write-line"></div>
+      </div>
+
+      <div class="workbook-question">What is the one question you would ask to test your diagnosis?</div>
+      <div class="write-lines-group">
+        <div class="write-line"></div>
+        <div class="write-line"></div>
+      </div>
+    </div>
+
+    <!-- Exercise 2 -->
+    <div class="workbook-block">
+      <div class="workbook-label">Exercise 2 · Certainty-Building Language</div>
+      <div class="workbook-title">Diagnostic Response — Not a Script</div>
+      <div class="workbook-instruction">These are not scripts. A script is applied regardless of what is present. These are diagnostic responses — they only work when the uncertainty type has been correctly identified first. Study each structure. Then write your own version in the language you would actually use in a conversation.</div>
+
+      <div class="uncertainty-type">Outcome Uncertainty</div>
+      <div class="language-example">"You mentioned that something similar didn't deliver results. Help me understand what specifically didn't work — I want to tell you honestly whether that's a problem this addresses or one that would still apply."</div>
+      <div class="language-structure">Structure: invite the specific failure, then assess it directly — including the possibility that it applies. The buyer is testing whether you will engage with the real concern or deflect it. Engaging with it precisely, without flinching, is what builds confidence in everything else you say.</div>
+      <div class="workbook-question">Write your version for the Deal 1 outcome uncertainty — in your own language:</div>
+      <div class="write-lines-group">
+        <div class="write-line"></div>
+        <div class="write-line"></div>
+        <div class="write-line"></div>
+      </div>
+
+      <div class="uncertainty-type">Implementation Uncertainty</div>
+      <div class="language-example">"What would your current setup need to look like for this to function the way you need it to? Let's map that specifically — before you commit, not after you have."</div>
+      <div class="language-structure">Structure: make the implementation concern discussable before the close. Moving it into the conversation — rather than leaving it as a private doubt — converts an internal obstacle into a shared problem. Shared problems get solved. Private doubts compound.</div>
+      <div class="workbook-question">Write your version for a deal with implementation uncertainty:</div>
+      <div class="write-lines-group">
+        <div class="write-line"></div>
+        <div class="write-line"></div>
+        <div class="write-line"></div>
+      </div>
+
+      <div class="uncertainty-type">Social Uncertainty</div>
+      <div class="language-example">"If this performs the way we expect, that's straightforward. If for any reason it doesn't — what would you need to have in place to protect yourself internally? Let's make sure that's covered before you move forward."</div>
+      <div class="language-structure">Structure: name the failure scenario explicitly, then address it. This signals you are thinking about the buyer's position, not just the close. The buyer is already thinking about it. The seller who names it first takes it off the table as a private fear — which is the only way it stops functioning as one.</div>
+      <div class="workbook-question">Write your version for a deal where the buyer's hesitation is about internal risk:</div>
+      <div class="write-lines-group">
+        <div class="write-line"></div>
+        <div class="write-line"></div>
+        <div class="write-line"></div>
+      </div>
+    </div>
+
+    <!-- DRILL -->
+    <div class="section-label">Today's Practice Drill</div>
+
+    <div class="drill-box">
+      <div class="drill-label">Pre-Call Reconnaissance · Post-Call Debrief</div>
+      <p><strong>Before your next call:</strong> identify which uncertainty type is most likely present for this buyer at this stage. Write it down before the call starts. One sentence — not a paragraph, not a list. The specific uncertainty type and your reasoning.</p>
+      <p><strong>During the call:</strong> do not treat your pre-call diagnosis as confirmed. Listen for what the buyer presents and test your diagnosis against it.</p>
+      <p><strong>After the call (3 minutes):</strong> write what uncertainty type was actually present. Was your pre-call diagnosis right? If not, what was the surface presentation, and what was the type underneath it? Specific observations only — not impressions, not general notes on how it went.</p>
+      <p>This drill is reconnaissance. You are building a data set on how uncertainty presents in your specific deals, with your specific buyers. The pattern you identify across three or four calls is more useful than any framework.</p>
+    </div>
+
+    <!-- END OF DAY -->
+    <div class="section-label">End of Day — Day 10</div>
+
+    <div class="end-of-day">
+      <div class="workbook-label">End of Day — Day 10</div>
+
+      <div class="workbook-question">1. Which uncertainty type do you most often address by default — regardless of which type is actually present? What does that tell you about your default sales conversation?</div>
+      <div class="write-lines-group">
+        <div class="write-line"></div>
+        <div class="write-line"></div>
+      </div>
+
+      <div class="workbook-question">2. Of the deals you audited today, which one has the most clearly unaddressed social uncertainty? What has the conversation been focused on instead?</div>
+      <div class="write-lines-group">
+        <div class="write-line"></div>
+        <div class="write-line"></div>
+      </div>
+
+      <div class="workbook-question">3. One thing you are taking into tomorrow:</div>
+      <div class="write-lines-group">
+        <div class="write-line"></div>
+        <div class="write-line"></div>
+      </div>
+    </div>
+
+  </div><!-- end content-area -->
+
+  <!-- ─── DAY FOOTER ─── -->
+  <div class="day-footer">
+    <div class="footer-left">
+      Executive Conditioning System™ · Sales Conditioning<br>
+      © 2026 Aivorya AS · Licensed for personal use only · Not for redistribution · Day 10 of 30
+    </div>
+    <div class="footer-right">
+      <div class="footer-tomorrow-label">Tomorrow</div>
+      <div class="footer-tomorrow-title">Structure as Confidence</div>
+    </div>
+  </div>
+
+</body>
+</html>

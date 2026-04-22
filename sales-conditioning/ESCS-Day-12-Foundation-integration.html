@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Executive Conditioning System™ · Sales Conditioning · Day 12</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Jost:wght@300;400;500;600&family=Martian+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper:        #F0EBE1;
+    --paper-deep:   #E8E1D5;
+    --ink:          #1A1510;
+    --ink-mid:      #4A3F35;
+    --ink-light:    #8A7D72;
+    --accent:       #A87840;
+    --accent-light: #C4975A;
+    --accent-muted: rgba(168, 120, 64, 0.12);
+    --dark:         #2E2820;
+    --rule:         rgba(168, 120, 64, 0.25);
+    --write-line:   rgba(26, 21, 16, 0.15);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Jost', sans-serif;
+    font-size: 10pt;
+    line-height: 1.7;
+  }
+
+  /* ── MASTHEAD ── */
+  .masthead {
+    background: var(--dark);
+    border-bottom: 1px solid rgba(168, 120, 64, 0.3);
+    padding: 14px 64px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .masthead-left {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 300;
+    color: var(--ink-light);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .masthead-left .highlight {
+    color: var(--accent-light);
+  }
+  .masthead-right {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 300;
+    color: var(--ink-light);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* ── DAY HEADER ── */
+  .day-header {
+    padding: 48px 64px 40px;
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 0 24px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .day-number {
+    font-family: 'Lora', serif;
+    font-size: 88pt;
+    font-weight: 400;
+    color: var(--accent);
+    opacity: 0.65;
+    line-height: 1;
+    padding-top: 6px;
+  }
+  .day-meta {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+  }
+  .day-phase-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 400;
+    color: var(--accent);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+  .day-title {
+    font-family: 'Lora', serif;
+    font-size: 20pt;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.2;
+  }
+  .day-premise {
+    font-family: 'Jost', sans-serif;
+    font-size: 10pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.6;
+    max-width: 520px;
+  }
+
+  /* ── CONTENT AREA ── */
+  .content {
+    padding: 0 64px;
+  }
+
+  /* ── SECTION LABEL ── */
+  .section-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 400;
+    color: var(--accent);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 10px;
+    margin-top: 48px;
+    margin-bottom: 0;
+  }
+
+  /* ── EMAIL BLOCK ── */
+  .email-block {
+    margin-top: 0;
+    border: 1px solid var(--rule);
+    border-top: none;
+  }
+  .email-topbar {
+    background: var(--dark);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .email-topbar-left {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 300;
+    color: var(--ink-light);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .email-topbar-right {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 300;
+    color: var(--ink-light);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .email-body {
+    background: var(--paper);
+    padding: 32px 36px;
+  }
+  .email-body p {
+    font-family: 'Lora', serif;
+    font-size: 11pt;
+    line-height: 1.75;
+    color: var(--ink);
+    margin-bottom: 18px;
+  }
+  .email-body p:last-child {
+    margin-bottom: 0;
+  }
+  .email-body em {
+    font-style: italic;
+  }
+
+  /* ── SCIENCE BOX ── */
+  .science-box {
+    background: var(--accent-muted);
+    border-left: 3px solid var(--accent);
+    padding: 24px 28px;
+    margin-top: 32px;
+  }
+  .science-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 500;
+    color: var(--accent);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .science-box p {
+    font-family: 'Jost', sans-serif;
+    font-size: 10pt;
+    line-height: 1.7;
+    color: var(--ink-mid);
+    margin-bottom: 10px;
+  }
+  .science-box p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* ── CALLOUT ── */
+  .callout {
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    padding: 28px 0;
+    margin-top: 32px;
+    text-align: center;
+  }
+  .callout p {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 14pt;
+    color: var(--ink-mid);
+    max-width: 440px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  /* ── WORKBOOK BLOCK ── */
+  .workbook-block {
+    background: var(--paper-deep);
+    border-left: 3px solid var(--accent);
+    padding: 28px 32px;
+    margin-top: 32px;
+  }
+  .workbook-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 500;
+    color: var(--accent);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .workbook-title {
+    font-family: 'Jost', sans-serif;
+    font-size: 13pt;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 12px;
+    line-height: 1.3;
+  }
+  .workbook-instruction {
+    font-family: 'Jost', sans-serif;
+    font-size: 9.5pt;
+    line-height: 1.65;
+    color: var(--ink-mid);
+    margin-bottom: 20px;
+  }
+  .workbook-instruction p {
+    margin-bottom: 10px;
+  }
+  .workbook-instruction p:last-child {
+    margin-bottom: 0;
+  }
+  .workbook-instruction strong {
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .workbook-instruction ul {
+    margin: 8px 0 8px 18px;
+  }
+  .workbook-instruction ul li {
+    margin-bottom: 5px;
+  }
+
+  .question-block {
+    margin-top: 20px;
+  }
+  .question-block + .question-block {
+    margin-top: 22px;
+  }
+  .question-text {
+    font-family: 'Jost', sans-serif;
+    font-size: 10pt;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 6px;
+    line-height: 1.5;
+  }
+  .question-sub {
+    font-family: 'Jost', sans-serif;
+    font-size: 9pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+    margin-bottom: 8px;
+    line-height: 1.5;
+    font-style: italic;
+  }
+  .write-line {
+    border-bottom: 1px solid var(--write-line);
+    height: 9mm;
+    display: block;
+    width: 100%;
+  }
+  .write-line + .write-line {
+    margin-top: 2px;
+  }
+
+  /* ── SCORECARD DIMENSION ── */
+  .scorecard-dimension {
+    margin-top: 28px;
+    padding-top: 20px;
+    border-top: 1px solid var(--rule);
+  }
+  .scorecard-dimension:first-of-type {
+    margin-top: 20px;
+    padding-top: 0;
+    border-top: none;
+  }
+  .dimension-header {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 4px;
+  }
+  .dimension-number {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 400;
+    color: var(--ink-light);
+    letter-spacing: 0.1em;
+    flex-shrink: 0;
+  }
+  .dimension-name {
+    font-family: 'Jost', sans-serif;
+    font-size: 10pt;
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .dimension-desc {
+    font-family: 'Jost', sans-serif;
+    font-size: 9pt;
+    color: var(--ink-mid);
+    font-style: italic;
+    margin-bottom: 10px;
+    padding-left: 0;
+  }
+  .score-field {
+    font-family: 'Jost', sans-serif;
+    font-size: 9pt;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 6px;
+  }
+
+  /* ── DRILL BOX ── */
+  .drill-box {
+    background: var(--paper);
+    border-left: 3px solid var(--ink-mid);
+    padding: 24px 28px;
+    margin-top: 32px;
+  }
+  .drill-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 400;
+    color: var(--ink-light);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .drill-box p {
+    font-family: 'Jost', sans-serif;
+    font-size: 10pt;
+    line-height: 1.7;
+    color: var(--ink-mid);
+    margin-bottom: 10px;
+  }
+  .drill-box p:last-child {
+    margin-bottom: 0;
+  }
+  .drill-box strong {
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  /* ── DAY FOOTER ── */
+  .day-footer {
+    margin-top: 48px;
+    border-top: 1px solid var(--rule);
+    padding: 20px 64px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  .footer-left {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 300;
+    color: var(--ink-light);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    line-height: 1.8;
+  }
+  .footer-right {
+    text-align: right;
+  }
+  .footer-tomorrow-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 400;
+    color: var(--accent);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .footer-tomorrow-text {
+    font-family: 'Jost', sans-serif;
+    font-size: 9pt;
+    color: var(--ink-mid);
+    line-height: 1.5;
+  }
+
+  /* ── PRINT STYLESHEET ── */
+  @media print {
+    body { background: white; color: var(--ink); }
+
+    .masthead,
+    .email-topbar {
+      background: white !important;
+      color: var(--ink) !important;
+    }
+    .masthead-left,
+    .masthead-right,
+    .masthead-left .highlight,
+    .email-topbar-left,
+    .email-topbar-right {
+      color: var(--ink) !important;
+    }
+
+    .science-box,
+    .workbook-block {
+      background: #F5F5F5 !important;
+    }
+
+    .write-line {
+      border-bottom-color: #BBBBBB !important;
+    }
+
+    .email-block {
+      border-color: #CCCCCC !important;
+    }
+
+    .workbook-block,
+    .drill-box,
+    .science-box {
+      page-break-inside: avoid;
+    }
+
+    .day-footer {
+      page-break-inside: avoid;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- ── MASTHEAD ── -->
+<header class="masthead">
+  <div class="masthead-left">
+    Executive Conditioning System™ · <span class="highlight">Sales Conditioning</span> · An Aivorya Program
+  </div>
+  <div class="masthead-right">Phase 2 · Day 12</div>
+</header>
+
+<!-- ── DAY HEADER ── -->
+<div class="day-header">
+  <div class="day-number">12</div>
+  <div class="day-meta">
+    <div class="day-phase-label">Phase 2 — Foundation</div>
+    <div class="day-title">Foundation Integration</div>
+    <p class="day-premise">Knowing how to use a tool and using it under pressure are different skills. Today you test all six tools together for the first time — not in isolation, not in sequence, but simultaneously, as they will need to operate in a real conversation.</p>
+  </div>
+</div>
+
+<!-- ── CONTENT ── -->
+<div class="content">
+
+  <!-- SECTION: Morning Conditioning -->
+  <div class="section-label">Morning Conditioning</div>
+
+  <div class="email-block">
+    <div class="email-topbar">
+      <span class="email-topbar-left">From: Executive Conditioning System™ · Day 12 of 30</span>
+      <span class="email-topbar-right">Read · Then Work</span>
+    </div>
+    <div class="email-body">
+      <p>Six days ago you learned a single tool. One thing. Breath control — the cyclic sigh and what it does to the nervous system in under two minutes. That was manageable. You had one job.</p>
+      <p>Today you have six.</p>
+      <p>The tools installed across Phase 2 — breath regulation, physical authority, curiosity reframe, pre-call state management, uncertainty reduction, conversation structure — each one is functional in isolation. You have practiced each of them separately. That is not the same as using them simultaneously while listening to a buyer, tracking conversation stage, reading uncertainty signals, and deciding in real time what to do next.</p>
+      <p>That gap — between knowing a tool and deploying it as part of a running system under load — is where most skill training stops. It assumes that because you can do each thing separately, you can do them together. You cannot, not automatically. Integration is its own training stage.</p>
+      <p>Today runs the first integrated simulation. Not to test whether you pass. To find out where the system breaks — because it will break somewhere. That is what the simulation is for.</p>
+      <p>Phase 2 is complete after today. Phase 3 begins tomorrow. The register changes. Phase 2 gave you the tools and time to practice them one at a time. Phase 3 applies pressure to all of them simultaneously — sustained, escalating, realistic pressure. What you find in today's simulation is the precise information you need to walk into that with your eyes open.</p>
+      <p>Run the simulation. Complete the scorecard. Be accurate.</p>
+    </div>
+  </div>
+
+  <!-- SCIENCE BOX -->
+  <div class="science-box">
+    <div class="science-label">The Science</div>
+    <p>When skills are learned in isolation — each practiced separately, in blocked repetition — they rarely transfer automatically into integrated performance. This is one of the most replicated findings in learning science.</p>
+    <p>The mechanism is called <em>contextual interference</em>. Research by Shea and Morgan (1979), building on Battig's earlier work, found that practicing skills in variable, interleaved conditions produces significantly better transfer to real performance than blocked practice of each skill in sequence. The performance cost appears during acquisition — integrated practice is harder and feels less clean than isolated practice — but the transfer advantage is substantial and durable.</p>
+    <p>The cognitive load explanation is related: when a skill has not been sufficiently automated, it consumes working memory. Six partially-automated skills running simultaneously can exceed working memory capacity entirely. The simulation reveals exactly where your cognitive cost is highest — which is where Phase 3 conditioning will focus. That is diagnostic information, not failure.</p>
+    <p>The simulation today is not a test of whether the tools work. It is the first performance of the complete system. What breaks is what needs conditioning. What holds is what Phase 2 built.</p>
+  </div>
+
+  <!-- CALLOUT -->
+  <div class="callout">
+    <p>Integration is a distinct training stage. What breaks in the simulation is precisely what Phase 3 is designed to condition.</p>
+  </div>
+
+  <!-- SECTION: Workbook -->
+  <div class="section-label">Workbook — Day 12</div>
+
+  <!-- EXERCISE 1 -->
+  <div class="workbook-block">
+    <div class="workbook-label">Exercise 1 · Integration Simulation</div>
+    <div class="workbook-title">Run the First Full-System Simulation</div>
+    <div class="workbook-instruction">
+      <p><strong>Allow 25 minutes — 5 minutes setup, 15 minutes simulation, 5 minutes immediate debrief</strong></p>
+      <p>Set up the simulation in one of three formats:</p>
+      <ul>
+        <li><strong>AI roleplay</strong> — use ChatGPT or equivalent; prompt it to play a moderately resistant B2B buyer: detail-oriented, budget-conscious, not hostile</li>
+        <li><strong>Colleague</strong> — brief them on the scenario below and ask them to run it without going easy on you</li>
+        <li><strong>Self-narration</strong> — narrate both sides of the conversation aloud into a recording device, switching roles</li>
+      </ul>
+      <p><strong>The scenario:</strong> A B2B discovery call, 15 minutes. The buyer is interested but not committed. At approximately the 8-minute mark, raise one price objection: <em>"This seems expensive compared to what we're currently doing."</em> At approximately the 12-minute mark, add one stall: <em>"We'd need to think about this internally before moving forward."</em></p>
+      <p>Mild pressure. Not worst-case. The goal is integration, not stress testing.</p>
+      <p><strong>Before you begin:</strong> Run the full pre-call protocol from Day 09. Do not skip it. The pre-call state is one of the six tools being tested today.</p>
+      <p><strong>During the simulation, deploy:</strong></p>
+      <ul>
+        <li>Conversation blueprint (Day 11) as your structural frame</li>
+        <li>Cyclic sighing at the moment the price objection lands — before you respond</li>
+        <li>Curiosity reframe (Day 08) as your primary response to both the objection and the stall</li>
+      </ul>
+      <p><strong>Immediately after:</strong> Complete the Foundation Scorecard below. Do not wait. Memory degrades fast and optimism fills the gaps.</p>
+    </div>
+  </div>
+
+  <!-- EXERCISE 2 — FOUNDATION SCORECARD -->
+  <div class="workbook-block">
+    <div class="workbook-label">Exercise 2 · Foundation Scorecard</div>
+    <div class="workbook-title">Rate Yourself Across 8 Dimensions</div>
+    <div class="workbook-instruction">
+      <p><strong>Complete immediately after the simulation. Allow 10 minutes.</strong></p>
+      <p>Rate each dimension 1–10. <strong>Score what actually happened in the simulation</strong> — not what you know, not what you usually do. A score of 8 means you demonstrated it clearly in this simulation. A score of 4 means you know how to do it but it did not show up today. Score what happened.</p>
+      <p>If you are not uncomfortable with at least three of your scores, you are rounding up.</p>
+      <p>For each dimension, write one behavioral observation — what you saw yourself do or fail to do. A feeling is not evidence. <em>"I felt anxious"</em> is not a behavioral observation. <em>"I defended the price immediately without asking a question"</em> is.</p>
+    </div>
+
+    <!-- Dimension 1 -->
+    <div class="scorecard-dimension">
+      <div class="dimension-header">
+        <span class="dimension-number">01</span>
+        <span class="dimension-name">Regulation</span>
+      </div>
+      <div class="dimension-desc">Staying composed when pressure rises</div>
+      <div class="score-field">Score (1–10): ________</div>
+      <div class="question-text">Behavioral observation — what specifically happened when the pressure moment arrived:</div>
+      <span class="write-line"></span>
+      <span class="write-line"></span>
+    </div>
+
+    <!-- Dimension 2 -->
+    <div class="scorecard-dimension">
+      <div class="dimension-header">
+        <span class="dimension-number">02</span>
+        <span class="dimension-name">Curiosity</span>
+      </div>
+      <div class="dimension-desc">Responding to objections with questions, not defence</div>
+      <div class="score-field">Score (1–10): ________</div>
+      <div class="question-text">What was your first response to the price objection — question or statement:</div>
+      <span class="write-line"></span>
+      <span class="write-line"></span>
+    </div>
+
+    <!-- Dimension 3 -->
+    <div class="scorecard-dimension">
+      <div class="dimension-header">
+        <span class="dimension-number">03</span>
+        <span class="dimension-name">Structure</span>
+      </div>
+      <div class="dimension-desc">Maintaining conversation framework under pressure</div>
+      <div class="score-field">Score (1–10): ________</div>
+      <div class="question-text">At what point did you lose the structure or abandon the blueprint:</div>
+      <span class="write-line"></span>
+      <span class="write-line"></span>
+    </div>
+
+    <!-- Dimension 4 -->
+    <div class="scorecard-dimension">
+      <div class="dimension-header">
+        <span class="dimension-number">04</span>
+        <span class="dimension-name">Silence Tolerance</span>
+      </div>
+      <div class="dimension-desc">Holding space after questions and proposals</div>
+      <div class="score-field">Score (1–10): ________</div>
+      <div class="question-text">After you asked a question — did you hold the silence or fill it:</div>
+      <span class="write-line"></span>
+      <span class="write-line"></span>
+    </div>
+
+    <!-- Dimension 5 -->
+    <div class="scorecard-dimension">
+      <div class="dimension-header">
+        <span class="dimension-number">05</span>
+        <span class="dimension-name">Non-Attachment</span>
+      </div>
+      <div class="dimension-desc">Wanting the deal without needing it</div>
+      <div class="score-field">Score (1–10): ________</div>
+      <div class="question-text">Where did urgency appear in your body or voice — what triggered it:</div>
+      <span class="write-line"></span>
+      <span class="write-line"></span>
+    </div>
+
+    <!-- Dimension 6 -->
+    <div class="scorecard-dimension">
+      <div class="dimension-header">
+        <span class="dimension-number">06</span>
+        <span class="dimension-name">Certainty Language</span>
+      </div>
+      <div class="dimension-desc">Reducing buyer uncertainty precisely</div>
+      <div class="score-field">Score (1–10): ________</div>
+      <div class="question-text">What specific uncertainty did you address — or fail to address:</div>
+      <span class="write-line"></span>
+      <span class="write-line"></span>
+    </div>
+
+    <!-- Dimension 7 -->
+    <div class="scorecard-dimension">
+      <div class="dimension-header">
+        <span class="dimension-number">07</span>
+        <span class="dimension-name">Authority Posture</span>
+      </div>
+      <div class="dimension-desc">Physical and vocal presence on the call</div>
+      <div class="score-field">Score (1–10): ________</div>
+      <div class="question-text">Posture, pace, and volume — what changed when the objection landed:</div>
+      <span class="write-line"></span>
+      <span class="write-line"></span>
+    </div>
+
+    <!-- Dimension 8 -->
+    <div class="scorecard-dimension">
+      <div class="dimension-header">
+        <span class="dimension-number">08</span>
+        <span class="dimension-name">Recovery Speed</span>
+      </div>
+      <div class="dimension-desc">Time to reset after a difficult moment</div>
+      <div class="score-field">Score (1–10): ________</div>
+      <div class="question-text">After the stall — how long before you were back in the conversation fully:</div>
+      <span class="write-line"></span>
+      <span class="write-line"></span>
+    </div>
+  </div>
+
+  <!-- EXERCISE 3 -->
+  <div class="workbook-block">
+    <div class="workbook-label">Exercise 3 · Phase 3 Targeting</div>
+    <div class="workbook-title">Identify Your Conditioning Targets</div>
+    <div class="workbook-instruction">
+      <p><strong>Allow 5 minutes.</strong></p>
+      <p>Identify your two or three lowest-scoring dimensions. These are your Phase 3 conditioning targets.</p>
+      <p>Write each target as a specific behavioral description — not a general area for improvement. Name the exact moment it breaks and what you do instead of what you should do.</p>
+      <p><strong>Example of a target that is not useful:</strong><br><em>"I need to work on regulation."</em></p>
+      <p><strong>Example of a target that is:</strong><br><em>"Under the price objection, my breath shortens and I respond with a justification before I have asked a single question. I need to hold the sigh before I speak."</em></p>
+    </div>
+
+    <div class="question-block">
+      <div class="question-text">Target 1</div>
+      <span class="write-line"></span>
+      <span class="write-line"></span>
+      <span class="write-line"></span>
+    </div>
+
+    <div class="question-block">
+      <div class="question-text">Target 2</div>
+      <span class="write-line"></span>
+      <span class="write-line"></span>
+      <span class="write-line"></span>
+    </div>
+
+    <div class="question-block">
+      <div class="question-text">Target 3 (if applicable)</div>
+      <span class="write-line"></span>
+      <span class="write-line"></span>
+    </div>
+  </div>
+
+  <!-- DRILL -->
+  <div class="section-label">Today's Practice Drill</div>
+
+  <div class="drill-box">
+    <div class="drill-label">Drill · Day 12 — Pre-Call Targeting</div>
+    <p>Before your next real call — 90 seconds.</p>
+    <p>Run the cyclic sigh. Deploy the pre-call protocol. Then answer this question out loud before you dial:</p>
+    <p><strong>Which of the eight dimensions is most likely to break in this specific call — and what is the one thing you will do when it does?</strong></p>
+    <p>Name it before the call. Not after.</p>
+    <p>After the call: write whether it broke — and what you did in the moment it did. One sentence. That is the data Phase 3 works from.</p>
+  </div>
+
+  <!-- END OF DAY REFLECTION -->
+  <div class="section-label">End of Day — Day 12</div>
+
+  <div class="workbook-block">
+    <div class="workbook-label">End of Day Reflection</div>
+    <div class="workbook-title">Three Questions</div>
+    <div class="workbook-instruction">
+      <p>Two write lines each. Write what actually happened.</p>
+    </div>
+
+    <div class="question-block">
+      <div class="question-text">1. Which scorecard dimension surprised you most — and what did you see that you were not expecting?</div>
+      <span class="write-line"></span>
+      <span class="write-line"></span>
+    </div>
+
+    <div class="question-block">
+      <div class="question-text">2. In the simulation, where did the tools fail to operate together — what were you managing when something else dropped?</div>
+      <span class="write-line"></span>
+      <span class="write-line"></span>
+    </div>
+
+    <div class="question-block">
+      <div class="question-text">3. One thing you are taking into Day 13:</div>
+      <span class="write-line"></span>
+      <span class="write-line"></span>
+    </div>
+  </div>
+
+  <!-- PHASE CLOSE NOTE -->
+  <div class="science-box" style="margin-top: 32px; margin-bottom: 0;">
+    <div class="science-label">Phase 2 — Complete</div>
+    <p>The tools are installed. Phase 3 begins tomorrow. What comes next finds out whether they hold.</p>
+  </div>
+
+</div><!-- end .content -->
+
+<!-- ── DAY FOOTER ── -->
+<footer class="day-footer">
+  <div class="footer-left">
+    Executive Conditioning System™ · Sales Conditioning<br>
+    © 2026 Aivorya AS · Licensed for personal use only · Not for redistribution · Day 12 of 30
+  </div>
+  <div class="footer-right">
+    <div class="footer-tomorrow-label">Tomorrow</div>
+    <div class="footer-tomorrow-text">Phase 3 begins · Day 13 · Contrast Training: Calibration</div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Executive Conditioning System™ · Day 16 · The Stall Conversation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Jost:wght@300;400;500;600&family=Martian+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --paper:        #F0EBE1;
+    --paper-deep:   #E8E1D5;
+    --ink:          #1A1510;
+    --ink-mid:      #4A3F35;
+    --ink-light:    #8A7D72;
+    --accent:       #A87840;
+    --accent-light: #C4975A;
+    --accent-muted: rgba(168, 120, 64, 0.12);
+    --dark:         #2E2820;
+    --rule:         rgba(168, 120, 64, 0.25);
+    --write-line:   rgba(26, 21, 16, 0.15);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Lora', Georgia, serif;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── MASTHEAD ── */
+  .masthead {
+    background: var(--dark);
+    border-bottom: 1px solid rgba(168, 120, 64, 0.3);
+    padding: 14px 64px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .masthead-left {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 400;
+    color: var(--ink-light);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .masthead-left span {
+    color: var(--accent-light);
+  }
+  .masthead-right {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 400;
+    color: var(--ink-light);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* ── DAY HEADER ── */
+  .day-header {
+    padding: 48px 64px 40px;
+    border-bottom: 1px solid var(--rule);
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 0 32px;
+    align-items: start;
+  }
+  .day-number-large {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 88pt;
+    font-weight: 400;
+    color: var(--accent);
+    opacity: 0.65;
+    line-height: 1;
+    margin-top: -8px;
+  }
+  .day-header-right {
+    padding-top: 6px;
+  }
+  .day-phase-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 400;
+    color: var(--accent);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .day-title {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 20pt;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.25;
+    margin-bottom: 12px;
+  }
+  .day-premise {
+    font-family: 'Jost', sans-serif;
+    font-size: 10pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.65;
+  }
+
+  /* ── CONTENT AREA ── */
+  .content-area {
+    padding: 0 64px;
+  }
+
+  /* ── SECTION LABEL ── */
+  .section-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 400;
+    color: var(--accent);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 10px;
+    margin-top: 48px;
+    margin-bottom: 0;
+  }
+
+  /* ── EMAIL BLOCK ── */
+  .email-block {
+    margin-top: 24px;
+  }
+  .email-topbar {
+    background: var(--dark);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .email-topbar-left,
+  .email-topbar-right {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 400;
+    color: var(--ink-light);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .email-body {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-top: none;
+    padding: 36px 40px 40px;
+  }
+  .email-body p {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 11pt;
+    font-weight: 400;
+    color: var(--ink);
+    line-height: 1.75;
+    margin-bottom: 18px;
+  }
+  .email-body p:last-child {
+    margin-bottom: 0;
+  }
+  .email-body em {
+    font-style: italic;
+  }
+
+  /* ── SCIENCE BOX ── */
+  .science-box {
+    background: var(--accent-muted);
+    border-left: 3px solid var(--accent);
+    padding: 24px 28px;
+    margin-top: 32px;
+  }
+  .science-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 500;
+    color: var(--accent);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .science-box p {
+    font-family: 'Jost', sans-serif;
+    font-size: 10pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.65;
+    margin-bottom: 12px;
+  }
+  .science-box p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* ── CALLOUT ── */
+  .callout {
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    padding: 28px 40px;
+    margin-top: 36px;
+    text-align: center;
+  }
+  .callout p {
+    font-family: 'Lora', Georgia, serif;
+    font-style: italic;
+    font-size: 14pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.55;
+    max-width: 440px;
+    margin: 0 auto;
+  }
+
+  /* ── WORKBOOK BLOCK ── */
+  .workbook-block {
+    background: var(--paper-deep);
+    border-left: 3px solid var(--accent);
+    padding: 28px 32px 32px;
+    margin-top: 32px;
+    page-break-inside: avoid;
+  }
+  .workbook-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 500;
+    color: var(--accent);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .workbook-title {
+    font-family: 'Jost', sans-serif;
+    font-size: 13pt;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 8px;
+  }
+  .workbook-instruction {
+    font-family: 'Jost', sans-serif;
+    font-size: 9.5pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.65;
+    margin-bottom: 20px;
+  }
+  .workbook-question {
+    font-family: 'Jost', sans-serif;
+    font-size: 10pt;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 6px;
+    margin-top: 14px;
+  }
+  .workbook-question:first-of-type {
+    margin-top: 0;
+  }
+  .write-lines {
+    margin-top: 4px;
+    margin-bottom: 10px;
+  }
+  .write-line {
+    border-bottom: 1px solid var(--write-line);
+    height: 9mm;
+    width: 100%;
+    display: block;
+  }
+  .workbook-subhead {
+    font-family: 'Jost', sans-serif;
+    font-size: 9.5pt;
+    font-weight: 600;
+    color: var(--ink);
+    margin-top: 20px;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .workbook-body {
+    font-family: 'Jost', sans-serif;
+    font-size: 10pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.65;
+    margin-bottom: 10px;
+  }
+  .workbook-body strong {
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .protocol-quote {
+    font-family: 'Lora', Georgia, serif;
+    font-style: italic;
+    font-size: 10.5pt;
+    color: var(--ink);
+    border-left: 2px solid var(--accent);
+    padding: 10px 16px;
+    margin: 14px 0;
+    line-height: 1.65;
+  }
+  .mapping-grid {
+    margin: 16px 0;
+    display: grid;
+    gap: 10px;
+  }
+  .mapping-row {
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    gap: 0 16px;
+    align-items: start;
+    padding: 10px 14px;
+    background: rgba(168, 120, 64, 0.06);
+    border-left: 2px solid rgba(168, 120, 64, 0.35);
+  }
+  .mapping-key {
+    font-family: 'Martian Mono', monospace;
+    font-size: 7pt;
+    font-weight: 500;
+    color: var(--accent);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding-top: 2px;
+    line-height: 1.5;
+  }
+  .mapping-val {
+    font-family: 'Jost', sans-serif;
+    font-size: 9.5pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.6;
+  }
+  .deal-block {
+    margin-top: 18px;
+    padding: 16px 18px;
+    background: rgba(168, 120, 64, 0.05);
+    border: 1px solid var(--rule);
+  }
+  .deal-block-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 500;
+    color: var(--accent);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  /* ── DRILL BOX ── */
+  .drill-box {
+    background: var(--paper);
+    border-left: 3px solid var(--ink-mid);
+    padding: 24px 28px;
+    margin-top: 32px;
+    page-break-inside: avoid;
+  }
+  .drill-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 400;
+    color: var(--ink-light);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .drill-box p {
+    font-family: 'Jost', sans-serif;
+    font-size: 10pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.65;
+    margin-bottom: 10px;
+  }
+  .drill-box p:last-child { margin-bottom: 0; }
+  .drill-box strong {
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  /* ── DAY FOOTER ── */
+  .day-footer {
+    margin-top: 48px;
+    border-top: 1px solid var(--rule);
+    padding: 20px 64px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    page-break-inside: avoid;
+  }
+  .footer-left {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 300;
+    color: var(--ink-light);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    line-height: 1.8;
+  }
+  .footer-right {
+    text-align: right;
+  }
+  .footer-tomorrow-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 500;
+    color: var(--accent);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .footer-tomorrow-title {
+    font-family: 'Jost', sans-serif;
+    font-size: 9pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+  }
+
+  /* ── PRINT ── */
+  @media print {
+    .masthead,
+    .email-topbar {
+      background: white !important;
+      color: var(--ink) !important;
+    }
+    .masthead-left, .masthead-right,
+    .email-topbar-left, .email-topbar-right {
+      color: var(--ink) !important;
+    }
+    .masthead-left span { color: var(--accent) !important; }
+    body { background: white; }
+    .science-box { background: #F5F5F5 !important; }
+    .workbook-block { background: #F5F5F5 !important; }
+    .drill-box { background: #F5F5F5 !important; }
+    .write-line { border-bottom-color: #BBBBBB !important; }
+    .email-body { border-color: #CCCCCC !important; }
+    .workbook-block, .drill-box, .science-box { page-break-inside: avoid; }
+    .day-footer { page-break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ── MASTHEAD ── -->
+<header class="masthead">
+  <div class="masthead-left">Executive Conditioning System™ · <span>Sales Conditioning</span> · An Aivorya Program</div>
+  <div class="masthead-right">Phase 3 · Day 16</div>
+</header>
+
+<!-- ── DAY HEADER ── -->
+<div class="day-header">
+  <div class="day-number-large">16</div>
+  <div class="day-header-right">
+    <div class="day-phase-label">Phase 3 — Conditioning</div>
+    <div class="day-title">The Stall Conversation</div>
+    <div class="day-premise">"We need to think about it" is not a decision. It is an avoidance of a decision. The salesperson who accepts it as an answer has accepted a conversation that will never close. The one who understands what produces it can have a different conversation entirely.</div>
+  </div>
+</div>
+
+<!-- ── CONTENT AREA ── -->
+<div class="content-area">
+
+  <!-- SECTION LABEL: Morning Conditioning -->
+  <div class="section-label">Morning Conditioning</div>
+
+  <!-- EMAIL BLOCK -->
+  <div class="email-block">
+    <div class="email-topbar">
+      <div class="email-topbar-left">From: Executive Conditioning System™ · Day 16 of 30</div>
+      <div class="email-topbar-right">Read · Then Work</div>
+    </div>
+    <div class="email-body">
+      <p>When a buyer says "we need to think about it," they are not communicating ambivalence about your solution. They are communicating that the perceived cost of committing now feels higher than the perceived benefit of the best available option. That calculation may be wrong. But it is the calculation they have made, and no amount of urgency from your side changes it — it reinforces it.</p>
+
+      <p>Christopher Anderson's 2003 research on decision avoidance documents what most salespeople already know but rarely name correctly: people choose inaction not because they have decided against an option, but because inaction feels safer than a decision that might be wrong. The stall is not a soft no. It is a risk calculation that has temporarily resolved in favour of doing nothing.</p>
+
+      <p>The practical implication: the stall is diagnostic information. It is telling you that some specific risk is present — a risk that has not been addressed, possibly one that has not been named. Your job is to find out which one. You cannot do that by responding to the stall as if it were the final answer.</p>
+
+      <p>What you also cannot do is push. Jack Brehm's reactance research, running from 1966 through decades of replication, establishes what happens when freedom of choice is perceived as threatened: resistance increases. Not stays the same — <em>increases.</em> A buyer who was genuinely considering saying yes becomes more committed to non-decision when pressure is applied. Urgency tactics, artificial deadlines, and commitment questions aimed at forcing movement do not accelerate the sale. They contract it. The stall becomes harder to exit because the buyer is now defending their position rather than examining it.</p>
+
+      <p>The stall diagnosis protocol works for the opposite reason. It does not push toward a decision. It asks what the buyer needs in order to make one. That distinction is not a courtesy. It is the mechanism that keeps the conversation open.</p>
+    </div>
+  </div>
+
+  <!-- SCIENCE BOX -->
+  <div class="science-box">
+    <div class="science-label">The Science</div>
+    <p>Two mechanisms explain why stalls happen and why the standard response makes them worse.</p>
+    <p>Anderson (2003) on decision avoidance: people choose inaction when the perceived cost of deciding outweighs the perceived benefit of the best available option. In a buying context, this is rarely about the product. It is about what happens if the decision is wrong — internally, financially, reputationally. The stall is not evidence that the solution is unappealing. It is evidence that some cost of commitment has not been resolved.</p>
+    <p>Brehm (1966) on psychological reactance: when a person perceives their freedom to choose as threatened, they experience a motivational state directed at restoring that freedom. In practice, pressure toward a decision produces resistance to that decision. The buyer becomes more committed to not deciding, not less. The stall diagnosis protocol avoids this entirely by framing the next move around what the buyer needs, not what you need.</p>
+  </div>
+
+  <!-- CALLOUT -->
+  <div class="callout">
+    <p>The stall is not a decision. It is unresolved risk — still in the conversation, still addressable.</p>
+  </div>
+
+  <!-- SECTION LABEL: Workbook -->
+  <div class="section-label">Workbook — Day 16</div>
+
+  <!-- EXERCISE 1 -->
+  <div class="workbook-block">
+    <div class="workbook-label">Exercise 1 · Stall Diagnosis Protocol</div>
+    <div class="workbook-title">The Diagnostic Question</div>
+    <div class="workbook-instruction">Approx. 7 minutes. Read the protocol. Write your version. Map the responses.</div>
+
+    <div class="workbook-body">The following question cannot be answered without the buyer revealing which specific concern is present:</div>
+
+    <div class="protocol-quote">"Of course — what would be most helpful to think through? Is it the fit, the timing, the investment, or something else?"</div>
+
+    <div class="workbook-body">The four options map directly to the uncertainty types from Day 10. Fit concerns are outcome uncertainty. Timing concerns are usually implementation or social uncertainty. Investment concerns return to the price conversation from Day 15. "Something else" is an open door — stay with it.</div>
+
+    <div class="workbook-body">Two working variations:</div>
+
+    <div class="protocol-quote">"What's the part that would be most useful to have clearer before you move forward?"</div>
+    <div class="protocol-quote">"Is there something specific I haven't addressed that would help you decide?"</div>
+
+    <div class="workbook-question">Write your version below. Same function, your language. One sentence. It must end with an open question.</div>
+    <div class="write-lines">
+      <span class="write-line"></span>
+      <span class="write-line"></span>
+      <span class="write-line"></span>
+    </div>
+
+    <div class="workbook-subhead">Response Mapping</div>
+    <div class="workbook-body">Each answer the buyer gives requires a different next move. Do not attempt to run the same response to every stall type.</div>
+
+    <div class="mapping-grid">
+      <div class="mapping-row">
+        <div class="mapping-key">Fit</div>
+        <div class="mapping-val">Outcome uncertainty. Return to the specific problem and the specific evidence that this addresses it. Do not re-present the solution. Re-anchor to the problem.</div>
+      </div>
+      <div class="mapping-row">
+        <div class="mapping-key">Timing</div>
+        <div class="mapping-val">Surface the constraint. Is it a budget cycle, an internal approval process, or is timing a proxy for something else? "What's driving the timing for you?" One question.</div>
+      </div>
+      <div class="mapping-row">
+        <div class="mapping-key">Investment</div>
+        <div class="mapping-val">Return to the re-anchoring sequence from Day 15. This is a price conversation. Treat it as one.</div>
+      </div>
+      <div class="mapping-row">
+        <div class="mapping-key">Something else</div>
+        <div class="mapping-val">Ask what it is. Do not suggest options. One question: "What would it be?" Then hold the silence. The buyer who says "something else" has more to say.</div>
+      </div>
+    </div>
+
+    <div class="workbook-question">What is the most common stall you receive? Write exactly how it is usually stated.</div>
+    <div class="write-lines">
+      <span class="write-line"></span>
+      <span class="write-line"></span>
+    </div>
+
+    <div class="workbook-question">Which of the four categories does it most likely fall into?</div>
+    <div class="write-lines">
+      <span class="write-line"></span>
+    </div>
+
+    <div class="workbook-question">What is the one question that would surface the real concern?</div>
+    <div class="write-lines">
+      <span class="write-line"></span>
+      <span class="write-line"></span>
+    </div>
+  </div>
+
+  <!-- EXERCISE 2 -->
+  <div class="workbook-block">
+    <div class="workbook-label">Exercise 2 · Next Step Commitment</div>
+    <div class="workbook-title">Closing the Loop</div>
+    <div class="workbook-instruction">Approx. 5 minutes. A conversation that ends without a specific agreed next step has produced nothing actionable.</div>
+
+    <div class="workbook-body">Peter Gollwitzer's research on implementation intentions is consistent and replicated: specific if-then plans — when X, I will do Y — produce dramatically higher follow-through than general intentions. "I'll follow up" is not a next step. It is an intention with no structure. A vague close leaves both parties with no committed action. A specific close gives both parties a structure to return to.</div>
+
+    <div class="protocol-quote">"What would make sense as a next step — would it be useful to [specific action] by [specific date]?"</div>
+
+    <div class="workbook-body">This question preserves the buyer's autonomy by offering a concrete option rather than a vague obligation. It also commits both parties to something real.</div>
+
+    <div class="workbook-question">Write three versions for your three most common conversation-close scenarios. Be specific about the action and the timeframe.</div>
+
+    <div class="workbook-body" style="margin-top:16px;"><strong>Scenario 1:</strong></div>
+    <div class="write-lines">
+      <span class="write-line"></span>
+      <span class="write-line"></span>
+    </div>
+
+    <div class="workbook-body"><strong>Scenario 2:</strong></div>
+    <div class="write-lines">
+      <span class="write-line"></span>
+      <span class="write-line"></span>
+    </div>
+
+    <div class="workbook-body"><strong>Scenario 3:</strong></div>
+    <div class="write-lines">
+      <span class="write-line"></span>
+      <span class="write-line"></span>
+    </div>
+
+    <div class="workbook-body" style="margin-top:20px; border-top: 1px solid var(--rule); padding-top: 16px;">Review what you wrote. If any scenario does not include a specific action and a specific date, rewrite it. A next step without both is still a vague intention.</div>
+  </div>
+
+  <!-- EXERCISE 3 -->
+  <div class="workbook-block">
+    <div class="workbook-label">Exercise 3 · Pipeline Audit</div>
+    <div class="workbook-title">Stalled Deals — Retrospective Diagnosis</div>
+    <div class="workbook-instruction">Approx. 8 minutes. Apply the stall diagnosis framework to every deal currently stalled in your pipeline. Work through up to three deals below.</div>
+
+    <div class="workbook-body">For each stalled deal: identify the most likely uncertainty type, the specific question that would surface it, and the re-engagement message. One sentence each. No chasing. No pressure.</div>
+
+    <!-- Deal 1 -->
+    <div class="deal-block">
+      <div class="deal-block-label">Deal 01</div>
+      <div class="workbook-question">Buyer / Deal:</div>
+      <div class="write-lines"><span class="write-line"></span></div>
+      <div class="workbook-question">How the stall was stated:</div>
+      <div class="write-lines"><span class="write-line"></span></div>
+      <div class="workbook-question">Most likely uncertainty type (fit / timing / investment / something else):</div>
+      <div class="write-lines"><span class="write-line"></span></div>
+      <div class="workbook-question">The specific question that would surface it:</div>
+      <div class="write-lines"><span class="write-line"></span><span class="write-line"></span></div>
+      <div class="workbook-question">Re-engagement message — one sentence, no pressure, no chasing:</div>
+      <div class="write-lines"><span class="write-line"></span><span class="write-line"></span></div>
+    </div>
+
+    <!-- Deal 2 -->
+    <div class="deal-block">
+      <div class="deal-block-label">Deal 02</div>
+      <div class="workbook-question">Buyer / Deal:</div>
+      <div class="write-lines"><span class="write-line"></span></div>
+      <div class="workbook-question">How the stall was stated:</div>
+      <div class="write-lines"><span class="write-line"></span></div>
+      <div class="workbook-question">Most likely uncertainty type (fit / timing / investment / something else):</div>
+      <div class="write-lines"><span class="write-line"></span></div>
+      <div class="workbook-question">The specific question that would surface it:</div>
+      <div class="write-lines"><span class="write-line"></span><span class="write-line"></span></div>
+      <div class="workbook-question">Re-engagement message — one sentence, no pressure, no chasing:</div>
+      <div class="write-lines"><span class="write-line"></span><span class="write-line"></span></div>
+    </div>
+
+    <!-- Deal 3 -->
+    <div class="deal-block">
+      <div class="deal-block-label">Deal 03</div>
+      <div class="workbook-question">Buyer / Deal:</div>
+      <div class="write-lines"><span class="write-line"></span></div>
+      <div class="workbook-question">How the stall was stated:</div>
+      <div class="write-lines"><span class="write-line"></span></div>
+      <div class="workbook-question">Most likely uncertainty type (fit / timing / investment / something else):</div>
+      <div class="write-lines"><span class="write-line"></span></div>
+      <div class="workbook-question">The specific question that would surface it:</div>
+      <div class="write-lines"><span class="write-line"></span><span class="write-line"></span></div>
+      <div class="workbook-question">Re-engagement message — one sentence, no pressure, no chasing:</div>
+      <div class="write-lines"><span class="write-line"></span><span class="write-line"></span></div>
+    </div>
+  </div>
+
+  <!-- DRILL BOX -->
+  <div class="section-label">Today's Practice Drill</div>
+
+  <div class="drill-box">
+    <div class="drill-label">Day 16 Drill — Stall Diagnosis · Pre-Call and Post-Call</div>
+    <p><strong>Before your next call:</strong> identify the most likely stall point in this specific conversation. Write one sentence on which uncertainty type — if unresolved — would produce it.</p>
+    <p><strong>After the call:</strong> if a stall occurred, write exactly what was said and which diagnosis question you used or should have used. If no stall occurred, write the next step commitment you closed with — and whether it was specific enough to hold.</p>
+    <p>Pre-call: 90 seconds. Post-call: 3 minutes.</p>
+    <p><strong>No call today:</strong> take the three stalled deals from the pipeline audit. Write the re-engagement message for the one most likely to respond. Send it or schedule it before you close this document. The audit is only complete when the message exists.</p>
+  </div>
+
+  <!-- SECTION LABEL: End of Day -->
+  <div class="section-label">End of Day — Day 16</div>
+
+  <!-- END OF DAY REFLECTION -->
+  <div class="workbook-block">
+    <div class="workbook-label">End of Day Reflection</div>
+    <div class="workbook-title">Three Questions</div>
+    <div class="workbook-instruction">Write what actually happened. Not what you intended. Not what you would like to have done.</div>
+
+    <div class="workbook-question">What stall have you accepted as a final answer that may not have been one?</div>
+    <div class="write-lines">
+      <span class="write-line"></span>
+      <span class="write-line"></span>
+    </div>
+
+    <div class="workbook-question">In the next conversation where you hear "we need to think about it" — what is the first thing you will say?</div>
+    <div class="write-lines">
+      <span class="write-line"></span>
+      <span class="write-line"></span>
+    </div>
+
+    <div class="workbook-question">One thing you are taking into tomorrow:</div>
+    <div class="write-lines">
+      <span class="write-line"></span>
+      <span class="write-line"></span>
+    </div>
+  </div>
+
+</div><!-- /content-area -->
+
+<!-- ── DAY FOOTER ── -->
+<footer class="day-footer">
+  <div class="footer-left">
+    Executive Conditioning System™ · Sales Conditioning<br>
+    © 2026 Aivorya AS · Licensed for personal use only · Not for redistribution · Day 16 of 30
+  </div>
+  <div class="footer-right">
+    <div class="footer-tomorrow-label">Tomorrow</div>
+    <div class="footer-tomorrow-title">Day 17 — AI Roleplay: Resistant Buyer</div>
+  </div>
+</footer>
+
+</body>
+</html>

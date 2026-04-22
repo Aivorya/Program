@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Executive Conditioning System™ · Day 20 · Cognitive Dissonance Work</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Jost:wght@300;400;500;600&family=Martian+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper:        #F0EBE1;
+    --paper-deep:   #E8E1D5;
+    --ink:          #1A1510;
+    --ink-mid:      #4A3F35;
+    --ink-light:    #8A7D72;
+    --accent:       #A87840;
+    --accent-light: #C4975A;
+    --accent-muted: rgba(168, 120, 64, 0.12);
+    --dark:         #2E2820;
+    --rule:         rgba(168, 120, 64, 0.25);
+    --write-line:   rgba(26, 21, 16, 0.15);
+  }
+
+  *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Lora', serif;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── MASTHEAD ── */
+  .masthead {
+    background: var(--dark);
+    border-bottom: 1px solid rgba(168, 120, 64, 0.3);
+    padding: 18px 64px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .masthead-left {
+    font-family: 'Martian Mono', monospace;
+    font-size: 7px;
+    font-weight: 300;
+    color: var(--ink-light);
+    letter-spacing: 0.08em;
+    line-height: 1.6;
+  }
+
+  .masthead-left .highlight {
+    color: var(--accent-light);
+  }
+
+  .masthead-right {
+    font-family: 'Martian Mono', monospace;
+    font-size: 7px;
+    font-weight: 400;
+    color: var(--ink-light);
+    letter-spacing: 0.08em;
+    text-align: right;
+  }
+
+  /* ── DAY HEADER ── */
+  .day-header {
+    padding: 48px 64px 40px;
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 0 32px;
+    border-bottom: 1px solid var(--rule);
+    align-items: start;
+  }
+
+  .day-number {
+    font-family: 'Lora', serif;
+    font-size: 88px;
+    font-weight: 400;
+    color: var(--accent);
+    opacity: 0.65;
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+
+  .day-meta {
+    padding-top: 8px;
+  }
+
+  .day-phase-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 7px;
+    font-weight: 400;
+    color: var(--accent);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  .day-title {
+    font-family: 'Lora', serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.3;
+    margin-bottom: 12px;
+  }
+
+  .day-premise {
+    font-family: 'Jost', sans-serif;
+    font-size: 10px;
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.65;
+    max-width: 520px;
+  }
+
+  /* ── CONTENT AREA ── */
+  .content-area {
+    padding: 0 64px;
+  }
+
+  /* ── SECTION LABEL ── */
+  .section-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5px;
+    font-weight: 400;
+    color: var(--accent);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 10px;
+    margin-top: 48px;
+    margin-bottom: 0;
+  }
+
+  /* ── EMAIL BLOCK ── */
+  .email-block {
+    margin-top: 24px;
+  }
+
+  .email-topbar {
+    background: var(--dark);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .email-topbar-left {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5px;
+    font-weight: 300;
+    color: var(--accent-light);
+    letter-spacing: 0.08em;
+  }
+
+  .email-topbar-right {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5px;
+    font-weight: 300;
+    color: var(--ink-light);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .email-body {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-top: none;
+    padding: 36px 40px 40px;
+  }
+
+  .email-body p {
+    font-family: 'Lora', serif;
+    font-size: 11px;
+    font-weight: 400;
+    color: var(--ink);
+    line-height: 1.75;
+    margin-bottom: 18px;
+  }
+
+  .email-body p:last-child {
+    margin-bottom: 0;
+  }
+
+  .email-body em {
+    font-style: italic;
+    color: var(--ink);
+  }
+
+  /* ── SCIENCE BOX ── */
+  .science-box {
+    background: var(--accent-muted);
+    border-left: 3px solid var(--accent);
+    padding: 24px 28px;
+    margin-top: 32px;
+    page-break-inside: avoid;
+  }
+
+  .science-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5px;
+    font-weight: 500;
+    color: var(--accent);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .science-box p {
+    font-family: 'Jost', sans-serif;
+    font-size: 10px;
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.65;
+    margin-bottom: 10px;
+  }
+
+  .science-box p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* ── CALLOUT ── */
+  .callout {
+    text-align: center;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    padding: 28px 20px;
+    margin-top: 36px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 440px;
+  }
+
+  .callout p {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.6;
+  }
+
+  /* ── WORKBOOK BLOCK ── */
+  .workbook-block {
+    background: var(--paper-deep);
+    border-left: 3px solid var(--accent);
+    padding: 28px 32px;
+    margin-top: 32px;
+    page-break-inside: avoid;
+  }
+
+  .workbook-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5px;
+    font-weight: 500;
+    color: var(--accent);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  .workbook-title {
+    font-family: 'Jost', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 12px;
+    line-height: 1.4;
+  }
+
+  .workbook-instruction {
+    font-family: 'Jost', sans-serif;
+    font-size: 9.5px;
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.65;
+    margin-bottom: 20px;
+  }
+
+  .workbook-instruction p {
+    margin-bottom: 8px;
+  }
+
+  .workbook-instruction p:last-child {
+    margin-bottom: 0;
+  }
+
+  .workbook-question {
+    font-family: 'Jost', sans-serif;
+    font-size: 10px;
+    font-weight: 500;
+    color: var(--ink);
+    line-height: 1.55;
+    margin-bottom: 6px;
+    margin-top: 16px;
+  }
+
+  .workbook-question:first-of-type {
+    margin-top: 0;
+  }
+
+  .write-line {
+    border: none;
+    border-bottom: 1px solid var(--write-line);
+    height: 9mm;
+    display: block;
+    width: 100%;
+    margin-bottom: 0;
+  }
+
+  .write-line + .write-line {
+    margin-top: 0;
+  }
+
+  .workbook-divider {
+    border: none;
+    border-top: 1px solid var(--rule);
+    margin: 24px 0;
+    opacity: 0.5;
+  }
+
+  .time-note {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6px;
+    font-weight: 300;
+    color: var(--ink-light);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    display: block;
+  }
+
+  .format-block {
+    background: rgba(168, 120, 64, 0.06);
+    border-left: 2px solid var(--rule);
+    padding: 14px 18px;
+    margin: 16px 0;
+  }
+
+  .format-block p {
+    font-family: 'Jost', sans-serif;
+    font-size: 9.5px;
+    font-weight: 400;
+    color: var(--ink-mid);
+    font-style: italic;
+    line-height: 1.7;
+    margin-bottom: 6px;
+  }
+
+  .format-block p:last-child {
+    margin-bottom: 0;
+  }
+
+  .rationalization-note {
+    font-family: 'Jost', sans-serif;
+    font-size: 9.5px;
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.65;
+    border-top: 1px solid var(--rule);
+    padding-top: 18px;
+    margin-top: 20px;
+  }
+
+  .rationalization-note strong {
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  /* ── DRILL BOX ── */
+  .drill-box {
+    background: var(--paper);
+    border-left: 3px solid var(--ink-mid);
+    padding: 24px 28px;
+    margin-top: 32px;
+    page-break-inside: avoid;
+  }
+
+  .drill-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5px;
+    font-weight: 400;
+    color: var(--ink-light);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+
+  .drill-box p {
+    font-family: 'Jost', sans-serif;
+    font-size: 10px;
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.65;
+    margin-bottom: 10px;
+  }
+
+  .drill-box p:last-child {
+    margin-bottom: 0;
+  }
+
+  .drill-box strong {
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  /* ── END OF DAY BLOCK ── */
+  .end-of-day-block {
+    background: var(--paper-deep);
+    border-left: 3px solid var(--accent);
+    padding: 28px 32px;
+    margin-top: 32px;
+    page-break-inside: avoid;
+  }
+
+  /* ── FOOTER ── */
+  .day-footer {
+    border-top: 1px solid var(--rule);
+    margin-top: 48px;
+    padding: 24px 64px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    page-break-inside: avoid;
+  }
+
+  .footer-left {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6px;
+    font-weight: 300;
+    color: var(--ink-light);
+    letter-spacing: 0.08em;
+    line-height: 1.8;
+  }
+
+  .footer-right {
+    text-align: right;
+  }
+
+  .footer-tomorrow-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6px;
+    font-weight: 500;
+    color: var(--accent);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+  }
+
+  .footer-tomorrow-title {
+    font-family: 'Jost', sans-serif;
+    font-size: 9px;
+    font-weight: 400;
+    color: var(--ink-mid);
+  }
+
+  /* ── PRINT STYLESHEET ── */
+  @media print {
+    body {
+      background: white;
+      color: var(--ink);
+    }
+
+    .masthead {
+      background: white !important;
+      border-bottom: 1px solid #CCCCCC;
+    }
+
+    .masthead-left,
+    .masthead-right,
+    .masthead-left .highlight {
+      color: var(--ink) !important;
+    }
+
+    .email-topbar {
+      background: white !important;
+      border-bottom: 1px solid #CCCCCC;
+    }
+
+    .email-topbar-left,
+    .email-topbar-right {
+      color: var(--ink) !important;
+    }
+
+    .email-body {
+      border: 1px solid #CCCCCC;
+      border-top: none;
+    }
+
+    .science-box {
+      background: #F5F5F5 !important;
+    }
+
+    .workbook-block,
+    .end-of-day-block {
+      background: #F5F5F5 !important;
+      page-break-inside: avoid;
+    }
+
+    .drill-box {
+      page-break-inside: avoid;
+    }
+
+    .write-line {
+      border-bottom-color: #BBBBBB;
+    }
+
+    .day-footer {
+      page-break-inside: avoid;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- ── MASTHEAD ── -->
+<header class="masthead">
+  <div class="masthead-left">
+    Executive Conditioning System™ · <span class="highlight">Sales Conditioning</span> · An Aivorya Program
+  </div>
+  <div class="masthead-right">
+    Phase 3 · Day 20
+  </div>
+</header>
+
+<!-- ── DAY HEADER ── -->
+<div class="day-header">
+  <div class="day-number">20</div>
+  <div class="day-meta">
+    <div class="day-phase-label">Phase 3 — Conditioning</div>
+    <h1 class="day-title">Cognitive Dissonance Work</h1>
+    <p class="day-premise">You know what a top performer does. You do not consistently do those things. That is not a knowledge problem. Today you identify the gap precisely and put it to work.</p>
+  </div>
+</div>
+
+<!-- ── CONTENT AREA ── -->
+<div class="content-area">
+
+  <!-- SECTION: MORNING CONDITIONING -->
+  <div class="section-label">Morning Conditioning</div>
+
+  <div class="email-block">
+    <div class="email-topbar">
+      <span class="email-topbar-left">From: Executive Conditioning System™ · Day 20 of 30</span>
+      <span class="email-topbar-right">Read · Then Work</span>
+    </div>
+    <div class="email-body">
+      <p>You have been in this program for twenty days. You know what a top-performing salesperson does differently in a conversation. You have named your triggers, mapped your identity beliefs, built regulation tools, and drilled the closing and objection work.</p>
+
+      <p>And you still revert under pressure sometimes.</p>
+
+      <p>That is not a knowledge failure. It is not a motivation failure. It has a specific name and a specific mechanism, and today you work with it directly.</p>
+
+      <p>In 1957, Leon Festinger published <em>A Theory of Cognitive Dissonance</em> — still one of the most cited works in social psychology. His core finding: when a person holds two cognitions that are psychologically inconsistent, the resulting discomfort motivates change. You know that asking one clarifying question before responding to an objection produces better outcomes. You still defend immediately. That tension — between what you know and what you do — is cognitive dissonance. It is not a character flaw. It is a psychological state with predictable dynamics.</p>
+
+      <p>Festinger identified two ways people resolve it.</p>
+
+      <p>The first: change the behavior to match the belief. You know that pausing works. You start pausing. The dissonance closes.</p>
+
+      <p>The second: lower the standard of the belief to match the behavior. You know that pausing works — but you start telling yourself that your situation is different, that the speed of your responses is actually a strength, that you'll work on it when things settle. The dissonance closes, but nothing changes. The behavior stays. The belief quietly adjusts downward to accommodate it.</p>
+
+      <p>Most salespeople take the second path without noticing they are doing it. The rationalizations are sophisticated. They sound like self-awareness. They function like avoidance.</p>
+
+      <p>There is a single test for which path you are on.</p>
+
+      <p>When you name a gap between what you know and what you do — ask yourself: <em>Am I naming this to close it, or to explain why it exists?</em></p>
+
+      <p>If the internal answer is the second one, you are rationalizing. The dissonance is being managed, not used. Notice it. Then decide whether to continue.</p>
+
+      <p>What makes dissonance useful rather than paralyzing is specificity. Generalized guilt — <em>I know I could be better at this</em> — produces shame. It is vague enough to sit with indefinitely. Specific dissonance — <em>I know that X leads to better results, I still do Y, and the cost in a real conversation is Z</em> — is precise enough to act on. The format matters. Precision is what converts the discomfort into a behavioral target.</p>
+
+      <p>Today's workbook uses the Day 01 Top 1% Audit as the data source. You re-rate yourself on all ten behaviors. Where the conditioning has moved the needle, you name the specific behavioral change. Where it has not moved: that is the dissonance material. Three behaviors. The format is not negotiable.</p>
+
+      <p>The second exercise closes the day with a different mechanism. The Identity Bridge Statement is a directional claim — written from behavioral evidence, not aspiration — that moves the self-concept toward the target identity incrementally. The specific tense matters. <em>I am becoming someone who</em> is true right now. The process is underway. That makes the statement accurate rather than aspirational, which is the difference between a statement your nervous system accepts and one it rejects.</p>
+
+      <p>The bridge statements you write today are the first draft of the evidence-based identity declaration on Day 30. Today's version reflects twenty days of data. Write them accordingly.</p>
+    </div>
+  </div>
+
+  <!-- SCIENCE BOX -->
+  <div class="science-box">
+    <div class="science-label">The Science</div>
+    <p>Festinger's two resolution paths are equally available at every moment of dissonance. The nervous system does not prefer one over the other — it prefers whichever one reduces the discomfort fastest. Rationalization is faster. It requires no behavioral change. This is why the second path is the default under pressure.</p>
+    <p>The self-concept operates as a behavioral thermostat. Behavior that exceeds the current self-concept produces an automatic corrective pull back toward the set point. This is not a character problem. It is how the system is designed. The Identity Bridge Statement works because it moves the set point incrementally — "I am becoming" is a present-tense process statement. It is accurate right now. "I am" applied to a trait not yet consistently demonstrated produces its own dissonance — the evidence contradicts the claim. Process language sidesteps that, which is why it holds.</p>
+  </div>
+
+  <!-- CALLOUT -->
+  <div style="margin-top: 36px; margin-bottom: 4px;">
+    <div class="callout">
+      <p>Generalized guilt produces shame. Specific dissonance produces a target.</p>
+    </div>
+  </div>
+
+  <!-- SECTION: WORKBOOK -->
+  <div class="section-label">Workbook — Day 20</div>
+
+  <!-- EXERCISE 1 -->
+  <div class="workbook-block">
+    <div class="workbook-label">Exercise 1 · Dissonance Activation — Top 1% Re-Rating</div>
+    <div class="workbook-title">Return to the Day 01 Audit. Re-rate all ten behaviors.</div>
+    <span class="time-note">5–7 minutes</span>
+    <div class="workbook-instruction">
+      <p>Use the same 1–10 scale you used on Day 01. For each behavior, write your Day 01 score and your score today. Work through all ten before moving to Part 2.</p>
+      <p>Where a score has moved: name the specific behavioral change that moved it. One sentence. What did you start doing differently in actual calls?</p>
+      <p>Where a score has not moved: this is your dissonance material. Note it and continue to Exercise 2.</p>
+      <p>If you do not have your Day 01 workbook with you, the ten behaviors are:</p>
+      <ol style="margin: 10px 0 0 18px; font-family: 'Jost', sans-serif; font-size: 9.5px; font-weight: 400; color: var(--ink-mid); line-height: 1.85;">
+        <li>Stays regulated when the buyer pushes back on price</li>
+        <li>Asks follow-up questions rather than defending when challenged</li>
+        <li>Tolerates silence after giving a price or a proposal</li>
+        <li>Moves into the next conversation without carrying the previous one</li>
+        <li>Does not change tone or pace when a deal looks uncertain</li>
+        <li>Asks directly about budget, timeline, and decision process in the first call</li>
+        <li>Handles an objection with curiosity rather than a prepared response</li>
+        <li>Maintains physical authority on video — posture, stillness, eye contact</li>
+        <li>Does not over-explain when the buyer is already decided</li>
+        <li>Debriefs every significant call within 24 hours</li>
+      </ol>
+    </div>
+
+    <div class="workbook-question">Behaviors where your score has moved — what specifically changed?</div>
+    <hr class="write-line">
+    <hr class="write-line">
+    <hr class="write-line">
+    <hr class="write-line">
+
+    <div class="workbook-question">Behaviors where your score has not moved — list them here before Exercise 2.</div>
+    <hr class="write-line">
+    <hr class="write-line">
+    <hr class="write-line">
+  </div>
+
+  <!-- EXERCISE 2 -->
+  <div class="workbook-block">
+    <div class="workbook-label">Exercise 2 · Dissonance Statements</div>
+    <div class="workbook-title">Three behaviors. The format is not negotiable.</div>
+    <span class="time-note">5–7 minutes</span>
+    <div class="workbook-instruction">
+      <p>From the behaviors that have not moved, select three. For each one, complete the format below exactly. The cost must be specific — not "it hurts my performance" but the precise thing that happens in a live conversation when this gap is active.</p>
+    </div>
+
+    <div class="format-block">
+      <p>I know that [specific behavior] leads to better results in a sales conversation.</p>
+      <p>I still do [what I actually do] instead.</p>
+      <p>The cost of this in a live conversation is [specific, behavioral cost].</p>
+    </div>
+
+    <div class="workbook-question">Dissonance Statement 1</div>
+    <hr class="write-line">
+    <hr class="write-line">
+    <hr class="write-line">
+
+    <div class="workbook-question">Dissonance Statement 2</div>
+    <hr class="write-line">
+    <hr class="write-line">
+    <hr class="write-line">
+
+    <div class="workbook-question">Dissonance Statement 3</div>
+    <hr class="write-line">
+    <hr class="write-line">
+    <hr class="write-line">
+
+    <div class="rationalization-note">
+      <strong>Rationalization test.</strong> After writing each statement, ask: <em>Am I naming this to close it, or to explain why it exists?</em> If the internal answer is the second one, you are on Festinger's second path. The dissonance is being managed. Rewrite the statement until it names the gap without defending it.
+    </div>
+  </div>
+
+  <!-- EXERCISE 3 -->
+  <div class="workbook-block">
+    <div class="workbook-label">Exercise 3 · Identity Bridge Statement</div>
+    <div class="workbook-title">Three completions. Each one grounded in behavioral evidence.</div>
+    <span class="time-note">5–7 minutes</span>
+    <div class="workbook-instruction">
+      <p>Write three completions of: <em>I am becoming someone who…</em></p>
+      <p>Each completion must point to behavioral evidence from the past twenty days — something you have actually done, even once, that was different from your previous pattern. Not what you intend to do. What you have done.</p>
+      <p>If you cannot identify behavioral evidence for a completion, do not write it. Write one you can substantiate. The Day 30 Identity Declaration builds from what you write here — today's statement reflects twenty days of data.</p>
+    </div>
+
+    <div class="workbook-question">I am becoming someone who…</div>
+    <hr class="write-line">
+    <hr class="write-line">
+
+    <div class="workbook-question">I am becoming someone who…</div>
+    <hr class="write-line">
+    <hr class="write-line">
+
+    <div class="workbook-question">I am becoming someone who…</div>
+    <hr class="write-line">
+    <hr class="write-line">
+  </div>
+
+  <!-- SECTION: DRILL -->
+  <div class="section-label">Today's Practice Drill</div>
+
+  <div class="drill-box">
+    <div class="drill-label">Post-Call Dissonance Check · 3 minutes post-call</div>
+    <p>After your next sales call, before you move to anything else:</p>
+    <p><strong>Identify one moment in that call where you knew what to do and did something else instead. Write it in the dissonance format. One statement. Specific cost.</strong></p>
+    <p>This is data collection. The statement gives you a precise behavioral target for the next call. If the call produced no such moment, note that — it is also data.</p>
+    <p>No call today: apply the post-call dissonance check to the most recent call you can clearly recall. The format works on memory as well as on immediate recall. Write the statement before the day ends.</p>
+  </div>
+
+  <!-- SECTION: END OF DAY -->
+  <div class="section-label">End of Day — Day 20</div>
+
+  <div class="end-of-day-block">
+    <span class="time-note">3–5 minutes</span>
+
+    <div class="workbook-question">Which of the three dissonance statements was the most uncomfortable to write? What made it specific enough to be uncomfortable rather than general enough to be safe?</div>
+    <hr class="write-line">
+    <hr class="write-line">
+
+    <div class="workbook-question">On the rationalization test — were there moments in this workbook where you were explaining the gap rather than naming it? What was the explanation?</div>
+    <hr class="write-line">
+    <hr class="write-line">
+
+    <div class="workbook-question">One thing you are taking into the next day.</div>
+    <hr class="write-line">
+    <hr class="write-line">
+  </div>
+
+</div><!-- end content-area -->
+
+<!-- ── FOOTER ── -->
+<footer class="day-footer">
+  <div class="footer-left">
+    Executive Conditioning System™ · Sales Conditioning<br>
+    © 2026 Aivorya AS · Licensed for personal use only · Not for redistribution · Day 20 of 30
+  </div>
+  <div class="footer-right">
+    <div class="footer-tomorrow-label">Tomorrow</div>
+    <div class="footer-tomorrow-title">AI Roleplay: High-Stakes Close</div>
+  </div>
+</footer>
+
+</body>
+</html>

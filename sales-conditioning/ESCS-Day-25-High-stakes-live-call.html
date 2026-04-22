@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Executive Conditioning System™ — Day 25: The High-Stakes Live Call</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Jost:wght@300;400;500;600&family=Martian+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --paper:        #F0EBE1;
+    --paper-deep:   #E8E1D5;
+    --ink:          #1A1510;
+    --ink-mid:      #4A3F35;
+    --ink-light:    #8A7D72;
+    --accent:       #A87840;
+    --accent-light: #C4975A;
+    --accent-muted: rgba(168, 120, 64, 0.12);
+    --dark:         #2E2820;
+    --rule:         rgba(168, 120, 64, 0.25);
+    --write-line:   rgba(26, 21, 16, 0.15);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Lora', serif;
+    font-size: 11pt;
+    line-height: 1.7;
+  }
+
+  /* ── MASTHEAD ── */
+  .masthead {
+    background: var(--dark);
+    border-bottom: 1px solid rgba(168, 120, 64, 0.3);
+    padding: 14px 64px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .masthead-left {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 400;
+    color: var(--ink-light);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .masthead-left span {
+    color: var(--accent-light);
+  }
+  .masthead-right {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 400;
+    color: var(--ink-light);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* ── DAY HEADER ── */
+  .day-header {
+    padding: 48px 64px 40px;
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 0 32px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .day-number-large {
+    font-family: 'Lora', serif;
+    font-size: 88pt;
+    font-weight: 400;
+    color: var(--accent);
+    opacity: 0.65;
+    line-height: 1;
+    padding-top: 6px;
+  }
+  .day-header-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+  }
+  .phase-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 400;
+    color: var(--accent);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+  .day-title {
+    font-family: 'Lora', serif;
+    font-size: 20pt;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.2;
+  }
+  .day-premise {
+    font-family: 'Jost', sans-serif;
+    font-size: 10pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.65;
+    max-width: 580px;
+  }
+
+  /* ── CONTENT AREA ── */
+  .content-area {
+    padding: 0 64px;
+  }
+
+  /* ── SECTION LABEL ── */
+  .section-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 400;
+    color: var(--accent);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 10px;
+    margin-top: 48px;
+  }
+
+  /* ── EMAIL BLOCK ── */
+  .email-block {
+    border: 1px solid var(--rule);
+    border-top: none;
+    margin-top: 0;
+  }
+  .email-topbar {
+    background: var(--dark);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .email-topbar-left {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 400;
+    color: var(--ink-light);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .email-topbar-right {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 400;
+    color: var(--ink-light);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .email-body {
+    background: var(--paper);
+    padding: 32px 36px;
+    font-family: 'Lora', serif;
+    font-size: 11pt;
+    line-height: 1.75;
+    color: var(--ink);
+  }
+  .email-body p {
+    margin-bottom: 18px;
+  }
+  .email-body p:last-child {
+    margin-bottom: 0;
+  }
+  .email-body em {
+    font-style: italic;
+  }
+
+  /* ── SCIENCE BOX ── */
+  .science-box {
+    background: var(--accent-muted);
+    border-left: 3px solid var(--accent);
+    padding: 24px 28px;
+    margin-top: 32px;
+  }
+  .science-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 500;
+    color: var(--accent);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .science-box p {
+    font-family: 'Jost', sans-serif;
+    font-size: 10pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.7;
+    margin-bottom: 12px;
+  }
+  .science-box p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* ── CALLOUT ── */
+  .callout {
+    text-align: center;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    padding: 28px 0;
+    margin: 40px auto;
+    max-width: 440px;
+  }
+  .callout p {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 14pt;
+    color: var(--ink-mid);
+    line-height: 1.6;
+  }
+
+  /* ── WORKBOOK BLOCK ── */
+  .workbook-block {
+    background: var(--paper-deep);
+    border-left: 3px solid var(--accent);
+    padding: 28px 32px;
+    margin-top: 32px;
+    page-break-inside: avoid;
+  }
+  .workbook-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 500;
+    color: var(--accent);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .workbook-title {
+    font-family: 'Jost', sans-serif;
+    font-size: 13pt;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 8px;
+    line-height: 1.3;
+  }
+  .workbook-timing {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    color: var(--ink-light);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .workbook-instruction {
+    font-family: 'Jost', sans-serif;
+    font-size: 9.5pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.65;
+    margin-bottom: 20px;
+  }
+  .workbook-question {
+    font-family: 'Jost', sans-serif;
+    font-size: 10pt;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 6px;
+    line-height: 1.5;
+  }
+  .workbook-sub {
+    font-family: 'Jost', sans-serif;
+    font-size: 9.5pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.55;
+    margin-bottom: 12px;
+  }
+  .write-lines {
+    margin-top: 8px;
+    margin-bottom: 20px;
+  }
+  .write-line {
+    border-bottom: 1px solid var(--write-line);
+    height: 9mm;
+    margin-bottom: 0;
+  }
+  .element-divider {
+    border: none;
+    border-top: 1px solid var(--rule);
+    margin: 24px 0;
+    opacity: 0.6;
+  }
+  .element-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 500;
+    color: var(--accent);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .score-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 4px;
+  }
+  .score-label {
+    font-family: 'Jost', sans-serif;
+    font-size: 10pt;
+    font-weight: 500;
+    color: var(--ink);
+    min-width: 200px;
+    line-height: 1.5;
+  }
+  .note-box {
+    background: rgba(168, 120, 64, 0.07);
+    border-left: 2px solid var(--accent-light);
+    padding: 16px 20px;
+    margin-top: 24px;
+    margin-bottom: 8px;
+  }
+  .note-box p {
+    font-family: 'Jost', sans-serif;
+    font-size: 9.5pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.65;
+    margin-bottom: 0;
+  }
+  .note-box strong {
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  /* ── DRILL BOX ── */
+  .drill-box {
+    background: var(--paper);
+    border-left: 3px solid var(--ink-mid);
+    padding: 24px 28px;
+    margin-top: 32px;
+    page-break-inside: avoid;
+  }
+  .drill-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 400;
+    color: var(--ink-light);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .drill-box p {
+    font-family: 'Jost', sans-serif;
+    font-size: 10pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.7;
+    margin-bottom: 10px;
+  }
+  .drill-box p:last-child { margin-bottom: 0; }
+  .drill-box strong {
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  /* ── DAY FOOTER ── */
+  .day-footer {
+    border-top: 1px solid var(--rule);
+    margin-top: 48px;
+    padding: 24px 64px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    page-break-inside: avoid;
+  }
+  .footer-left {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 300;
+    color: var(--ink-light);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    line-height: 1.8;
+  }
+  .footer-right {
+    text-align: right;
+  }
+  .footer-tomorrow-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 500;
+    color: var(--accent);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .footer-tomorrow-title {
+    font-family: 'Jost', sans-serif;
+    font-size: 9pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+  }
+
+  /* ── PRINT STYLESHEET ── */
+  @media print {
+    body { background: white; color: var(--ink); }
+    .masthead { background: white; border-bottom: 1px solid #CCCCCC; }
+    .masthead-left, .masthead-right { color: #888; }
+    .masthead-left span { color: var(--accent); }
+    .email-topbar { background: white; border-bottom: 1px solid #CCCCCC; }
+    .email-topbar-left, .email-topbar-right { color: #888; }
+    .email-body { border: 1px solid #CCCCCC; }
+    .science-box { background: #F5F5F5; }
+    .workbook-block { background: #F5F5F5; page-break-inside: avoid; }
+    .drill-box { page-break-inside: avoid; }
+    .day-footer { page-break-inside: avoid; }
+    .write-line { border-bottom: 1px solid #BBBBBB; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ── MASTHEAD ── -->
+<div class="masthead">
+  <div class="masthead-left">
+    Executive Conditioning System™ · <span>Sales Conditioning</span> · An Aivorya Program
+  </div>
+  <div class="masthead-right">Phase 4 · Day 25</div>
+</div>
+
+<!-- ── DAY HEADER ── -->
+<div class="day-header">
+  <div class="day-number-large">25</div>
+  <div class="day-header-right">
+    <div class="phase-label">Phase 4 — Integration</div>
+    <div class="day-title">The High-Stakes Live Call</div>
+    <div class="day-premise">Today you identify the single most important deal in your current pipeline, build the complete preparation architecture, run the call, and conduct the full 20-minute debrief. This is the integration test. A real deal, a real buyer, real stakes.</div>
+  </div>
+</div>
+
+<!-- ── CONTENT AREA ── -->
+<div class="content-area">
+
+  <!-- Morning Conditioning -->
+  <div class="section-label">Morning Conditioning</div>
+  <div class="email-block">
+    <div class="email-topbar">
+      <div class="email-topbar-left">From: Executive Conditioning System™ · Day 25 of 30</div>
+      <div class="email-topbar-right">Read · Then Work</div>
+    </div>
+    <div class="email-body">
+      <p>Twenty-four days of preparation is worth nothing if it stays in the workbook.</p>
+      <p>Today it leaves the workbook.</p>
+      <p>You are going to identify the single most important deal in your current pipeline — not the easiest one, not the most likely to close, the one where a successful conversation would have the most significant commercial impact — and you are going to prepare for it completely. Then you are going to run it. Then you are going to debrief it for twenty minutes.</p>
+      <p>That is the complete work of Day 25.</p>
+      <p>The transfer of learning research is unambiguous on this point: skill acquisition under training conditions transfers most completely when it is applied to a real performance event with genuine stakes. Not a simulation. Not a roleplay. A conversation where the outcome is uncertain, the buyer's responses are unscripted, and the pressure is actual. The emotional activation that comes with real stakes is not an obstacle to performance — it is the condition under which the deepest conditioning occurs.</p>
+      <p>The pre-call architecture you build today is not a workbook exercise. It is your actual preparation for the most important call in your pipeline.</p>
+      <p>If that call is not yet scheduled, schedule it today.</p>
+    </div>
+  </div>
+
+  <!-- Science Box -->
+  <div class="science-box">
+    <div class="science-label">The Science</div>
+    <p>The principle is called transfer of learning — the degree to which skills acquired in training carry into real-world performance. Research across surgery, aviation, elite sport, and high-stakes negotiation shows consistent findings: transfer is maximized when the learner applies the skill in the highest-fidelity available environment, with genuine uncertainty about the outcome.</p>
+    <p>Simulations are useful. Deliberate practice is essential. But neither produces the conditioning signal of a real performance event under genuine pressure — because only the real event activates the full emotional and physiological response the skill must ultimately operate within. Ericsson's deliberate practice research is explicit: the highest available fidelity is the real performance event. The debrief that follows it produces the most specific behavioral data because the activation is real, the responses are unscripted, and the outcome cannot be controlled.</p>
+    <p>There is a second mechanism. Performance psychology calls it emotional anchoring: a specific memory of competent performance under real pressure functions as an identity anchor. It is a retrievable memory that serves as evidence — not the feeling of having performed well, but a specific moment the nervous system can point to. If Day 25 produces a well-prepared, regulated, curious conversation — regardless of the commercial outcome — that memory is available for Day 30's Identity Declaration. Simulations cannot produce it.</p>
+    <p>Both mechanisms point to the same conclusion: this is not the day to run a safe call.</p>
+  </div>
+
+  <!-- Deal Selection -->
+  <div class="section-label">Deal Selection</div>
+  <div class="drill-box">
+    <div class="drill-label">Before You Begin</div>
+    <p>Identify one deal. Not the easiest deal. Not the most likely to close this month. <strong>The most important deal in your current pipeline — the one where a successful conversation would have the most significant commercial impact.</strong></p>
+    <p>If you have a conversation already scheduled with that buyer, that is your Day 25 call. If you do not, schedule it today before you begin the architecture.</p>
+    <p>Write the deal name and the buyer's name at the top of Exercise 1. Everything that follows is specific to that deal and that buyer.</p>
+  </div>
+
+  <!-- Workbook -->
+  <div class="section-label">Workbook — Day 25</div>
+
+  <!-- Exercise 1: Pre-Call Architecture -->
+  <div class="workbook-block">
+    <div class="workbook-label">Exercise 1 · Pre-Call Architecture</div>
+    <div class="workbook-title">Complete Preparation for the High-Stakes Call</div>
+    <div class="workbook-timing">Approximate time: 20–25 minutes · Complete before the call</div>
+    <div class="workbook-instruction">Work through all seven elements in order. Do not skip elements. The architecture is the preparation — it is not a summary of what you already know. Every element is specific to the deal and buyer you have identified.</div>
+
+    <!-- Element 1 -->
+    <div class="element-label">Element 1 — Buyer Uncertainty Map</div>
+    <div class="workbook-question">What type of uncertainty is this buyer most likely carrying?</div>
+    <div class="workbook-sub">
+      Outcome uncertainty: Will this produce the result they need?<br>
+      Implementation uncertainty: Can they execute this inside their organisation?<br>
+      Social uncertainty: What happens to them internally if this does not work?<br><br>
+      Write the most likely uncertainty type and the specific evidence from previous conversations that supports this diagnosis. Not what you assume — what they have actually said or done.
+    </div>
+    <div class="write-lines">
+      <div class="write-line"></div>
+      <div class="write-line"></div>
+    </div>
+
+    <hr class="element-divider">
+
+    <!-- Element 2 -->
+    <div class="element-label">Element 2 — Remaining Unknowns</div>
+    <div class="workbook-question">What do you still not know about this buyer's situation that would change how you approach the conversation?</div>
+    <div class="workbook-sub">Write two to three discovery questions that would surface this information. These are the questions you need answered before any version of a close is appropriate.</div>
+    <div class="write-lines">
+      <div class="write-line"></div>
+      <div class="write-line"></div>
+      <div class="write-line"></div>
+    </div>
+
+    <hr class="element-divider">
+
+    <!-- Element 3 -->
+    <div class="element-label">Element 3 — Three Anticipated Objections</div>
+    <div class="workbook-question">For each of the three objections most likely to appear in this specific conversation, work through the full anatomy.</div>
+    <div class="workbook-sub">Use the Day 14 framework exactly. Do not improvise this section.</div>
+
+    <div class="element-label" style="margin-top:16px; opacity:0.7;">Objection 1</div>
+    <div class="workbook-sub">Surface statement · Underlying concern · Unspoken question · Uncertainty type · Explore Before Respond question</div>
+    <div class="write-lines">
+      <div class="write-line"></div>
+      <div class="write-line"></div>
+      <div class="write-line"></div>
+      <div class="write-line"></div>
+      <div class="write-line"></div>
+    </div>
+
+    <div class="element-label" style="opacity:0.7;">Objection 2</div>
+    <div class="workbook-sub">Surface statement · Underlying concern · Unspoken question · Uncertainty type · Explore Before Respond question</div>
+    <div class="write-lines">
+      <div class="write-line"></div>
+      <div class="write-line"></div>
+      <div class="write-line"></div>
+      <div class="write-line"></div>
+      <div class="write-line"></div>
+    </div>
+
+    <div class="element-label" style="opacity:0.7;">Objection 3</div>
+    <div class="workbook-sub">Surface statement · Underlying concern · Unspoken question · Uncertainty type · Explore Before Respond question</div>
+    <div class="write-lines">
+      <div class="write-line"></div>
+      <div class="write-line"></div>
+      <div class="write-line"></div>
+      <div class="write-line"></div>
+      <div class="write-line"></div>
+    </div>
+
+    <hr class="element-divider">
+
+    <!-- Element 4 -->
+    <div class="element-label">Element 4 — Price Preparation</div>
+    <div class="workbook-question">Complete this element if price is likely to come up in this conversation.</div>
+    <div class="workbook-sub">Write the exact number you will state. Write the silence hold — note it explicitly so it is not an accident. Write the re-anchoring sequence using the specific cost of the problem for this buyer — not a generic cost-of-inaction argument, the one that came from their own description of the situation.</div>
+    <div class="write-lines">
+      <div class="write-line"></div>
+      <div class="write-line"></div>
+      <div class="write-line"></div>
+    </div>
+
+    <hr class="element-divider">
+
+    <!-- Element 5 -->
+    <div class="element-label">Element 5 — Stall Preparation</div>
+    <div class="workbook-question">Write your stall diagnosis question in your own language.</div>
+    <div class="workbook-sub">Not a template — the version you would actually say to this buyer. Then write the next step commitment you are aiming to secure: specific action, specific date, specific person responsible.</div>
+    <div class="write-lines">
+      <div class="write-line"></div>
+      <div class="write-line"></div>
+    </div>
+
+    <hr class="element-divider">
+
+    <!-- Element 6 -->
+    <div class="element-label">Element 6 — Collaborative Close Language</div>
+    <div class="workbook-question">Write the close language for this specific conversation in advance.</div>
+    <div class="workbook-sub">It should reference something this buyer has specifically described — a consequence they named, a constraint they mentioned, a goal they stated. Not a template. A sentence that could only be said to this buyer about this deal.</div>
+    <div class="write-lines">
+      <div class="write-line"></div>
+      <div class="write-line"></div>
+    </div>
+
+    <hr class="element-divider">
+
+    <!-- Element 7 -->
+    <div class="element-label">Element 7 — Behavioral Objective</div>
+    <div class="workbook-question">From your Phase 4 targeting statements, identify the one dimension most likely to be tested in this specific conversation.</div>
+    <div class="workbook-sub">Write it in when-then format: When [specific trigger], I will [specific behavior].</div>
+    <div class="write-lines">
+      <div class="write-line"></div>
+    </div>
+  </div>
+
+  <!-- Exercise 2: Extended Post-Call Debrief -->
+  <div class="workbook-block">
+    <div class="workbook-label">Exercise 2 · Extended Post-Call Debrief</div>
+    <div class="workbook-title">All Eight Dimensions — After the Call</div>
+    <div class="workbook-timing">Approximate time: 20 minutes · Complete within 30 minutes of the call ending</div>
+    <div class="workbook-instruction">Rate all eight scorecard dimensions. For each score, write one specific behavioral observation — a moment in the call, a specific thing you said or did not say. Not a general feeling about how it went. A behavioral observation from a specific moment.</div>
+
+    <!-- Scorecard Dimensions -->
+    <div class="element-label" style="margin-top:8px;">Scorecard Dimensions</div>
+
+    <div class="workbook-question">1. Regulation (1–10)</div>
+    <div class="workbook-sub">Name one specific moment when pressure arrived. What did you do?</div>
+    <div class="write-lines"><div class="write-line"></div></div>
+
+    <div class="workbook-question">2. Curiosity (1–10)</div>
+    <div class="workbook-sub">When an objection or resistance appeared: did you ask or answer?</div>
+    <div class="write-lines"><div class="write-line"></div></div>
+
+    <div class="workbook-question">3. Structure (1–10)</div>
+    <div class="workbook-sub">Did the conversation follow your architecture? Where did it deviate?</div>
+    <div class="write-lines"><div class="write-line"></div></div>
+
+    <div class="workbook-question">4. Silence Tolerance (1–10)</div>
+    <div class="workbook-sub">After your most important question or your price. What happened?</div>
+    <div class="write-lines"><div class="write-line"></div></div>
+
+    <div class="workbook-question">5. Non-Attachment (1–10)</div>
+    <div class="workbook-sub">Was there a moment you felt the need to close, not the desire to? What did it produce?</div>
+    <div class="write-lines"><div class="write-line"></div></div>
+
+    <div class="workbook-question">6. Certainty Language (1–10)</div>
+    <div class="workbook-sub">Which uncertainty type did you address directly? What did you say?</div>
+    <div class="write-lines"><div class="write-line"></div></div>
+
+    <div class="workbook-question">7. Authority Posture (1–10)</div>
+    <div class="workbook-sub">Pace, tone, physical presence. Any moment where you felt it slip? What caused it?</div>
+    <div class="write-lines"><div class="write-line"></div></div>
+
+    <div class="workbook-question">8. Recovery Speed (1–10)</div>
+    <div class="workbook-sub">If the call hit a difficult moment: how long before you were back? What did you use?</div>
+    <div class="write-lines"><div class="write-line"></div></div>
+
+    <hr class="element-divider">
+
+    <!-- Three Additional Questions -->
+    <div class="element-label">Three Additional Questions — This Debrief Only</div>
+
+    <div class="workbook-question">What was different about how you conducted this conversation compared to how you would have conducted it before Day 01?</div>
+    <div class="workbook-sub">Write what actually changed. Not what you intended to do differently — what you actually did.</div>
+    <div class="write-lines">
+      <div class="write-line"></div>
+      <div class="write-line"></div>
+    </div>
+
+    <div class="workbook-question">What surprised you — about the buyer, the conversation, or your own performance?</div>
+    <div class="write-lines">
+      <div class="write-line"></div>
+      <div class="write-line"></div>
+    </div>
+
+    <div class="workbook-question">Did you secure a specific next step?</div>
+    <div class="workbook-sub">If yes: write it — action, date, person.<br>If no: write what prevented it and what you will do about that in the next 24 hours.</div>
+    <div class="write-lines">
+      <div class="write-line"></div>
+      <div class="write-line"></div>
+    </div>
+
+    <!-- Note on key question -->
+    <div class="note-box">
+      <p><strong>On the debrief question that matters most:</strong> "What was different about how you conducted this conversation compared to how you would have conducted it before Day 01?" The answer to that question is what Day 30 needs. Every specific behavioral change you record here becomes evidence for the Identity Declaration. Write it precisely.</p>
+    </div>
+  </div>
+
+  <!-- Day 28 Connection -->
+  <div class="section-label">Day 28 Connection</div>
+  <div class="drill-box">
+    <div class="drill-label">Before/After Recording — Three Days Out</div>
+    <p>Day 28 is the before/after recording session — the comparison against the Day 05 baseline. <strong>The preparation you completed today and the debrief that follows is the material you bring to that session.</strong> The participant who runs the high-stakes call on Day 25 with complete preparation arrives at Day 28 with live deal experience to draw from. That matters for what the recording produces.</p>
+  </div>
+
+  <!-- End of Day Reflection -->
+  <div class="section-label">End of Day — Day 25</div>
+  <div class="workbook-block">
+    <div class="workbook-label">End of Day Reflection</div>
+    <div class="workbook-timing">Approximate time: 5 minutes</div>
+
+    <div class="workbook-question">What did the preparation reveal that you did not know before you wrote it?</div>
+    <div class="write-lines">
+      <div class="write-line"></div>
+      <div class="write-line"></div>
+    </div>
+
+    <div class="workbook-question">Which element of the pre-call architecture proved most valuable in the conversation — and which element, looking back, was missing or incomplete?</div>
+    <div class="write-lines">
+      <div class="write-line"></div>
+      <div class="write-line"></div>
+    </div>
+
+    <div class="workbook-question">One specific thing you are taking into the next conversation.</div>
+    <div class="write-lines">
+      <div class="write-line"></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+
+</div><!-- end content-area -->
+
+<!-- ── DAY FOOTER ── -->
+<div class="day-footer">
+  <div class="footer-left">
+    Executive Conditioning System™ · Sales Conditioning<br>
+    © 2026 Aivorya AS · Licensed for personal use only · Not for redistribution · Day 25 of 30
+  </div>
+  <div class="footer-right">
+    <div class="footer-tomorrow-label">Tomorrow</div>
+    <div class="footer-tomorrow-title">Regression and Recovery</div>
+  </div>
+</div>
+
+</body>
+</html>

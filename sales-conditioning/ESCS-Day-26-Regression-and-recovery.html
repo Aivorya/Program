@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Executive Conditioning System™ · Day 26 · Regression and Recovery</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Jost:wght@300;400;500;600&family=Martian+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper:        #F0EBE1;
+    --paper-deep:   #E8E1D5;
+    --ink:          #1A1510;
+    --ink-mid:      #4A3F35;
+    --ink-light:    #8A7D72;
+    --accent:       #A87840;
+    --accent-light: #C4975A;
+    --accent-muted: rgba(168, 120, 64, 0.12);
+    --dark:         #2E2820;
+    --rule:         rgba(168, 120, 64, 0.25);
+    --write-line:   rgba(26, 21, 16, 0.15);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Lora', Georgia, serif;
+    font-size: 11pt;
+    line-height: 1.7;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* ── MASTHEAD ── */
+  .masthead {
+    background: var(--dark);
+    border-bottom: 1px solid rgba(168, 120, 64, 0.3);
+    padding: 14px 64px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .masthead-left {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 300;
+    color: var(--ink-light);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .masthead-left span {
+    color: var(--accent-light);
+  }
+  .masthead-right {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 300;
+    color: var(--ink-light);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* ── DAY HEADER ── */
+  .day-header {
+    padding: 48px 64px 40px;
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 0 32px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .day-number {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 88pt;
+    font-weight: 400;
+    color: var(--accent);
+    opacity: 0.65;
+    line-height: 1;
+    padding-top: 4px;
+  }
+  .day-meta {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+  }
+  .phase-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 400;
+    color: var(--accent);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+  .day-title {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 20pt;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.2;
+  }
+  .day-premise {
+    font-family: 'Jost', sans-serif;
+    font-size: 10pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.65;
+    max-width: 540px;
+  }
+
+  /* ── CONTENT AREA ── */
+  .content {
+    padding: 0 64px;
+  }
+
+  /* ── SECTION LABEL ── */
+  .section-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 400;
+    color: var(--accent);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 8px;
+    margin-top: 48px;
+    margin-bottom: 0;
+  }
+
+  /* ── EMAIL BLOCK ── */
+  .email-block {
+    margin-top: 24px;
+  }
+  .email-topbar {
+    background: var(--dark);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .email-topbar-left {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 300;
+    color: var(--ink-light);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .email-topbar-right {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 300;
+    color: var(--ink-light);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .email-body {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-top: none;
+    padding: 36px 40px;
+  }
+  .email-body p {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 11pt;
+    line-height: 1.75;
+    color: var(--ink);
+    margin-bottom: 18px;
+  }
+  .email-body p:last-child { margin-bottom: 0; }
+  .email-body em { font-style: italic; }
+
+  /* ── SCIENCE BOX ── */
+  .science-box {
+    background: var(--accent-muted);
+    border-left: 3px solid var(--accent);
+    padding: 24px 28px;
+    margin-top: 32px;
+  }
+  .science-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 500;
+    color: var(--accent);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .science-box p {
+    font-family: 'Jost', sans-serif;
+    font-size: 10pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.65;
+    margin-bottom: 12px;
+  }
+  .science-box p:last-child { margin-bottom: 0; }
+
+  /* ── CALLOUT ── */
+  .callout {
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    padding: 24px 0;
+    margin-top: 32px;
+    text-align: center;
+  }
+  .callout p {
+    font-family: 'Lora', Georgia, serif;
+    font-style: italic;
+    font-size: 14pt;
+    color: var(--ink-mid);
+    line-height: 1.5;
+    max-width: 440px;
+    margin: 0 auto;
+  }
+
+  /* ── WORKBOOK BLOCK ── */
+  .workbook-block {
+    background: var(--paper-deep);
+    border-left: 3px solid var(--accent);
+    padding: 28px 32px;
+    margin-top: 32px;
+    page-break-inside: avoid;
+  }
+  .workbook-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 500;
+    color: var(--accent);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .workbook-title {
+    font-family: 'Jost', sans-serif;
+    font-size: 13pt;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 6px;
+  }
+  .workbook-time {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 300;
+    color: var(--ink-light);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+  }
+  .workbook-instruction {
+    font-family: 'Jost', sans-serif;
+    font-size: 9.5pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.65;
+    margin-bottom: 20px;
+  }
+  .workbook-question {
+    font-family: 'Jost', sans-serif;
+    font-size: 10pt;
+    font-weight: 500;
+    color: var(--ink);
+    line-height: 1.5;
+    margin-bottom: 6px;
+    margin-top: 18px;
+  }
+  .workbook-question:first-of-type { margin-top: 0; }
+  .write-line {
+    border-bottom: 1px solid var(--write-line);
+    height: 9mm;
+    margin-bottom: 2px;
+  }
+  .workbook-step {
+    font-family: 'Jost', sans-serif;
+    font-size: 10pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.65;
+    margin-bottom: 10px;
+    padding-left: 16px;
+    border-left: 2px solid var(--rule);
+  }
+  .workbook-step strong {
+    color: var(--ink);
+    font-weight: 600;
+  }
+  .workbook-step-number {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+    display: block;
+    margin-bottom: 3px;
+    text-transform: uppercase;
+  }
+
+  /* ── DRILL BOX ── */
+  .drill-box {
+    background: var(--paper);
+    border-left: 3px solid var(--ink-mid);
+    padding: 24px 28px;
+    margin-top: 32px;
+    page-break-inside: avoid;
+  }
+  .drill-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 400;
+    color: var(--ink-light);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .drill-box p {
+    font-family: 'Jost', sans-serif;
+    font-size: 10pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.65;
+    margin-bottom: 10px;
+  }
+  .drill-box p:last-child { margin-bottom: 0; }
+  .drill-box strong {
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  /* ── IDENTITY NOTE ── */
+  .identity-note {
+    margin-top: 32px;
+    padding: 20px 28px;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+  }
+  .identity-note-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 400;
+    color: var(--ink-light);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .identity-note p {
+    font-family: 'Jost', sans-serif;
+    font-size: 10pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.65;
+    margin-bottom: 8px;
+  }
+  .identity-note p:last-child { margin-bottom: 0; }
+
+  /* ── END OF DAY ── */
+  .end-of-day {
+    background: var(--paper-deep);
+    border-left: 3px solid var(--accent);
+    padding: 28px 32px;
+    margin-top: 48px;
+    page-break-inside: avoid;
+  }
+  .end-of-day .workbook-label { margin-bottom: 16px; }
+
+  /* ── FOOTER ── */
+  .day-footer {
+    padding: 24px 64px;
+    border-top: 1px solid var(--rule);
+    margin-top: 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    page-break-inside: avoid;
+  }
+  .footer-left {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 300;
+    color: var(--ink-light);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    line-height: 1.8;
+  }
+  .footer-right {
+    text-align: right;
+  }
+  .footer-tomorrow-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 400;
+    color: var(--accent);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .footer-tomorrow-title {
+    font-family: 'Jost', sans-serif;
+    font-size: 9pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+  }
+
+  /* ── PRINT ── */
+  @media print {
+    body { background: #fff; color: var(--ink); }
+    .masthead { background: #fff; border-bottom: 1px solid #ccc; }
+    .masthead-left, .masthead-right { color: #666; }
+    .masthead-left span { color: #444; }
+    .email-topbar { background: #fff; border-bottom: 1px solid #ccc; }
+    .email-topbar-left, .email-topbar-right { color: #666; }
+    .email-body { border-color: #ccc; background: #fff; }
+    .science-box { background: #f5f5f5; }
+    .workbook-block { background: #f5f5f5; page-break-inside: avoid; }
+    .drill-box { background: #fff; page-break-inside: avoid; }
+    .end-of-day { background: #f5f5f5; page-break-inside: avoid; }
+    .write-line { border-bottom: 1px solid #bbb; }
+    .day-footer { page-break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<!-- MASTHEAD -->
+<header class="masthead">
+  <div class="masthead-left">Executive Conditioning System™ · <span>Sales Conditioning</span> · An Aivorya Program</div>
+  <div class="masthead-right">Phase 4 · Day 26</div>
+</header>
+
+<!-- DAY HEADER -->
+<div class="day-header">
+  <div class="day-number">26</div>
+  <div class="day-meta">
+    <div class="phase-label">Phase 4 — Integration</div>
+    <div class="day-title">Regression and Recovery</div>
+    <div class="day-premise">By Day 26, most participants will have experienced at least one moment where the old patterns came back. Not failure. The expected behavior of a nervous system under real pressure. Today you map it precisely and build the reset into automatic behavior.</div>
+  </div>
+</div>
+
+<!-- CONTENT -->
+<div class="content">
+
+  <!-- SECTION: Morning Conditioning -->
+  <div class="section-label">Morning Conditioning</div>
+
+  <div class="email-block">
+    <div class="email-topbar">
+      <div class="email-topbar-left">From: Executive Conditioning System™ · Day 26 of 30</div>
+      <div class="email-topbar-right">Read · Then Work</div>
+    </div>
+    <div class="email-body">
+      <p>By Day 26, the old pattern has reasserted at least once. In most cases, more than once. This is not a problem with the program or with you. It is the documented behavior of a nervous system in the process of change.</p>
+
+      <p>The existing pathway — the defensive response, the premature close, the silence you filled, the concession you made without being asked — has been reinforced across years of selling. Thousands of repetitions. The new pathway has been conditioned for twenty-five days. Under maximum pressure, the existing pathway has a structural advantage. This is not a metaphor. It is how synaptic reinforcement works. A well-established pathway fires faster and with less resistance than a newly formed one. That gap narrows with deliberate repetition. It does not close from awareness alone.</p>
+
+      <p>The regression is data. Specifically: it is the most precise information you have about where the conditioning has not yet displaced the existing response. A call that goes well tells you nothing about where the weakness is. The regression names it exactly — the trigger, the pattern, the moment. That information is more useful than ten smooth calls, because it points to exactly where the next deliberate practice needs to be applied.</p>
+
+      <p>Today's work is in two parts. First: map the regression with precision. Second: run the reset ten times in sequence against recalled pressure until it begins to feel automatic. The goal is not to analyze what went wrong. It is to convert what went wrong into targeted conditioning.</p>
+    </div>
+  </div>
+
+  <!-- SCIENCE BOX -->
+  <div class="science-box">
+    <div class="science-label">The Science</div>
+    <p>Neuroplasticity operates through repetition. Each time a neural pathway fires, the synaptic connection strengthens — described as Hebbian reinforcement: neurons that fire together, wire together. An existing behavioral pathway has been reinforced across years of identical responses to pressure. The prefrontal cortex, which governs deliberate regulation, is the last region to mature and the first to go offline under threat. Under maximum stress, the limbic system — the faster, older pathway — reasserts.</p>
+    <p>Twenty-five days of conditioning has built a competing pathway. That pathway is real. But competing pathways require repetition to become dominant, and dominance is not achieved by understanding the mechanism. It is achieved by running the new pathway more times than the old one — particularly at the exact point where the old one fires.</p>
+    <p>The pattern interruption speed drill is deliberate practice targeted at the failure point. Ten sequential repetitions of the reset sequence, triggered by recalled pressure, creates more targeted progress than ten calls without structured recovery practice. Ericsson's research is consistent across domains: practice at the specific point of failure, with immediate feedback, produces durable improvement. The baseline you record today is a measurement, not a verdict. What shortens it is not awareness — it is the number of times you run the reset under conditions that approximate real pressure. That is what the drill produces.</p>
+  </div>
+
+  <!-- SECTION: Workbook -->
+  <div class="section-label">Workbook — Day 26</div>
+
+  <!-- Exercise 1 -->
+  <div class="workbook-block">
+    <div class="workbook-label">Exercise 1 · Regression Mapping</div>
+    <div class="workbook-title">Map the Regression</div>
+    <div class="workbook-time">Approximate time: 7 minutes</div>
+    <div class="workbook-instruction">Identify the most recent moment where the old pattern reasserted. Not the worst call of the program — the most recent regression. If you have had several, choose the one where the trigger is clearest. Work through these four in sequence. Vague answers produce vague targets.</div>
+
+    <div class="workbook-question">What was the trigger?</div>
+    <div class="workbook-instruction" style="margin-bottom:10px;">The exact moment or stimulus. Not "I got nervous." The specific thing that happened or was said — the word, the silence, the question, the tone.</div>
+    <div class="write-line"></div>
+    <div class="write-line"></div>
+
+    <div class="workbook-question">What was the old pattern?</div>
+    <div class="workbook-instruction" style="margin-bottom:10px;">The specific behavior that fired. Not "I handled it badly." What you specifically said or did — filled the silence, discounted without being asked, over-explained, became defensive.</div>
+    <div class="write-line"></div>
+
+    <div class="workbook-question">What was the cost in that conversation?</div>
+    <div class="workbook-instruction" style="margin-bottom:10px;">Not a confidence assessment. What specifically happened next as a result — did the buyer disengage, did the frame shift, did you lose ground you had already established?</div>
+    <div class="write-line"></div>
+    <div class="write-line"></div>
+
+    <div class="workbook-question">How long did it take to reset?</div>
+    <div class="workbook-instruction" style="margin-bottom:10px;">In minutes. Or in calls, if you carried the activation into the next conversation. This is the baseline. Record it.</div>
+    <div class="write-line"></div>
+  </div>
+
+  <!-- Exercise 2 -->
+  <div class="workbook-block">
+    <div class="workbook-label">Exercise 2 · 3-Step Reset Applied</div>
+    <div class="workbook-title">Run the Reset Against the Regression</div>
+    <div class="workbook-time">Approximate time: 5 minutes</div>
+    <div class="workbook-instruction">Run the reset from Day 19 against the regression you just mapped. Three steps, in sequence.</div>
+
+    <div class="workbook-step">
+      <span class="workbook-step-number">Step 1 — Name It</span>
+      One sentence. What happened. Not what it means.
+    </div>
+    <div class="write-line"></div>
+
+    <div class="workbook-step" style="margin-top:14px;">
+      <span class="workbook-step-number">Step 2 — Cyclic Sighing</span>
+      Two sharp inhales through the nose. One long slow exhale through the mouth. <strong>Five cycles. Do this now, not as a concept.</strong>
+    </div>
+
+    <div class="workbook-step" style="margin-top:14px;">
+      <span class="workbook-step-number">Step 3 — Behavioral Extraction</span>
+      Write your when-then commitment. The more precisely the trigger matches what actually happened, the faster it will fire under pressure.
+    </div>
+
+    <div class="workbook-question">When this specific trigger appears in the next call, I will:</div>
+    <div class="write-line"></div>
+  </div>
+
+  <!-- Exercise 3 -->
+  <div class="workbook-block">
+    <div class="workbook-label">Exercise 3 · Pattern Interruption Speed Drill</div>
+    <div class="workbook-title">Ten Repetitions</div>
+    <div class="workbook-time">Approximate time: 10 minutes</div>
+    <div class="workbook-instruction">Ten repetitions. Sequential. No breaks between them. Each repetition follows the same sequence. The tenth should feel different from the first. That difference is what you are conditioning for.</div>
+
+    <div class="workbook-step">
+      <span class="workbook-step-number">Each Repetition</span>
+      <strong>Recall</strong> — a specific recent stressful moment from a call. Ten seconds. A real moment, not a category.<br><br>
+      <strong>Reset</strong> — name it in one sentence (said aloud), five cycles of cyclic sighing, when-then extraction (said aloud).<br><br>
+      <strong>Move immediately</strong> to the next repetition without pause.
+    </div>
+
+    <div class="workbook-instruction" style="margin-top:18px;">After ten repetitions, record the time from recall to reset completion on the final repetition. The target is under sixty seconds. Record what you record.</div>
+
+    <div class="workbook-instruction" style="margin-bottom:10px; color: var(--ink);">The goal is not to complete ten repetitions cleanly. It is to find the point at which the reset begins to fire before you have decided to run it. That is the level at which it becomes available under maximum pressure.</div>
+
+    <div class="workbook-question">Time of final repetition (seconds):</div>
+    <div class="write-line"></div>
+  </div>
+
+  <!-- CALLOUT -->
+  <div class="callout">
+    <p>The regression names exactly where the next deliberate practice needs to go.</p>
+  </div>
+
+  <!-- IDENTITY NOTE -->
+  <div class="identity-note">
+    <div class="identity-note-label">Note — Identity vs. Behavior</div>
+    <p>The regression is behavioral data. It is not identity data. The participant who reads regression as evidence that nothing has changed is making the move Festinger described — lowering the standard to match the behavior. The standard does not change.</p>
+    <p>The evidence from the previous twenty-five days stands. The regression does not erase it. It adds to it.</p>
+  </div>
+
+  <!-- SECTION: Drill -->
+  <div class="section-label">Today's Practice Drill</div>
+
+  <div class="drill-box">
+    <div class="drill-label">Day 26 Drill — Pre-Call Reset Activation</div>
+    <p>Before your next live call today or tomorrow: <strong>run three repetitions of the speed drill sequence</strong> — recall, reset, extract — against the specific trigger from the regression mapping.</p>
+    <p>Three repetitions. Timed. Record the time on the third.</p>
+    <p>The pre-call use is different from the ten-repetition exercise. The ten-repetition set conditions the pathway. The pre-call use activates it. Both are required. Do not substitute one for the other.</p>
+  </div>
+
+  <!-- END OF DAY -->
+  <div class="end-of-day">
+    <div class="workbook-label">End of Day — Day 26</div>
+
+    <div class="workbook-question">What was the specific trigger in the regression — written in one sentence precise enough that you would recognize it in the next call if it appeared?</div>
+    <div class="write-line"></div>
+    <div class="write-line"></div>
+
+    <div class="workbook-question">After ten repetitions — at what point in the sequence did the reset begin to fire before you had consciously decided to run it? Write the specific moment.</div>
+    <div class="write-line"></div>
+    <div class="write-line"></div>
+
+    <div class="workbook-question">What one behavioral commitment are you carrying into Day 27?</div>
+    <div class="write-line"></div>
+    <div class="write-line"></div>
+  </div>
+
+</div><!-- /content -->
+
+<!-- FOOTER -->
+<footer class="day-footer">
+  <div class="footer-left">
+    Executive Conditioning System™ · Sales Conditioning<br>
+    © 2026 Aivorya AS · Licensed for personal use only · Not for redistribution · Day 26 of 30
+  </div>
+  <div class="footer-right">
+    <div class="footer-tomorrow-label">Tomorrow</div>
+    <div class="footer-tomorrow-title">The Team Dynamic</div>
+  </div>
+</footer>
+
+</body>
+</html>

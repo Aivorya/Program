@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Executive Conditioning System™ · Day 28 · The Second Recording</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Jost:wght@300;400;500;600&family=Martian+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --paper:        #F0EBE1;
+    --paper-deep:   #E8E1D5;
+    --ink:          #1A1510;
+    --ink-mid:      #4A3F35;
+    --ink-light:    #8A7D72;
+    --accent:       #A87840;
+    --accent-light: #C4975A;
+    --accent-muted: rgba(168, 120, 64, 0.12);
+    --dark:         #2E2820;
+    --rule:         rgba(168, 120, 64, 0.25);
+    --write-line:   rgba(26, 21, 16, 0.15);
+  }
+
+  *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Jost', sans-serif;
+    font-weight: 400;
+    line-height: 1.7;
+    font-size: 11pt;
+  }
+
+  /* ─── MASTHEAD ─── */
+  .masthead {
+    background: var(--dark);
+    border-bottom: 1px solid rgba(168, 120, 64, 0.3);
+    padding: 14px 64px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .masthead-left {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 300;
+    color: var(--ink-light);
+    letter-spacing: 0.08em;
+    line-height: 1.6;
+  }
+
+  .masthead-left .highlight {
+    color: var(--accent-light);
+  }
+
+  .masthead-right {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 400;
+    color: var(--ink-light);
+    letter-spacing: 0.1em;
+  }
+
+  /* ─── DAY HEADER ─── */
+  .day-header {
+    padding: 48px 64px 40px;
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 0;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .day-number-col {
+    display: flex;
+    align-items: flex-start;
+    padding-top: 4px;
+  }
+
+  .day-number {
+    font-family: 'Lora', serif;
+    font-size: 72pt;
+    font-weight: 400;
+    color: var(--accent);
+    opacity: 0.65;
+    line-height: 0.85;
+    letter-spacing: -0.02em;
+  }
+
+  .day-info-col {
+    padding-left: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .phase-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 400;
+    color: var(--accent);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  .day-title {
+    font-family: 'Lora', serif;
+    font-size: 20pt;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.2;
+  }
+
+  .day-premise {
+    font-family: 'Jost', sans-serif;
+    font-size: 10pt;
+    font-weight: 300;
+    color: var(--ink-mid);
+    line-height: 1.65;
+    max-width: 560px;
+  }
+
+  /* ─── CONTENT AREA ─── */
+  .content-area {
+    padding: 0 64px;
+  }
+
+  /* ─── SECTION LABEL ─── */
+  .section-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 400;
+    color: var(--accent);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--rule);
+    margin-top: 48px;
+    margin-bottom: 24px;
+  }
+
+  /* ─── EMAIL BLOCK ─── */
+  .email-block {
+    border: 1px solid var(--rule);
+    border-top: none;
+    margin-bottom: 32px;
+  }
+
+  .email-topbar {
+    background: var(--dark);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .email-from {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 300;
+    color: var(--accent-light);
+    letter-spacing: 0.08em;
+  }
+
+  .email-action {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 300;
+    color: var(--ink-light);
+    letter-spacing: 0.1em;
+  }
+
+  .email-body {
+    background: var(--paper);
+    padding: 32px 40px 36px;
+  }
+
+  .email-body p {
+    font-family: 'Lora', serif;
+    font-size: 11pt;
+    font-weight: 400;
+    color: var(--ink);
+    line-height: 1.75;
+    margin-bottom: 18px;
+  }
+
+  .email-body p:last-child {
+    margin-bottom: 0;
+  }
+
+  .email-body em {
+    font-style: italic;
+  }
+
+  /* ─── SCIENCE BOX ─── */
+  .science-box {
+    background: var(--accent-muted);
+    border-left: 3px solid var(--accent);
+    padding: 24px 28px;
+    margin-bottom: 32px;
+  }
+
+  .science-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 500;
+    color: var(--accent);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .science-box p {
+    font-family: 'Jost', sans-serif;
+    font-size: 10pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.65;
+    margin-bottom: 12px;
+  }
+
+  .science-box p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* ─── CALLOUT ─── */
+  .callout {
+    text-align: center;
+    padding: 28px 0;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 32px;
+    margin-top: 8px;
+  }
+
+  .callout p {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 14pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.55;
+    max-width: 440px;
+    margin: 0 auto;
+  }
+
+  /* ─── WORKBOOK BLOCK ─── */
+  .workbook-block {
+    background: var(--paper-deep);
+    border-left: 3px solid var(--accent);
+    padding: 28px 32px;
+    margin-bottom: 24px;
+  }
+
+  .workbook-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 400;
+    color: var(--accent);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  .workbook-title {
+    font-family: 'Jost', sans-serif;
+    font-size: 13pt;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 10px;
+    line-height: 1.3;
+  }
+
+  .workbook-instruction {
+    font-family: 'Jost', sans-serif;
+    font-size: 9.5pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.65;
+    margin-bottom: 18px;
+  }
+
+  .workbook-instruction em {
+    font-style: italic;
+  }
+
+  .workbook-time {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 300;
+    color: var(--ink-light);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+  }
+
+  .workbook-question {
+    font-family: 'Jost', sans-serif;
+    font-size: 10pt;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 4px;
+    line-height: 1.5;
+    margin-top: 14px;
+  }
+
+  .workbook-question:first-of-type {
+    margin-top: 0;
+  }
+
+  .workbook-sub {
+    font-family: 'Jost', sans-serif;
+    font-size: 9.5pt;
+    font-weight: 300;
+    color: var(--ink-mid);
+    line-height: 1.6;
+    margin-bottom: 6px;
+  }
+
+  .write-line {
+    display: block;
+    height: 9mm;
+    border-bottom: 1px solid var(--write-line);
+    margin-bottom: 2px;
+  }
+
+  .write-lines-2 .write-line:last-child,
+  .write-lines-3 .write-line:last-child {
+    margin-bottom: 0;
+  }
+
+  .workbook-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .workbook-list li {
+    font-family: 'Jost', sans-serif;
+    font-size: 10pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.6;
+    padding: 10px 0 4px;
+    border-top: 1px solid var(--rule);
+  }
+
+  .workbook-list li:first-child {
+    border-top: none;
+    padding-top: 0;
+  }
+
+  .workbook-list li strong {
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .protocol-list {
+    list-style: none;
+    padding: 0;
+    margin: 4px 0 14px;
+  }
+
+  .protocol-list li {
+    font-family: 'Jost', sans-serif;
+    font-size: 9.5pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.65;
+    padding: 3px 0 3px 16px;
+    position: relative;
+  }
+
+  .protocol-list li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-size: 9pt;
+  }
+
+  .workbook-divider {
+    border: none;
+    border-top: 1px solid var(--rule);
+    margin: 20px 0;
+  }
+
+  /* ─── DIMENSION BLOCK ─── */
+  .dimension-block {
+    padding: 14px 0;
+    border-top: 1px solid var(--rule);
+  }
+
+  .dimension-block:first-of-type {
+    border-top: none;
+    padding-top: 0;
+  }
+
+  .dimension-title {
+    font-family: 'Jost', sans-serif;
+    font-size: 10pt;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+
+  .dimension-prompt {
+    font-family: 'Jost', sans-serif;
+    font-size: 9.5pt;
+    font-weight: 300;
+    color: var(--ink-mid);
+    line-height: 1.6;
+    margin-bottom: 8px;
+  }
+
+  /* ─── EVIDENCE ITEM ─── */
+  .evidence-item {
+    padding: 14px 0;
+    border-top: 1px solid var(--rule);
+  }
+
+  .evidence-item:first-child {
+    border-top: none;
+    padding-top: 0;
+  }
+
+  .evidence-number {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 400;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+    margin-bottom: 4px;
+  }
+
+  .evidence-prompt {
+    font-family: 'Jost', sans-serif;
+    font-size: 10pt;
+    font-weight: 500;
+    color: var(--ink);
+    line-height: 1.5;
+    margin-bottom: 6px;
+  }
+
+  /* ─── TRANSITION NOTE ─── */
+  .transition-note {
+    background: var(--paper-deep);
+    border-left: 3px solid var(--accent);
+    padding: 20px 28px;
+    margin-bottom: 24px;
+  }
+
+  .transition-note p {
+    font-family: 'Jost', sans-serif;
+    font-size: 10pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.65;
+    margin-bottom: 10px;
+  }
+
+  .transition-note p:last-child {
+    margin-bottom: 0;
+  }
+
+  .transition-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 400;
+    color: var(--accent);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  /* ─── DRILL BOX ─── */
+  .drill-box {
+    background: var(--paper);
+    border-left: 3px solid var(--ink-mid);
+    padding: 24px 28px;
+    margin-bottom: 24px;
+  }
+
+  .drill-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 400;
+    color: var(--ink-light);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .drill-box p {
+    font-family: 'Jost', sans-serif;
+    font-size: 10pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.65;
+    margin-bottom: 10px;
+  }
+
+  .drill-box p:last-child {
+    margin-bottom: 0;
+  }
+
+  .drill-box strong {
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  /* ─── DAY FOOTER ─── */
+  .day-footer {
+    padding: 20px 64px 48px;
+    border-top: 1px solid var(--rule);
+    margin-top: 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    page-break-inside: avoid;
+  }
+
+  .footer-left {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 300;
+    color: var(--ink-light);
+    letter-spacing: 0.08em;
+    line-height: 1.8;
+  }
+
+  .footer-right {
+    text-align: right;
+  }
+
+  .footer-tomorrow-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 400;
+    color: var(--accent);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+
+  .footer-tomorrow-title {
+    font-family: 'Jost', sans-serif;
+    font-size: 9pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+  }
+
+  .footer-phase-note {
+    font-family: 'Martian Mono', monospace;
+    font-size: 5.5pt;
+    font-weight: 300;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+    margin-top: 6px;
+  }
+
+  /* ─── PRINT STYLESHEET ─── */
+  @media print {
+    body {
+      background: white;
+      color: var(--ink);
+    }
+
+    .masthead,
+    .email-topbar {
+      background: white !important;
+      color: var(--ink) !important;
+      border-bottom: 1px solid #CCCCCC;
+    }
+
+    .masthead-left,
+    .masthead-right,
+    .masthead-left .highlight,
+    .email-from,
+    .email-action {
+      color: var(--ink) !important;
+    }
+
+    .science-box {
+      background: #F5F5F5 !important;
+    }
+
+    .workbook-block {
+      background: #F5F5F5 !important;
+      page-break-inside: avoid;
+    }
+
+    .drill-box {
+      page-break-inside: avoid;
+    }
+
+    .science-box {
+      page-break-inside: avoid;
+    }
+
+    .write-line {
+      border-bottom: 1px solid #BBBBBB !important;
+    }
+
+    .email-block {
+      border: 1px solid #CCCCCC !important;
+      border-top: none !important;
+    }
+
+    .day-footer {
+      page-break-inside: avoid;
+    }
+
+    .transition-note {
+      background: #F5F5F5 !important;
+      page-break-inside: avoid;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- ─── MASTHEAD ─── -->
+<header class="masthead">
+  <div class="masthead-left">
+    Executive Conditioning System™ · <span class="highlight">Sales Conditioning</span> · An Aivorya Program
+  </div>
+  <div class="masthead-right">Phase 4 · Day 28</div>
+</header>
+
+<!-- ─── DAY HEADER ─── -->
+<div class="day-header">
+  <div class="day-number-col">
+    <span class="day-number">28</span>
+  </div>
+  <div class="day-info-col">
+    <div class="phase-label">Phase 4 — Integration</div>
+    <div class="day-title">The Second Recording</div>
+    <div class="day-premise">On Day 05 you recorded a five-minute simulated call with no preparation and no second take. Today you retrieve that recording, record the same format again, and listen to both back to back. What you hear is the evidence. Not a score. Not a debrief. Your own voice, before and after.</div>
+  </div>
+</div>
+
+<!-- ─── CONTENT AREA ─── -->
+<div class="content-area">
+
+  <!-- MORNING CONDITIONING -->
+  <div class="section-label">Morning Conditioning</div>
+
+  <div class="email-block">
+    <div class="email-topbar">
+      <span class="email-from">From: Executive Conditioning System™ · Day 28 of 30</span>
+      <span class="email-action">Read · Then Work</span>
+    </div>
+    <div class="email-body">
+      <p>Twenty-three days ago you recorded a five-minute simulated call with no preparation and no second take. That recording has been sitting in your files since Day 05. Today you retrieve it.</p>
+
+      <p>Before you read any further: find the file. It was saved as <em>ECS-Baseline-Recording</em> on Day 05. Locate it now. Do not record the Day 28 version first. The sequence matters.</p>
+
+      <p>What happens today is not an assessment. There is no score. No one is grading the comparison. What you are about to hear is behavioral data — your own voice, before twenty-three days of this program, and after. The difference between those two recordings is not what you intended to change. It is what actually changed. Those are sometimes the same thing. Not always.</p>
+
+      <p>The recording you made on Day 05 captured what your baseline looked like under mild pressure with no protocol and no preparation. The recording you make today captures what the same format looks like after the pre-call protocol from Day 09 is running, after Phase 3 conditioning, after the live deal work of Phase 4. The protocol is part of what is being measured. That is intentional. Day 05 captured the unregulated baseline. Day 28 captures regulated performance. That is the comparison.</p>
+
+      <p>Listen to both back to back. Write what you hear — not what you feel about it, not what you hope to hear. Behavioral observations only. Seven specific dimensions are listed in the workbook. Work through each one. If the difference is significant, write that. If a dimension has not moved, write that too. <em>The evidence inventory is a factual record. It holds both.</em></p>
+    </div>
+  </div>
+
+  <!-- SCIENCE BOX -->
+  <div class="science-box">
+    <div class="science-label">The Science</div>
+    <p>Identity change that holds under pressure is consolidated by behavioral evidence, not by intention. The self-concept functions as a behavioral thermostat — it regulates performance back toward the identity the person holds. Shifting that thermostat requires accumulating proof: specific instances of the new behavior, documented and retrievable. This is the mechanism James Clear describes, building on established self-concept research. The evidence inventory built today converts the Day 30 declaration from "I intend to be" into "I am, and here is the documentation."</p>
+    <p>Audio feedback works differently from written self-assessment. Written self-assessment passes through the rationalizing layer of conscious thought — the mind that explains away, softens, or reframes. Audio feedback bypasses that layer. The comparison between the two recordings produces evidence that is difficult to argue with because it is yours, it is specific, and it is audible.</p>
+    <p>Ericsson's deliberate practice research consistently shows that progress without measurement produces ambiguous results. The practitioner cannot distinguish genuine improvement from accommodation. The before/after recording is the measurement instrument. It makes twenty-eight days of conditioning visible in a form that is concrete, not theoretical — which connects directly to the Bannister framing from Day 22: the measurement was part of the training protocol, not a separate activity.</p>
+  </div>
+
+  <!-- WORKBOOK -->
+  <div class="section-label">Workbook — Day 28</div>
+
+  <!-- Exercise 1: The Recording -->
+  <div class="workbook-block">
+    <div class="workbook-label">Exercise 1 · The Day 28 Recording</div>
+    <div class="workbook-title">Record the After</div>
+    <div class="workbook-time">Approximately 10 minutes · Complete before all other workbook exercises</div>
+    <div class="workbook-instruction">Retrieve the Day 05 baseline recording first. File name: ECS-Baseline-Recording. Do this before you record the Day 28 version — not after. Then run the pre-call protocol. Then record. Then listen to both.</div>
+
+    <div class="workbook-question">Step 1 — Retrieve the baseline</div>
+    <div class="workbook-sub">Locate the ECS-Baseline-Recording file saved on Day 05. Have it ready to play before you begin.</div>
+
+    <div class="workbook-question">Step 2 — Run the pre-call protocol</div>
+    <ul class="protocol-list">
+      <li>Five cycles of cyclic sighing: double inhale through the nose, long slow exhale through the mouth</li>
+      <li>Posture check: seated straight, both feet flat, shoulders settled</li>
+      <li>One behavioral intention for this recording: state it out loud before you start</li>
+    </ul>
+
+    <div class="workbook-question">Step 3 — Record the Day 28 version</div>
+    <ul class="protocol-list">
+      <li>Five minutes maximum</li>
+      <li>No preparation beyond the pre-call protocol above</li>
+      <li>No second take</li>
+      <li>Same structure: introduce yourself, establish call purpose, ask two discovery questions, handle one objection, attempt to move to next steps</li>
+    </ul>
+    <div class="workbook-sub">Save as: ECS-Day28-Recording</div>
+
+    <div class="workbook-question">Behavioral intention stated before recording:</div>
+    <span class="write-line"></span>
+  </div>
+
+  <!-- Exercise 2: Back-to-Back Comparison -->
+  <div class="workbook-block">
+    <div class="workbook-label">Exercise 2 · The Back-to-Back Comparison</div>
+    <div class="workbook-title">Seven Dimensions — What You Hear</div>
+    <div class="workbook-time">Approximately 15 minutes</div>
+    <div class="workbook-instruction">Play the Day 05 recording. Then play the Day 28 recording. Listen to both before writing anything. Then go back through each dimension below and write what you observed. Behavioral observations only — not impressions, not how it made you feel. What specifically happened, on which recording, at what point in the call.</div>
+
+    <div class="dimension-block">
+      <div class="dimension-title">Speech Rate</div>
+      <div class="dimension-prompt">Does pace change when pressure arrives — the objection, the price, the silence? On which recording and at what point?</div>
+      <div class="write-lines-2">
+        <span class="write-line"></span>
+        <span class="write-line"></span>
+      </div>
+    </div>
+
+    <div class="dimension-block">
+      <div class="dimension-title">Silence</div>
+      <div class="dimension-prompt">Does silence get filled? On which recording, and at what moment in the call? How long does it last before something fills it?</div>
+      <div class="write-lines-2">
+        <span class="write-line"></span>
+        <span class="write-line"></span>
+      </div>
+    </div>
+
+    <div class="dimension-block">
+      <div class="dimension-title">Question Quality</div>
+      <div class="dimension-prompt">Are the discovery questions surface-level or situational? Do they stay practical or move toward the emotional and financial? Compare the two recordings directly.</div>
+      <div class="write-lines-2">
+        <span class="write-line"></span>
+        <span class="write-line"></span>
+      </div>
+    </div>
+
+    <div class="dimension-block">
+      <div class="dimension-title">Response to Resistance</div>
+      <div class="dimension-prompt">When the objection arrives — does the response come before or after a question? On which recording? What is the specific language used?</div>
+      <div class="write-lines-2">
+        <span class="write-line"></span>
+        <span class="write-line"></span>
+      </div>
+    </div>
+
+    <div class="dimension-block">
+      <div class="dimension-title">Closing Language</div>
+      <div class="dimension-prompt">Is the move to next steps pressuring or collaborative? Write the specific words used in each recording.</div>
+      <div class="write-lines-2">
+        <span class="write-line"></span>
+        <span class="write-line"></span>
+      </div>
+    </div>
+
+    <div class="dimension-block">
+      <div class="dimension-title">Approval Language</div>
+      <div class="dimension-prompt">Listen for: "does that make sense?" / "just quickly" / "if that's okay." Does it appear in either recording? At what point?</div>
+      <div class="write-lines-2">
+        <span class="write-line"></span>
+        <span class="write-line"></span>
+      </div>
+    </div>
+
+    <div class="dimension-block">
+      <div class="dimension-title">Regulation</div>
+      <div class="dimension-prompt">Audible quality of attention across the full call: pace, tone, recovery after resistance. Does the call stay level or deteriorate? In which recording?</div>
+      <div class="write-lines-2">
+        <span class="write-line"></span>
+        <span class="write-line"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- CALLOUT -->
+  <div class="callout">
+    <p>The recording is behavioral data. Write what you hear, not what you hoped would be different.</p>
+  </div>
+
+  <!-- Exercise 3: Evidence Inventory -->
+  <div class="workbook-block">
+    <div class="workbook-label">Exercise 3 · The Evidence Inventory</div>
+    <div class="workbook-title">Ten Instances. Specific. Dated if Possible.</div>
+    <div class="workbook-time">Approximately 15 minutes</div>
+    <div class="workbook-instruction">This inventory is the raw material for the Day 30 Identity Declaration. The specificity standard: if you cannot point to a conversation and a moment within it, it is not evidence — it is an impression. Impressions do not belong here. Write these as you would want to read them on Day 30. Because you will.</div>
+
+    <div class="evidence-item">
+      <div class="evidence-number">01</div>
+      <div class="evidence-prompt">A conversation where curiosity replaced defence. What was said? What was the result?</div>
+      <div class="write-lines-2">
+        <span class="write-line"></span>
+        <span class="write-line"></span>
+      </div>
+    </div>
+
+    <div class="evidence-item">
+      <div class="evidence-number">02</div>
+      <div class="evidence-prompt">A silence held that would previously have been filled. How long? What happened after it?</div>
+      <div class="write-lines-2">
+        <span class="write-line"></span>
+        <span class="write-line"></span>
+      </div>
+    </div>
+
+    <div class="evidence-item">
+      <div class="evidence-number">03</div>
+      <div class="evidence-prompt">A reset deployed after a difficult moment — a lost call, a hard conversation, a rejection. What did the next call look like?</div>
+      <div class="write-lines-2">
+        <span class="write-line"></span>
+        <span class="write-line"></span>
+      </div>
+    </div>
+
+    <div class="evidence-item">
+      <div class="evidence-number">04</div>
+      <div class="evidence-prompt">A stalled deal re-engaged. What was the opening message? What was the response?</div>
+      <div class="write-lines-2">
+        <span class="write-line"></span>
+        <span class="write-line"></span>
+      </div>
+    </div>
+
+    <div class="evidence-item">
+      <div class="evidence-number">05</div>
+      <div class="evidence-prompt">A price moment handled without hedging or qualification. What happened?</div>
+      <div class="write-lines-2">
+        <span class="write-line"></span>
+        <span class="write-line"></span>
+      </div>
+    </div>
+
+    <div class="evidence-item">
+      <div class="evidence-number">06</div>
+      <div class="evidence-prompt">A live call where the pre-call protocol made an observable difference. What was different?</div>
+      <div class="write-lines-2">
+        <span class="write-line"></span>
+        <span class="write-line"></span>
+      </div>
+    </div>
+
+    <div class="evidence-item">
+      <div class="evidence-number">07</div>
+      <div class="evidence-prompt">A discovery question that moved the conversation into territory it would not previously have reached. What was the question?</div>
+      <div class="write-lines-2">
+        <span class="write-line"></span>
+        <span class="write-line"></span>
+      </div>
+    </div>
+
+    <div class="evidence-item">
+      <div class="evidence-number">08</div>
+      <div class="evidence-prompt">A post-call debrief finding that changed something specific in the next call. What was the finding? What changed?</div>
+      <div class="write-lines-2">
+        <span class="write-line"></span>
+        <span class="write-line"></span>
+      </div>
+    </div>
+
+    <div class="evidence-item">
+      <div class="evidence-number">09</div>
+      <div class="evidence-prompt">A moment of non-attachment — wanting the deal without needing it — observable in how the call was conducted. What was the decision point?</div>
+      <div class="write-lines-2">
+        <span class="write-line"></span>
+        <span class="write-line"></span>
+      </div>
+    </div>
+
+    <div class="evidence-item">
+      <div class="evidence-number">10</div>
+      <div class="evidence-prompt">Any instance of behavioral change not covered above. Specific conversation. Specific moment.</div>
+      <div class="write-lines-2">
+        <span class="write-line"></span>
+        <span class="write-line"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- PHASE TRANSITION NOTE -->
+  <div class="transition-note">
+    <div class="transition-label">Phase Transition · Phase 4 Complete</div>
+    <p>Phase 4 closes after today. Six days of live deal work: live call debriefs, a stalled deal re-engaged, a high-stakes call conducted and reviewed, and today's before/after comparison.</p>
+    <p>Phase 5 — Ownership — begins tomorrow. It requires evidence. The ten instances you documented today are the foundation for the Day 30 Identity Declaration. The declaration is built on specific behavioral instances, not on how the program felt. Write the inventory with that purpose in mind.</p>
+  </div>
+
+  <!-- END OF DAY REFLECTION -->
+  <div class="workbook-block">
+    <div class="workbook-label">End of Day — Day 28</div>
+    <div class="workbook-title">Three Questions</div>
+    <div class="workbook-time">5 minutes</div>
+
+    <div class="workbook-question">What is the single most significant behavioral difference between the Day 05 and Day 28 recordings — specific, observable, and yours?</div>
+    <div class="write-lines-2">
+      <span class="write-line"></span>
+      <span class="write-line"></span>
+    </div>
+
+    <div class="workbook-question" style="margin-top:14px;">Which of the ten inventory instances carries the most weight as evidence of change? Why?</div>
+    <div class="write-lines-2">
+      <span class="write-line"></span>
+      <span class="write-line"></span>
+    </div>
+
+    <div class="workbook-question" style="margin-top:14px;">What are you taking into Day 29?</div>
+    <div class="write-lines-2">
+      <span class="write-line"></span>
+      <span class="write-line"></span>
+    </div>
+  </div>
+
+  <!-- DRILL BOX -->
+  <div class="section-label">Today's Practice Drill</div>
+
+  <div class="drill-box">
+    <div class="drill-label">Drill — Day 28 · Pre-call Protocol + Evidence Collection</div>
+    <p>Pre-call: 90 seconds. Post-call: 3 minutes.</p>
+    <p><strong>Before your next live call today: run the pre-call protocol. Breath, posture, one behavioral intention. State the intention out loud before you dial.</strong></p>
+    <p>After the call: identify one moment from that call that belongs in the evidence inventory. Specific moment. What was said or done. What the result was. Add it if it qualifies.</p>
+  </div>
+
+</div><!-- end content-area -->
+
+<!-- ─── DAY FOOTER ─── -->
+<footer class="day-footer">
+  <div class="footer-left">
+    Executive Conditioning System™ · Sales Conditioning<br>
+    © 2026 Aivorya AS · Licensed for personal use only · Not for redistribution · Day 28 of 30
+  </div>
+  <div class="footer-right">
+    <div class="footer-phase-note">Phase 4 complete · Phase 5 begins tomorrow</div>
+    <div class="footer-tomorrow-label">Tomorrow</div>
+    <div class="footer-tomorrow-title">Day 29 · The Final Scorecard</div>
+  </div>
+</footer>
+
+</body>
+</html>

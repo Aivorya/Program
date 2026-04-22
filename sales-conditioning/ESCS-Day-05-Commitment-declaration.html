@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Executive Conditioning System™ · Day 05 · The Commitment Declaration</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Jost:wght@300;400;500;600&family=Martian+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --paper:        #F0EBE1;
+    --paper-deep:   #E8E1D5;
+    --ink:          #1A1510;
+    --ink-mid:      #4A3F35;
+    --ink-light:    #8A7D72;
+    --accent:       #A87840;
+    --accent-light: #C4975A;
+    --accent-muted: rgba(168, 120, 64, 0.12);
+    --dark:         #2E2820;
+    --rule:         rgba(168, 120, 64, 0.25);
+    --write-line:   rgba(26, 21, 16, 0.15);
+  }
+
+  *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Lora', Georgia, serif;
+    line-height: 1.7;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* ─── MASTHEAD ─── */
+  .masthead {
+    background: var(--dark);
+    border-bottom: 1px solid rgba(168, 120, 64, 0.3);
+    padding: 14px 64px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .masthead-left {
+    font-family: 'Martian Mono', monospace;
+    font-size: 7pt;
+    font-weight: 300;
+    color: var(--ink-light);
+    letter-spacing: 0.05em;
+  }
+
+  .masthead-left .highlight {
+    color: var(--accent-light);
+  }
+
+  .masthead-right {
+    font-family: 'Martian Mono', monospace;
+    font-size: 7pt;
+    font-weight: 300;
+    color: var(--ink-light);
+    letter-spacing: 0.05em;
+  }
+
+  /* ─── DAY HEADER ─── */
+  .day-header {
+    padding: 48px 64px 40px;
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 0 24px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .day-number {
+    font-family: 'Lora', serif;
+    font-size: 88pt;
+    font-weight: 400;
+    color: var(--accent);
+    opacity: 0.65;
+    line-height: 1;
+    padding-top: 4px;
+  }
+
+  .day-meta {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .day-phase-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 400;
+    color: var(--accent);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+
+  .day-title {
+    font-family: 'Lora', serif;
+    font-size: 20pt;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.2;
+  }
+
+  .day-premise {
+    font-family: 'Jost', sans-serif;
+    font-size: 10pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.65;
+  }
+
+  /* ─── CONTENT AREA ─── */
+  .content-area {
+    padding: 0 64px;
+  }
+
+  /* ─── SECTION LABEL ─── */
+  .section-label {
+    margin-top: 48px;
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 400;
+    color: var(--accent);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 0;
+  }
+
+  /* ─── EMAIL BLOCK ─── */
+  .email-block {
+    border: 1px solid var(--rule);
+    border-top: none;
+  }
+
+  .email-topbar {
+    background: var(--dark);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .email-topbar-left {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 300;
+    color: var(--ink-light);
+    letter-spacing: 0.05em;
+  }
+
+  .email-topbar-right {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 300;
+    color: var(--ink-light);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .email-body {
+    background: var(--paper);
+    padding: 32px 36px;
+  }
+
+  .email-body p {
+    font-family: 'Lora', serif;
+    font-size: 11pt;
+    font-weight: 400;
+    color: var(--ink);
+    line-height: 1.75;
+    margin-bottom: 18px;
+  }
+
+  .email-body p:last-child {
+    margin-bottom: 0;
+  }
+
+  .email-body em {
+    font-style: italic;
+  }
+
+  /* ─── SCIENCE BOX ─── */
+  .science-box {
+    background: var(--accent-muted);
+    border-left: 3px solid var(--accent);
+    padding: 24px 28px;
+    margin-top: 32px;
+  }
+
+  .science-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 500;
+    color: var(--accent);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .science-box p {
+    font-family: 'Jost', sans-serif;
+    font-size: 10pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.7;
+    margin-bottom: 14px;
+  }
+
+  .science-box p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* ─── CALLOUT ─── */
+  .callout {
+    max-width: 440px;
+    margin: 40px auto;
+    text-align: center;
+    padding: 24px 0;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .callout p {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 14pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.6;
+  }
+
+  /* ─── WORKBOOK BLOCK ─── */
+  .workbook-block {
+    background: var(--paper-deep);
+    border-left: 3px solid var(--accent);
+    padding: 28px 32px;
+    margin-top: 32px;
+    page-break-inside: avoid;
+  }
+
+  .workbook-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 500;
+    color: var(--accent);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  .workbook-title {
+    font-family: 'Jost', sans-serif;
+    font-size: 13pt;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 12px;
+    line-height: 1.3;
+  }
+
+  .workbook-time {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 300;
+    color: var(--ink-light);
+    letter-spacing: 0.1em;
+    margin-bottom: 16px;
+  }
+
+  .workbook-instruction {
+    font-family: 'Jost', sans-serif;
+    font-size: 9.5pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.65;
+    margin-bottom: 20px;
+  }
+
+  .workbook-instruction p {
+    margin-bottom: 10px;
+  }
+
+  .workbook-instruction p:last-child {
+    margin-bottom: 0;
+  }
+
+  .workbook-instruction .avoid-example {
+    font-style: italic;
+    color: var(--ink-light);
+  }
+
+  .workbook-instruction .good-example {
+    font-weight: 500;
+    color: var(--ink-mid);
+  }
+
+  .workbook-question {
+    font-family: 'Jost', sans-serif;
+    font-size: 10pt;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 6px;
+    margin-top: 16px;
+    line-height: 1.5;
+  }
+
+  .workbook-question:first-of-type {
+    margin-top: 8px;
+  }
+
+  /* ─── WRITE LINES ─── */
+  .write-line {
+    display: block;
+    border-bottom: 1px solid var(--write-line);
+    height: 9mm;
+    margin-bottom: 0;
+  }
+
+  .write-line + .write-line {
+    margin-top: 0;
+  }
+
+  /* ─── COMMITMENT BLOCK ─── */
+  .commitment-set {
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 1px solid var(--rule);
+  }
+
+  .commitment-set:first-of-type {
+    border-top: none;
+    padding-top: 0;
+    margin-top: 12px;
+  }
+
+  .commitment-field-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 400;
+    color: var(--ink-light);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+    display: block;
+  }
+
+  .commitment-number {
+    font-family: 'Martian Mono', monospace;
+    font-size: 7pt;
+    font-weight: 500;
+    color: var(--accent);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  /* ─── SIGNATURE ROW ─── */
+  .signature-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-top: 24px;
+    padding-top: 20px;
+    border-top: 1px solid var(--rule);
+  }
+
+  .signature-field-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 400;
+    color: var(--ink-light);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+    display: block;
+  }
+
+  /* ─── DRILL BOX ─── */
+  .drill-box {
+    background: var(--paper);
+    border-left: 3px solid var(--ink-mid);
+    padding: 24px 28px;
+    margin-top: 32px;
+    page-break-inside: avoid;
+  }
+
+  .drill-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 400;
+    color: var(--ink-light);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+
+  .drill-box p {
+    font-family: 'Jost', sans-serif;
+    font-size: 10pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.7;
+    margin-bottom: 12px;
+  }
+
+  .drill-box p:last-child {
+    margin-bottom: 0;
+  }
+
+  .drill-box strong {
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  .drill-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 16px;
+    padding-top: 14px;
+    border-top: 1px solid var(--rule);
+  }
+
+  .drill-checkbox-box {
+    width: 16px;
+    height: 16px;
+    border: 1.5px solid var(--ink-mid);
+    flex-shrink: 0;
+  }
+
+  .drill-checkbox-label {
+    font-family: 'Jost', sans-serif;
+    font-size: 9.5pt;
+    font-weight: 500;
+    color: var(--ink-mid);
+  }
+
+  /* ─── SCIENCE NOTE (non-exercise) ─── */
+  .science-note {
+    background: var(--accent-muted);
+    border-left: 3px solid var(--accent);
+    padding: 24px 28px;
+    margin-top: 32px;
+    page-break-inside: avoid;
+  }
+
+  .science-note-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 400;
+    color: var(--ink-light);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  .science-note-title {
+    font-family: 'Jost', sans-serif;
+    font-size: 10pt;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 14px;
+  }
+
+  .science-note p {
+    font-family: 'Jost', sans-serif;
+    font-size: 10pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.7;
+    margin-bottom: 12px;
+  }
+
+  .science-note p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* ─── DAY FOOTER ─── */
+  .day-footer {
+    margin-top: 48px;
+    padding: 20px 64px;
+    border-top: 1px solid var(--rule);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 32px;
+    page-break-inside: avoid;
+  }
+
+  .footer-left {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .footer-brand {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 300;
+    color: var(--ink-light);
+    letter-spacing: 0.05em;
+  }
+
+  .footer-right {
+    text-align: right;
+  }
+
+  .footer-tomorrow-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 500;
+    color: var(--accent);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+
+  .footer-tomorrow-title {
+    font-family: 'Jost', sans-serif;
+    font-size: 9pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+  }
+
+  .footer-tomorrow-phase {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 300;
+    color: var(--ink-light);
+    margin-top: 3px;
+    letter-spacing: 0.05em;
+  }
+
+  /* ─── UTILITY ─── */
+  .mt-small { margin-top: 10px; }
+
+  /* ─── PRINT STYLES ─── */
+  @media print {
+    body {
+      background: white;
+      color: #1A1510;
+    }
+
+    .masthead,
+    .email-topbar {
+      background: white !important;
+      border-bottom: 1px solid #CCCCCC;
+    }
+
+    .masthead-left,
+    .masthead-left .highlight,
+    .masthead-right,
+    .email-topbar-left,
+    .email-topbar-right {
+      color: #1A1510 !important;
+    }
+
+    .email-body {
+      border: 1px solid #CCCCCC;
+    }
+
+    .science-box,
+    .science-note {
+      background: #F5F5F5 !important;
+    }
+
+    .workbook-block {
+      background: #F5F5F5 !important;
+      page-break-inside: avoid;
+    }
+
+    .drill-box {
+      page-break-inside: avoid;
+    }
+
+    .write-line {
+      border-bottom: 1px solid #BBBBBB;
+    }
+
+    .day-footer {
+      page-break-inside: avoid;
+    }
+
+    .day-number {
+      opacity: 0.5;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- ─── MASTHEAD ─── -->
+<header class="masthead">
+  <div class="masthead-left">
+    Executive Conditioning System™ · <span class="highlight">Sales Conditioning</span> · An Aivorya Program
+  </div>
+  <div class="masthead-right">Phase 1 · Day 05</div>
+</header>
+
+<!-- ─── DAY HEADER ─── -->
+<div class="day-header">
+  <div class="day-number">05</div>
+  <div class="day-meta">
+    <div class="day-phase-label">Phase 1 — Diagnosis</div>
+    <div class="day-title">The Commitment Declaration</div>
+    <div class="day-premise">Phase 1 closes today. Five days of diagnosis produced five outputs. Today those outputs become a single specific commitment — written, dated, and built to hold.</div>
+  </div>
+</div>
+
+<!-- ─── CONTENT AREA ─── -->
+<div class="content-area">
+
+  <!-- MORNING CONDITIONING -->
+  <div class="section-label">Morning Conditioning</div>
+
+  <div class="email-block">
+    <div class="email-topbar">
+      <div class="email-topbar-left">From: Executive Conditioning System™ · Day 05 of 30</div>
+      <div class="email-topbar-right">Read · Then Work</div>
+    </div>
+    <div class="email-body">
+      <p>Phase 1 ends today.</p>
+      <p>Five days produced five outputs: a Trigger Catalogue, an Identity Map, a Gap Analysis, a Commitment Declaration, and a baseline recording. Five documents that together describe your performance with more precision than most salespeople ever apply to themselves.</p>
+      <p>That is more precise information about your own performance patterns than most salespeople accumulate in five years. Not because they are not capable of it. Because they have never been asked to look directly at what is happening, document it, and sit with it without immediately trying to fix it.</p>
+      <p>That phase is now complete.</p>
+      <p>What comes next is different. Phase 1 asked you to observe. Phase 2 asks you to work.</p>
+      <p>There is a specific mechanism behind why written declarations outperform intentions. Peter Gollwitzer at NYU has studied this for decades. The finding is consistent across domains, populations, and contexts: people who form <em>implementation intentions</em> — specific if-then plans — follow through at dramatically higher rates than people who set goals without them. The effect sizes are not marginal. They are large.</p>
+      <p>The difference is precision. "I will handle objections better" is not a plan. It is a preference. It gives the brain nothing to act on. "When a buyer goes silent after I give the price, I will hold the silence for five seconds before I speak" is a plan. It specifies the trigger, the response, and the moment. When that situation arrives — and it will — the plan is already waiting.</p>
+      <p>Vagueness in a commitment is not modesty. It is a way of avoiding accountability. A commitment that cannot be measured cannot be broken, and a commitment that cannot be broken requires nothing.</p>
+      <p>Today, you are writing three of them.</p>
+    </div>
+  </div>
+
+  <!-- SCIENCE BOX -->
+  <div class="science-box">
+    <div class="science-label">The Science</div>
+    <p>Dan Ariely's research on commitment devices adds a second mechanism. Writing a commitment down — specifically, attaching it to an identity statement — creates an external reference point that the self-concept treats as binding. The act of writing externalizes the intention. It shifts it from private preference to stated position, and the self-concept has a measurable resistance to contradicting its stated positions.</p>
+    <p>This is not motivational. It is architectural. The declaration you write today is a behavioral contract with yourself. Day 30 will tell you whether you kept it.</p>
+    <p>The second mechanism in today's workbook requires a different kind of care.</p>
+    <p>There is a documented caution on visualization worth stating directly. Research by Gabriele Oettingen at NYU shows that visualizing desired outcomes — imagining the successful close, picturing the deal landing — can reduce actual motivation rather than increase it. The mechanism: the brain receives a partial taste of the reward, which reduces the urgency to pursue it. The exercise today is not outcome visualization. It is anchoring a physiological state — what regulated feels like in your body during a high-pressure conversation. You are not rehearsing success. You are training the nervous system to recognize a target state so it can find its way back to it when pressure rises.</p>
+  </div>
+
+  <!-- WORKBOOK SECTION -->
+  <div class="section-label">Workbook — Day 05</div>
+
+  <!-- EXERCISE 1: COMMITMENT DECLARATION -->
+  <div class="workbook-block">
+    <div class="workbook-label">Exercise 1 · The Commitment Declaration</div>
+    <div class="workbook-title">Three Implementation Intentions</div>
+    <div class="workbook-time">Estimated time: 10–12 minutes</div>
+
+    <div class="workbook-instruction">
+      <p>Write three behavioral commitments in when-then format. Each one must name a specific trigger situation and a specific response. The standard: on Day 30, you should be able to read each statement and know exactly whether you kept it. If you can read it and think "I'm not sure," it is not specific enough. Rewrite it until it is.</p>
+      <p class="avoid-example">Avoid: "I will stay calmer under pressure."</p>
+      <p class="good-example">Write instead: "When a prospect objects to price, I will ask one question before I respond."</p>
+      <p class="avoid-example">Avoid: "I will be more curious."</p>
+      <p class="good-example">Write instead: "When a call goes silent after I give a proposal, I will hold the silence for five seconds before I speak."</p>
+      <p>Each commitment should come directly from what Phase 1 produced — your Trigger Catalogue, Identity Map, and Gap Analysis. These are not general improvement goals. They are the three most important behavioral changes identified by your own diagnosis.</p>
+    </div>
+
+    <!-- Commitment 1 -->
+    <div class="commitment-set">
+      <span class="commitment-number">Commitment 01</span>
+      <span class="commitment-field-label">When this happens:</span>
+      <span class="write-line"></span>
+      <span class="write-line"></span>
+      <div class="workbook-question mt-small">I will do this:</div>
+      <span class="write-line"></span>
+      <span class="write-line"></span>
+    </div>
+
+    <!-- Commitment 2 -->
+    <div class="commitment-set">
+      <span class="commitment-number">Commitment 02</span>
+      <span class="commitment-field-label">When this happens:</span>
+      <span class="write-line"></span>
+      <span class="write-line"></span>
+      <div class="workbook-question mt-small">I will do this:</div>
+      <span class="write-line"></span>
+      <span class="write-line"></span>
+    </div>
+
+    <!-- Commitment 3 -->
+    <div class="commitment-set">
+      <span class="commitment-number">Commitment 03</span>
+      <span class="commitment-field-label">When this happens:</span>
+      <span class="write-line"></span>
+      <span class="write-line"></span>
+      <div class="workbook-question mt-small">I will do this:</div>
+      <span class="write-line"></span>
+      <span class="write-line"></span>
+    </div>
+
+    <!-- Signature Row -->
+    <div class="signature-row">
+      <div>
+        <span class="signature-field-label">Date</span>
+        <span class="write-line"></span>
+      </div>
+      <div>
+        <span class="signature-field-label">Signed</span>
+        <span class="write-line"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- EXERCISE 2: STATE VISUALIZATION -->
+  <div class="workbook-block">
+    <div class="workbook-label">Exercise 2 · State Visualization</div>
+    <div class="workbook-title">Anchoring the Target State</div>
+    <div class="workbook-time">Estimated time: 5 minutes</div>
+
+    <div class="workbook-instruction">
+      <p>This is not a success visualization. Do not imagine winning the deal, the prospect saying yes, or a positive outcome. That is not the exercise.</p>
+      <p>Choose one specific high-pressure conversation — an objection you regularly struggle with, a closing moment that tends to produce tension, a negotiation that typically makes you over-explain. Make it specific. The more precisely you can picture the actual scenario, the more useful this exercise is.</p>
+      <p>Set a timer for three minutes.</p>
+      <p>Close your eyes. Place yourself in that conversation at the moment pressure is highest. Shift your attention away from what is being said and toward your own physical state. Notice: How is your breathing — shallow or full? Where is your attention — on your own next word, or on what the prospect is actually communicating? How does your voice sound, and at what pace? What is your posture?</p>
+      <p>Now adjust each one toward regulation. Full breath. Attention on them, not on your response. Voice steady, pace slightly slower than feels natural. Posture upright. Hold that state for the remaining time.</p>
+      <p>When the timer ends, write your answer to the question below.</p>
+    </div>
+
+    <div class="workbook-question">Describe what regulation felt like in that moment — specifically in the body, not in the outcome.</div>
+    <span class="write-line"></span>
+    <span class="write-line"></span>
+    <span class="write-line"></span>
+
+    <div class="workbook-instruction" style="margin-top: 16px; margin-bottom: 0;">
+      <p>This is your target state. It now has a physical reference point. The work of Phase 2 is to make it accessible under actual pressure, not just here.</p>
+    </div>
+  </div>
+
+  <!-- EXERCISE 3: BASELINE RECORDING -->
+  <div class="workbook-block">
+    <div class="workbook-label">Exercise 3 · Baseline Recording</div>
+    <div class="workbook-title">The Baseline Recording</div>
+    <div class="workbook-time">Estimated time: 10 minutes</div>
+
+    <div class="workbook-instruction">
+      <p>Record a five-minute simulated sales call. No preparation. No second take. One clean recording, start to finish.</p>
+      <p><strong>Setup:</strong> Use your phone, laptop, or any recording device. You do not need another person. Narrate a call as if you are speaking to a real prospect — introduce yourself, establish the call purpose, ask two discovery questions, handle one objection, and attempt to move to next steps. Keep it under five minutes.</p>
+      <p><strong>Do not edit it. Do not listen back to it today.</strong></p>
+      <p><strong>Store it immediately</strong> — label the file: ECS-Baseline-Day01. Put it somewhere you will find it in four weeks. Day 28 will instruct you to retrieve it.</p>
+    </div>
+
+    <div class="workbook-question">Why this matters:</div>
+    <div class="workbook-instruction">
+      <p>On Day 28, you will record the same call structure again and compare the two. That comparison will show you something that no score, debrief, or feedback can replicate — your own voice, before and after. The gap will be audible. You will hear exactly where regulation changed, where your pacing shifted, where the quality of your questions improved.</p>
+      <p>This recording is not a test. There is no grade. Record it as you are today, not as you want to be. An accurate baseline is worth more than a performance.</p>
+    </div>
+
+    <div class="drill-checkbox">
+      <div class="drill-checkbox-box"></div>
+      <div class="drill-checkbox-label">Recording stored as ECS-Baseline-Day01</div>
+    </div>
+  </div>
+
+  <!-- CALLOUT -->
+  <div class="callout">
+    <p>The ceiling identified in Days 03 and 04 is not permanent. It is a belief that has been performing as a fact.</p>
+  </div>
+
+  <!-- SCIENCE NOTE: BANNISTER -->
+  <div class="science-note">
+    <div class="science-note-label">Context — The Identity Ceiling</div>
+    <div class="science-note-title">The Bannister Effect</div>
+    <p>In 1954, Roger Bannister ran the first sub-four-minute mile. In the years prior, the medical community had published papers arguing the achievement was physiologically impossible. Within six weeks of Bannister running it, two other athletes had also broken the barrier.</p>
+    <p>The record had not changed. The physiological requirement had not changed. What had changed was that the field now had evidence the ceiling was not where they had placed it — and once that evidence existed, performance followed.</p>
+    <p>This is not an inspirational story. It is documented evidence that identity ceilings are real, that they function as performance limiters independent of actual physical capacity, and that they are moveable when the belief behind them changes. The ceiling you mapped in Phase 1 is the same mechanism. The declaration you wrote today begins the process of moving it — not through motivation, but through evidence collected over 25 more days.</p>
+  </div>
+
+  <!-- END OF DAY REFLECTION -->
+  <div class="workbook-block">
+    <div class="workbook-label">End of Day — Day 05</div>
+    <div class="workbook-title">End of Day Reflection</div>
+    <div class="workbook-time">Estimated time: 5 minutes</div>
+
+    <div class="workbook-question">Of the three implementation intentions you wrote today, which one will be the hardest to keep — and what specifically makes it difficult?</div>
+    <span class="write-line"></span>
+    <span class="write-line"></span>
+
+    <div class="workbook-question">What is one belief about your own performance that you named this week that you had been treating as a fact rather than a story?</div>
+    <span class="write-line"></span>
+    <span class="write-line"></span>
+
+    <div class="workbook-question">What is one specific thing you are taking into Phase 2?</div>
+    <span class="write-line"></span>
+    <span class="write-line"></span>
+  </div>
+
+  <!-- DRILL BOX -->
+  <div class="section-label">Today's Practice Drill</div>
+
+  <div class="drill-box">
+    <div class="drill-label">Today's Drill · Baseline Storage</div>
+    <p>Before you close this document:</p>
+    <p><strong>Open a folder on your device labeled "ECS Program." Store your baseline recording there now.</strong> If you have not recorded it yet, record it before anything else today. Five minutes. No preparation. One take.</p>
+    <p>The recording exists or it does not. There is no partial credit for intending to do it.</p>
+    <p>Phase 2 begins tomorrow.</p>
+  </div>
+
+</div><!-- end content-area -->
+
+<!-- ─── DAY FOOTER ─── -->
+<footer class="day-footer">
+  <div class="footer-left">
+    <div class="footer-brand">Executive Conditioning System™ · Sales Conditioning</div>
+    <div class="footer-brand">© 2026 Aivorya AS · Licensed for personal use only · Not for redistribution · Day 05 of 30</div>
+  </div>
+  <div class="footer-right">
+    <div class="footer-tomorrow-label">Tomorrow</div>
+    <div class="footer-tomorrow-title">Day 06 · Breath as Anchor</div>
+    <div class="footer-tomorrow-phase">Phase 2 begins — Foundation</div>
+  </div>
+</footer>
+
+</body>
+</html>

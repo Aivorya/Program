@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Executive Conditioning System™ · Day 18 · Closing Without Pressure</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&family=Martian+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --paper:        #F0EBE1;
+    --paper-deep:   #E8E1D5;
+    --ink:          #1A1510;
+    --ink-mid:      #4A3F35;
+    --ink-light:    #8A7D72;
+    --accent:       #A87840;
+    --accent-light: #C4975A;
+    --accent-muted: rgba(168, 120, 64, 0.12);
+    --dark:         #2E2820;
+    --rule:         rgba(168, 120, 64, 0.25);
+    --write-line:   rgba(26, 21, 16, 0.15);
+  }
+
+  *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    font-size: 14px;
+  }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Lora', Georgia, serif;
+    line-height: 1.7;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* ─── MASTHEAD ─── */
+  .masthead {
+    background: var(--dark);
+    border-bottom: 1px solid rgba(168, 120, 64, 0.3);
+    padding: 14px 64px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .masthead-left {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 300;
+    color: var(--ink-light);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .masthead-left .highlight {
+    color: var(--accent-light);
+  }
+
+  .masthead-right {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 300;
+    color: var(--ink-light);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* ─── DAY HEADER ─── */
+  .day-header {
+    padding: 48px 64px 40px;
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 0 32px;
+    border-bottom: 1px solid var(--rule);
+    align-items: start;
+  }
+
+  .day-number-large {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 88pt;
+    font-weight: 500;
+    color: var(--accent);
+    opacity: 0.65;
+    line-height: 0.85;
+    letter-spacing: -0.03em;
+    padding-top: 6px;
+  }
+
+  .day-header-right {
+    padding-top: 8px;
+  }
+
+  .day-phase-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 400;
+    color: var(--accent);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  .day-title {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 20pt;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.2;
+    margin-bottom: 14px;
+  }
+
+  .day-premise {
+    font-family: 'Jost', sans-serif;
+    font-size: 10pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.65;
+  }
+
+  /* ─── CONTENT AREA ─── */
+  .content-area {
+    padding: 0 64px;
+  }
+
+  /* ─── SECTION LABEL ─── */
+  .section-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 400;
+    color: var(--accent);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 10px;
+    margin-top: 48px;
+    margin-bottom: 0;
+  }
+
+  /* ─── EMAIL BLOCK ─── */
+  .email-block {
+    border: 1px solid var(--rule);
+    border-top: none;
+    margin-top: 0;
+  }
+
+  .email-topbar {
+    background: var(--dark);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .email-topbar-left {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 300;
+    color: var(--ink-light);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .email-topbar-right {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 300;
+    color: var(--ink-light);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .email-body {
+    background: var(--paper);
+    padding: 36px 40px;
+  }
+
+  .email-body p {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 11pt;
+    font-weight: 400;
+    color: var(--ink);
+    line-height: 1.75;
+    margin-bottom: 18px;
+  }
+
+  .email-body p:last-child {
+    margin-bottom: 0;
+  }
+
+  .email-body em {
+    font-style: italic;
+  }
+
+  /* ─── SCIENCE BOX ─── */
+  .science-box {
+    background: var(--accent-muted);
+    border-left: 3px solid var(--accent);
+    padding: 24px 28px;
+    margin-top: 32px;
+  }
+
+  .science-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 400;
+    color: var(--accent);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .science-box p {
+    font-family: 'Jost', sans-serif;
+    font-size: 10pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.65;
+    margin-bottom: 12px;
+  }
+
+  .science-box p:last-child {
+    margin-bottom: 0;
+  }
+
+  .science-box strong {
+    font-weight: 600;
+    color: var(--ink-mid);
+  }
+
+  /* ─── CALLOUT ─── */
+  .callout {
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    padding: 28px 0;
+    margin-top: 36px;
+    text-align: center;
+  }
+
+  .callout p {
+    font-family: 'Lora', Georgia, serif;
+    font-style: italic;
+    font-size: 14pt;
+    color: var(--ink-mid);
+    max-width: 440px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  /* ─── WORKBOOK BLOCK ─── */
+  .workbook-block {
+    background: var(--paper-deep);
+    border-left: 3px solid var(--accent);
+    padding: 28px 32px;
+    margin-top: 32px;
+    page-break-inside: avoid;
+  }
+
+  .workbook-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 400;
+    color: var(--accent);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  .workbook-title {
+    font-family: 'Jost', sans-serif;
+    font-size: 13pt;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 8px;
+    line-height: 1.3;
+  }
+
+  .workbook-time {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 300;
+    color: var(--ink-light);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .workbook-instruction {
+    font-family: 'Jost', sans-serif;
+    font-size: 9.5pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.65;
+    margin-bottom: 20px;
+  }
+
+  .workbook-question {
+    font-family: 'Jost', sans-serif;
+    font-size: 10pt;
+    font-weight: 500;
+    color: var(--ink);
+    line-height: 1.55;
+    margin-bottom: 6px;
+    margin-top: 16px;
+  }
+
+  .workbook-question:first-of-type {
+    margin-top: 0;
+  }
+
+  .workbook-sub {
+    font-family: 'Jost', sans-serif;
+    font-size: 9pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.6;
+    margin-bottom: 8px;
+    font-style: italic;
+  }
+
+  .write-line {
+    border: none;
+    border-bottom: 1px solid var(--write-line);
+    height: 9mm;
+    display: block;
+    width: 100%;
+    margin-bottom: 0;
+    background: transparent;
+  }
+
+  .write-lines-group {
+    margin-bottom: 16px;
+  }
+
+  .close-item {
+    margin-bottom: 24px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(168, 120, 64, 0.12);
+  }
+
+  .close-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+
+  .close-number {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 500;
+    color: var(--accent);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .close-text {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 11pt;
+    font-weight: 400;
+    font-style: italic;
+    color: var(--ink);
+    margin-bottom: 10px;
+    line-height: 1.6;
+  }
+
+  .signal-item {
+    margin-bottom: 22px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid rgba(168, 120, 64, 0.12);
+  }
+
+  .signal-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+
+  .signal-number {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 500;
+    color: var(--accent);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+
+  .signal-desc {
+    font-family: 'Jost', sans-serif;
+    font-size: 10pt;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 6px;
+    line-height: 1.5;
+  }
+
+  .signal-example {
+    font-family: 'Jost', sans-serif;
+    font-size: 9.5pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.6;
+    margin-bottom: 10px;
+    font-style: italic;
+  }
+
+  .signal-prompt {
+    font-family: 'Jost', sans-serif;
+    font-size: 9.5pt;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 6px;
+  }
+
+  .audit-item {
+    margin-bottom: 24px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(168, 120, 64, 0.12);
+  }
+
+  .audit-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+
+  .audit-number {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 500;
+    color: var(--accent);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .workbook-note {
+    font-family: 'Jost', sans-serif;
+    font-size: 9.5pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.65;
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(168, 120, 64, 0.15);
+  }
+
+  .workbook-note strong {
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  /* ─── DRILL BOX ─── */
+  .drill-box {
+    background: var(--paper);
+    border-left: 3px solid var(--ink-mid);
+    padding: 24px 28px;
+    margin-top: 32px;
+    page-break-inside: avoid;
+  }
+
+  .drill-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 400;
+    color: var(--ink-light);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .drill-box p {
+    font-family: 'Jost', sans-serif;
+    font-size: 10pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.65;
+    margin-bottom: 12px;
+  }
+
+  .drill-box p:last-child {
+    margin-bottom: 0;
+  }
+
+  .drill-box strong {
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .drill-grid {
+    margin-top: 16px;
+  }
+
+  .drill-row {
+    margin-bottom: 12px;
+  }
+
+  .drill-row-label {
+    font-family: 'Jost', sans-serif;
+    font-size: 9.5pt;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+
+  /* ─── EOD BLOCK ─── */
+  .eod-block {
+    background: var(--paper-deep);
+    border-left: 3px solid var(--accent);
+    padding: 28px 32px;
+    margin-top: 32px;
+    page-break-inside: avoid;
+  }
+
+  .eod-question {
+    font-family: 'Jost', sans-serif;
+    font-size: 10pt;
+    font-weight: 500;
+    color: var(--ink);
+    line-height: 1.55;
+    margin-bottom: 6px;
+    margin-top: 18px;
+  }
+
+  .eod-question:first-of-type {
+    margin-top: 0;
+  }
+
+  /* ─── DAY FOOTER ─── */
+  .day-footer {
+    border-top: 1px solid var(--rule);
+    margin-top: 48px;
+    padding: 24px 64px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    page-break-inside: avoid;
+  }
+
+  .footer-left {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 300;
+    color: var(--ink-light);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    line-height: 1.8;
+  }
+
+  .footer-right {
+    text-align: right;
+  }
+
+  .footer-tomorrow-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 400;
+    color: var(--accent);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+
+  .footer-tomorrow-title {
+    font-family: 'Jost', sans-serif;
+    font-size: 9pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.4;
+  }
+
+  /* ─── PRINT STYLES ─── */
+  @media print {
+    body {
+      background: white;
+      color: var(--ink);
+    }
+
+    .masthead,
+    .email-topbar {
+      background: white !important;
+      -webkit-print-color-adjust: exact;
+    }
+
+    .masthead-left,
+    .masthead-right,
+    .email-topbar-left,
+    .email-topbar-right {
+      color: var(--ink) !important;
+    }
+
+    .masthead-left .highlight {
+      color: var(--accent) !important;
+    }
+
+    .science-box {
+      background: #F5F5F5 !important;
+    }
+
+    .workbook-block,
+    .eod-block {
+      background: #F5F5F5 !important;
+    }
+
+    .email-body {
+      border: 1px solid #CCCCCC !important;
+    }
+
+    .write-line {
+      border-bottom-color: #BBBBBB !important;
+    }
+
+    .workbook-block,
+    .drill-box,
+    .science-box,
+    .eod-block {
+      page-break-inside: avoid;
+    }
+
+    .day-footer {
+      page-break-inside: avoid;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- ─── MASTHEAD ─── -->
+<header class="masthead">
+  <div class="masthead-left">
+    Executive Conditioning System™ · <span class="highlight">Sales Conditioning</span> · An Aivorya Program
+  </div>
+  <div class="masthead-right">Phase 3 · Day 18</div>
+</header>
+
+<!-- ─── DAY HEADER ─── -->
+<div class="day-header">
+  <div class="day-number-large">18</div>
+  <div class="day-header-right">
+    <div class="day-phase-label">Phase 3 — Conditioning</div>
+    <div class="day-title">Closing Without Pressure</div>
+    <div class="day-premise">Premature closing is a regulation failure. The close is not applied at the end of a good conversation — it arrives there.</div>
+  </div>
+</div>
+
+<!-- ─── CONTENT AREA ─── -->
+<div class="content-area">
+
+  <!-- Morning Conditioning -->
+  <div class="section-label">Morning Conditioning</div>
+
+  <div class="email-block">
+    <div class="email-topbar">
+      <div class="email-topbar-left">From: Executive Conditioning System™ · Day 18 of 30</div>
+      <div class="email-topbar-right">Read · Then Work</div>
+    </div>
+    <div class="email-body">
+      <p>When a close fails, the reflex is to examine the close. The language used. The timing. Whether a different question might have worked better.</p>
+
+      <p>Most of the time, that is the wrong place to look.</p>
+
+      <p>Premature closing — attempting to close before a buyer has reached a genuine decision — is not a technique error. It is a regulation error. The salesperson who closes too early is not reading the room wrong. They are managing their own internal pressure by forcing an external outcome. The close becomes an attempt to resolve the wanting-to-needing tension from Day 9 — to end the uncertainty of not knowing by creating a decision, <em>any</em> decision, before the buyer is actually there.</p>
+
+      <p>Buyers feel this. Not the words. The state underneath the words. A regulated close — offered when the conversation has done its diagnostic work — feels different to a buyer than a close delivered from an approval-seeking state. The language can be identical. The physiological signal is not. Reactance is triggered by the pressure signal, not the question itself.</p>
+
+      <p>Jack Brehm's research on psychological reactance, developed in the 1960s and replicated consistently since, established a mechanism every salesperson has experienced from both sides of a desk: when autonomy feels threatened, resistance increases — automatically, before any conscious evaluation of the proposition. A buyer who was approaching a yes can be pushed into hesitation by a close that signals urgency or necessity. The close that preserves autonomy — that treats the decision as the buyer's to make, not the salesperson's to extract — does not activate this. It confirms what the buyer already knows.</p>
+
+      <p>The collaborative close is not a softer close. It is a more effective one. <em>"Based on everything we've discussed, does this feel like the right direction?"</em> works because it attributes the close to the conversation, not to the salesperson's agenda. It asks for the buyer's assessment. It is confirmatory rather than pressuring. The buyer who says yes to that question has made a genuine assessment. The buyer who says yes to "are you ready to move forward?" has responded to a pressure signal — and is more likely to produce post-purchase doubt, cancellations, and implementation resistance than one who closed with genuine certainty.</p>
+
+      <p>But language is downstream of state. A collaborative close delivered from an approval-seeking state is a performance. The buyer reads it. The exercise today is not primarily about language. It is about identifying when a buyer has actually decided — and not closing before that point regardless of internal pressure to do so.</p>
+    </div>
+  </div>
+
+  <!-- Science Box -->
+  <div class="science-box">
+    <div class="science-label">The Science</div>
+    <p><strong>Reactance and Autonomy — Two Findings Worth Knowing</strong></p>
+    <p>Psychological reactance (Brehm, 1966): when a person perceives their freedom of choice as threatened, they become motivationally opposed to the direction of the pressure — even if they were already moving that way. In a close, the signal that activates reactance is not the question but the urgency or necessity embedded in how it is delivered. "Are you ready to move forward?" can carry that signal. "Does this address what you described?" generally does not. The difference is whether the close treats the decision as the buyer's to make.</p>
+    <p>Self-Determination Theory (Deci and Ryan): autonomy-supportive communication — acknowledging the other person's perspective, offering rationale rather than pressure, using non-pressuring language — produces more genuine engagement and more durable decisions than controlling communication. A buyer who decides in an autonomy-supported conversation is less likely to reverse that decision than one who decided under pressure. The durable yes comes from genuine certainty, not from a well-executed technique.</p>
+  </div>
+
+  <!-- Callout -->
+  <div class="callout">
+    <p>The close that comes from a non-attached state is a different conversation. The language is almost incidental.</p>
+  </div>
+
+  <!-- Workbook Section -->
+  <div class="section-label">Workbook — Day 18</div>
+
+  <!-- Exercise 1 -->
+  <div class="workbook-block">
+    <div class="workbook-label">Exercise 1 · The Collaborative Close</div>
+    <div class="workbook-title">Language and Mechanism</div>
+    <div class="workbook-time">5–7 minutes</div>
+    <div class="workbook-instruction">Three close formulations below. Read each one. Write, in your own words, why each one works — what it signals to the buyer, and what it does not signal. Be specific about the mechanism, not the tone.</div>
+
+    <div class="close-item">
+      <div class="close-number">Close 1</div>
+      <div class="close-text">"Based on everything we've discussed, does this feel like the right direction?"</div>
+      <div class="workbook-question">Why this works — what it signals and what it doesn't:</div>
+      <div class="write-lines-group">
+        <div class="write-line"></div>
+        <div class="write-line"></div>
+      </div>
+    </div>
+
+    <div class="close-item">
+      <div class="close-number">Close 2</div>
+      <div class="close-text">"Does what we've mapped out address what you described at the start of this conversation?"</div>
+      <div class="workbook-question">Why this works — what it signals and what it doesn't:</div>
+      <div class="write-lines-group">
+        <div class="write-line"></div>
+        <div class="write-line"></div>
+      </div>
+    </div>
+
+    <div class="close-item">
+      <div class="close-number">Close 3</div>
+      <div class="close-text">"Is there anything that would prevent you from moving forward with this?"</div>
+      <div class="workbook-question">This is the most important of the three. Write specifically why — consider what a buyer with a residual concern does when asked this question, versus what they do when asked "are you ready to move forward?"</div>
+      <div class="write-lines-group">
+        <div class="write-line"></div>
+        <div class="write-line"></div>
+      </div>
+    </div>
+
+    <div class="workbook-question" style="margin-top: 24px;">Now write one version in your own language — not copied from above, not a variation of these. Your close, confirmatory rather than pressuring. One sentence.</div>
+    <div class="write-lines-group">
+      <div class="write-line"></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+
+  <!-- Exercise 2 -->
+  <div class="workbook-block">
+    <div class="workbook-label">Exercise 2 · Buying Signal Identification</div>
+    <div class="workbook-title">The Three Signals</div>
+    <div class="workbook-time">5–7 minutes</div>
+    <div class="workbook-instruction">Before a buyer closes, they signal. The drill that follows requires you to know what you are listening for. Read each signal. Write a specific example from a real conversation — not a hypothetical, an actual buyer statement you have heard or something close to it.</div>
+
+    <div class="signal-item">
+      <div class="signal-number">Signal 1 — Problem Repetition</div>
+      <div class="signal-desc">The buyer returns to the same pain point from discovery — not as an objection, as a confirmation. They are verifying that the problem is real.</div>
+      <div class="signal-example">"Like I said earlier, the biggest issue for us is the reporting lag — that's what's been causing the quarterly reviews to go badly."</div>
+      <div class="signal-prompt">Your example from a real conversation:</div>
+      <div class="write-lines-group">
+        <div class="write-line"></div>
+        <div class="write-line"></div>
+      </div>
+    </div>
+
+    <div class="signal-item">
+      <div class="signal-number">Signal 2 — Future-Tense Language</div>
+      <div class="signal-desc">The buyer speaks as if the solution is already in place. "When we roll this out" rather than "if we were to." The buyer's thinking has moved into a post-decision frame. This is a pre-conscious signal of genuine engagement.</div>
+      <div class="signal-example">"When we roll this out, I'd want to make sure the team is trained before the Q3 review cycle."</div>
+      <div class="signal-prompt">Your example from a real conversation:</div>
+      <div class="write-lines-group">
+        <div class="write-line"></div>
+        <div class="write-line"></div>
+      </div>
+    </div>
+
+    <div class="signal-item">
+      <div class="signal-number">Signal 3 — Implementation Questions</div>
+      <div class="signal-desc">The buyer asks about onboarding, timelines, integration, or team requirements. Questions that only matter if the decision has been made — or is very close.</div>
+      <div class="signal-example">"How long does the onboarding typically take? And do you work with our IT team directly or through us?"</div>
+      <div class="signal-prompt">Your example from a real conversation:</div>
+      <div class="write-lines-group">
+        <div class="write-line"></div>
+        <div class="write-line"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Drill Box -->
+  <div class="drill-box">
+    <div class="drill-label">Today's Practice Drill · Close Timing — Next Three Conversations</div>
+    <p>In each of the next three conversations, track whether any of the three signals appears before you attempt a close.</p>
+    <p><strong>Do not close until at least one signal is present.</strong></p>
+    <p>If none appears, do not close. Return to diagnosis — something is unresolved. The absence of buying signals is as diagnostic as their presence.</p>
+    <p>After each conversation: note which signal appeared (or did not), and at what point in the conversation you first heard it.</p>
+
+    <div class="drill-grid">
+      <div class="drill-row">
+        <div class="drill-row-label">Conversation 1 — signal observed (or absent):</div>
+        <div class="write-line"></div>
+      </div>
+      <div class="drill-row">
+        <div class="drill-row-label">Conversation 2 — signal observed (or absent):</div>
+        <div class="write-line"></div>
+      </div>
+      <div class="drill-row">
+        <div class="drill-row-label">Conversation 3 — signal observed (or absent):</div>
+        <div class="write-line"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Exercise 3 -->
+  <div class="workbook-block">
+    <div class="workbook-label">Exercise 3 · Premature Close Audit</div>
+    <div class="workbook-title">Three Recent Conversations That Did Not Close</div>
+    <div class="workbook-time">5–7 minutes</div>
+    <div class="workbook-instruction">Choose three recent conversations where the close did not produce a yes. For each: identify when you attempted the close. Then answer whether any buying signal had appeared before that point. Write what actually happened — not what you intended, not what you said. What the buyer said and did in the five minutes before you closed.</div>
+
+    <div class="audit-item">
+      <div class="audit-number">Conversation 1</div>
+      <div class="workbook-question">What happened in the five minutes before you closed:</div>
+      <div class="write-lines-group">
+        <div class="write-line"></div>
+        <div class="write-line"></div>
+        <div class="write-line"></div>
+      </div>
+      <div class="workbook-question">Had any buying signal appeared before that point? If yes, which one:</div>
+      <div class="write-lines-group">
+        <div class="write-line"></div>
+      </div>
+    </div>
+
+    <div class="audit-item">
+      <div class="audit-number">Conversation 2</div>
+      <div class="workbook-question">What happened in the five minutes before you closed:</div>
+      <div class="write-lines-group">
+        <div class="write-line"></div>
+        <div class="write-line"></div>
+        <div class="write-line"></div>
+      </div>
+      <div class="workbook-question">Had any buying signal appeared before that point? If yes, which one:</div>
+      <div class="write-lines-group">
+        <div class="write-line"></div>
+      </div>
+    </div>
+
+    <div class="audit-item">
+      <div class="audit-number">Conversation 3</div>
+      <div class="workbook-question">What happened in the five minutes before you closed:</div>
+      <div class="write-lines-group">
+        <div class="write-line"></div>
+        <div class="write-line"></div>
+        <div class="write-line"></div>
+      </div>
+      <div class="workbook-question">Had any buying signal appeared before that point? If yes, which one:</div>
+      <div class="write-lines-group">
+        <div class="write-line"></div>
+      </div>
+    </div>
+
+    <div class="workbook-note">
+      If no buying signal was present in any of the three conversations before you closed: you are not closing too late. You are closing before the buyer has arrived. <strong>That is a regulation issue, not a timing issue.</strong> The drill above addresses it directly.
+    </div>
+  </div>
+
+  <!-- End of Day Reflection -->
+  <div class="section-label">End of Day — Day 18</div>
+
+  <div class="eod-block">
+    <div class="workbook-label">End of Day Reflection</div>
+    <div class="workbook-time">3 minutes</div>
+
+    <div class="eod-question">What pattern do you recognise in the premature close audit — specifically about your own internal state at the moment you initiated the close?</div>
+    <div class="write-lines-group">
+      <div class="write-line"></div>
+      <div class="write-line"></div>
+    </div>
+
+    <div class="eod-question">Which of the three buying signals do you currently notice most reliably in live conversations? Which one do you miss?</div>
+    <div class="write-lines-group">
+      <div class="write-line"></div>
+      <div class="write-line"></div>
+    </div>
+
+    <div class="eod-question">One thing you are taking into tomorrow:</div>
+    <div class="write-lines-group">
+      <div class="write-line"></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+
+</div>
+<!-- end content-area -->
+
+<!-- ─── DAY FOOTER ─── -->
+<footer class="day-footer">
+  <div class="footer-left">
+    Executive Conditioning System™ · Sales Conditioning<br>
+    © 2026 Aivorya AS · Licensed for personal use only · Not for redistribution · Day 18 of 30
+  </div>
+  <div class="footer-right">
+    <div class="footer-tomorrow-label">Tomorrow</div>
+    <div class="footer-tomorrow-title">Day 19 · Recovery After Loss</div>
+  </div>
+</footer>
+
+</body>
+</html>

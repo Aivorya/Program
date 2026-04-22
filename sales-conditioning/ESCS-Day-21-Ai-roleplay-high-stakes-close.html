@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Executive Conditioning System™ · Sales Conditioning · Day 21</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Jost:wght@300;400;500;600&family=Martian+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper:        #F0EBE1;
+    --paper-deep:   #E8E1D5;
+    --ink:          #1A1510;
+    --ink-mid:      #4A3F35;
+    --ink-light:    #8A7D72;
+    --accent:       #A87840;
+    --accent-light: #C4975A;
+    --accent-muted: rgba(168, 120, 64, 0.12);
+    --dark:         #2E2820;
+    --rule:         rgba(168, 120, 64, 0.25);
+    --write-line:   rgba(26, 21, 16, 0.15);
+  }
+
+  *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Lora', Georgia, serif;
+    line-height: 1.7;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* ─── MASTHEAD ─── */
+  .masthead {
+    background: var(--dark);
+    border-bottom: 1px solid rgba(168, 120, 64, 0.3);
+    padding: 18px 64px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .masthead-left {
+    font-family: 'Martian Mono', monospace;
+    font-size: 7.5pt;
+    font-weight: 300;
+    color: var(--ink-light);
+    letter-spacing: 0.04em;
+  }
+
+  .masthead-left .highlight {
+    color: var(--accent-light);
+  }
+
+  .masthead-right {
+    font-family: 'Martian Mono', monospace;
+    font-size: 7.5pt;
+    font-weight: 300;
+    color: var(--ink-light);
+    letter-spacing: 0.04em;
+  }
+
+  /* ─── DAY HEADER ─── */
+  .day-header {
+    padding: 48px 64px 40px;
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 0 28px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .day-number-large {
+    font-family: 'Lora', serif;
+    font-size: 88pt;
+    font-weight: 400;
+    color: var(--accent);
+    opacity: 0.65;
+    line-height: 1;
+    margin-top: 6px;
+  }
+
+  .day-header-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .phase-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 7pt;
+    font-weight: 400;
+    color: var(--accent);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+
+  .day-title {
+    font-family: 'Lora', serif;
+    font-size: 20pt;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.25;
+  }
+
+  .day-premise {
+    font-family: 'Jost', sans-serif;
+    font-size: 10pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.65;
+    max-width: 560px;
+  }
+
+  /* ─── CONTENT AREA ─── */
+  .content-area {
+    padding: 0 64px;
+  }
+
+  /* ─── SECTION LABEL ─── */
+  .section-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 400;
+    color: var(--accent);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 10px;
+    margin-top: 48px;
+    margin-bottom: 0;
+  }
+
+  /* ─── EMAIL BLOCK ─── */
+  .email-block {
+    border: 1px solid var(--rule);
+    border-top: none;
+    margin-top: 0;
+  }
+
+  .email-topbar {
+    background: var(--dark);
+    padding: 10px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .email-topbar-left {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 300;
+    color: var(--ink-light);
+    letter-spacing: 0.06em;
+  }
+
+  .email-topbar-right {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 300;
+    color: var(--ink-light);
+    letter-spacing: 0.06em;
+  }
+
+  .email-body {
+    background: var(--paper);
+    padding: 36px 40px 36px;
+  }
+
+  .email-body p {
+    font-family: 'Lora', serif;
+    font-size: 11pt;
+    font-weight: 400;
+    color: var(--ink);
+    line-height: 1.75;
+    margin-bottom: 18px;
+  }
+
+  .email-body p:last-child {
+    margin-bottom: 0;
+  }
+
+  .email-body em {
+    font-style: italic;
+  }
+
+  /* ─── SCIENCE BOX ─── */
+  .science-box {
+    background: var(--accent-muted);
+    border-left: 3px solid var(--accent);
+    padding: 24px 28px;
+    margin-top: 32px;
+  }
+
+  .science-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 500;
+    color: var(--accent);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .science-box p {
+    font-family: 'Jost', sans-serif;
+    font-size: 10pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.65;
+    margin-bottom: 10px;
+  }
+
+  .science-box p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* ─── CALLOUT ─── */
+  .callout {
+    text-align: center;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    padding: 28px 0;
+    margin-top: 40px;
+  }
+
+  .callout p {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 14pt;
+    color: var(--ink-mid);
+    max-width: 440px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  /* ─── WORKBOOK BLOCK ─── */
+  .workbook-block {
+    background: var(--paper-deep);
+    border-left: 3px solid var(--accent);
+    padding: 28px 32px;
+    margin-top: 28px;
+    page-break-inside: avoid;
+  }
+
+  .workbook-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 500;
+    color: var(--accent);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  .workbook-title {
+    font-family: 'Jost', sans-serif;
+    font-size: 13pt;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 12px;
+    line-height: 1.3;
+  }
+
+  .workbook-instruction {
+    font-family: 'Jost', sans-serif;
+    font-size: 9.5pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.65;
+    margin-bottom: 20px;
+  }
+
+  .workbook-instruction p {
+    margin-bottom: 10px;
+  }
+
+  .workbook-instruction p:last-child {
+    margin-bottom: 0;
+  }
+
+  .workbook-question {
+    font-family: 'Jost', sans-serif;
+    font-size: 10pt;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 6px;
+    margin-top: 18px;
+    line-height: 1.5;
+  }
+
+  .workbook-question:first-of-type {
+    margin-top: 0;
+  }
+
+  .write-line {
+    display: block;
+    height: 9mm;
+    border-bottom: 1px solid var(--write-line);
+    margin-bottom: 0;
+  }
+
+  .write-line + .write-line {
+    margin-top: 0;
+  }
+
+  /* ─── PROMPT BLOCK ─── */
+  .prompt-block {
+    background: rgba(26, 21, 16, 0.04);
+    border: 1px solid var(--rule);
+    border-left: 3px solid var(--accent);
+    padding: 20px 24px;
+    margin: 16px 0 20px;
+    font-family: 'Jost', sans-serif;
+    font-size: 9.5pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.7;
+    font-style: italic;
+  }
+
+  /* ─── PHASE LIST ─── */
+  .phase-list {
+    margin: 14px 0 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .phase-list li {
+    font-family: 'Jost', sans-serif;
+    font-size: 9.5pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.65;
+    padding: 6px 0 6px 18px;
+    border-bottom: 1px solid rgba(168,120,64,0.1);
+    position: relative;
+  }
+
+  .phase-list li:last-child {
+    border-bottom: none;
+  }
+
+  .phase-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 13px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+    opacity: 0.5;
+  }
+
+  .phase-list li strong {
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  /* ─── DRILL BOX ─── */
+  .drill-box {
+    background: var(--paper);
+    border-left: 3px solid var(--ink-mid);
+    padding: 24px 28px;
+    margin-top: 28px;
+    page-break-inside: avoid;
+  }
+
+  .drill-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 400;
+    color: var(--ink-light);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .drill-box p {
+    font-family: 'Jost', sans-serif;
+    font-size: 10pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.65;
+    margin-bottom: 10px;
+  }
+
+  .drill-box p:last-child {
+    margin-bottom: 0;
+  }
+
+  .drill-box strong {
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  /* ─── TIME NOTE ─── */
+  .time-note {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 300;
+    color: var(--ink-light);
+    letter-spacing: 0.1em;
+    margin-bottom: 16px;
+    display: block;
+  }
+
+  /* ─── FOOTER ─── */
+  .day-footer {
+    margin-top: 48px;
+    border-top: 1px solid var(--rule);
+    padding: 24px 64px 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    page-break-inside: avoid;
+  }
+
+  .footer-left {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 300;
+    color: var(--ink-light);
+    letter-spacing: 0.05em;
+    line-height: 1.8;
+  }
+
+  .footer-right {
+    text-align: right;
+  }
+
+  .footer-tomorrow-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 400;
+    color: var(--accent);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+
+  .footer-tomorrow-title {
+    font-family: 'Jost', sans-serif;
+    font-size: 9pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+  }
+
+  /* ─── PRINT ─── */
+  @media print {
+    body {
+      background: white;
+    }
+
+    .masthead,
+    .email-topbar {
+      background: white !important;
+      border-bottom: 1px solid #CCCCCC;
+    }
+
+    .masthead-left,
+    .masthead-right,
+    .masthead-left .highlight,
+    .email-topbar-left,
+    .email-topbar-right {
+      color: var(--ink) !important;
+    }
+
+    .email-body {
+      border: 1px solid #CCCCCC;
+    }
+
+    .science-box,
+    .workbook-block {
+      background: #F5F5F5 !important;
+      page-break-inside: avoid;
+    }
+
+    .write-line {
+      border-bottom-color: #BBBBBB;
+    }
+
+    .workbook-block,
+    .drill-box,
+    .science-box {
+      page-break-inside: avoid;
+    }
+
+    .day-footer {
+      page-break-inside: avoid;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- ─── MASTHEAD ─── -->
+<header class="masthead">
+  <div class="masthead-left">
+    Executive Conditioning System™ · <span class="highlight">Sales Conditioning</span> · An Aivorya Program
+  </div>
+  <div class="masthead-right">
+    Phase 3 · Day 21
+  </div>
+</header>
+
+<!-- ─── DAY HEADER ─── -->
+<div class="day-header">
+  <div class="day-number-large">21</div>
+  <div class="day-header-right">
+    <div class="phase-label">Phase 3 — Conditioning</div>
+    <div class="day-title">AI Roleplay — High-Stakes Close</div>
+    <div class="day-premise">The resistant buyer on Day 17 tested regulation under pressure. Today's simulation tests something harder: staying regulated when the deal is close, the buyer is engaged, and the pressure to close comes from inside, not from the buyer.</div>
+  </div>
+</div>
+
+<!-- ─── CONTENT AREA ─── -->
+<div class="content-area">
+
+  <!-- MORNING CONDITIONING -->
+  <div class="section-label">Morning Conditioning</div>
+  <div class="email-block">
+    <div class="email-topbar">
+      <span class="email-topbar-left">From: Executive Conditioning System™ · Day 21 of 30</span>
+      <span class="email-topbar-right">Read · Then Work</span>
+    </div>
+    <div class="email-body">
+      <p>On Day 17, the simulation worked because the buyer was difficult. Resistance is a familiar pressure profile. You train for it. You feel it arrive and you know what to do with it.</p>
+
+      <p>Today's simulation is harder. Not because the buyer will push back — they won't, not much. Because the buyer is engaged, the deal is close, and the pressure is coming from inside.</p>
+
+      <p>This is the activation pattern that costs more deals than any difficult buyer does. When success is possible — when the buyer has budget, authority, and genuine interest — the nervous system registers proximity to a desired outcome. That proximity activates approach-avoidance arousal: wanting shifts toward needing, and <em>needing degrades execution</em> in ways that are invisible until the conversation is already off.</p>
+
+      <p>Research in performance psychology is consistent on this: performers don't choke under certain failure. They choke under achievable success. The salesperson who stayed regulated through five Guaranteed No repetitions on Day 13 may find a genuinely interested buyer harder to handle than a hostile one. If that sounds counterintuitive, it's because we assume difficulty is the variable. It isn't. <em>Proximity to the desired outcome is the variable.</em></p>
+
+      <p>Today's simulation is designed to test that specific pressure profile. The buyer is close to yes. The close is possible. That's the pressure.</p>
+
+      <p>Run the Day 09 pre-call protocol before you open the AI. The wanting-versus-needing audit in Step 1 applies directly here: do you need this simulation to go well, or do you want it to go well? Name it honestly. The simulation that begins from a needing state produces data about what happens under approval-seeking pressure. The simulation that begins from a wanting state produces data about what you can actually do. Both are valid. They are not the same session.</p>
+    </div>
+  </div>
+
+  <!-- SCIENCE BOX -->
+  <div class="science-box">
+    <div class="science-label">The Science</div>
+    <p>In performance psychology, choking under pressure refers specifically to underperformance in high-stakes conditions relative to practice conditions. The mechanism is not anxiety — it's attentional shift. Under high-stakes achievable conditions, performers move from process focus (what am I doing right now) to outcome focus (how is this going), which overloads working memory and disrupts automated sequences.</p>
+    <p>The critical finding: this is most activated not by difficult conditions but by achievable ones. The proximity of a desired outcome generates approach-avoidance conflict — wanting it strongly while fearing the loss of it — which produces elevated arousal that execution cannot absorb cleanly.</p>
+    <p>In sales, this is most common in the final meeting with an engaged buyer. The skill is present. The regulation isn't. The Day 09 wanting-versus-needing distinction is the practical intervention: not to remove the wanting, but to release the needing that converts the outcome into a threat.</p>
+  </div>
+
+  <!-- CALLOUT -->
+  <div class="callout">
+    <p>The hardest regulation challenge is not the buyer who won't move. It is the buyer who might.</p>
+  </div>
+
+  <!-- PRE-SIMULATION PROTOCOL -->
+  <div class="section-label">Pre-Simulation — Day 09 Protocol</div>
+
+  <div class="workbook-block">
+    <div class="workbook-label">Before You Begin</div>
+    <div class="workbook-title">Run the Full Pre-Call Protocol</div>
+    <span class="time-note">Approximate time: 3 minutes</span>
+    <div class="workbook-instruction">
+      <p>Before opening the AI, complete each step in order.</p>
+    </div>
+
+    <div class="workbook-question">Step 1 — Wanting versus needing audit</div>
+    <div class="workbook-instruction">
+      <p>Write one sentence: do you need this simulation to go well, or do you want it to go well? If the honest answer is need, name what the need is attached to. It is probably not about the simulation.</p>
+    </div>
+    <span class="write-line"></span>
+    <span class="write-line"></span>
+
+    <div class="workbook-question">Step 2 — Cyclic sighing</div>
+    <div class="workbook-instruction">
+      <p>Five cycles. Two sharp inhales through the nose, one long exhale through the mouth. Full exhale each time. Do not skip this.</p>
+    </div>
+
+    <div class="workbook-question">Step 3 — Process focus statement</div>
+    <div class="workbook-instruction">
+      <p>Write one sentence: what specific behaviour are you focusing on in this simulation? Not the outcome — the behaviour. One thing.</p>
+    </div>
+    <span class="write-line"></span>
+  </div>
+
+  <!-- WORKBOOK -->
+  <div class="section-label">Workbook — Day 21</div>
+
+  <!-- EXERCISE 1 -->
+  <div class="workbook-block">
+    <div class="workbook-label">Exercise 1 · The Simulation</div>
+    <div class="workbook-title">High-Stakes Final Meeting — Full Deal Arc</div>
+    <span class="time-note">Approximate time: 30–45 minutes including debrief rounds</span>
+
+    <div class="workbook-question">The buyer profile — use this prompt exactly</div>
+    <div class="prompt-block">
+      "You are playing the role of a B2B buyer named Sarah. You are a Chief Operating Officer at a company of 200 people. You have been through two discovery calls and have seen the proposal. You are genuinely interested — this solution addresses a real problem your business has. However, you have one unresolved concern: you are not confident that your team will actually adopt the solution, and you have seen previous initiatives fail at the implementation stage. You are not resistant — you want this to work. But you will not commit until you feel certain about the implementation risk. When the salesperson asks genuine questions about your concern and addresses it with specific evidence, you become more open. When they push toward a close before your concern is fully addressed, you pull back. Begin the conversation by saying: 'Thanks for making time. I've been thinking about this since we last spoke. I'm close — but I have one thing I need to work through before I can commit.'"
+    </div>
+
+    <div class="workbook-question">The simulation structure — run the full meeting arc in this order</div>
+    <ul class="phase-list">
+      <li><strong>Phase 1 — Confirm understanding.</strong> Open with a summary of what was diagnosed across the two discovery calls. Check for accuracy. Correct anything Sarah adjusts.</li>
+      <li><strong>Phase 2 — Proposal.</strong> Present the solution as a direct response to what was diagnosed. Not a feature list. A response to a specific problem.</li>
+      <li><strong>Phase 3 — The concern surfaces.</strong> Apply the objection anatomy from Day 14. What is the surface concern? What is the uncertainty underneath it?</li>
+      <li><strong>Phase 4 — Uncertainty diagnosis.</strong> Identify the category of uncertainty (Day 10). Sarah is carrying social uncertainty — the cost of being wrong internally, the failure of previous initiatives, the risk of sponsoring something that doesn't stick. Address that specifically, not the general hesitation.</li>
+      <li><strong>Phase 5 — Certainty building.</strong> Use the certainty language from Day 10. Address the specific uncertainty Sarah named — implementation risk and internal adoption. Not the product. Not the price. The implementation risk.</li>
+      <li><strong>Phase 6 — Collaborative close.</strong> Use the language from Day 18. Do not close until the concern is addressed. If you close before the concern is resolved, Sarah pulls back.</li>
+      <li><strong>Phase 7 — If the close does not land.</strong> Apply the stall diagnosis from Day 16. Identify what is unresolved. Commit to a specific next step — date, agenda, owner.</li>
+    </ul>
+
+    <div class="workbook-instruction" style="margin-top: 18px;">
+      <p>Run minimum two rounds. Three if time allows. Debrief after each round using Exercise 2 before running the next round.</p>
+    </div>
+  </div>
+
+  <!-- EXERCISE 2 -->
+  <div class="workbook-block">
+    <div class="workbook-label">Exercise 2 · Debrief Protocol</div>
+    <div class="workbook-title">Four Questions — After Every Round</div>
+    <span class="time-note">Approximate time: 5 minutes per round</span>
+    <div class="workbook-instruction">
+      <p>Complete after each round before running the next. Do not combine rounds in a single debrief.</p>
+    </div>
+
+    <div class="workbook-question">Q1 — Regulation</div>
+    <div class="workbook-instruction"><p>At what moment did you feel the most activation? What was the physical signal? What did you do with it?</p></div>
+    <span class="write-line"></span>
+    <span class="write-line"></span>
+
+    <div class="workbook-question">Q2 — Curiosity vs defence</div>
+    <div class="workbook-instruction"><p>When Sarah's concern surfaced — did you ask a question or did you start building a case? Write what you actually did, not what you intended to do.</p></div>
+    <span class="write-line"></span>
+    <span class="write-line"></span>
+
+    <div class="workbook-question">Q3 — The price moment</div>
+    <div class="workbook-instruction"><p>At the price moment — did you state the number and hold silence, or did you add qualifications? What state were you in when you gave the price?</p></div>
+    <span class="write-line"></span>
+    <span class="write-line"></span>
+
+    <div class="workbook-question">Q4 — Observation vs judgement</div>
+    <div class="workbook-instruction"><p>Write one observation about the round. Not an evaluation — a description of what happened. Specific. Present tense. No interpretation.</p></div>
+    <span class="write-line"></span>
+    <span class="write-line"></span>
+  </div>
+
+  <!-- EXERCISE 3 -->
+  <div class="workbook-block">
+    <div class="workbook-label">Exercise 3 · Cross-Round Comparison</div>
+    <div class="workbook-title">After All Rounds</div>
+    <span class="time-note">Approximate time: 5 minutes</span>
+    <div class="workbook-instruction">
+      <p>Complete after all rounds are finished.</p>
+    </div>
+
+    <div class="workbook-question">Q1 — Regulation trajectory</div>
+    <div class="workbook-instruction"><p>Did your regulation improve across rounds, hold steady, or deteriorate? Describe specifically what changed.</p></div>
+    <span class="write-line"></span>
+    <span class="write-line"></span>
+
+    <div class="workbook-question">Q2 — The close</div>
+    <div class="workbook-instruction"><p>In which round did you hold the collaborative close most cleanly? What was different in that round?</p></div>
+    <span class="write-line"></span>
+    <span class="write-line"></span>
+
+    <div class="workbook-question">Q3 — Day 17 comparison</div>
+    <div class="workbook-instruction"><p>Compare your regulation in this simulation to Day 17. Where were you more regulated? Where were you less? What does the difference tell you about which pressure profile is harder for you?</p></div>
+    <span class="write-line"></span>
+    <span class="write-line"></span>
+    <span class="write-line"></span>
+  </div>
+
+  <!-- DRILL BOX -->
+  <div class="section-label">Today's Practice Drill</div>
+
+  <div class="drill-box">
+    <div class="drill-label">Day 21 Drill · Pre-Call Protocol — Live Application</div>
+    <p>The simulation is complete. Before your next real call today or tomorrow, <strong>run the full Day 09 pre-call protocol — wanting versus needing audit, five cycles of cyclic sighing, one process focus statement.</strong></p>
+    <p>If you have a high-stakes call in the next 48 hours — a buyer who is engaged and close to deciding — that is the call to run it on. That is the pressure profile you trained for today.</p>
+    <p>If no call is scheduled, identify the one deal in your pipeline where you feel the wanting-to-needing pull most strongly. Write the deal name and one sentence on what the needing is attached to.</p>
+    <span class="write-line" style="margin-top: 14px;"></span>
+    <span class="write-line"></span>
+    <span class="write-line"></span>
+  </div>
+
+  <!-- END OF DAY -->
+  <div class="section-label">End of Day — Day 21</div>
+
+  <div class="workbook-block">
+    <div class="workbook-label">End of Day Reflection</div>
+    <div class="workbook-title">Three Questions</div>
+    <span class="time-note">Approximate time: 5 minutes</span>
+
+    <div class="workbook-question">Q1 — The internal pressure finding</div>
+    <div class="workbook-instruction"><p>Before today, did you know that an engaged buyer activates more approval-seeking arousal than a resistant one? Write where you felt that in the simulation.</p></div>
+    <span class="write-line"></span>
+    <span class="write-line"></span>
+
+    <div class="workbook-question">Q2 — Your specific vulnerability</div>
+    <div class="workbook-instruction"><p>Based on the Day 17 comparison: which pressure profile is harder for you — external resistance or internal pressure from an achievable close? What does that tell you about where Phase 4 focus belongs?</p></div>
+    <span class="write-line"></span>
+    <span class="write-line"></span>
+
+    <div class="workbook-question">Q3 — Into Day 22</div>
+    <div class="workbook-instruction"><p>One thing you are taking into tomorrow's conditioning checkpoint.</p></div>
+    <span class="write-line"></span>
+    <span class="write-line"></span>
+  </div>
+
+</div><!-- end content-area -->
+
+<!-- ─── FOOTER ─── -->
+<footer class="day-footer">
+  <div class="footer-left">
+    Executive Conditioning System™ · Sales Conditioning<br>
+    © 2026 Aivorya AS · Licensed for personal use only · Not for redistribution · Day 21 of 30
+  </div>
+  <div class="footer-right">
+    <div class="footer-tomorrow-label">Tomorrow</div>
+    <div class="footer-tomorrow-title">Day 22 — Conditioning Checkpoint</div>
+  </div>
+</footer>
+
+</body>
+</html>

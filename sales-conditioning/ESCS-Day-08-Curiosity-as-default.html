@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Executive Conditioning System™ · Day 08 · Curiosity as Default</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Jost:wght@300;400;500;600&family=Martian+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper:        #F0EBE1;
+    --paper-deep:   #E8E1D5;
+    --ink:          #1A1510;
+    --ink-mid:      #4A3F35;
+    --ink-light:    #8A7D72;
+    --accent:       #A87840;
+    --accent-light: #C4975A;
+    --accent-muted: rgba(168, 120, 64, 0.12);
+    --dark:         #2E2820;
+    --rule:         rgba(168, 120, 64, 0.25);
+    --write-line:   rgba(26, 21, 16, 0.15);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Lora', Georgia, serif;
+    font-size: 11pt;
+    line-height: 1.7;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* ── MASTHEAD ── */
+  .masthead {
+    background: var(--dark);
+    border-bottom: 1px solid rgba(168, 120, 64, 0.3);
+    padding: 14px 64px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .masthead-left {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 300;
+    color: var(--ink-light);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .masthead-left span {
+    color: var(--accent-light);
+  }
+  .masthead-right {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 300;
+    color: var(--ink-light);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* ── DAY HEADER ── */
+  .day-header {
+    padding: 48px 64px 40px;
+    border-bottom: 1px solid var(--rule);
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 0 28px;
+    align-items: start;
+  }
+  .day-number-large {
+    font-family: 'Lora', serif;
+    font-size: 88pt;
+    font-weight: 400;
+    color: var(--accent);
+    opacity: 0.65;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    margin-top: -8px;
+  }
+  .day-header-meta {
+    padding-top: 6px;
+  }
+  .phase-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 400;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    margin-bottom: 10px;
+    display: block;
+  }
+  .day-title {
+    font-family: 'Lora', serif;
+    font-size: 20pt;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.2;
+    margin-bottom: 12px;
+  }
+  .day-premise {
+    font-family: 'Jost', sans-serif;
+    font-size: 10pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.65;
+    max-width: 520px;
+  }
+
+  /* ── CONTENT AREA ── */
+  .content-area {
+    padding: 0 64px;
+  }
+
+  /* ── SECTION LABEL ── */
+  .section-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 400;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 10px;
+    margin-top: 48px;
+    margin-bottom: 0;
+  }
+
+  /* ── EMAIL BLOCK ── */
+  .email-block {
+    margin-top: 24px;
+  }
+  .email-topbar {
+    background: var(--dark);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .email-topbar-left {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 300;
+    color: var(--ink-light);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .email-topbar-right {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 300;
+    color: var(--ink-light);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .email-body {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-top: none;
+    padding: 36px 40px 32px;
+  }
+  .email-body p {
+    font-family: 'Lora', serif;
+    font-size: 11pt;
+    line-height: 1.75;
+    color: var(--ink);
+    margin-bottom: 18px;
+  }
+  .email-body p:last-child { margin-bottom: 0; }
+  .email-body em { font-style: italic; }
+
+  /* ── SCIENCE BOX ── */
+  .science-box {
+    background: var(--accent-muted);
+    border-left: 3px solid var(--accent);
+    padding: 24px 28px;
+    margin-top: 32px;
+  }
+  .science-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 500;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin-bottom: 12px;
+    display: block;
+  }
+  .science-box p {
+    font-family: 'Jost', sans-serif;
+    font-size: 10pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.65;
+    margin-bottom: 12px;
+  }
+  .science-box p:last-child { margin-bottom: 0; }
+  .science-box em { font-style: italic; }
+
+  /* ── CALLOUT ── */
+  .callout {
+    text-align: center;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    padding: 28px 0;
+    margin: 40px auto;
+    max-width: 440px;
+  }
+  .callout p {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 14pt;
+    color: var(--ink-mid);
+    line-height: 1.5;
+  }
+
+  /* ── WORKBOOK BLOCK ── */
+  .workbook-block {
+    background: var(--paper-deep);
+    border-left: 3px solid var(--accent);
+    padding: 28px 32px;
+    margin-top: 32px;
+  }
+  .workbook-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 500;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin-bottom: 10px;
+    display: block;
+  }
+  .workbook-title {
+    font-family: 'Jost', sans-serif;
+    font-size: 13pt;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 10px;
+    line-height: 1.3;
+  }
+  .workbook-time {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 300;
+    color: var(--ink-light);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: 16px;
+    display: block;
+  }
+  .workbook-instruction {
+    font-family: 'Jost', sans-serif;
+    font-size: 9.5pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.65;
+    margin-bottom: 20px;
+  }
+  .workbook-instruction p { margin-bottom: 10px; }
+  .workbook-instruction p:last-child { margin-bottom: 0; }
+  .workbook-instruction strong { font-weight: 600; color: var(--ink); }
+  .workbook-instruction em { font-style: italic; }
+
+  .workbook-question {
+    font-family: 'Jost', sans-serif;
+    font-size: 10pt;
+    font-weight: 500;
+    color: var(--ink);
+    margin-top: 18px;
+    margin-bottom: 6px;
+    line-height: 1.5;
+  }
+  .write-line {
+    border: none;
+    border-bottom: 1px solid var(--write-line);
+    height: 9mm;
+    display: block;
+    width: 100%;
+    margin-bottom: 2px;
+    background: transparent;
+  }
+
+  /* Example rows in Curiosity Reframe table */
+  .reframe-example {
+    background: rgba(255,255,255,0.45);
+    border: 1px solid var(--rule);
+    padding: 16px 18px;
+    margin-top: 16px;
+  }
+  .reframe-row {
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    gap: 4px 12px;
+    margin-bottom: 8px;
+    font-family: 'Jost', sans-serif;
+    font-size: 9.5pt;
+    line-height: 1.55;
+  }
+  .reframe-row:last-child { margin-bottom: 0; }
+  .reframe-col-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 500;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    padding-top: 2px;
+  }
+  .reframe-col-text {
+    color: var(--ink-mid);
+    font-weight: 400;
+  }
+  .reframe-col-text strong {
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  /* Protocol blank rows */
+  .protocol-entry {
+    margin-top: 20px;
+    padding-top: 14px;
+    border-top: 1px solid var(--rule);
+  }
+  .protocol-entry:first-of-type { margin-top: 12px; }
+  .protocol-number {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 400;
+    color: var(--ink-light);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: 8px;
+    display: block;
+  }
+
+  /* Question taxonomy table */
+  .question-taxonomy {
+    background: rgba(255,255,255,0.45);
+    border: 1px solid var(--rule);
+    padding: 16px 18px;
+    margin: 16px 0 20px;
+  }
+  .taxonomy-row {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 6px 12px;
+    margin-bottom: 10px;
+    font-family: 'Jost', sans-serif;
+    font-size: 9.5pt;
+    line-height: 1.55;
+  }
+  .taxonomy-row:last-child { margin-bottom: 0; }
+  .taxonomy-type {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 500;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    padding-top: 2px;
+  }
+  .taxonomy-example {
+    color: var(--ink-mid);
+    font-style: italic;
+  }
+
+  /* ── DRILL BOX ── */
+  .drill-box {
+    background: var(--paper);
+    border-left: 3px solid var(--ink-mid);
+    padding: 24px 28px;
+    margin-top: 32px;
+  }
+  .drill-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 400;
+    color: var(--ink-light);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin-bottom: 14px;
+    display: block;
+  }
+  .drill-box p {
+    font-family: 'Jost', sans-serif;
+    font-size: 10pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.65;
+    margin-bottom: 12px;
+  }
+  .drill-box p:last-child { margin-bottom: 0; }
+  .drill-box strong {
+    color: var(--ink);
+    font-weight: 600;
+  }
+  .drill-timing {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 300;
+    color: var(--ink-light);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-top: 16px;
+    display: block;
+  }
+
+  /* ── FOOTER ── */
+  .day-footer {
+    margin-top: 48px;
+    padding: 20px 64px 48px;
+    border-top: 1px solid var(--rule);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 32px;
+    align-items: start;
+    page-break-inside: avoid;
+  }
+  .footer-left {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 300;
+    color: var(--ink-light);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    line-height: 1.7;
+  }
+  .footer-right {
+    text-align: right;
+  }
+  .footer-tomorrow-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 500;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    display: block;
+    margin-bottom: 5px;
+  }
+  .footer-tomorrow-title {
+    font-family: 'Jost', sans-serif;
+    font-size: 9pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.4;
+  }
+
+  /* ── PRINT ── */
+  @media print {
+    body { background: #fff; color: var(--ink); }
+    .masthead, .email-topbar { background: #fff !important; border-bottom: 1px solid #ccc !important; }
+    .masthead-left, .masthead-right,
+    .email-topbar-left, .email-topbar-right { color: var(--ink) !important; }
+    .science-box, .workbook-block { background: #F5F5F5 !important; }
+    .write-line { border-bottom: 1px solid #BBBBBB !important; }
+    .email-body { border-color: #CCCCCC !important; }
+    .workbook-block, .drill-box, .science-box { page-break-inside: avoid; }
+    .day-footer { page-break-inside: avoid; }
+    .reframe-example, .question-taxonomy { background: #F5F5F5 !important; border-color: #ccc !important; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ── MASTHEAD ── -->
+<header class="masthead">
+  <div class="masthead-left">
+    Executive Conditioning System™ · <span>Sales Conditioning</span> · An Aivorya Program
+  </div>
+  <div class="masthead-right">Phase 2 · Day 08</div>
+</header>
+
+<!-- ── DAY HEADER ── -->
+<div class="day-header">
+  <div class="day-number-large">08</div>
+  <div class="day-header-meta">
+    <span class="phase-label">Phase 2 — Foundation</span>
+    <div class="day-title">Curiosity as Default</div>
+    <div class="day-premise">An objection is not an attack. It is information. The difference between a salesperson who defends and one who asks is not technique — it is the cognitive state they are operating from before the objection arrives.</div>
+  </div>
+</div>
+
+<!-- ── CONTENT AREA ── -->
+<div class="content-area">
+
+  <!-- Morning Conditioning -->
+  <div class="section-label">Morning Conditioning</div>
+
+  <div class="email-block">
+    <div class="email-topbar">
+      <div class="email-topbar-left">From: Executive Conditioning System™ · Day 08 of 30</div>
+      <div class="email-topbar-right">Read · Then Work</div>
+    </div>
+    <div class="email-body">
+      <p>When an objection arrives, something happens before you have consciously decided how to respond.</p>
+      <p>The nervous system interprets the statement — "it's too expensive," "we're already using something," "we need to think about it" — and assigns it a category: threat, or information. That assignment happens fast, below the level of deliberate thought. The response that follows — defensive, explanatory, concessionary — is not a technique choice. It is the output of a threat interpretation.</p>
+      <p>This is what most sales training misses. It teaches responses. It does not address the interpretation that generates the response.</p>
+      <p>James Gross at Stanford has spent decades studying how people manage emotional responses. His most replicated finding: suppression — appearing calm while internally activated — does not reduce the emotional experience. It reduces the outward expression while <em>increasing</em> physiological arousal. That arousal is detectable. The buyer's nervous system reads elevated stress in your voice, your pacing, the slight flattening in your tone, and interprets it as a signal. Trust does not rise.</p>
+      <p>Reappraisal works differently. Reappraisal changes the meaning assigned to a stimulus before the emotional response fully generates. It does not manage the reaction after the fact. It prevents the reaction from forming in the first place. The prefrontal cortex stays engaged. The response comes from reasoning, not activation.</p>
+      <p>Curiosity is reappraisal in operational form.</p>
+      <p>When an objection arrives and you interpret it as information — <em>what does this tell me about what they actually need?</em> — the threat response does not fully generate. You stay in full cognitive capacity. You ask a real question. The buyer experiences a conversation, not a defence.</p>
+      <p>This is not a communication style. It is a cognitive frame. The frame precedes the response. And the frame is trainable.</p>
+      <p>One thing that affects the quality of curiosity available in a conversation: what you have already decided before you dial.</p>
+      <p>A difficult prospect from last week. A deal that stalled at this same stage before. Three calls that went nowhere this morning. These experiences create an interpretive frame that is already in place by the time the buyer answers. You arrive at the conversation carrying a prediction. The buyer receives not just a salesperson, but a salesperson with a closed frame — and the quality of curiosity available from a closed frame is limited.</p>
+      <p>Day 09 addresses this directly. Today: notice what you bring to the call before you make it.</p>
+    </div>
+  </div>
+
+  <!-- Science Box -->
+  <div class="science-box">
+    <span class="science-label">The Science</span>
+    <p>James Gross's emotion regulation research, conducted at Stanford over more than two decades, establishes a consistent finding: suppression and reappraisal produce different outcomes at every level of analysis.</p>
+    <p>Suppression — trying to appear unaffected while internally activated — reduces visible expression but increases heart rate, skin conductance, and cortisol. Critically, suppression also increases physiological arousal in the <em>other person in the conversation</em>. The stress is transmitted, not contained.</p>
+    <p>Reappraisal — changing how a stimulus is interpreted before the emotional response fully forms — reduces physiological arousal at the source. The interpretation happens first. The response follows the interpretation.</p>
+    <p>In a sales conversation: an objection interpreted as an attack generates a threat response. An objection interpreted as a question — incomplete, worth exploring — does not. The event is identical. The interpretation is the variable. This is why curiosity is not a communication technique. It is a cognitive intervention that operates before the response generates.</p>
+  </div>
+
+  <!-- Callout -->
+  <div class="callout">
+    <p>The buyer feels what you are suppressing. Regulation is not for your benefit alone.</p>
+  </div>
+
+  <!-- Workbook -->
+  <div class="section-label">Workbook — Day 08</div>
+
+  <!-- Exercise 1 -->
+  <div class="workbook-block">
+    <span class="workbook-label">Exercise 1 · Curiosity Reframe Protocol</span>
+    <div class="workbook-title">Surface → Concern → Question</div>
+    <span class="workbook-time">15 minutes</span>
+    <div class="workbook-instruction">
+      <p>This is a writing exercise. You are building a document you will use.</p>
+      <p>Take ten objections you hear regularly. For each one, work through three columns:</p>
+      <p><strong>Surface Statement</strong> — what the buyer actually says.<br>
+      <strong>Underlying Concern</strong> — what the statement is most likely signalling underneath. Not what you fear it means. What a regulated, curious salesperson would diagnose as the real concern.<br>
+      <strong>Curiosity Question</strong> — one question that surfaces the underlying concern without defending against the surface statement. The question must be genuinely open. It must not carry an argument inside it.</p>
+      <p>Three examples to calibrate the level of precision required:</p>
+    </div>
+
+    <div class="reframe-example">
+      <div class="reframe-row">
+        <div class="reframe-col-label">Surface</div>
+        <div class="reframe-col-text">"We're already using something for that."</div>
+      </div>
+      <div class="reframe-row">
+        <div class="reframe-col-label">Concern</div>
+        <div class="reframe-col-text">Switching cost, internal disruption, or not yet convinced the current solution is the actual problem.</div>
+      </div>
+      <div class="reframe-row">
+        <div class="reframe-col-label">Question</div>
+        <div class="reframe-col-text"><strong>"What would need to be true about what you have now for this not to be worth looking at?"</strong></div>
+      </div>
+    </div>
+
+    <div class="reframe-example">
+      <div class="reframe-row">
+        <div class="reframe-col-label">Surface</div>
+        <div class="reframe-col-text">"It's too expensive."</div>
+      </div>
+      <div class="reframe-row">
+        <div class="reframe-col-label">Concern</div>
+        <div class="reframe-col-text">Value not yet established, or budget genuinely constrained.</div>
+      </div>
+      <div class="reframe-row">
+        <div class="reframe-col-label">Question</div>
+        <div class="reframe-col-text"><strong>"Is the concern the investment itself, or confidence that it solves the problem?"</strong></div>
+      </div>
+    </div>
+
+    <div class="reframe-example">
+      <div class="reframe-row">
+        <div class="reframe-col-label">Surface</div>
+        <div class="reframe-col-text">"We need to think about it."</div>
+      </div>
+      <div class="reframe-row">
+        <div class="reframe-col-label">Concern</div>
+        <div class="reframe-col-text">Something unresolved — fit, timing, internal sign-off, or fear of making the wrong call.</div>
+      </div>
+      <div class="reframe-row">
+        <div class="reframe-col-label">Question</div>
+        <div class="reframe-col-text"><strong>"What's the part that needs most thought — is it the fit, the timing, or something else?"</strong></div>
+      </div>
+    </div>
+
+    <div class="workbook-instruction" style="margin-top: 20px; margin-bottom: 0;">
+      <p>Write your ten objections using the same format. The questions are written in advance because curiosity under pressure is not improvised — it is retrieved.</p>
+    </div>
+
+    <!-- Blank protocol entries: 7 remaining (3 shown as examples above) -->
+    <div class="protocol-entry">
+      <span class="protocol-number">Objection 01</span>
+      <div class="workbook-question">Surface Statement</div>
+      <div class="write-line"></div>
+      <div class="workbook-question">Underlying Concern</div>
+      <div class="write-line"></div>
+      <div class="write-line"></div>
+      <div class="workbook-question">Curiosity Question</div>
+      <div class="write-line"></div>
+      <div class="write-line"></div>
+    </div>
+    <div class="protocol-entry">
+      <span class="protocol-number">Objection 02</span>
+      <div class="workbook-question">Surface Statement</div>
+      <div class="write-line"></div>
+      <div class="workbook-question">Underlying Concern</div>
+      <div class="write-line"></div>
+      <div class="write-line"></div>
+      <div class="workbook-question">Curiosity Question</div>
+      <div class="write-line"></div>
+      <div class="write-line"></div>
+    </div>
+    <div class="protocol-entry">
+      <span class="protocol-number">Objection 03</span>
+      <div class="workbook-question">Surface Statement</div>
+      <div class="write-line"></div>
+      <div class="workbook-question">Underlying Concern</div>
+      <div class="write-line"></div>
+      <div class="write-line"></div>
+      <div class="workbook-question">Curiosity Question</div>
+      <div class="write-line"></div>
+      <div class="write-line"></div>
+    </div>
+    <div class="protocol-entry">
+      <span class="protocol-number">Objection 04</span>
+      <div class="workbook-question">Surface Statement</div>
+      <div class="write-line"></div>
+      <div class="workbook-question">Underlying Concern</div>
+      <div class="write-line"></div>
+      <div class="write-line"></div>
+      <div class="workbook-question">Curiosity Question</div>
+      <div class="write-line"></div>
+      <div class="write-line"></div>
+    </div>
+    <div class="protocol-entry">
+      <span class="protocol-number">Objection 05</span>
+      <div class="workbook-question">Surface Statement</div>
+      <div class="write-line"></div>
+      <div class="workbook-question">Underlying Concern</div>
+      <div class="write-line"></div>
+      <div class="write-line"></div>
+      <div class="workbook-question">Curiosity Question</div>
+      <div class="write-line"></div>
+      <div class="write-line"></div>
+    </div>
+    <div class="protocol-entry">
+      <span class="protocol-number">Objection 06</span>
+      <div class="workbook-question">Surface Statement</div>
+      <div class="write-line"></div>
+      <div class="workbook-question">Underlying Concern</div>
+      <div class="write-line"></div>
+      <div class="write-line"></div>
+      <div class="workbook-question">Curiosity Question</div>
+      <div class="write-line"></div>
+      <div class="write-line"></div>
+    </div>
+    <div class="protocol-entry">
+      <span class="protocol-number">Objection 07</span>
+      <div class="workbook-question">Surface Statement</div>
+      <div class="write-line"></div>
+      <div class="workbook-question">Underlying Concern</div>
+      <div class="write-line"></div>
+      <div class="write-line"></div>
+      <div class="workbook-question">Curiosity Question</div>
+      <div class="write-line"></div>
+      <div class="write-line"></div>
+    </div>
+    <div class="protocol-entry">
+      <span class="protocol-number">Objection 08</span>
+      <div class="workbook-question">Surface Statement</div>
+      <div class="write-line"></div>
+      <div class="workbook-question">Underlying Concern</div>
+      <div class="write-line"></div>
+      <div class="write-line"></div>
+      <div class="workbook-question">Curiosity Question</div>
+      <div class="write-line"></div>
+      <div class="write-line"></div>
+    </div>
+    <div class="protocol-entry">
+      <span class="protocol-number">Objection 09</span>
+      <div class="workbook-question">Surface Statement</div>
+      <div class="write-line"></div>
+      <div class="workbook-question">Underlying Concern</div>
+      <div class="write-line"></div>
+      <div class="write-line"></div>
+      <div class="workbook-question">Curiosity Question</div>
+      <div class="write-line"></div>
+      <div class="write-line"></div>
+    </div>
+    <div class="protocol-entry">
+      <span class="protocol-number">Objection 10</span>
+      <div class="workbook-question">Surface Statement</div>
+      <div class="write-line"></div>
+      <div class="workbook-question">Underlying Concern</div>
+      <div class="write-line"></div>
+      <div class="write-line"></div>
+      <div class="workbook-question">Curiosity Question</div>
+      <div class="write-line"></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+
+  <!-- Exercise 2 -->
+  <div class="workbook-block">
+    <span class="workbook-label">Exercise 2 · Discovery Question Bank</span>
+    <div class="workbook-title">Build Your Repertoire — 15 Questions</div>
+    <span class="workbook-time">12 minutes</span>
+    <div class="workbook-instruction">
+      <p>Build a personal bank of fifteen discovery questions. These are not feature questions. They surface the real decision criteria — what the buyer needs to feel certain enough to move.</p>
+      <p>The distinction:</p>
+    </div>
+
+    <div class="question-taxonomy">
+      <div class="taxonomy-row">
+        <div class="taxonomy-type">Feature question</div>
+        <div class="taxonomy-example">"What does your current solution do?"</div>
+      </div>
+      <div class="taxonomy-row">
+        <div class="taxonomy-type">Situational question</div>
+        <div class="taxonomy-example">"What happens when [specific problem scenario] occurs — what does that cost the business?"</div>
+      </div>
+      <div class="taxonomy-row">
+        <div class="taxonomy-type">Emotional question</div>
+        <div class="taxonomy-example">"What would change for you specifically if this was resolved?"</div>
+      </div>
+    </div>
+
+    <div class="workbook-instruction">
+      <p>Feature questions tell you what exists. Situational and emotional questions tell you what matters.</p>
+      <p>Write fifteen questions. Minimum five in each category. Use your own language — these need to sound like you. Test each one: would a senior buyer in your market find this question worth answering, or would they find it obvious? If the answer is no, rewrite it until it is. A question that a senior buyer would find obvious is a feature question in disguise.</p>
+      <p>This bank is a trained repertoire. In a live conversation, you select from it based on where the conversation is. You do not deliver it in sequence.</p>
+    </div>
+
+    <div class="protocol-entry">
+      <span class="protocol-number">Situational Questions — minimum 5</span>
+      <div class="write-line"></div>
+      <div class="write-line"></div>
+      <div class="write-line"></div>
+      <div class="write-line"></div>
+      <div class="write-line"></div>
+      <div class="write-line"></div>
+      <div class="write-line"></div>
+    </div>
+    <div class="protocol-entry">
+      <span class="protocol-number">Emotional Questions — minimum 5</span>
+      <div class="write-line"></div>
+      <div class="write-line"></div>
+      <div class="write-line"></div>
+      <div class="write-line"></div>
+      <div class="write-line"></div>
+      <div class="write-line"></div>
+      <div class="write-line"></div>
+    </div>
+    <div class="protocol-entry">
+      <span class="protocol-number">Additional Questions</span>
+      <div class="write-line"></div>
+      <div class="write-line"></div>
+      <div class="write-line"></div>
+      <div class="write-line"></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+
+  <!-- End of Day Reflection -->
+  <div class="workbook-block">
+    <span class="workbook-label">End of Day — Day 08</span>
+    <div class="workbook-title">Reflection</div>
+    <span class="workbook-time">3 minutes</span>
+    <div class="workbook-instruction">
+      <p>Write what actually happened.</p>
+    </div>
+
+    <div class="workbook-question">Which objection in your Curiosity Reframe Protocol was hardest to find a genuine question for — not a question that argues, a question that opens?</div>
+    <div class="write-line"></div>
+    <div class="write-line"></div>
+
+    <div class="workbook-question">Look at your Discovery Question Bank. Mark the three questions you would currently be most reluctant to ask in a real call. What does that reluctance tell you?</div>
+    <div class="write-line"></div>
+    <div class="write-line"></div>
+
+    <div class="workbook-question">One thing you are taking into tomorrow.</div>
+    <div class="write-line"></div>
+    <div class="write-line"></div>
+  </div>
+
+  <!-- Drill -->
+  <div class="section-label">Today's Practice Drill</div>
+
+  <div class="drill-box">
+    <span class="drill-label">Drill · Day 08 — Pre-Call Question Preparation</span>
+    <p>Before your next call, identify one objection you expect to hear — or one that is likely given where this deal currently is.</p>
+    <p><strong>Write the curiosity question you will use if it arrives.</strong></p>
+    <p>Not a response. Not a reframe. A single question that treats the objection as information.</p>
+    <p>Have it written before you dial. After the call, note whether the objection came, whether you used the question, and what the buyer's response told you.</p>
+    <span class="drill-timing">90 seconds pre-call · 3 minutes post-call</span>
+    <p style="margin-top: 16px;">No call today: take the objection you expect most often in your current pipeline. Write the curiosity question for it. Then write what you predict the buyer's response would be — and what that prediction tells you about how you currently interpret that objection.</p>
+  </div>
+
+</div><!-- /content-area -->
+
+<!-- ── FOOTER ── -->
+<footer class="day-footer">
+  <div class="footer-left">
+    Executive Conditioning System™ · Sales Conditioning<br>
+    © 2026 Aivorya AS · Licensed for personal use only · Not for redistribution · Day 08 of 30
+  </div>
+  <div class="footer-right">
+    <span class="footer-tomorrow-label">Tomorrow</span>
+    <div class="footer-tomorrow-title">Day 09 — The Pre-Call Mind</div>
+  </div>
+</footer>
+
+</body>
+</html>

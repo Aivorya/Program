@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Executive Conditioning System™ · Day 06 · Breath as Anchor</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Jost:wght@300;400;500;600&family=Martian+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --paper:        #F0EBE1;
+    --paper-deep:   #E8E1D5;
+    --ink:          #1A1510;
+    --ink-mid:      #4A3F35;
+    --ink-light:    #8A7D72;
+    --accent:       #A87840;
+    --accent-light: #C4975A;
+    --accent-muted: rgba(168, 120, 64, 0.12);
+    --dark:         #2E2820;
+    --rule:         rgba(168, 120, 64, 0.25);
+    --write-line:   rgba(26, 21, 16, 0.15);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Lora', Georgia, serif;
+    font-size: 11pt;
+    line-height: 1.7;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* ─── PHASE COVER ─── */
+  .phase-cover {
+    background: var(--dark);
+    padding: 72px 64px 64px;
+    position: relative;
+    overflow: hidden;
+    border-top: 3px solid var(--accent);
+    page-break-after: always;
+  }
+
+  .phase-cover-ghost {
+    position: absolute;
+    top: -20px;
+    right: -10px;
+    font-family: 'Lora', serif;
+    font-size: 320pt;
+    font-weight: 600;
+    color: #ffffff;
+    opacity: 0.03;
+    line-height: 1;
+    user-select: none;
+    pointer-events: none;
+  }
+
+  .phase-cover-eyebrow {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent-light);
+    margin-bottom: 48px;
+  }
+
+  .phase-cover-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 8pt;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 20px;
+  }
+
+  .phase-cover-title {
+    font-family: 'Lora', serif;
+    font-size: 42pt;
+    font-weight: 600;
+    color: var(--paper);
+    line-height: 1.1;
+    margin-bottom: 28px;
+    letter-spacing: -0.01em;
+  }
+
+  .phase-cover-subtitle {
+    font-family: 'Jost', sans-serif;
+    font-size: 11pt;
+    font-weight: 300;
+    color: var(--accent-light);
+    line-height: 1.75;
+    max-width: 560px;
+    margin-bottom: 64px;
+  }
+
+  .phase-cover-meta {
+    border-top: 1px solid rgba(168, 120, 64, 0.3);
+    padding-top: 20px;
+    display: flex;
+    gap: 40px;
+    align-items: center;
+  }
+
+  .phase-cover-meta-item {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+  }
+
+  .phase-cover-meta-divider {
+    width: 1px;
+    height: 16px;
+    background: rgba(168, 120, 64, 0.3);
+  }
+
+  /* ─── MASTHEAD ─── */
+  .masthead {
+    background: var(--dark);
+    border-bottom: 1px solid rgba(168, 120, 64, 0.3);
+    padding: 14px 64px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .masthead-left {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+  }
+
+  .masthead-left span {
+    color: var(--accent-light);
+  }
+
+  .masthead-right {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+  }
+
+  /* ─── DAY HEADER ─── */
+  .day-header {
+    padding: 48px 64px 40px;
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 0 24px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .day-number-col {
+    display: flex;
+    align-items: flex-start;
+    padding-top: 4px;
+  }
+
+  .day-number {
+    font-family: 'Lora', serif;
+    font-size: 88pt;
+    font-weight: 600;
+    color: var(--accent);
+    opacity: 0.65;
+    line-height: 0.85;
+    letter-spacing: -0.03em;
+  }
+
+  .day-meta-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .day-phase-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 10px;
+  }
+
+  .day-title {
+    font-family: 'Lora', serif;
+    font-size: 20pt;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.2;
+    margin-bottom: 12px;
+  }
+
+  .day-premise {
+    font-family: 'Jost', sans-serif;
+    font-size: 10pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.65;
+    max-width: 520px;
+  }
+
+  /* ─── CONTENT AREA ─── */
+  .content-area {
+    padding: 0 64px;
+  }
+
+  /* ─── SECTION LABEL ─── */
+  .section-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 8px;
+    margin-top: 48px;
+    margin-bottom: 0;
+  }
+
+  /* ─── EMAIL BLOCK ─── */
+  .email-block {
+    border: 1px solid var(--rule);
+    border-top: none;
+    margin-top: 0;
+  }
+
+  .email-topbar {
+    background: var(--dark);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .email-topbar-left {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+  }
+
+  .email-topbar-right {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent-light);
+  }
+
+  .email-body {
+    background: var(--paper);
+    padding: 32px 36px;
+  }
+
+  .email-body p {
+    font-family: 'Lora', serif;
+    font-size: 11pt;
+    line-height: 1.75;
+    color: var(--ink);
+    margin-bottom: 18px;
+  }
+
+  .email-body p:last-child {
+    margin-bottom: 0;
+  }
+
+  .email-body em {
+    font-style: italic;
+  }
+
+  /* ─── SCIENCE BOX ─── */
+  .science-box {
+    background: var(--accent-muted);
+    border-left: 3px solid var(--accent);
+    padding: 24px 28px;
+    margin-top: 32px;
+  }
+
+  .science-box-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 12px;
+  }
+
+  .science-box p {
+    font-family: 'Jost', sans-serif;
+    font-size: 10pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.7;
+    margin-bottom: 10px;
+  }
+
+  .science-box p:last-child {
+    margin-bottom: 0;
+  }
+
+  .science-box .citation {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    color: var(--ink-light);
+    margin-top: 14px;
+    display: block;
+  }
+
+  /* ─── CALLOUT ─── */
+  .callout {
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    padding: 24px 0;
+    margin-top: 40px;
+    text-align: center;
+  }
+
+  .callout p {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 14pt;
+    color: var(--ink-mid);
+    line-height: 1.6;
+    max-width: 440px;
+    margin: 0 auto;
+  }
+
+  /* ─── WORKBOOK BLOCK ─── */
+  .workbook-block {
+    background: var(--paper-deep);
+    border-left: 3px solid var(--accent);
+    padding: 28px 32px;
+    margin-top: 32px;
+    page-break-inside: avoid;
+  }
+
+  .workbook-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 8px;
+  }
+
+  .workbook-title {
+    font-family: 'Jost', sans-serif;
+    font-size: 13pt;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 12px;
+    line-height: 1.3;
+  }
+
+  .workbook-instruction {
+    font-family: 'Jost', sans-serif;
+    font-size: 9.5pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.65;
+    margin-bottom: 18px;
+  }
+
+  .workbook-question {
+    font-family: 'Jost', sans-serif;
+    font-size: 10pt;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 6px;
+    margin-top: 14px;
+  }
+
+  .workbook-sub-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-top: 22px;
+    margin-bottom: 6px;
+    display: block;
+  }
+
+  .write-line {
+    border-bottom: 1px solid var(--write-line);
+    height: 9mm;
+    display: block;
+    margin-bottom: 0;
+  }
+
+  .write-line + .write-line {
+    margin-top: 0;
+  }
+
+  .write-lines-group {
+    margin-bottom: 10px;
+  }
+
+  /* ─── DRILL BOX ─── */
+  .drill-box {
+    background: var(--paper);
+    border-left: 3px solid var(--ink-mid);
+    padding: 24px 28px;
+    margin-top: 32px;
+    page-break-inside: avoid;
+  }
+
+  .drill-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+    margin-bottom: 10px;
+  }
+
+  .drill-box p {
+    font-family: 'Jost', sans-serif;
+    font-size: 10pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.7;
+    margin-bottom: 10px;
+  }
+
+  .drill-box p:last-child {
+    margin-bottom: 0;
+  }
+
+  .drill-box strong {
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  /* ─── DAY FOOTER ─── */
+  .day-footer {
+    border-top: 1px solid var(--rule);
+    margin-top: 48px;
+    padding: 20px 64px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    page-break-inside: avoid;
+  }
+
+  .footer-left {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+    line-height: 1.8;
+  }
+
+  .footer-right {
+    text-align: right;
+  }
+
+  .footer-tomorrow-label {
+    font-family: 'Martian Mono', monospace;
+    font-size: 6pt;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 4px;
+  }
+
+  .footer-tomorrow-title {
+    font-family: 'Jost', sans-serif;
+    font-size: 9pt;
+    font-weight: 400;
+    color: var(--ink-mid);
+  }
+
+  /* ─── PRINT ─── */
+  @media print {
+    .phase-cover {
+      background: white !important;
+      border-bottom: 2px solid var(--accent);
+    }
+    .phase-cover-ghost { display: none; }
+    .phase-cover-eyebrow,
+    .phase-cover-label { color: var(--accent) !important; }
+    .phase-cover-title { color: var(--ink) !important; }
+    .phase-cover-subtitle { color: var(--ink-mid) !important; }
+    .phase-cover-meta-item { color: var(--ink-light) !important; }
+
+    .masthead { background: white !important; }
+    .masthead-left,
+    .masthead-left span,
+    .masthead-right { color: var(--ink) !important; }
+
+    .email-topbar { background: white !important; border-bottom: 1px solid #CCCCCC; }
+    .email-topbar-left,
+    .email-topbar-right { color: var(--ink) !important; }
+    .email-body { border: 1px solid #CCCCCC !important; }
+
+    .science-box { background: #F5F5F5 !important; page-break-inside: avoid; }
+    .workbook-block { background: #F5F5F5 !important; page-break-inside: avoid; }
+    .drill-box { page-break-inside: avoid; }
+    .day-footer { page-break-inside: avoid; }
+
+    .write-line { border-bottom-color: #BBBBBB !important; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- PHASE COVER — PHASE 2                  -->
+<!-- ═══════════════════════════════════════ -->
+<div class="phase-cover">
+  <div class="phase-cover-ghost">2</div>
+
+  <div class="phase-cover-eyebrow">Executive Conditioning System™ · Sales Conditioning</div>
+
+  <div class="phase-cover-label">Phase 2 — Days 06–12</div>
+
+  <div class="phase-cover-title">Foundation</div>
+
+  <div class="phase-cover-subtitle">
+    The participant now knows their patterns. Phase 2 installs the tools to interrupt them. Three core regulation capacities are built: physiological (breath), postural (authority), and cognitive (curiosity). Without these, all technique training collapses under pressure.
+  </div>
+
+  <div class="phase-cover-meta">
+    <div class="phase-cover-meta-item">Executive Conditioning System™</div>
+    <div class="phase-cover-meta-divider"></div>
+    <div class="phase-cover-meta-item">Phase 2 of 6</div>
+    <div class="phase-cover-meta-divider"></div>
+    <div class="phase-cover-meta-item">7 Days</div>
+    <div class="phase-cover-meta-divider"></div>
+    <div class="phase-cover-meta-item">An Aivorya Program</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- MASTHEAD                               -->
+<!-- ═══════════════════════════════════════ -->
+<div class="masthead">
+  <div class="masthead-left">
+    Executive Conditioning System™ · <span>Sales Conditioning</span> · An Aivorya Program
+  </div>
+  <div class="masthead-right">Phase 2 · Day 06</div>
+</div>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- DAY HEADER                             -->
+<!-- ═══════════════════════════════════════ -->
+<div class="day-header">
+  <div class="day-number-col">
+    <div class="day-number">06</div>
+  </div>
+  <div class="day-meta-col">
+    <div class="day-phase-label">Phase 2 — Foundation</div>
+    <div class="day-title">Breath as Anchor</div>
+    <div class="day-premise">The nervous system does not know the difference between a difficult sales call and a physical threat. Today you install the first tool that does.</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- CONTENT AREA                           -->
+<!-- ═══════════════════════════════════════ -->
+<div class="content-area">
+
+  <!-- SECTION: Morning Conditioning -->
+  <div class="section-label">Morning Conditioning</div>
+
+  <div class="email-block">
+    <div class="email-topbar">
+      <div class="email-topbar-left">From: Executive Conditioning System™ · Day 06 of 30</div>
+      <div class="email-topbar-right">Read · Then Work</div>
+    </div>
+    <div class="email-body">
+      <p>For five days you have been observing. You have a trigger catalogue, a performance gap analysis, a map of the identity beliefs that shape how you behave under pressure. Phase 2 does not revisit any of it. It builds on it.</p>
+
+      <p>The first tool is not cognitive. It is not a reframe, a question bank, or a conversation framework. Those come. But there is a sequencing problem that most training ignores, and it determines whether everything that follows works or fails.</p>
+
+      <p>The prefrontal cortex handles reasoning, language, decision-making, and access to learned strategies. It is also the first region to lose capacity when the stress response activates. When a buyer says "we've already got something for that" and something tightens in your chest — that is not a moment for your best thinking. That is your nervous system assessing threat and routing resources away from the cognitive systems you need most.</p>
+
+      <p>The practical consequence: you cannot execute a cognitive strategy from an unregulated physiological state. The script, the framework, the objection response you rehearsed — all of it becomes less accessible the moment your threat response fires. Not because you forgot it. Because the nervous system is not interested in your sales technique right now. It is interested in survival.</p>
+
+      <p>Physiological regulation comes first because it is the only sequence that works. Not as a wellness practice. As access to performance.</p>
+
+      <p>The tool is cyclic sighing. Here is the exact technique.</p>
+
+      <p>Two sharp inhales through the nose — the first to begin filling the lungs, the second to fully inflate them including the lower lobes. Then one slow, extended exhale through the mouth. The double inhale maximises the volume of air before the exhale. <em>The exhale is the active element.</em> It activates the vagus nerve, which signals the parasympathetic nervous system to begin down-regulating the stress response — slowing heart rate, lowering blood pressure, reducing cortisol. The effect begins within two cycles. Five cycles takes under 90 seconds.</p>
+
+      <p>Do this before every call today.</p>
+
+      <p>There is a second use of this technique that changes how useful it is. It can be deployed silently during a live conversation. One cycle, executed slowly and without visible effort. The inhales through the nose are quiet. The exhale can be slow enough to be imperceptible. A buyer says something that activates you — a direct challenge, a competitor reference, a price objection. One cycle. Return to full capacity. The tool is not only a pre-call protocol. It is available mid-conversation, exactly when you need it.</p>
+
+      <p>Today you begin designing your pre-call ritual. It has three components: breath, posture, and intention. Day 07 goes into posture in depth. Intention is addressed in the workbook below. The three components together form a personal entry gate — a 3-minute protocol you use before every call from here forward. Consistency in the ritual builds the nervous system response faster than duration. Three minutes, every time, matters more than ten minutes occasionally.</p>
+    </div>
+  </div>
+
+  <!-- SCIENCE BOX -->
+  <div class="science-box">
+    <div class="science-box-label">The Science</div>
+    <p>In 2023, researchers at Stanford University ran a randomised controlled trial with 108 participants over 28 days. They compared three breathing techniques against mindfulness meditation across primary outcomes: mood, anxiety reduction, and physiological arousal.</p>
+    <p>Cyclic sighing — two sharp inhales through the nose followed by one long slow exhale through the mouth — produced greater improvement in mood and greater reduction in physiological arousal than every other technique, including mindfulness meditation.</p>
+    <p>The mechanism: the extended exhale activates the parasympathetic nervous system through the vagus nerve. The vagus nerve is the primary pathway for the parasympathetic branch — it signals the body to slow the heart, lower blood pressure, and reduce cortisol. The effect starts in two cycles. Five cycles before a call takes under 90 seconds. You enter the conversation with full cognitive capacity available, not fighting your own threat response.</p>
+    <span class="citation">Balban et al., Cell Reports Medicine, 2023</span>
+  </div>
+
+  <!-- CALLOUT -->
+  <div class="callout">
+    <p>You cannot regulate a conversation you have not first regulated yourself into.</p>
+  </div>
+
+  <!-- SECTION: Workbook -->
+  <div class="section-label">Workbook — Day 06</div>
+
+  <!-- WORKBOOK BLOCK 1 -->
+  <div class="workbook-block">
+    <div class="workbook-label">Exercise 1 · Learning the Technique</div>
+    <div class="workbook-title">First Contact with the Tool</div>
+    <div class="workbook-instruction">Before doing anything else, run five cycles of the technique right now. Two sharp inhales through the nose. Pause briefly at the top. One slow exhale through the mouth — as long as the two inhales combined, or longer. Repeat five times. Then answer.</div>
+
+    <div class="workbook-question">What did you notice in your body during the exhale?</div>
+    <div class="write-lines-group">
+      <span class="write-line"></span>
+      <span class="write-line"></span>
+    </div>
+
+    <div class="workbook-question">What is your state right now — on a scale of 1–10, where 10 is completely regulated and alert?</div>
+    <div class="write-lines-group">
+      <span class="write-line"></span>
+    </div>
+
+    <div class="workbook-instruction" style="margin-top: 14px; margin-bottom: 0;">Note this number. <span style="font-family: 'Martian Mono', monospace; font-size: 6pt; color: var(--ink-light); letter-spacing: 0.1em;">· 5 min</span></div>
+  </div>
+
+  <!-- WORKBOOK BLOCK 2 -->
+  <div class="workbook-block">
+    <div class="workbook-label">Exercise 2 · Pre-Call Ritual Design</div>
+    <div class="workbook-title">Your Personal Entry Protocol</div>
+    <div class="workbook-instruction">Design your personal version of the three-component pre-call ritual. Write each component as an instruction you would give to someone else — specific and operational, not aspirational. This is the protocol you will run before every call from today forward. <span style="font-family: 'Martian Mono', monospace; font-size: 6pt; color: var(--ink-light); letter-spacing: 0.1em;">· 7 min</span></div>
+
+    <span class="workbook-sub-label">Component 1 — Breath</span>
+    <div class="workbook-question">How many cycles? (Five is the standard. Adjust if needed, but not below three.)</div>
+    <div class="write-lines-group">
+      <span class="write-line"></span>
+    </div>
+
+    <div class="workbook-question">Where will you do this — at your desk, standing, before you open the call software?</div>
+    <div class="write-lines-group">
+      <span class="write-line"></span>
+    </div>
+
+    <span class="workbook-sub-label">Component 2 — Posture</span>
+    <div class="workbook-instruction">Day 07 covers posture in depth. For now: note one physical adjustment you already know puts you in a more authoritative state.</div>
+    <div class="write-lines-group">
+      <span class="write-line"></span>
+    </div>
+
+    <span class="workbook-sub-label">Component 3 — Intention</span>
+    <div class="workbook-instruction">Write one behavioral intention for the call — not a goal, not an outcome. A specific behavior you are committing to in this conversation. "Close this deal" is an outcome. "Hold silence for three full seconds after giving the price" is a behavior. The nervous system can execute a behavior. It cannot execute an outcome. Use your Phase 1 gap analysis — what specific behavior are you going to execute deliberately on the next call?</div>
+    <div class="write-lines-group">
+      <span class="write-line"></span>
+      <span class="write-line"></span>
+    </div>
+
+    <span class="workbook-sub-label">Your Full Ritual</span>
+    <div class="workbook-instruction">Write the three-component ritual here as a single paragraph — your personal protocol, in your own words, specific enough to execute without thinking:</div>
+    <div class="write-lines-group">
+      <span class="write-line"></span>
+      <span class="write-line"></span>
+      <span class="write-line"></span>
+    </div>
+  </div>
+
+  <!-- WORKBOOK BLOCK 3 -->
+  <div class="workbook-block">
+    <div class="workbook-label">Exercise 3 · The Silent Deployment Test</div>
+    <div class="workbook-title">Mid-Call Availability</div>
+    <div class="workbook-instruction">The technique can be used mid-call without detection. Identify one type of moment in a live call that activates you — a specific trigger from your Phase 1 catalogue. A price challenge. A competitor reference. A silence that goes longer than expected. <span style="font-family: 'Martian Mono', monospace; font-size: 6pt; color: var(--ink-light); letter-spacing: 0.1em;">· 3 min</span></div>
+
+    <div class="workbook-question">Write the trigger:</div>
+    <div class="write-lines-group">
+      <span class="write-line"></span>
+    </div>
+
+    <div class="workbook-instruction" style="margin-top: 16px;">Now practise one silent cycle. Sitting upright, as you would be on a call. Inhale twice through the nose without visible effort. Exhale slowly through the mouth — quiet, controlled. No one watching would notice.</div>
+
+    <div class="workbook-question">Write one sentence on how you will use this the next time this specific trigger fires:</div>
+    <div class="write-lines-group">
+      <span class="write-line"></span>
+      <span class="write-line"></span>
+    </div>
+  </div>
+
+  <!-- SECTION: Practice Drill -->
+  <div class="section-label">Today's Practice Drill</div>
+
+  <div class="drill-box">
+    <div class="drill-label">Drill · Pre-Call Ritual — First Deployment</div>
+    <p><strong>Run your three-component ritual before every call today.</strong> Including internal calls. Including calls you expect to be easy. Especially those.</p>
+    <p>After each call, note one thing: what was your state at the start of the call, and did it hold?</p>
+    <p>You are not assessing yourself. You are collecting data. What you notice today informs how you refine the ritual over the next six days.</p>
+    <p>If you have no calls scheduled today, run the ritual three times before each session of work that requires focus. The habit forms the same way. <span style="font-family: 'Martian Mono', monospace; font-size: 6pt; color: var(--ink-light); letter-spacing: 0.1em;">90 sec pre-call · 3 min post-call debrief</span></p>
+  </div>
+
+  <!-- SECTION: End of Day -->
+  <div class="section-label">End of Day — Day 06</div>
+
+  <div class="workbook-block">
+    <div class="workbook-label">End of Day Reflection</div>
+    <div class="workbook-title">Close of Day 06</div>
+
+    <div class="workbook-question">What difference, if any, did you notice between calls where you ran the ritual and calls where you did not?</div>
+    <div class="write-lines-group">
+      <span class="write-line"></span>
+      <span class="write-line"></span>
+    </div>
+
+    <div class="workbook-question">Your Exercise 1 state rating was _____. What is your rating now, at the end of the day?</div>
+    <div class="write-lines-group">
+      <span class="write-line"></span>
+      <span class="write-line"></span>
+    </div>
+
+    <div class="workbook-question">Where in a live conversation today did you feel activation — and what did you do with it?</div>
+    <div class="write-lines-group">
+      <span class="write-line"></span>
+      <span class="write-line"></span>
+    </div>
+
+    <div class="workbook-question">What are you taking into Day 07?</div>
+    <div class="write-lines-group">
+      <span class="write-line"></span>
+      <span class="write-line"></span>
+    </div>
+  </div>
+
+</div><!-- end content-area -->
+
+<!-- ═══════════════════════════════════════ -->
+<!-- DAY FOOTER                             -->
+<!-- ═══════════════════════════════════════ -->
+<div class="day-footer">
+  <div class="footer-left">
+    Executive Conditioning System™ · Sales Conditioning<br>
+    © 2026 Aivorya AS · Licensed for personal use only · Not for redistribution · Day 06 of 30
+  </div>
+  <div class="footer-right">
+    <div class="footer-tomorrow-label">Tomorrow</div>
+    <div class="footer-tomorrow-title">Day 07 — The Authority Posture</div>
+  </div>
+</div>
+
+</body>
+</html>
